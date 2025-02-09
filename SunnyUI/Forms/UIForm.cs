@@ -1,7 +1,7 @@
 /******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
- * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * SunnyUI Open-source control library, utility library, extension library, and multi-page development framework.
+ * CopyRight (C) 2012-2025 ShenYongHua.
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,59 +9,58 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
- ******************************************************************************
- * 文件名称: UIForm.cs
- * 文件说明: 窗体基类
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ ****************************************************************************** 
+ * File Name: UIForm.cs
+ * File Description: Base form class
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-05-30: V2.2.5 更新标题移动、双击最大化/正常、到顶最大化、最大化后拖拽正常
- * 2020-07-01: V2.2.6 仿照QQ，重绘标题栏按钮
- * 2020-07-05: V2.2.6 更新窗体控制按钮圆角和跟随窗体圆角变化。
- * 2020-09-17: V2.2.7 重写WindowState相关代码
- * 2020-09-17: V2.2.7 增加了窗体可拉拽调整大小ShowDragStretch属性
- * 2021-02-04: V3.0.1 标题栏增加扩展按钮
- * 2021-05-06: V3.0.3 增加属性，标题栏可放置控件
- * 2021-08-17: V3.0.6 增加TitleFont属性
- * 2021-08-17: V3.0.6 适应主屏幕任务栏在屏幕各个方向均可
- * 2021-08-17: V3.0.8 增加IFrame接口
- * 2022-01-03: V3.0.9 标题栏按钮可以设置颜色
- * 2022-02-09: V3.1.0 增加页面间传值方法SetParamToPage
- * 2022-03-19: V3.1.1 重构主题配色
- * 2022-03-28: V3.1.1 增加了查找页面的方法
- * 2022-04-02: V3.1.2 默认设置AutoScaleMode为None
- * 2022-04-26: V3.1.8 屏蔽一些属性
- * 2022-05-06: V3.1.8 可拖拽时Padding可以调整大小
- * 2022-06-11: V3.1.9 弹窗默认关闭半透明遮罩
- * 2022-07-05: V3.2.1 多页面框架增加PageAdded，PageSelected，PageRemoved事件
- * 2022-07-14: V3.2.1 增加UnRegisterHotKey，卸载全局热键
- * 2022-07-25: V3.2.2 多页面框架增加程序关闭时调用UIPage的Final和FormClosed事件
- * 2022-08-25: V3.2.3 重构多页面框架传值删除SetParamToPage
- * 2022-08-25: V3.2.3 重构多页面框架传值：框架发送给页面 SendParamToPage 函数
- * 2022-08-25: V3.2.3 重构多页面框架传值：接收页面传值 ReceiveParams 事件
- * 2022-09-11: V3.2.3 修复继承页面可响应WM_HOTKEY消息
- * 2022-11-30: V3.3.0 增加RemoveAllPages函数
- * 2023-01-25: V3.3.1 最大化后，关闭按钮扩大至原按钮右上角全部区域
- * 2023-02-24: V3.3.2 修复PageSelected可能未显示选中页面的问题
- * 2023-05-12: V3.3.6 重构DrawString函数
- * 2023-07-24: V3.4.1 修复页面切换时，第一个UIPage未执行Final事件的问题
- * 2023-07-27: V3.4.1 默认提示弹窗TopMost为true
- * 2023-10-09: V3.5.0 增加一个在窗体显示后延时执行的事件
- * 2023-11-05: V3.5.2 重构主题
- * 2023-11-19: V3.5.2 修改默认ShowShadow边框阴影打开，ShowRadius显示圆角关闭
- * 2023-12-04: V3.6.1 修复修改Style后，BackColor未保存的问题
- * 2023-12-13: V3.6.2 优化UIPage的Init和Final加载逻辑
- * 2023-02-19: V3.6.3 修改标题栏文字与控制按钮绘制重叠的问题
- * 2024-02-22: V3.6.3 最大化时，鼠标拖拽标题超过一定范围后再恢复Normal显示
- * 2024-04-28: V3.6.5 增加WindowStateChanged事件
- * 2024-05-16: V3.6.6 Resizable替代ShowDragStretch，显示边框可拖拽调整窗体大小
- * 2024-06-08: V3.6.6 防止图标转换错误
- * 2024-07-20: V3.6.8 修改为初始化最大化后恢复时界面尺寸大小正常
- * 2024-07-26: V3.6.8 修复鼠标点击事件
- * 2024-07-28: V3.6.8 最大化后，鼠标点击标题栏最上方，不恢复正常大小
- * 2025-01-09: V3.8.1 修复窗体边框显示不全 #IBGJBS
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-05-30: V2.2.5 Updated title movement, double-click to maximize/restore, maximize to the top, and normal dragging after maximization
+ * 2020-07-01: V2.2.6 Redesigned title bar buttons similar to QQ
+ * 2020-07-05: V2.2.6 Updated control buttons and rounded corners of the title bar to match form changes
+ * 2020-09-17: V2.2.7 Rewrote WindowState-related code
+ * 2020-09-17: V2.2.7 Added the ShowDragStretch property for resizable forms
+ * 2021-02-04: V3.0.1 Added an extension button to the title bar
+ * 2021-05-06: V3.0.3 Added support for placing controls on the title bar
+ * 2021-08-17: V3.0.6 Added TitleFont property
+ * 2021-08-17: V3.0.6 Adapted to taskbars in various screen directions
+ * 2021-08-17: V3.0.8 Added IFrame interface
+ * 2022-01-03: V3.0.9 Title bar buttons can now be customized with colors
+ * 2022-02-09: V3.1.0 Added SetParamToPage for passing values between pages
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2022-03-28: V3.1.1 Added method to find pages
+ * 2022-04-02: V3.1.2 Default AutoScaleMode set to None
+ * 2022-04-26: V3.1.8 Hidden some properties
+ * 2022-05-06: V3.1.8 Adjustable size when resizable with Padding
+ * 2022-06-11: V3.1.9 Disabled semi-transparent mask for popups by default
+ * 2022-07-05: V3.2.1 Added PageAdded, PageSelected, and PageRemoved events for multi-page framework
+ * 2022-07-14: V3.2.1 Added UnRegisterHotKey for unloading global hotkeys
+ * 2022-07-25: V3.2.2 Multi-page framework now calls UIPage’s Final and FormClosed events upon program close
+ * 2022-08-25: V3.2.3 Refactored multi-page framework value passing by removing SetParamToPage
+ * 2022-08-25: V3.2.3 Refactored value passing: SendParamToPage for framework-to-page communication
+ * 2022-08-25: V3.2.3 Refactored value passing: ReceiveParams event for receiving values from pages
+ * 2022-09-11: V3.2.3 Fixed WM_HOTKEY message handling in inherited pages
+ * 2022-11-30: V3.3.0 Added RemoveAllPages function
+ * 2023-01-25: V3.3.1 Close button area expanded when maximized
+ * 2023-02-24: V3.3.2 Fixed PageSelected issue with the first UIPage not showing as selected
+ * 2023-05-12: V3.3.6 Refactored DrawString function
+ * 2023-07-24: V3.4.1 Fixed issue with UIPage Final event not triggering during page switch
+ * 2023-07-27: V3.4.1 Set TopMost to true for default pop-up messages
+ * 2023-10-09: V3.5.0 Added delayed execution event after form display
+ * 2023-11-05: V3.5.2 Refactored theme
+ * 2023-11-19: V3.5.2 Changed default ShowShadow to enabled and ShowRadius to disabled
+ * 2023-12-04: V3.6.1 Fixed BackColor not saving after modifying Style
+ * 2023-12-13: V3.6.2 Optimized UIPage Init and Final load logic
+ * 2023-02-19: V3.6.3 Fixed overlapping of title text and control buttons
+ * 2024-02-22: V3.6.3 Restored Normal display when dragging title beyond a certain range while maximized
+ * 2024-04-28: V3.6.5 Added WindowStateChanged event
+ * 2024-05-16: V3.6.6 Resizable replaced ShowDragStretch for adjustable window size with border dragging
+ * 2024-06-08: V3.6.6 Prevented icon conversion errors
+ * 2024-07-20: V3.6.8 Fixed form size issue when restoring from maximized state
+ * 2024-07-26: V3.6.8 Fixed mouse click events
+ * 2024-07-28: V3.6.8 Prevented form size restoration when clicking the topmost area of the title bar after maximizing
+ * 2025-01-09: V3.8.1 Fixed incomplete display of form borders #IBGJBS
 ******************************************************************************/
 
 using System;
@@ -75,7 +74,7 @@ namespace Sunny.UI
     {
         public UIForm()
         {
-            base.MaximumSize = Screen.PrimaryScreen.WorkingArea.Size;//设置最大化尺寸
+            base.MaximumSize = Screen.PrimaryScreen.WorkingArea.Size;//Set the maximum size
             InitializeComponent();
 
             SetStyle(ControlStyles.UserPaint |
@@ -90,9 +89,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 禁止控件跟随窗体缩放
+        /// Disable control scaling with the form.
         /// </summary>
-        [DefaultValue(false), Category("SunnyUI"), Description("禁止控件跟随窗体缩放")]
+        [DefaultValue(false), Category("SunnyUI"), Description("Disable control scaling with the form.")]
         public bool ZoomScaleDisabled { get; set; }
 
         private void SetZoomScaleRect()
@@ -113,7 +112,7 @@ namespace Sunny.UI
         public event OnZoomScaleRectChanged ZoomScaleRectChanged;
 
         [DefaultValue(typeof(Size), "0, 0")]
-        [Description("设计界面大小"), Category("SunnyUI")]
+        [Description("Design the interface size"), Category("SunnyUI")]
         public Size ZoomScaleSize
         {
             get;
@@ -121,15 +120,15 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 控件缩放前在其容器里的位置
+        /// The position of the control in its container before scaling
         /// </summary>
         [Browsable(false), DefaultValue(typeof(Rectangle), "0, 0, 0, 0")]
         public Rectangle ZoomScaleRect { get; set; }
 
         /// <summary>
-        /// 设置控件缩放比例
+        /// Set control scaling
         /// </summary>
-        /// <param name="scale">缩放比例</param>
+        /// <param name="scale">Zoom ratio</param>
         private void SetZoomScale()
         {
             if (ZoomScaleDisabled) return;
@@ -151,7 +150,7 @@ namespace Sunny.UI
 
         public event OnZoomScaleChanged ZoomScaleChanged;
 
-        //不显示FormBorderStyle属性
+        //FormBorderStyle property is not displayed
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -290,19 +289,19 @@ namespace Sunny.UI
         private bool FormMoveMouseDown;
 
         /// <summary>
-        /// 鼠标左键按下时，窗体的位置
+        /// The position of the form when the left mouse button is pressed
         /// </summary>
         private Point FormLocation;
 
         /// <summary>
-        /// 鼠标左键按下时，鼠标的位置
+        /// The position of the mouse when the left mouse button is pressed
         /// </summary>
         private Point mouseOffset;
 
         /// <summary>
-        /// 重载鼠标按下事件
+        /// Overload mouse press event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse event parameters</param>
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
@@ -335,9 +334,9 @@ namespace Sunny.UI
         private long stickyBorderTime = 5000000;
 
         /// <summary>
-        /// 设置或获取显示器边缘停留的最大时间(ms)，默认500ms
+        /// Set or get the maximum time for staying at the edge of the display (ms), default 500ms
         /// </summary>
-        [Description("设置或获取在显示器边缘停留的最大时间(ms)"), Category("SunnyUI")]
+        [Description("Set or get the maximum time to stay at the edge of the display (ms)"), Category("SunnyUI")]
         [DefaultValue(500)]
         public long StickyBorderTime
         {
@@ -346,19 +345,19 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 是否触发在显示器边缘停留事件
+        /// Whether the mouse is staying at the top border of the display.
         /// </summary>
         private bool IsStayAtTopBorder;
 
         /// <summary>
-        /// 显示器边缘停留事件被触发的时间
+        /// The time when the mouse stays at the top border of the display
         /// </summary>
         private long TopBorderStayTicks;
 
         /// <summary>
-        /// 重载鼠标抬起事件
+        /// Overload mouse up event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse up event</param>
         protected override void OnMouseUp(MouseEventArgs e)
         {
             base.OnMouseUp(e);
@@ -372,29 +371,29 @@ namespace Sunny.UI
                     ShowMaximize();
                 }
 
-                // 防止窗体上移时标题栏超出容器，导致后续无法移动
+                // Prevent the title bar from exceeding the container when the form is moved up, resulting in the inability to move later.
                 if (Top < screen.WorkingArea.Top)
                 {
                     Top = screen.WorkingArea.Top;
                 }
 
-                // 防止窗体下移时标题栏超出容器，导致后续无法移动
+                // Prevent the title bar from exceeding the container when the form is moved down, resulting in the inability to move later.
                 if (Top > screen.WorkingArea.Bottom - TitleHeight)
                 {
                     Top = screen.WorkingArea.Bottom - TitleHeight;
                 }
             }
 
-            // 鼠标抬起后强行关闭粘滞并恢复鼠标移动区域
+            // After the mouse is lifted, sticky is forcibly turned off and the mouse movement area is restored.
             IsStayAtTopBorder = false;
             Cursor.Clip = new Rectangle();
             FormMoveMouseDown = false;
         }
 
         /// <summary>
-        /// 重载鼠标移动事件
+        /// Overload mouse move event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mpve move event</param>
         protected override void OnMouseMove(MouseEventArgs e)
         {
             if (FormMoveMouseDown && !MousePosition.Equals(mouseOffset))
@@ -404,7 +403,7 @@ namespace Sunny.UI
                     int MaximizedWidth = Width;
                     int LocationX = Left;
                     ShowMaximize();
-                    // 计算等比例缩放后，鼠标与原位置的相对位移
+                    // After calculating the proportional scaling, the relative displacement of the mouse and the original position
                     float offsetXRatio = 1 - (float)Width / MaximizedWidth;
                     mouseOffset.X -= (int)((mouseOffset.X - LocationX) * offsetXRatio);
                 }
@@ -413,9 +412,9 @@ namespace Sunny.UI
                 int offsetY = mouseOffset.Y - MousePosition.Y;
                 Rectangle WorkingArea = Screen.GetWorkingArea(this);
 
-                // 若当前鼠标停留在容器上边缘，将会触发一个时间为MaximumBorderInterval(ms)的边缘等待，
-                // 若此时结束移动，窗口将自动最大化，该功能为上下排列的多监视器提供
-                // 此处判断设置为特定值的好处是，若快速移动窗体跨越监视器，很难触发停留事件
+                // If the current mouse stays on the upper edge of the container, an edge wait with a time of MaximumBorderInterval(ms) will be triggered.
+                // If the movement ends at this time, the window will be automatically maximized. This function is provided for multiple monitors arranged one above the other.
+                //The advantage of setting the judgment here to a specific value is that if the form is quickly moved across the monitor, it is difficult to trigger the stay event.
                 if (MousePosition.Y - WorkingArea.Top == 0)
                 {
                     if (!IsStayAtTopBorder)
@@ -487,9 +486,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Overload Paint method
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Paint parameters</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -581,7 +580,7 @@ namespace Sunny.UI
                 }
                 catch
                 {
-                    Console.WriteLine("图标转换错误");
+                    Console.WriteLine("Icon conversion error");
                 }
             }
 
@@ -731,16 +730,16 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 自定义主题风格
+        /// Custom theme style
         /// </summary>
         [DefaultValue(false), Browsable(false)]
-        [Description("获取或设置可以自定义主题风格"), Category("SunnyUI")]
+        [Description("Get or set a customizable theme style"), Category("SunnyUI")]
         public bool StyleCustomMode { get; set; }
 
         /// <summary>
-        /// 重载控件尺寸变更
+        /// Overload control size change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameter</param>
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
@@ -763,7 +762,7 @@ namespace Sunny.UI
 
         private bool IsShown;
 
-        [Description("背景颜色"), Category("SunnyUI")]
+        [Description("Background Color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "Control")]
         public override Color BackColor
         {
@@ -781,14 +780,14 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 是否显示圆角
+        /// Whether to display rounded corners
         /// </summary>
         private bool _showRadius = false;
 
         /// <summary>
-        /// 是否显示圆角
+        /// Whether to display rounded corners
         /// </summary>
-        [Description("是否显示圆角"), Category("SunnyUI")]
+        [Description("Whether to display rounded corners"), Category("SunnyUI")]
         [DefaultValue(false)]
         public bool ShowRadius
         {
@@ -805,16 +804,16 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 是否显示阴影
+        /// Whether to display the shadow of the border
         /// </summary>
         private bool _showShadow = true;
 
-        #region 边框阴影
+        #region Border shadow
 
         /// <summary>
-        /// 是否显示阴影
+        /// Whether to display the shadow of the border
         /// </summary>
-        [Description("是否显示阴影"), Category("SunnyUI")]
+        [Description("Whether to display the shadow of the border"), Category("SunnyUI")]
         [DefaultValue(true)]
         public bool ShowShadow
         {
@@ -840,17 +839,17 @@ namespace Sunny.UI
             return false;
         }
 
-        #endregion 边框阴影
+        #endregion Border shadow
 
         /// <summary>
-        /// 是否重绘边框样式
+        /// Whether to display the border
         /// </summary>
         private bool _showRect = true;
 
         /// <summary>
-        /// 是否显示边框
+        /// Whether to display the border
         /// </summary>
-        [Description("是否显示边框"), Category("SunnyUI")]
+        [Description("Whether to display the border"), Category("SunnyUI")]
         [DefaultValue(true)]
         public bool ShowRect
         {
@@ -895,8 +894,8 @@ namespace Sunny.UI
 
                 if (FormBorderStyle == FormBorderStyle.None)
                 {
-                    // 当边框样式为FormBorderStyle.None时
-                    // 点击窗体任务栏图标，可以进行最小化
+                    // When the border style is FormBorderStyle.None
+                    // Click the form taskbar icon to minimize it
                     cp.Style = cp.Style | Win32.User.WS_MINIMIZEBOX;
                     return cp;
                 }
@@ -905,7 +904,7 @@ namespace Sunny.UI
             }
         }
 
-        [Description("显示边框可拖拽调整窗体大小"), Category("SunnyUI"), DefaultValue(false)]
+        [Description("Display borders that can be dragged to resize the form"), Category("SunnyUI"), DefaultValue(false)]
         public bool Resizable
         {
             get => showDragStretch;
@@ -913,7 +912,7 @@ namespace Sunny.UI
         }
 
         [Browsable(false)]
-        [Description("显示边框可拖拽调整窗体大小"), Category("SunnyUI"), DefaultValue(false)]
+        [Description("Display borders that can be dragged to resize the form"), Category("SunnyUI"), DefaultValue(false)]
         public bool ShowDragStretch
         {
             get => showDragStretch;
@@ -926,7 +925,7 @@ namespace Sunny.UI
             }
         }
 
-        #region 拉拽调整窗体大小
+        #region Drag to resize form
 
         public event HotKeyEventHandler HotKeyEventHandler;
 
@@ -970,7 +969,7 @@ namespace Sunny.UI
             if (m.Msg == Win32.User.WM_NCHITTEST && ShowDragStretch && WindowState == FormWindowState.Normal)
             {
                 //Point vPoint = new Point((int)m.LParam & 0xFFFF, (int)m.LParam >> 16 & 0xFFFF);
-                Point vPoint = new Point(MousePosition.X, MousePosition.Y);//修正有分屏后，调整窗体大小时鼠标显示左右箭头问题
+                Point vPoint = new Point(MousePosition.X, MousePosition.Y);//Fixed the issue where the mouse displays left and right arrows when resizing the form after split screen
                 vPoint = PointToClient(vPoint);
                 int dragSize = 5;
                 if (vPoint.X <= dragSize)
@@ -1017,6 +1016,6 @@ namespace Sunny.UI
             }
         }
 
-        #endregion 拉拽调整窗体大小
+        #endregion Drag to resize form
     }
 }

@@ -62,7 +62,7 @@
             label.Size = new System.Drawing.Size(215, 16);
             label.Style = UIStyle.Custom;
             label.TabIndex = 1;
-            label.Text = "请在下方编辑框中输入数值：";
+            label.Text = "Please enter a value in the edit box below:";
             label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // edit
@@ -91,7 +91,7 @@
             Name = "UIInputForm";
             Padding = new System.Windows.Forms.Padding(0, 35, 0, 0);
             Style = UIStyle.Custom;
-            Text = "输入";
+            Text = "Input";
             ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 473, 182);
             Shown += UIInputForm_Shown;
             Controls.SetChildIndex(pnlBtm, 0);

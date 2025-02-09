@@ -23,8 +23,7 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -118,7 +117,7 @@
             uiSymbolButton4.Size = new System.Drawing.Size(100, 35);
             uiSymbolButton4.Symbol = 361639;
             uiSymbolButton4.TabIndex = 3;
-            uiSymbolButton4.Text = "导出";
+            uiSymbolButton4.Text = "Export";
             uiSymbolButton4.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             uiSymbolButton4.Visible = false;
             // 
@@ -133,7 +132,7 @@
             uiSymbolButton3.Size = new System.Drawing.Size(100, 35);
             uiSymbolButton3.Symbol = 361544;
             uiSymbolButton3.TabIndex = 2;
-            uiSymbolButton3.Text = "删除";
+            uiSymbolButton3.Text = "Delete";
             uiSymbolButton3.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             // 
             // uiSymbolButton2
@@ -147,7 +146,7 @@
             uiSymbolButton2.Size = new System.Drawing.Size(100, 35);
             uiSymbolButton2.Symbol = 361508;
             uiSymbolButton2.TabIndex = 1;
-            uiSymbolButton2.Text = "编辑";
+            uiSymbolButton2.Text = "Edit";
             uiSymbolButton2.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             // 
             // uiSymbolButton1
@@ -161,7 +160,7 @@
             uiSymbolButton1.Size = new System.Drawing.Size(100, 35);
             uiSymbolButton1.Symbol = 361543;
             uiSymbolButton1.TabIndex = 0;
-            uiSymbolButton1.Text = "增加";
+            uiSymbolButton1.Text = "Add";
             uiSymbolButton1.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             // 
             // UIDataGridViewForm
