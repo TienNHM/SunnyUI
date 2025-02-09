@@ -23,10 +23,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 显示等待提示窗
+        /// Displays a waiting dialog.
         /// </summary>
-        /// <param name="owner"></param>
-        /// <param name="size"></param>
+        /// <param name="owner">The parent form.</param>
+        /// <param name="size">The size of the waiting dialog.</param>
         public static void ShowProcessForm(this Form owner, int size = 200, bool showrect = true)
         {
             if (ProcessFormService.IsRun) return;
@@ -37,7 +37,7 @@ namespace Sunny.UI
         internal static bool ProcessFormServiceClose;
 
         /// <summary>
-        /// 隐藏等待提示窗
+        /// Hides the waiting dialog.
         /// </summary>
         public static void HideProcessForm(this Form owner)
         {
@@ -45,10 +45,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 显示等待提示窗
+        /// Displays a waiting dialog with a description.
         /// </summary>
-        /// <param name="desc">描述文字</param>
-        public static void ShowWaitForm(this Form owner, string desc = "系统正在处理中，请稍候...")
+        /// <param name="desc">Description text</param>
+        public static void ShowWaitForm(this Form owner, string desc = "The system is processing, please wait...")
         {
             if (WaitFormService.IsRun) return;
             WaitFormServiceClose = false;
@@ -58,7 +58,7 @@ namespace Sunny.UI
         internal static bool WaitFormServiceClose;
 
         /// <summary>
-        /// 隐藏等待提示窗
+        /// Hide the waiting prompt window
         /// </summary>
         public static void HideWaitForm(this Form owner)
         {
@@ -66,9 +66,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置等待提示窗描述文字
+        /// Set the description text for the waiting prompt window
         /// </summary>
-        /// <param name="desc">描述文字</param>
+        /// <param name="desc">Description text</param
         public static void SetWaitFormDescription(this Form owner, string desc)
         {
             if (!WaitFormService.IsRun) return;
@@ -76,12 +76,12 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 显示进度提示窗
+        /// Show progress prompt window
         /// </summary>
-        /// <param name="desc">描述文字</param>
-        /// <param name="maximum">最大进度值</param>
-        /// <param name="decimalCount">显示进度条小数个数</param>
-        public static void ShowStatusForm(this Form owner, int maximum = 100, string desc = "系统正在处理中，请稍候...", int decimalCount = 1)
+        /// <param name="desc">Description text</param>
+        /// <param name="maximum">Maximum progress value</param>
+        /// <param name="decimalCount">Number of decimal places for progress bar</param>
+        public static void ShowStatusForm(this Form owner, int maximum = 100, string desc = "The system is processing, please wait...", int decimalCount = 1)
         {
             if (StatusFormService.IsRun) return;
             StatusFormServiceClose = false;
@@ -91,7 +91,7 @@ namespace Sunny.UI
         internal static bool StatusFormServiceClose;
 
         /// <summary>
-        /// 隐藏进度提示窗
+        /// Hide the progress prompt window
         /// </summary>
         public static void HideStatusForm(this Form owner)
         {
@@ -99,8 +99,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置进度提示窗步进值加1
+        /// Increase the progress step value in the progress prompt window by 1
         /// </summary>
+        /// <param name="step">Step value to increase (default is 1)</param>
         public static void SetStatusFormStepIt(this Form owner, int step = 1)
         {
             if (!StatusFormService.IsRun) return;
@@ -108,9 +109,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置进度提示窗描述文字
+        /// Set the description text for the progress prompt window
         /// </summary>
-        /// <param name="desc">描述文字</param>
+        /// <param name="desc">Description text</param>
         public static void SetStatusFormDescription(this Form owner, string desc)
         {
             if (!StatusFormService.IsRun) return;
