@@ -526,7 +526,7 @@ namespace Sunny.UI
             // 
             // bar
             // 
-            bar.Font = new Font("宋体", 12F);
+            bar.Font = new Font("Segoe UI", 12F);
             bar.Location = new Point(247, 4);
             bar.MinimumSize = new Size(1, 1);
             bar.Name = "bar";

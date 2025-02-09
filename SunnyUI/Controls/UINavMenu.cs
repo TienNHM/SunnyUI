@@ -351,7 +351,7 @@ namespace Sunny.UI
         private Font tipsFont = UIStyles.SubFont();
 
         [Description("角标文字字体"), Category("SunnyUI")]
-        [DefaultValue(typeof(Font), "宋体, 9pt")]
+        [DefaultValue(typeof(Font), "Segoe UI, 9pt")]
         public Font TipsFont
         {
             get => tipsFont;

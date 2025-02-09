@@ -36,7 +36,7 @@
             // uiProgressIndicator1
             // 
             uiProgressIndicator1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            uiProgressIndicator1.Font = new System.Drawing.Font("宋体", 12F);
+            uiProgressIndicator1.Font = new System.Drawing.Font("Segoe UI", 12F);
             uiProgressIndicator1.Location = new System.Drawing.Point(5, 5);
             uiProgressIndicator1.MinimumSize = new System.Drawing.Size(1, 1);
             uiProgressIndicator1.Name = "uiProgressIndicator1";

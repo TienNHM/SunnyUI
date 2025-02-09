@@ -53,7 +53,7 @@
             // 
             // uiLogo1
             // 
-            this.uiLogo1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLogo1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLogo1.Location = new System.Drawing.Point(15, 15);
             this.uiLogo1.MaximumSize = new System.Drawing.Size(300, 80);
             this.uiLogo1.MinimumSize = new System.Drawing.Size(300, 80);

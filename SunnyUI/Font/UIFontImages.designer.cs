@@ -264,7 +264,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label2.ForeColor = System.Drawing.Color.Blue;
             label2.Location = new System.Drawing.Point(12, 14);
             label2.Name = "label2";
@@ -275,7 +275,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label1.ForeColor = System.Drawing.Color.Blue;
             label1.Location = new System.Drawing.Point(441, 48);
             label1.Name = "label1";
@@ -285,7 +285,7 @@
             // 
             // button1
             // 
-            button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             button1.Location = new System.Drawing.Point(331, 42);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(93, 28);
@@ -296,7 +296,7 @@
             // 
             // textBox1
             // 
-            textBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             textBox1.Location = new System.Drawing.Point(7, 43);
             textBox1.Name = "textBox1";
             textBox1.Size = new System.Drawing.Size(317, 26);
@@ -309,7 +309,7 @@
             ClientSize = new System.Drawing.Size(820, 681);
             Controls.Add(tabControl1);
             Controls.Add(panel1);
-            Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             Name = "UIFontImages";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Symbols";

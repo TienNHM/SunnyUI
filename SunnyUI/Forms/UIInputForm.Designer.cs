@@ -55,7 +55,7 @@
             // 
             label.AutoSize = true;
             label.BackColor = System.Drawing.Color.Transparent;
-            label.Font = new System.Drawing.Font("宋体", 12F);
+            label.Font = new System.Drawing.Font("Segoe UI", 12F);
             label.ForeColor = System.Drawing.Color.FromArgb(48, 48, 48);
             label.Location = new System.Drawing.Point(28, 57);
             label.Name = "label";
@@ -68,7 +68,7 @@
             // edit
             // 
             edit.Cursor = System.Windows.Forms.Cursors.IBeam;
-            edit.Font = new System.Drawing.Font("宋体", 12F);
+            edit.Font = new System.Drawing.Font("Segoe UI", 12F);
             edit.Location = new System.Drawing.Point(29, 92);
             edit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             edit.MinimumSize = new System.Drawing.Size(1, 1);

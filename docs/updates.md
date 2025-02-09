@@ -209,7 +209,7 @@
 \* UIComboDataGridView: 增加ClearFilter，可以清除弹窗的搜索栏文字    
     
 ## 2023\-09\-19 V3.5.0   
- **注意：大版本更新，SunnyUI字体改为系统默认字体（中文Windows常见字体为宋体）**     
+ **注意：大版本更新，SunnyUI字体改为系统默认字体（中文Windows常见字体为Segoe UI）**     
 建议新项目使用此版本，如果3.5.0以下版本需要升级参照文档设置全局字体：    
 [全局字体设置](/globalfont)   
 

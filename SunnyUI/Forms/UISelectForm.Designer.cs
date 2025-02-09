@@ -51,7 +51,7 @@
             // 
             label.AutoSize = true;
             label.BackColor = System.Drawing.Color.Transparent;
-            label.Font = new System.Drawing.Font("宋体", 12F);
+            label.Font = new System.Drawing.Font("Segoe UI", 12F);
             label.ForeColor = System.Drawing.Color.FromArgb(48, 48, 48);
             label.Location = new System.Drawing.Point(29, 57);
             label.Name = "label";
@@ -65,7 +65,7 @@
             ComboBox.DataSource = null;
             ComboBox.DropDownStyle = UIDropDownStyle.DropDownList;
             ComboBox.FillColor = System.Drawing.Color.White;
-            ComboBox.Font = new System.Drawing.Font("宋体", 12F);
+            ComboBox.Font = new System.Drawing.Font("Segoe UI", 12F);
             ComboBox.ItemHoverColor = System.Drawing.Color.FromArgb(155, 200, 255);
             ComboBox.ItemSelectForeColor = System.Drawing.Color.FromArgb(235, 243, 255);
             ComboBox.Location = new System.Drawing.Point(29, 92);

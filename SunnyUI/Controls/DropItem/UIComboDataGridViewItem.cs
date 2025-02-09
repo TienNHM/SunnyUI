@@ -125,7 +125,7 @@ namespace Sunny.UI
             panel.Controls.Add(btnCancel);
             panel.Controls.Add(btnOK);
             panel.Dock = DockStyle.Bottom;
-            panel.Font = new System.Drawing.Font("宋体", 12F);
+            panel.Font = new System.Drawing.Font("Segoe UI", 12F);
             panel.Location = new System.Drawing.Point(0, 289);
             panel.Margin = new Padding(4, 5, 4, 5);
             panel.MinimumSize = new System.Drawing.Size(1, 1);
@@ -147,7 +147,7 @@ namespace Sunny.UI
             btnCancel.FillHoverColor = System.Drawing.Color.FromArgb(235, 115, 115);
             btnCancel.FillPressColor = System.Drawing.Color.FromArgb(184, 64, 64);
             btnCancel.FillSelectedColor = System.Drawing.Color.FromArgb(184, 64, 64);
-            btnCancel.Font = new System.Drawing.Font("宋体", 10.5F);
+            btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             btnCancel.LightColor = System.Drawing.Color.FromArgb(253, 243, 243);
             btnCancel.Location = new System.Drawing.Point(478, 8);
             btnCancel.MinimumSize = new System.Drawing.Size(1, 1);
@@ -168,7 +168,7 @@ namespace Sunny.UI
             // 
             btnOK.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnOK.Cursor = Cursors.Hand;
-            btnOK.Font = new System.Drawing.Font("宋体", 10.5F);
+            btnOK.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             btnOK.Location = new System.Drawing.Point(389, 8);
             btnOK.MinimumSize = new System.Drawing.Size(1, 1);
             btnOK.Name = "btnOK";
@@ -185,7 +185,7 @@ namespace Sunny.UI
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(80, 160, 255);
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(80, 160, 255);
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -194,7 +194,7 @@ namespace Sunny.UI
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 12F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(48, 48, 48);
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(220, 236, 255);
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(48, 48, 48);
@@ -202,14 +202,14 @@ namespace Sunny.UI
             dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridView.Dock = DockStyle.Fill;
             dataGridView.EnableHeadersVisualStyles = false;
-            dataGridView.Font = new System.Drawing.Font("宋体", 12F);
+            dataGridView.Font = new System.Drawing.Font("Segoe UI", 12F);
             dataGridView.GridColor = System.Drawing.Color.FromArgb(104, 173, 255);
             dataGridView.Location = new System.Drawing.Point(0, 44);
             dataGridView.MultiSelect = false;
             dataGridView.Name = "dataGridView";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(243, 249, 255);
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 12F);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F);
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(48, 48, 48);
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(80, 160, 255);
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(48, 48, 48);
@@ -231,7 +231,7 @@ namespace Sunny.UI
             pFilter.Controls.Add(btnSearch);
             pFilter.Controls.Add(edtFilter);
             pFilter.Dock = DockStyle.Top;
-            pFilter.Font = new System.Drawing.Font("宋体", 12F);
+            pFilter.Font = new System.Drawing.Font("Segoe UI", 12F);
             pFilter.Location = new System.Drawing.Point(0, 0);
             pFilter.Margin = new Padding(4, 5, 4, 5);
             pFilter.MinimumSize = new System.Drawing.Size(1, 1);
@@ -247,7 +247,7 @@ namespace Sunny.UI
             // 
             btnClear.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnClear.Cursor = Cursors.Hand;
-            btnClear.Font = new System.Drawing.Font("宋体", 10.5F);
+            btnClear.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             btnClear.Location = new System.Drawing.Point(478, 8);
             btnClear.MinimumSize = new System.Drawing.Size(1, 1);
             btnClear.Name = "btnClear";
@@ -262,7 +262,7 @@ namespace Sunny.UI
             // 
             btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnSearch.Cursor = Cursors.Hand;
-            btnSearch.Font = new System.Drawing.Font("宋体", 10.5F);
+            btnSearch.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             btnSearch.Location = new System.Drawing.Point(389, 8);
             btnSearch.MinimumSize = new System.Drawing.Size(1, 1);
             btnSearch.Name = "btnSearch";
@@ -277,7 +277,7 @@ namespace Sunny.UI
             edtFilter.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             edtFilter.ButtonSymbolOffset = new System.Drawing.Point(0, 0);
             edtFilter.Cursor = Cursors.IBeam;
-            edtFilter.Font = new System.Drawing.Font("宋体", 10.5F);
+            edtFilter.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             edtFilter.Location = new System.Drawing.Point(17, 10);
             edtFilter.Margin = new Padding(4, 5, 4, 5);
             edtFilter.MinimumSize = new System.Drawing.Size(1, 16);

@@ -38,7 +38,7 @@
             // 
             labelDescription.AutoSize = true;
             labelDescription.BackColor = System.Drawing.Color.Transparent;
-            labelDescription.Font = new System.Drawing.Font("宋体", 12F);
+            labelDescription.Font = new System.Drawing.Font("Segoe UI", 12F);
             labelDescription.ForeColor = System.Drawing.Color.FromArgb(48, 48, 48);
             labelDescription.Location = new System.Drawing.Point(32, 55);
             labelDescription.Name = "labelDescription";
@@ -50,7 +50,7 @@
             // processBar
             // 
             processBar.FillColor = System.Drawing.Color.FromArgb(235, 243, 255);
-            processBar.Font = new System.Drawing.Font("宋体", 12F);
+            processBar.Font = new System.Drawing.Font("Segoe UI", 12F);
             processBar.Location = new System.Drawing.Point(32, 91);
             processBar.MinimumSize = new System.Drawing.Size(70, 23);
             processBar.Name = "processBar";

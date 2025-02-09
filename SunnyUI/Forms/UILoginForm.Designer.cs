@@ -43,7 +43,7 @@
             // uiAvatar1
             // 
             uiAvatar1.BackColor = System.Drawing.Color.Transparent;
-            uiAvatar1.Font = new System.Drawing.Font("宋体", 12F);
+            uiAvatar1.Font = new System.Drawing.Font("Segoe UI", 12F);
             uiAvatar1.Location = new System.Drawing.Point(65, 16);
             uiAvatar1.MinimumSize = new System.Drawing.Size(1, 1);
             uiAvatar1.Name = "uiAvatar1";
@@ -54,7 +54,7 @@
             // uiLine1
             // 
             uiLine1.BackColor = System.Drawing.Color.Transparent;
-            uiLine1.Font = new System.Drawing.Font("宋体", 12F);
+            uiLine1.Font = new System.Drawing.Font("Segoe UI", 12F);
             uiLine1.ForeColor = System.Drawing.Color.FromArgb(48, 48, 48);
             uiLine1.Location = new System.Drawing.Point(4, 85);
             uiLine1.MinimumSize = new System.Drawing.Size(2, 2);
@@ -70,7 +70,7 @@
             // 
             edtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
             edtUser.EnterAsTab = true;
-            edtUser.Font = new System.Drawing.Font("宋体", 12F);
+            edtUser.Font = new System.Drawing.Font("Segoe UI", 12F);
             edtUser.Location = new System.Drawing.Point(4, 121);
             edtUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             edtUser.MinimumSize = new System.Drawing.Size(1, 1);
@@ -87,7 +87,7 @@
             // edtPassword
             // 
             edtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            edtPassword.Font = new System.Drawing.Font("宋体", 12F);
+            edtPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
             edtPassword.Location = new System.Drawing.Point(4, 162);
             edtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             edtPassword.MinimumSize = new System.Drawing.Size(1, 1);
@@ -106,7 +106,7 @@
             // btnLogin
             // 
             btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnLogin.Font = new System.Drawing.Font("宋体", 12F);
+            btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F);
             btnLogin.Location = new System.Drawing.Point(4, 206);
             btnLogin.MinimumSize = new System.Drawing.Size(1, 1);
             btnLogin.Name = "btnLogin";
@@ -115,7 +115,7 @@
             btnLogin.Size = new System.Drawing.Size(86, 29);
             btnLogin.TabIndex = 2;
             btnLogin.Text = "登录";
-            btnLogin.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
+            btnLogin.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             btnLogin.Click += btnLogin_Click;
             // 
             // btnCancel
@@ -126,7 +126,7 @@
             btnCancel.FillHoverColor = System.Drawing.Color.FromArgb(235, 115, 115);
             btnCancel.FillPressColor = System.Drawing.Color.FromArgb(184, 64, 64);
             btnCancel.FillSelectedColor = System.Drawing.Color.FromArgb(184, 64, 64);
-            btnCancel.Font = new System.Drawing.Font("宋体", 12F);
+            btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F);
             btnCancel.Location = new System.Drawing.Point(100, 206);
             btnCancel.MinimumSize = new System.Drawing.Size(1, 1);
             btnCancel.Name = "btnCancel";
@@ -142,13 +142,13 @@
             btnCancel.Symbol = 361453;
             btnCancel.TabIndex = 3;
             btnCancel.Text = "取消";
-            btnCancel.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
+            btnCancel.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             btnCancel.Click += btnCancel_Click;
             // 
             // lblTitle
             // 
             lblTitle.BackColor = System.Drawing.Color.Transparent;
-            lblTitle.Font = new System.Drawing.Font("宋体", 15.75F);
+            lblTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             lblTitle.ForeColor = System.Drawing.Color.Navy;
             lblTitle.Location = new System.Drawing.Point(44, 35);
             lblTitle.Name = "lblTitle";
@@ -163,7 +163,7 @@
             // 
             lblSubText.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             lblSubText.BackColor = System.Drawing.Color.Transparent;
-            lblSubText.Font = new System.Drawing.Font("宋体", 12F);
+            lblSubText.Font = new System.Drawing.Font("Segoe UI", 12F);
             lblSubText.ForeColor = System.Drawing.Color.FromArgb(48, 48, 48);
             lblSubText.Location = new System.Drawing.Point(426, 421);
             lblSubText.Name = "lblSubText";
@@ -181,7 +181,7 @@
             uiPanel1.Controls.Add(btnCancel);
             uiPanel1.Controls.Add(btnLogin);
             uiPanel1.FillColor = System.Drawing.Color.White;
-            uiPanel1.Font = new System.Drawing.Font("宋体", 12F);
+            uiPanel1.Font = new System.Drawing.Font("Segoe UI", 12F);
             uiPanel1.Location = new System.Drawing.Point(433, 126);
             uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);

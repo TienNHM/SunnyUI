@@ -47,7 +47,7 @@
             // noteContent
             // 
             noteContent.BackColor = System.Drawing.Color.Transparent;
-            noteContent.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
+            noteContent.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             noteContent.Location = new System.Drawing.Point(69, 48);
             noteContent.MaximumSize = new System.Drawing.Size(288, 100);
             noteContent.Name = "noteContent";
@@ -60,7 +60,7 @@
             // noteDate
             // 
             noteDate.AutoSize = true;
-            noteDate.Font = new System.Drawing.Font("宋体", 9F);
+            noteDate.Font = new System.Drawing.Font("Segoe UI", 9F);
             noteDate.Image = Properties.Resources.notifier;
             noteDate.Location = new System.Drawing.Point(21, 168);
             noteDate.Name = "noteDate";
@@ -74,7 +74,7 @@
             buttonMenu.BackgroundImage = Properties.Resources.menu;
             buttonMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             buttonMenu.ContextMenuStrip = menu;
-            buttonMenu.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
+            buttonMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             buttonMenu.Location = new System.Drawing.Point(295, 2);
             buttonMenu.MinimumSize = new System.Drawing.Size(1, 1);
             buttonMenu.Name = "buttonMenu";
@@ -85,7 +85,7 @@
             buttonMenu.SymbolOffset = new System.Drawing.Point(-1, 1);
             buttonMenu.TabIndex = 5;
             buttonMenu.TabStop = false;
-            buttonMenu.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
+            buttonMenu.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             buttonMenu.Click += onMenuClick;
             // 
             // menu
@@ -97,7 +97,7 @@
             // 
             // closeAllToolStripMenuItem
             // 
-            closeAllToolStripMenuItem.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
+            closeAllToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
             closeAllToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             closeAllToolStripMenuItem.Text = "Close All";
@@ -107,7 +107,7 @@
             // 
             noteTitle.BackColor = System.Drawing.Color.FromArgb(90, 140, 230);
             noteTitle.FillColor = System.Drawing.Color.FromArgb(80, 160, 255);
-            noteTitle.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 134);
+            noteTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 134);
             noteTitle.ForeColor = System.Drawing.Color.White;
             noteTitle.Location = new System.Drawing.Point(2, 2);
             noteTitle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -124,7 +124,7 @@
             // idLabel
             // 
             idLabel.AutoSize = true;
-            idLabel.Font = new System.Drawing.Font("宋体", 9F);
+            idLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
             idLabel.Image = Properties.Resources.notifier;
             idLabel.Location = new System.Drawing.Point(331, 168);
             idLabel.Name = "idLabel";
@@ -136,7 +136,7 @@
             // icon
             // 
             icon.BackColor = System.Drawing.Color.White;
-            icon.Font = new System.Drawing.Font("宋体", 12F);
+            icon.Font = new System.Drawing.Font("Segoe UI", 12F);
             icon.Location = new System.Drawing.Point(13, 79);
             icon.MinimumSize = new System.Drawing.Size(1, 1);
             icon.Name = "icon";
@@ -153,7 +153,7 @@
             // buttonClose
             // 
             buttonClose.BackColor = System.Drawing.Color.FromArgb(90, 140, 230);
-            buttonClose.Font = new System.Drawing.Font("宋体", 12F);
+            buttonClose.Font = new System.Drawing.Font("Segoe UI", 12F);
             buttonClose.Location = new System.Drawing.Point(335, 2);
             buttonClose.MinimumSize = new System.Drawing.Size(1, 1);
             buttonClose.Name = "buttonClose";
@@ -167,7 +167,7 @@
             buttonClose.SymbolSize = 26;
             buttonClose.TabIndex = 9;
             buttonClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            buttonClose.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
+            buttonClose.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             buttonClose.Click += onCloseClick;
             // 
             // UINotifier

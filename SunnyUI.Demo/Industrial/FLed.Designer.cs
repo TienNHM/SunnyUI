@@ -60,7 +60,7 @@ namespace Sunny.UI.Demo
             // 
             // uiBattery6
             // 
-            this.uiBattery6.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiBattery6.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiBattery6.Location = new System.Drawing.Point(301, 364);
             this.uiBattery6.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiBattery6.Name = "uiBattery6";
@@ -70,7 +70,7 @@ namespace Sunny.UI.Demo
             // 
             // uiBattery5
             // 
-            this.uiBattery5.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiBattery5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiBattery5.Location = new System.Drawing.Point(246, 364);
             this.uiBattery5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiBattery5.Name = "uiBattery5";
@@ -81,7 +81,7 @@ namespace Sunny.UI.Demo
             // 
             // uiBattery4
             // 
-            this.uiBattery4.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiBattery4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiBattery4.Location = new System.Drawing.Point(192, 364);
             this.uiBattery4.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiBattery4.Name = "uiBattery4";
@@ -92,7 +92,7 @@ namespace Sunny.UI.Demo
             // 
             // uiBattery3
             // 
-            this.uiBattery3.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiBattery3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiBattery3.Location = new System.Drawing.Point(138, 364);
             this.uiBattery3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiBattery3.Name = "uiBattery3";
@@ -103,7 +103,7 @@ namespace Sunny.UI.Demo
             // 
             // uiBattery2
             // 
-            this.uiBattery2.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiBattery2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiBattery2.Location = new System.Drawing.Point(84, 364);
             this.uiBattery2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiBattery2.Name = "uiBattery2";
@@ -114,7 +114,7 @@ namespace Sunny.UI.Demo
             // 
             // uiBattery1
             // 
-            this.uiBattery1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiBattery1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiBattery1.Location = new System.Drawing.Point(30, 364);
             this.uiBattery1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiBattery1.Name = "uiBattery1";
@@ -125,7 +125,7 @@ namespace Sunny.UI.Demo
             // uiLine2
             // 
             this.uiLine2.BackColor = System.Drawing.Color.Transparent;
-            this.uiLine2.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLine2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLine2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLine2.Location = new System.Drawing.Point(30, 328);
             this.uiLine2.MinimumSize = new System.Drawing.Size(16, 16);
@@ -138,7 +138,7 @@ namespace Sunny.UI.Demo
             // uiLine7
             // 
             this.uiLine7.BackColor = System.Drawing.Color.Transparent;
-            this.uiLine7.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLine7.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLine7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLine7.Location = new System.Drawing.Point(381, 55);
             this.uiLine7.MinimumSize = new System.Drawing.Size(16, 16);
@@ -151,7 +151,7 @@ namespace Sunny.UI.Demo
             // uiLine1
             // 
             this.uiLine1.BackColor = System.Drawing.Color.Transparent;
-            this.uiLine1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLine1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLine1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLine1.Location = new System.Drawing.Point(30, 55);
             this.uiLine1.MinimumSize = new System.Drawing.Size(16, 16);
@@ -188,7 +188,7 @@ namespace Sunny.UI.Demo
             // 
             // uiSignal6
             // 
-            this.uiSignal6.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiSignal6.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiSignal6.Location = new System.Drawing.Point(591, 354);
             this.uiSignal6.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiSignal6.Name = "uiSignal6";
@@ -198,7 +198,7 @@ namespace Sunny.UI.Demo
             // 
             // uiSignal5
             // 
-            this.uiSignal5.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiSignal5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiSignal5.Level = 4;
             this.uiSignal5.Location = new System.Drawing.Point(550, 354);
             this.uiSignal5.MinimumSize = new System.Drawing.Size(1, 1);
@@ -209,7 +209,7 @@ namespace Sunny.UI.Demo
             // 
             // uiSignal4
             // 
-            this.uiSignal4.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiSignal4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiSignal4.Level = 3;
             this.uiSignal4.Location = new System.Drawing.Point(509, 354);
             this.uiSignal4.MinimumSize = new System.Drawing.Size(1, 1);
@@ -220,7 +220,7 @@ namespace Sunny.UI.Demo
             // 
             // uiSignal3
             // 
-            this.uiSignal3.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiSignal3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiSignal3.Level = 2;
             this.uiSignal3.Location = new System.Drawing.Point(468, 354);
             this.uiSignal3.MinimumSize = new System.Drawing.Size(1, 1);
@@ -231,7 +231,7 @@ namespace Sunny.UI.Demo
             // 
             // uiSignal2
             // 
-            this.uiSignal2.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiSignal2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiSignal2.Level = 1;
             this.uiSignal2.Location = new System.Drawing.Point(427, 354);
             this.uiSignal2.MinimumSize = new System.Drawing.Size(1, 1);
@@ -243,7 +243,7 @@ namespace Sunny.UI.Demo
             // uiLine3
             // 
             this.uiLine3.BackColor = System.Drawing.Color.Transparent;
-            this.uiLine3.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLine3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLine3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLine3.Location = new System.Drawing.Point(381, 328);
             this.uiLine3.MinimumSize = new System.Drawing.Size(16, 16);
@@ -255,7 +255,7 @@ namespace Sunny.UI.Demo
             // 
             // uiSignal1
             // 
-            this.uiSignal1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiSignal1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiSignal1.Level = 0;
             this.uiSignal1.Location = new System.Drawing.Point(386, 354);
             this.uiSignal1.MinimumSize = new System.Drawing.Size(1, 1);
@@ -267,7 +267,7 @@ namespace Sunny.UI.Demo
             // uiLedLabel4
             // 
             this.uiLedLabel4.BackColor = System.Drawing.Color.Black;
-            this.uiLedLabel4.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLedLabel4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLedLabel4.ForeColor = System.Drawing.Color.Lime;
             this.uiLedLabel4.IntervalOn = 3;
             this.uiLedLabel4.Location = new System.Drawing.Point(395, 175);
@@ -281,7 +281,7 @@ namespace Sunny.UI.Demo
             // 
             // uiLedLabel2
             // 
-            this.uiLedLabel2.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLedLabel2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLedLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.uiLedLabel2.Location = new System.Drawing.Point(189, 175);
             this.uiLedLabel2.MinimumSize = new System.Drawing.Size(1, 1);
@@ -295,7 +295,7 @@ namespace Sunny.UI.Demo
             // 
             // uiLedLabel1
             // 
-            this.uiLedLabel1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLedLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLedLabel1.Location = new System.Drawing.Point(42, 175);
             this.uiLedLabel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiLedLabel1.Name = "uiLedLabel1";
@@ -307,7 +307,7 @@ namespace Sunny.UI.Demo
             // uiLedLabel
             // 
             this.uiLedLabel.BackColor = System.Drawing.Color.Transparent;
-            this.uiLedLabel.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLedLabel.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLedLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLedLabel.Location = new System.Drawing.Point(30, 139);
             this.uiLedLabel.MinimumSize = new System.Drawing.Size(16, 16);
@@ -322,7 +322,7 @@ namespace Sunny.UI.Demo
             this.uiDigitalLabel2.BackColor = System.Drawing.Color.Black;
             this.uiDigitalLabel2.DecimalPlaces = 1;
             this.uiDigitalLabel2.DigitalSize = 20;
-            this.uiDigitalLabel2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiDigitalLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiDigitalLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.uiDigitalLabel2.Location = new System.Drawing.Point(395, 269);
             this.uiDigitalLabel2.MinimumSize = new System.Drawing.Size(1, 1);
@@ -335,7 +335,7 @@ namespace Sunny.UI.Demo
             // uiDigitalLabel1
             // 
             this.uiDigitalLabel1.BackColor = System.Drawing.Color.Black;
-            this.uiDigitalLabel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiDigitalLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiDigitalLabel1.ForeColor = System.Drawing.Color.Lime;
             this.uiDigitalLabel1.Location = new System.Drawing.Point(42, 269);
             this.uiDigitalLabel1.MinimumSize = new System.Drawing.Size(1, 1);
@@ -349,7 +349,7 @@ namespace Sunny.UI.Demo
             // uiLine4
             // 
             this.uiLine4.BackColor = System.Drawing.Color.Transparent;
-            this.uiLine4.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLine4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLine4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLine4.Location = new System.Drawing.Point(30, 229);
             this.uiLine4.MinimumSize = new System.Drawing.Size(16, 16);

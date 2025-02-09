@@ -37,7 +37,7 @@
             // 
             btnDec.Cursor = System.Windows.Forms.Cursors.Hand;
             btnDec.Dock = System.Windows.Forms.DockStyle.Left;
-            btnDec.Font = new System.Drawing.Font("宋体", 12F);
+            btnDec.Font = new System.Drawing.Font("Segoe UI", 12F);
             btnDec.ImageInterval = 1;
             btnDec.Location = new System.Drawing.Point(0, 0);
             btnDec.Margin = new System.Windows.Forms.Padding(0);
@@ -48,7 +48,7 @@
             btnDec.Size = new System.Drawing.Size(29, 29);
             btnDec.Symbol = 61544;
             btnDec.TabIndex = 0;
-            btnDec.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
+            btnDec.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             btnDec.TipsText = null;
             btnDec.Click += btnDec_Click;
             // 
@@ -56,7 +56,7 @@
             // 
             btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             btnAdd.Dock = System.Windows.Forms.DockStyle.Right;
-            btnAdd.Font = new System.Drawing.Font("宋体", 12F);
+            btnAdd.Font = new System.Drawing.Font("Segoe UI", 12F);
             btnAdd.ImageInterval = 1;
             btnAdd.Location = new System.Drawing.Point(87, 0);
             btnAdd.Margin = new System.Windows.Forms.Padding(0);
@@ -67,14 +67,14 @@
             btnAdd.Size = new System.Drawing.Size(29, 29);
             btnAdd.Symbol = 61543;
             btnAdd.TabIndex = 1;
-            btnAdd.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
+            btnAdd.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             btnAdd.TipsText = null;
             btnAdd.Click += btnAdd_Click;
             // 
             // pnlValue
             // 
             pnlValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            pnlValue.Font = new System.Drawing.Font("宋体", 12F);
+            pnlValue.Font = new System.Drawing.Font("Segoe UI", 12F);
             pnlValue.Location = new System.Drawing.Point(29, 0);
             pnlValue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             pnlValue.MinimumSize = new System.Drawing.Size(1, 1);

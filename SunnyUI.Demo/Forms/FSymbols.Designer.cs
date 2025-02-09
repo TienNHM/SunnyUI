@@ -70,7 +70,7 @@
             this.uiPanel1.Controls.Add(this.uiLabel1);
             this.uiPanel1.Controls.Add(this.uiTextBox1);
             this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.uiPanel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiPanel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiPanel1.Location = new System.Drawing.Point(0, 35);
             this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
@@ -84,7 +84,7 @@
             // 
             // uiSymbolLabel1
             // 
-            this.uiSymbolLabel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiSymbolLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiSymbolLabel1.Location = new System.Drawing.Point(406, 6);
             this.uiSymbolLabel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiSymbolLabel1.Name = "uiSymbolLabel1";
@@ -95,7 +95,7 @@
             // uiSymbolButton2
             // 
             this.uiSymbolButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiSymbolButton2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiSymbolButton2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiSymbolButton2.Location = new System.Drawing.Point(595, 6);
             this.uiSymbolButton2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiSymbolButton2.Name = "uiSymbolButton2";
@@ -103,13 +103,13 @@
             this.uiSymbolButton2.Symbol = 557715;
             this.uiSymbolButton2.TabIndex = 3;
             this.uiSymbolButton2.Text = "复制";
-            this.uiSymbolButton2.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiSymbolButton2.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiSymbolButton2.Click += new System.EventHandler(this.uiSymbolButton2_Click);
             // 
             // uiTextBox2
             // 
             this.uiTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiTextBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiTextBox2.Location = new System.Drawing.Point(508, 9);
             this.uiTextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiTextBox2.MinimumSize = new System.Drawing.Size(1, 16);
@@ -126,7 +126,7 @@
             // uiSymbolButton1
             // 
             this.uiSymbolButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiSymbolButton1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiSymbolButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiSymbolButton1.Location = new System.Drawing.Point(286, 6);
             this.uiSymbolButton1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiSymbolButton1.Name = "uiSymbolButton1";
@@ -134,13 +134,13 @@
             this.uiSymbolButton1.Symbol = 61442;
             this.uiSymbolButton1.TabIndex = 1;
             this.uiSymbolButton1.Text = "查找";
-            this.uiSymbolButton1.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiSymbolButton1.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiSymbolButton1.Click += new System.EventHandler(this.uiSymbolButton1_Click);
             // 
             // uiLabel1
             // 
             this.uiLabel1.AutoSize = true;
-            this.uiLabel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLabel1.Location = new System.Drawing.Point(19, 15);
             this.uiLabel1.Name = "uiLabel1";
@@ -154,7 +154,7 @@
             this.uiTextBox1.ButtonSymbol = 361453;
             this.uiTextBox1.ButtonSymbolOffset = new System.Drawing.Point(0, 1);
             this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiTextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiTextBox1.Location = new System.Drawing.Point(129, 9);
             this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiTextBox1.MinimumSize = new System.Drawing.Size(1, 16);
@@ -181,7 +181,7 @@
             this.uiTabControl1.Controls.Add(this.tabPage7);
             this.uiTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.uiTabControl1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiTabControl1.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiTabControl1.ItemSize = new System.Drawing.Size(115, 40);
             this.uiTabControl1.Location = new System.Drawing.Point(0, 81);
             this.uiTabControl1.MainPage = "";
@@ -190,7 +190,7 @@
             this.uiTabControl1.Size = new System.Drawing.Size(1004, 611);
             this.uiTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.uiTabControl1.TabIndex = 1;
-            this.uiTabControl1.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiTabControl1.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             // 
             // tabPage1
             // 
@@ -205,7 +205,7 @@
             // lpV6Solid
             // 
             this.lpV6Solid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lpV6Solid.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lpV6Solid.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lpV6Solid.Location = new System.Drawing.Point(0, 0);
             this.lpV6Solid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lpV6Solid.MinimumSize = new System.Drawing.Size(1, 1);
@@ -231,7 +231,7 @@
             // lpV6Regular
             // 
             this.lpV6Regular.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lpV6Regular.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lpV6Regular.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lpV6Regular.Location = new System.Drawing.Point(0, 0);
             this.lpV6Regular.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lpV6Regular.MinimumSize = new System.Drawing.Size(1, 1);
@@ -257,7 +257,7 @@
             // lpV6Brands
             // 
             this.lpV6Brands.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lpV6Brands.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lpV6Brands.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lpV6Brands.Location = new System.Drawing.Point(0, 0);
             this.lpV6Brands.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lpV6Brands.MinimumSize = new System.Drawing.Size(1, 1);
@@ -283,7 +283,7 @@
             // lpAwesome
             // 
             this.lpAwesome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lpAwesome.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lpAwesome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lpAwesome.Location = new System.Drawing.Point(0, 0);
             this.lpAwesome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lpAwesome.MinimumSize = new System.Drawing.Size(1, 1);
@@ -309,7 +309,7 @@
             // lpElegant
             // 
             this.lpElegant.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lpElegant.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lpElegant.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lpElegant.Location = new System.Drawing.Point(0, 0);
             this.lpElegant.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lpElegant.MinimumSize = new System.Drawing.Size(1, 1);
@@ -335,7 +335,7 @@
             // lpMaterialIcons
             // 
             this.lpMaterialIcons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lpMaterialIcons.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lpMaterialIcons.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lpMaterialIcons.Location = new System.Drawing.Point(0, 0);
             this.lpMaterialIcons.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lpMaterialIcons.MinimumSize = new System.Drawing.Size(1, 1);
@@ -361,7 +361,7 @@
             // lblResult
             // 
             this.lblResult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblResult.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblResult.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblResult.Location = new System.Drawing.Point(0, 0);
             this.lblResult.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lblResult.MinimumSize = new System.Drawing.Size(1, 1);

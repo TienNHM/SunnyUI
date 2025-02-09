@@ -954,7 +954,7 @@ namespace Sunny.UI
             // 
             // Bar
             // 
-            Bar.Font = new Font("宋体", 12F);
+            Bar.Font = new Font("Segoe UI", 12F);
             Bar.Location = new Point(247, 3);
             Bar.MinimumSize = new Size(1, 1);
             Bar.Name = "Bar";
@@ -967,7 +967,7 @@ namespace Sunny.UI
             // 
             // HBar
             // 
-            HBar.Font = new Font("宋体", 12F);
+            HBar.Font = new Font("Segoe UI", 12F);
             HBar.Location = new Point(247, 3);
             HBar.MinimumSize = new Size(1, 1);
             HBar.Name = "HBar";

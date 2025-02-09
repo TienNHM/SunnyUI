@@ -922,7 +922,7 @@ namespace Sunny.UI
         /// 标题字体
         /// </summary>
         [Description("标题字体"), Category("SunnyUI")]
-        [DefaultValue(typeof(Font), "宋体, 12pt")]
+        [DefaultValue(typeof(Font), "Segoe UI, 12pt")]
         public Font TitleFont
         {
             get => titleFont;

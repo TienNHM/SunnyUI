@@ -639,7 +639,7 @@ namespace Sunny.UI
             IconSpacing = 5;
             TextFont = UIStyles.Font();
             var fontName = TextFont.Name;
-            if (fontName == "宋体") { TextOffset = new Point(1, 1); }
+            if (fontName == "Segoe UI") { TextOffset = new Point(1, 1); }
             TextColor = Color.Black;
             BackColor = Color.FromArgb(252, 252, 252);
             CornerRadius = 3;

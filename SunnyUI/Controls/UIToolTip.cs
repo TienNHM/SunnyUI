@@ -50,11 +50,11 @@ namespace Sunny.UI
             InitOwnerDraw();
         }
 
-        [DefaultValue(typeof(Font), "宋体, 9pt"), Description("字体"), Category("SunnyUI")]
-        public Font Font { get; set; } = new Font("宋体", 9);
+        [DefaultValue(typeof(Font), "Segoe UI, 9pt"), Description("字体"), Category("SunnyUI")]
+        public Font Font { get; set; } = new Font("Segoe UI", 9);
 
-        [DefaultValue(typeof(Font), "宋体, 12pt"), Description("标题字体"), Category("SunnyUI")]
-        public Font TitleFont { get; set; } = new Font("宋体", 12);
+        [DefaultValue(typeof(Font), "Segoe UI, 12pt"), Description("标题字体"), Category("SunnyUI")]
+        public Font TitleFont { get; set; } = new Font("Segoe UI", 12);
 
         [DefaultValue(typeof(Color), "239, 239, 239"), Description("边框颜色"), Category("SunnyUI")]
         public Color RectColor { get; set; } = UIChartStyles.Dark.ForeColor;

@@ -69,7 +69,7 @@ namespace Sunny.UI
 
         [Editor("System.Drawing.Design.FontNameEditor", "System.Drawing.Design.UITypeEditor")]
         [TypeConverter(typeof(FontNameConverter))]
-        [DefaultValue("宋体")]
+        [DefaultValue("Segoe UI")]
         [Description("全局字体设置开启后，可调字体名称"), Category("SunnyUI")]
         public string GlobalFontName
         {
