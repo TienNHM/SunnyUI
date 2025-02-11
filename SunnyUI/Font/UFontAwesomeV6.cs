@@ -1,7 +1,7 @@
-﻿ /******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
- * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+﻿/******************************************************************************
+ * SunnyUI open source control library, tool class library, extension class library, multi-page development framework.
+ * CopyRight (C) 2012-2025 ShenYongHua.
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,20 +9,19 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UFontAwesomeV6.cs
- * 文件说明: 字体图片定义类：FontAweSome，V6.7.2
- * 当前版本: V3.8.1
- * 创建日期: 2023-04-23
+ * File Name: UFontAwesomeV6.cs
+ * Description: Font image definition class: FontAweSome, V6.7.2
+ * Current Version: V3.8.1
+ * Creation Date: 2023-04-23
  *
- * 2023-04-23: V3.3.5 增加文件说明
- * 2024-06-26: V3.6.7 更新为Font Awesome version: 6.5.2
- * 2024-06-27: V3.6.7 减小文件大小
- * 2024-07-21: V3.6.8 更新为Font Awesome version: 6.6.0
- * 2024-11-27: V3.8.0 更新为Font Awesome version: 6.7.1
- * 2025-01-06: V3.8.1 更新为Font Awesome version: 6.7.2
-******************************************************************************/
+ * 2023-04-23: V3.3.5 Added file description
+ * 2024-06-26: V3.6.7 Updated to Font Awesome version: 6.5.2
+ * 2024-06-27: V3.6.7 Reduced file size
+ * 2024-07-21: V3.6.8 Updated to Font Awesome version: 6.6.0
+ * 2024-11-27: V3.8.0 Updated to Font Awesome version: 6.7.1
+ * 2025-01-06: V3.8.1 Updated to Font Awesome version: 6.7.2
+ ******************************************************************************/
 
 /******************************************************************************
  * https://fontawesome.com/search?o=r&m=free

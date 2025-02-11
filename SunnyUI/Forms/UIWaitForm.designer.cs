@@ -42,7 +42,7 @@
             labelDescription.Name = "labelDescription";
             labelDescription.Size = new System.Drawing.Size(207, 16);
             labelDescription.TabIndex = 4;
-            labelDescription.Text = "系统正在处理中，请稍候...";
+            labelDescription.Text = "The system is processing, please wait...";
             labelDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Bar
@@ -70,7 +70,7 @@
             MinimizeBox = false;
             Name = "UIWaitForm";
             ShowIcon = false;
-            Text = "提示";
+            Text = "Hint";
             TopMost = true;
             ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 473, 153);
             ResumeLayout(false);

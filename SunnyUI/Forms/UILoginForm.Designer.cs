@@ -64,7 +64,7 @@
             uiLine1.Size = new System.Drawing.Size(182, 28);
             uiLine1.StyleCustomMode = true;
             uiLine1.TabIndex = 5;
-            uiLine1.Text = "用户登录";
+            uiLine1.Text = "User Login";
             // 
             // edtUser
             // 
@@ -82,7 +82,7 @@
             edtUser.SymbolSize = 22;
             edtUser.TabIndex = 0;
             edtUser.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            edtUser.Watermark = "请输入账号";
+            edtUser.Watermark = "Please enter username";
             // 
             // edtPassword
             // 
@@ -100,7 +100,7 @@
             edtPassword.SymbolSize = 22;
             edtPassword.TabIndex = 1;
             edtPassword.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            edtPassword.Watermark = "请输入密码";
+            edtPassword.Watermark = "Please enter password";
             edtPassword.DoEnter += btnLogin_Click;
             // 
             // btnLogin
@@ -114,7 +114,7 @@
             btnLogin.ShowFocusColor = true;
             btnLogin.Size = new System.Drawing.Size(86, 29);
             btnLogin.TabIndex = 2;
-            btnLogin.Text = "登录";
+            btnLogin.Text = "Login";
             btnLogin.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             btnLogin.Click += btnLogin_Click;
             // 
@@ -141,7 +141,7 @@
             btnCancel.StyleCustomMode = true;
             btnCancel.Symbol = 361453;
             btnCancel.TabIndex = 3;
-            btnCancel.Text = "取消";
+            btnCancel.Text = "Cancel";
             btnCancel.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             btnCancel.Click += btnCancel_Click;
             // 

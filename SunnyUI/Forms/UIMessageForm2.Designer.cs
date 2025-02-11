@@ -50,7 +50,7 @@
             btnCancel.Size = new System.Drawing.Size(100, 35);
             btnCancel.Symbol = 361453;
             btnCancel.TabIndex = 10;
-            btnCancel.Text = "取消";
+            btnCancel.Text = "Cancel";
             btnCancel.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             btnCancel.TipsText = null;
             // 
@@ -69,7 +69,7 @@
             btnOK.ShowFocusLine = true;
             btnOK.Size = new System.Drawing.Size(100, 35);
             btnOK.TabIndex = 9;
-            btnOK.Text = "确定";
+            btnOK.Text = "OK";
             btnOK.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             btnOK.TipsText = null;
             // 
