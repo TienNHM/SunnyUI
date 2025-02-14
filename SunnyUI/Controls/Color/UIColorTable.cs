@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Sunny.UI
 {
-#pragma warning disable CS1591 // 缺少对公共可见类型或成员的 XML 注释
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     [ToolboxItem(false)]
     public sealed class UIColorTable : LabelRotate
     {
@@ -236,9 +236,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标按下事件
+        /// Mouse down event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse event arguments</param>
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
@@ -251,9 +251,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Paint event
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Paint event arguments</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             Size = new Size(253, 148);
@@ -389,5 +389,5 @@ namespace Sunny.UI
         }
     }
 
-#pragma warning restore CS1591 // 缺少对公共可见类型或成员的 XML 注释
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 }
