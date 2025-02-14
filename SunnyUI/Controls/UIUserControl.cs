@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI Open Source Control Library, Utility Library, Extension Library, Multi-Page Development Framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,19 +9,18 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIUserControl.cs
- * 文件说明: 用户控件基类
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIUserControl.cs
+ * File Description: User Control Base Class
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2022-04-02: V3.1.1 增加用户控件基类
- * 2022-04-02: V3.1.2 默认设置AutoScaleMode为None
- * 2023-05-12: V3.3.6 重构DrawString函数
- * 2023-07-02: V3.3.9 渐变色增加方向选择
- * 2023-11-05: V3.5.2 重构主题
- * 2023-11-28: V3.6.0 修复Panel内控件颜色设置问题
+ * 2022-04-02: V3.1.1 Added user control base class
+ * 2022-04-02: V3.1.2 Default set AutoScaleMode to None
+ * 2023-05-12: V3.3.6 Refactored DrawString function
+ * 2023-07-02: V3.3.9 Added gradient direction selection
+ * 2023-11-05: V3.5.2 Refactored theme
+ * 2023-11-28: V3.6.0 Fixed color setting issue for controls inside Panel
 ******************************************************************************/
 
 using System;
@@ -55,11 +54,11 @@ namespace Sunny.UI
         }
 
         [Browsable(false)]
-        [Description("控件在界面显示时需要多语翻译的属性名称数组"), Category("SunnyUI")]
+        [Description("Array of property names that need multi-language translation when the control is displayed on the interface"), Category("SunnyUI")]
         public virtual string[] FormTranslatorProperties => null;
 
         [DefaultValue(true)]
-        [Description("控件在界面显示时需要多语翻译"), Category("SunnyUI")]
+        [Description("Need multi-language translation when the control is displayed on the interface"), Category("SunnyUI")]
         public bool MultiLanguageSupport { get; set; } = true;
 
         protected override void OnClick(EventArgs e)
@@ -72,21 +71,21 @@ namespace Sunny.UI
         public bool Disabled => !Enabled;
 
         /// <summary>
-        /// 禁止控件跟随窗体缩放
+        /// Disable control scaling with the form
         /// </summary>
-        [DefaultValue(false), Category("SunnyUI"), Description("禁止控件跟随窗体缩放")]
+        [DefaultValue(false), Category("SunnyUI"), Description("Disable control scaling with the form")]
         public bool ZoomScaleDisabled { get; set; }
 
         /// <summary>
-        /// 控件缩放前在其容器里的位置
+        /// Control's position in its container before scaling
         /// </summary>
         [Browsable(false), DefaultValue(typeof(Rectangle), "0, 0, 0, 0")]
         public Rectangle ZoomScaleRect { get; set; }
 
         /// <summary>
-        /// 设置控件缩放比例
+        /// Set control scaling ratio
         /// </summary>
-        /// <param name="scale">缩放比例</param>
+        /// <param name="scale">Scaling ratio</param>
         public virtual void SetZoomScale(float scale)
         {
 
@@ -118,9 +117,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载控件尺寸变更
+        /// Override control size change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
@@ -128,10 +127,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// Tag字符串
+        /// Tag string
         /// </summary>
         [DefaultValue(null)]
-        [Description("获取或设置包含有关控件的数据的对象字符串"), Category("SunnyUI")]
+        [Description("Get or set the object string containing data about the control"), Category("SunnyUI")]
         public string TagString
         {
             get; set;
@@ -140,7 +139,7 @@ namespace Sunny.UI
         private string text;
 
         [Category("SunnyUI")]
-        [Description("显示文字")]
+        [Description("Display text")]
         [Browsable(true)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [DefaultValue("")]
@@ -162,7 +161,7 @@ namespace Sunny.UI
 
         private ToolStripStatusLabelBorderSides _rectSides = ToolStripStatusLabelBorderSides.All;
 
-        [DefaultValue(ToolStripStatusLabelBorderSides.All), Description("边框显示位置"), Category("SunnyUI")]
+        [DefaultValue(ToolStripStatusLabelBorderSides.All), Description("Border display position"), Category("SunnyUI")]
         public ToolStripStatusLabelBorderSides RectSides
         {
             get => _rectSides;
@@ -184,7 +183,7 @@ namespace Sunny.UI
 
         private UICornerRadiusSides _radiusSides = UICornerRadiusSides.All;
 
-        [DefaultValue(UICornerRadiusSides.All), Description("圆角显示位置"), Category("SunnyUI")]
+        [DefaultValue(UICornerRadiusSides.All), Description("Corner radius display position"), Category("SunnyUI")]
         public UICornerRadiusSides RadiusSides
         {
             get => _radiusSides;
@@ -197,13 +196,13 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 是否显示圆角
+        /// Whether to display rounded corners
         /// </summary>
-        [Description("是否显示圆角"), Category("SunnyUI")]
+        [Description("Whether to display rounded corners"), Category("SunnyUI")]
         protected bool ShowRadius => (int)RadiusSides > 0;
 
         //圆角角度
-        [Description("圆角角度"), Category("SunnyUI")]
+        [Description("Corner radius"), Category("SunnyUI")]
         [DefaultValue(5)]
         public int Radius
         {
@@ -223,16 +222,16 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 是否显示边框
+        /// Whether to display the border
         /// </summary>
-        [Description("是否显示边框"), Category("SunnyUI")]
+        [Description("Whether to display the border"), Category("SunnyUI")]
         [DefaultValue(true)]
         protected bool ShowRect => (int)RectSides > 0;
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("边框颜色"), Category("SunnyUI")]
+        [Description("Border color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color RectColor
         {
@@ -254,9 +253,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, no fill if the value is background color, transparent color, or null
         /// </summary>
-        [Description("填充颜色，当值为背景色或透明色或空值则不填充"), Category("SunnyUI")]
+        [Description("Fill color, no fill if the value is background color, transparent color, or null"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "243, 249, 255")]
         public Color FillColor
         {
@@ -279,7 +278,7 @@ namespace Sunny.UI
 
         private bool fillColorGradient;
 
-        [Description("填充颜色渐变"), Category("SunnyUI")]
+        [Description("Fill color gradient"), Category("SunnyUI")]
         [DefaultValue(false)]
         public bool FillColorGradient
         {
@@ -295,9 +294,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置填充颜色
+        /// Set fill color
         /// </summary>
-        /// <param name="value">颜色</param>
+        /// <param name="value">Color</param>
         protected virtual void SetFillColor2(Color value)
         {
             if (fillColor2 != value)
@@ -308,9 +307,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, no fill if the value is background color, transparent color, or null
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "243, 249, 255")]
         public Color FillColor2
         {
@@ -341,7 +340,7 @@ namespace Sunny.UI
         private bool showFill = true;
 
         /// <summary>
-        /// 是否显示填充
+        /// Whether to display fill
         /// </summary>
         protected bool ShowFill
         {
@@ -366,9 +365,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override drawing
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Drawing parameters</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             if (!Visible || Width <= 0 || Height <= 0) return;
@@ -377,19 +376,19 @@ namespace Sunny.UI
             Rectangle rect = new Rectangle(0, 0, Width - 1, Height - 1);
             using GraphicsPath path = rect.CreateRoundedRectanglePath(radius, RadiusSides, RectSize);
 
-            //填充背景色
+            // Fill background color
             if (BackgroundImage == null && ShowFill && fillColor.IsValid())
             {
                 OnPaintFill(e.Graphics, path);
             }
 
-            //填充边框色
+            // Fill border color
             if (ShowRect)
             {
                 OnPaintRect(e.Graphics, path);
             }
 
-            //填充文字
+            // Fill text
             rect = new Rectangle(1, 1, Width - 3, Height - 3);
             using var path1 = rect.GraphicsPath();
             OnPaintFore(e.Graphics, path1);
@@ -397,10 +396,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制前景颜色
+        /// Draw foreground color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Graphics path</param>
         protected virtual void OnPaintFore(Graphics g, GraphicsPath path)
         {
             string text = Text;
@@ -410,10 +409,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制边框颜色
+        /// Draw border color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Graphics path</param>
         protected virtual void OnPaintRect(Graphics g, GraphicsPath path)
         {
             radius = Math.Min(radius, Math.Min(Width, Height));
@@ -424,13 +423,13 @@ namespace Sunny.UI
 
             if (RadiusSides == UICornerRadiusSides.None || Radius == 0)
             {
-                //IsRadius为False时，显示左侧边线
+                // Show left border line when IsRadius is False
                 bool ShowRectLeft = RectSides.GetValue(ToolStripStatusLabelBorderSides.Left);
-                //IsRadius为False时，显示上侧边线
+                // Show top border line when IsRadius is False
                 bool ShowRectTop = RectSides.GetValue(ToolStripStatusLabelBorderSides.Top);
-                //IsRadius为False时，显示右侧边线
+                // Show right border line when IsRadius is False
                 bool ShowRectRight = RectSides.GetValue(ToolStripStatusLabelBorderSides.Right);
-                //IsRadius为False时，显示下侧边线
+                // Show bottom border line when IsRadius is False
                 bool ShowRectBottom = RectSides.GetValue(ToolStripStatusLabelBorderSides.Bottom);
 
                 if (ShowRectLeft)
@@ -451,25 +450,25 @@ namespace Sunny.UI
 
         private void PaintRectDisableSides(Graphics g)
         {
-            //IsRadius为False时，显示左侧边线
+            // Show left border line when IsRadius is False
             bool ShowRectLeft = RectSides.GetValue(ToolStripStatusLabelBorderSides.Left);
-            //IsRadius为False时，显示上侧边线
+            // Show top border line when IsRadius is False
             bool ShowRectTop = RectSides.GetValue(ToolStripStatusLabelBorderSides.Top);
-            //IsRadius为False时，显示右侧边线
+            // Show right border line when IsRadius is False
             bool ShowRectRight = RectSides.GetValue(ToolStripStatusLabelBorderSides.Right);
-            //IsRadius为False时，显示下侧边线
+            // Show bottom border line when IsRadius is False
             bool ShowRectBottom = RectSides.GetValue(ToolStripStatusLabelBorderSides.Bottom);
 
-            //IsRadius为True时，显示左上圆角
+            // Show top-left corner radius when IsRadius is True
             bool RadiusLeftTop = RadiusSides.GetValue(UICornerRadiusSides.LeftTop);
-            //IsRadius为True时，显示左下圆角
+            // Show bottom-left corner radius when IsRadius is True
             bool RadiusLeftBottom = RadiusSides.GetValue(UICornerRadiusSides.LeftBottom);
-            //IsRadius为True时，显示右上圆角
+            // Show top-right corner radius when IsRadius is True
             bool RadiusRightTop = RadiusSides.GetValue(UICornerRadiusSides.RightTop);
-            //IsRadius为True时，显示右下圆角
+            // Show bottom-right corner radius when IsRadius is True
             bool RadiusRightBottom = RadiusSides.GetValue(UICornerRadiusSides.RightBottom);
 
-            var ShowRadius = RadiusSides > 0 && Radius > 0;//肯定少有一个角显示圆角
+            var ShowRadius = RadiusSides > 0 && Radius > 0; // At least one corner shows radius
             if (!ShowRadius) return;
 
             if (!ShowRectLeft && !RadiusLeftBottom && !RadiusLeftTop)
@@ -495,7 +494,7 @@ namespace Sunny.UI
 
         private FlowDirection fillColorGradientDirection = FlowDirection.TopDown;
 
-        [Description("填充颜色渐变方向"), Category("SunnyUI")]
+        [Description("Fill color gradient direction"), Category("SunnyUI")]
         [DefaultValue(FlowDirection.TopDown)]
         public FlowDirection FillColorGradientDirection
         {
@@ -579,19 +578,19 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 自定义主题风格
+        /// Custom theme style
         /// </summary>
         [DefaultValue(false), Browsable(false)]
-        [Description("获取或设置可以自定义主题风格"), Category("SunnyUI")]
+        [Description("Get or set the ability to customize the theme style"), Category("SunnyUI")]
         public bool StyleCustomMode { get; set; }
 
 
         protected UIStyle _style = UIStyle.Inherited;
 
         /// <summary>
-        /// 主题样式
+        /// Theme style
         /// </summary>
-        [DefaultValue(UIStyle.Inherited), Description("主题样式"), Category("SunnyUI")]
+        [DefaultValue(UIStyle.Inherited), Description("Theme style"), Category("SunnyUI")]
         public UIStyle Style
         {
             get => _style;
@@ -599,9 +598,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="style">主题样式</param>
+        /// <param name="style">Theme style</param>
         private void SetStyle(UIStyle style)
         {
             if (!style.IsCustom())
@@ -636,9 +635,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置填充只读颜色
+        /// Set fill read-only color
         /// </summary>
-        /// <param name="color">颜色</param>
+        /// <param name="color">Color</param>
         protected void SetFillReadOnlyColor(Color color)
         {
             fillReadOnlyColor = color;
@@ -647,9 +646,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置边框只读颜色
+        /// Set border read-only color
         /// </summary>
-        /// <param name="color">颜色</param>
+        /// <param name="color">Color</param>
         protected virtual void SetRectReadOnlyColor(Color color)
         {
             rectReadOnlyColor = color;
@@ -658,7 +657,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "244, 244, 244")]
-        [Description("不可用时填充颜色"), Category("SunnyUI")]
+        [Description("Fill color when disabled"), Category("SunnyUI")]
         public Color FillDisableColor
         {
             get => fillDisableColor;
@@ -666,7 +665,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "173, 178, 181")]
-        [Description("不可用时边框颜色"), Category("SunnyUI")]
+        [Description("Border color when disabled"), Category("SunnyUI")]
         public Color RectDisableColor
         {
             get => rectDisableColor;
@@ -681,18 +680,18 @@ namespace Sunny.UI
         protected Color rectDisableColor = UIStyles.Blue.RectDisableColor;
         protected Color fillDisableColor = UIStyles.Blue.FillDisableColor;
         /// <summary>
-        /// 字体只读颜色
+        /// Font read-only color
         /// </summary>
         protected Color foreReadOnlyColor = UIStyles.Blue.ForeDisableColor;
 
         /// <summary>
-        /// 边框只读颜色
+        /// Border read-only color
         /// </summary>
         protected Color rectReadOnlyColor = UIStyles.Blue.RectDisableColor;
 
 
         /// <summary>
-        /// 填充只读颜色
+        /// Fill read-only color
         /// </summary>
         protected Color fillReadOnlyColor = UIStyles.Blue.FillDisableColor;
 
@@ -712,11 +711,11 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 屏蔽原属性，获取或设置一个值，该值指示是否在 Windows 任务栏中显示窗体。
+        /// Override original property, get or set a value indicating whether the form is displayed in the Windows taskbar.
         /// </summary>
         /// <value><c>true</c> if [show in taskbar]; otherwise, <c>false</c>.</value>
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
-        [Obsolete("禁用该属性！", true)]
+        [Obsolete("This property is disabled!", true)]
         public new BorderStyle BorderStyle => BorderStyle.None;
 
         public event EventHandler FillColorChanged;
@@ -731,9 +730,9 @@ namespace Sunny.UI
         private ContentAlignment _textAlignment = ContentAlignment.MiddleCenter;
 
         /// <summary>
-        /// 文字对齐方向
+        /// Text alignment direction
         /// </summary>
-        [Description("文字对齐方向"), Category("SunnyUI")]
+        [Description("Text alignment direction"), Category("SunnyUI")]
         public ContentAlignment TextAlignment
         {
             get => _textAlignment;
@@ -752,9 +751,9 @@ namespace Sunny.UI
         private int rectSize = 1;
 
         /// <summary>
-        /// 边框颜色
+        /// Border width
         /// </summary>
-        [Description("边框宽度"), Category("SunnyUI")]
+        [Description("Border width"), Category("SunnyUI")]
         [DefaultValue(1)]
         public int RectSize
         {

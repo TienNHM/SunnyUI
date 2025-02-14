@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI Open Source Control Library, Utility Library, Extension Library, Multi-page Development Framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,17 +9,16 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIBattery.cs
- * 文件说明: 电池电量图标
- * 当前版本: V3.1
- * 创建日期: 2020-06-04
+ * File Name: UIBattery.cs
+ * Description: Battery Power Icon
+ * Current Version: V3.1
+ * Creation Date: 2020-06-04
  *
- * 2020-06-04: V2.2.5 增加文件
- * 2021-06-18: V3.0.4 修改可自定义背景色
- * 2022-03-19: V3.1.1 重构主题配色
- * 2023-11-16: V3.5.2 重构主题
+ * 2020-06-04: V2.2.5 Added file
+ * 2021-06-18: V3.0.4 Modified to allow custom background color
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2023-11-16: V3.5.2 Refactored theme
 ******************************************************************************/
 
 using System;
@@ -30,7 +29,7 @@ using System.Drawing.Drawing2D;
 namespace Sunny.UI
 {
     /// <summary>
-    /// 电池电量图标
+    /// Battery Power Icon
     /// </summary>
     [DefaultProperty("Power")]
     [ToolboxItem(true)]
@@ -49,7 +48,7 @@ namespace Sunny.UI
         private int symbolSize = 36;
 
         /// <summary>
-        /// 构造函数
+        /// Constructor
         /// </summary>
         public UIBattery()
         {
@@ -61,9 +60,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 电量
+        /// Power
         /// </summary>
-        [DefaultValue(100), Description("电量"), Category("SunnyUI")]
+        [DefaultValue(100), Description("Power"), Category("SunnyUI")]
         public int Power
         {
             get => power;
@@ -76,9 +75,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体图标大小
+        /// Font Icon Size
         /// </summary>
-        [DefaultValue(36), Description("字体图标大小"), Category("SunnyUI")]
+        [DefaultValue(36), Description("Font Icon Size"), Category("SunnyUI")]
         public int SymbolSize
         {
             get => symbolSize;
@@ -91,9 +90,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 多种颜色显示电量
+        /// Multi-color display for power levels
         /// </summary>
-        [DefaultValue(true), Description("多种颜色"), Category("SunnyUI")]
+        [DefaultValue(true), Description("Multi-color display for power levels"), Category("SunnyUI")]
         public bool MultiColor
         {
             get => multiColor;
@@ -105,9 +104,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 电量为空颜色
+        /// Color when power is empty
         /// </summary>
-        [DefaultValue(typeof(Color), "230, 80, 80"), Description("电量为空颜色"), Category("SunnyUI")]
+        [DefaultValue(typeof(Color), "230, 80, 80"), Description("Color when power is empty"), Category("SunnyUI")]
         public Color ColorEmpty
         {
             get => colorEmpty;
@@ -119,9 +118,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 电量少时颜色
+        /// Color when power is low
         /// </summary>
-        [DefaultValue(typeof(Color), "220, 155, 40"), Description("电量少时颜色"), Category("SunnyUI")]
+        [DefaultValue(typeof(Color), "220, 155, 40"), Description("Color when power is low"), Category("SunnyUI")]
         public Color ColorDanger
         {
             get => colorDanger;
@@ -133,9 +132,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 电量安全颜色
+        /// Color when power is safe
         /// </summary>
-        [DefaultValue(typeof(Color), "110, 190, 40"), Description("电量安全颜色"), Category("SunnyUI")]
+        [DefaultValue(typeof(Color), "110, 190, 40"), Description("Color when power is safe"), Category("SunnyUI")]
         public Color ColorSafe
         {
             get => colorSafe;
@@ -147,9 +146,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, no fill if the value is background color, transparent color, or null
         /// </summary>
-        [Description("填充颜色")]
+        [Description("Fill color, no fill if the value is background color, transparent color, or null")]
         [Category("SunnyUI")]
         [DefaultValue(typeof(Color), "243, 249, 255")]
         public Color FillColor
@@ -159,9 +158,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -169,20 +168,20 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制填充颜色
+        /// Draw fill color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Drawing path</param>
         protected override void OnPaintFill(Graphics g, GraphicsPath path)
         {
             g.FillPath(fillColor, path);
         }
 
         /// <summary>
-        /// 绘制前景颜色
+        /// Draw foreground color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Drawing path</param>
         protected override void OnPaintFore(Graphics g, GraphicsPath path)
         {
             var fa_battery_empty = 0xf244;

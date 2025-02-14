@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,16 +9,16 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
+ * If you use this code, please retain this note.
  ******************************************************************************
- * 文件名称: UIValve.cs
- * 文件说明: 阀门
- * 当前版本: V3.1
- * 创建日期: 2021-08-08
+ * File Name: UIValve.cs
+ * File Description: Valve
+ * Current Version: V3.1
+ * Creation Date: 2021-08-08
  *
- * 2021-08-07: V3.0.5 增加阀门控件
- * 2021-08-08: V3.0.5 完成四个方向的阀门
-******************************************************************************/
+ * 2021-08-07: V3.0.5 Added valve control
+ * 2021-08-08: V3.0.5 Completed valves in four directions
+ ******************************************************************************/
 
 using System;
 using System.ComponentModel;
@@ -45,30 +45,30 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 禁止控件跟随窗体缩放
+        /// Disable control scaling with the form
         /// </summary>
-        [DefaultValue(false), Category("SunnyUI"), Description("禁止控件跟随窗体缩放")]
+        [DefaultValue(false), Category("SunnyUI"), Description("Disable control scaling with the form")]
         public bool ZoomScaleDisabled { get; set; }
 
         /// <summary>
-        /// 控件缩放前在其容器里的位置
+        /// Control position in its container before scaling
         /// </summary>
         [Browsable(false), DefaultValue(typeof(Rectangle), "0, 0, 0, 0")]
         public Rectangle ZoomScaleRect { get; set; }
 
         /// <summary>
-        /// 设置控件缩放比例
+        /// Set control scaling ratio
         /// </summary>
-        /// <param name="scale">缩放比例</param>
+        /// <param name="scale">Scaling ratio</param>
         public void SetZoomScale(float scale)
         {
 
         }
 
         /// <summary>
-        /// 点击事件
+        /// Click event
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnClick(EventArgs e)
         {
             base.OnClick(e);
@@ -76,7 +76,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 版本
+        /// Version
         /// </summary>
         public string Version
         {
@@ -85,7 +85,7 @@ namespace Sunny.UI
 
         private bool active;
 
-        [DefaultValue(false), Description("是否滚动"), Category("SunnyUI")]
+        [DefaultValue(false), Description("Is scrolling"), Category("SunnyUI")]
         public bool Active
         {
             get => active;
@@ -123,7 +123,7 @@ namespace Sunny.UI
         }
 
         private UIValveDirection direction = UIValveDirection.Left;
-        [DefaultValue(UIValveDirection.Left), Description("阀门方向"), Category("SunnyUI")]
+        [DefaultValue(UIValveDirection.Left), Description("Valve direction"), Category("SunnyUI")]
         public UIValveDirection Direction
         {
             get => direction;
@@ -139,9 +139,9 @@ namespace Sunny.UI
         private Color valveColor;
 
         /// <summary>
-        /// 阀门颜色
+        /// Valve color
         /// </summary>
-        [Description("阀门颜色"), Category("SunnyUI")]
+        [Description("Valve color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color ValveColor
         {
@@ -154,9 +154,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("边框颜色"), Category("SunnyUI")]
+        [Description("Border color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "Silver")]
         public Color RectColor
         {
@@ -169,9 +169,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, no fill if the value is background color, transparent color, or null
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "White")]
         public Color FillColor
         {
@@ -183,7 +183,7 @@ namespace Sunny.UI
             }
         }
 
-        [Description("管道尺寸"), Category("SunnyUI")]
+        [Description("Pipe size"), Category("SunnyUI")]
         [DefaultValue(20)]
         public int PipeSize
         {
@@ -198,9 +198,9 @@ namespace Sunny.UI
         int pipeSize = 20;
 
         /// <summary>
-        /// 重载绘图
+        /// Override paint
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Paint parameters</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);

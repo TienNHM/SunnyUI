@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,17 +9,16 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UICalendar.cs
- * 文件说明: 日历
- * 当前版本: V3.2
- * 创建日期: 2022-06-28
+ * File Name: UICalendar.cs
+ * File Description: Calendar
+ * Current Version: V3.2
+ * Creation Date: 2022-06-28
  *
- * 2022-06-28: V3.2.0 增加文件说明
- * 2023-05-13: V3.3.6 重构DrawString函数
- * 2023-11-13: V3.5.2 重构主题
- * 2024-12-02: V3.8.0 切换语言实时刷新
+ * 2022-06-28: V3.2.0 Added file description
+ * 2023-05-13: V3.3.6 Refactored DrawString function
+ * 2023-11-13: V3.5.2 Refactored theme
+ * 2024-12-02: V3.8.0 Real-time refresh when switching languages
 ******************************************************************************/
 
 using System;
@@ -380,7 +379,7 @@ namespace Sunny.UI
         public event OnDateTimeChanged OnDateTimeChanged;
 
         [DefaultValue(UIDateType.YearMonthDay)]
-        [Description("日期显示类型"), Category("SunnyUI")]
+        [Description("Date display type"), Category("SunnyUI")]
         public UIDateType ShowType { get; set; }
 
         private int year;
@@ -545,9 +544,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);

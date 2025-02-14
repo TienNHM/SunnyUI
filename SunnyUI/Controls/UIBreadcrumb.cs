@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
- * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
+ * CopyRight (C) 2012-2025 ShenYongHua.
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,19 +9,18 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIBreadcrumb.cs
- * 文件说明: 面包屑导航条
- * 当前版本: V3.1
- * 创建日期: 2021-04-10
+ * File Name: UIBreadcrumb.cs
+ * File Description: Breadcrumb Navigation Bar
+ * Current Version: V3.1
+ * Creation Date: 2021-04-10
  *
- * 2021-04-10: V3.0.2 增加文件说明
- * 2022-01-26: V3.1.0 增加两端对齐，AlignBothEnds
- * 2022-01-26: V3.1.0 增加未选中步骤文字颜色
- * 2022-03-19: V3.1.1 重构主题配色
- * 2023-05-12: V3.3.6 重构DrawString函数
- * 2023-09-17: V3.4.2 增加Readonly，禁用鼠标点击，可通过代码设置ItemIndex
+ * 2021-04-10: V3.0.2 Added file description
+ * 2022-01-26: V3.1.0 Added align both ends, AlignBothEnds
+ * 2022-01-26: V3.1.0 Added unselected step text color
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2023-05-12: V3.3.6 Refactored DrawString function
+ * 2023-09-17: V3.4.2 Added Readonly, disabled mouse click, can set ItemIndex through code
 ******************************************************************************/
 
 using System;
@@ -36,7 +35,7 @@ using System.Windows.Forms;
 namespace Sunny.UI
 {
     /// <summary>
-    /// 面包屑导航条
+    /// Breadcrumb Navigation Bar
     /// </summary>
     [ToolboxItem(true)]
     [DefaultEvent("ItemIndexChanged")]
@@ -44,7 +43,7 @@ namespace Sunny.UI
     public class UIBreadcrumb : UIControl
     {
         /// <summary>
-        /// 构造函数
+        /// Constructor
         /// </summary>
         public UIBreadcrumb()
         {
@@ -68,10 +67,10 @@ namespace Sunny.UI
         private bool alignBothEnds;
 
         /// <summary>
-        /// 显示时两端对齐
+        /// Align both ends when displayed
         /// </summary>
         [DefaultValue(false)]
-        [Description("显示时两端对齐"), Category("SunnyUI")]
+        [Description("Align both ends when displayed"), Category("SunnyUI")]
         public bool AlignBothEnds
         {
             get => alignBothEnds;
@@ -86,25 +85,25 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 步骤值变化事件
+        /// Step value change event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="value"></param>
         public delegate void OnValueChanged(object sender, int value);
 
         /// <summary>
-        /// 步骤值变化事件
+        /// Step value change event
         /// </summary>
         public event OnValueChanged ItemIndexChanged;
 
         /// <summary>
-        /// 步骤条目列表
+        /// Step item list
         /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         [Localizable(true)]
         [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, " + AssemblyRefEx.SystemDesign, typeof(UITypeEditor))]
         [MergableProperty(false)]
-        [Description("列表项"), Category("SunnyUI")]
+        [Description("Item list"), Category("SunnyUI")]
         public UIObjectCollection Items => items;
 
         private readonly UIObjectCollection items = new UIObjectCollection();
@@ -112,7 +111,7 @@ namespace Sunny.UI
         private readonly ConcurrentDictionary<int, Point[]> ClickArea = new ConcurrentDictionary<int, Point[]>();
 
         /// <summary>
-        /// 步骤个数
+        /// Number of steps
         /// </summary>
         [Browsable(false)]
         public int Count => Items.Count;
@@ -120,10 +119,10 @@ namespace Sunny.UI
         private int itemIndex = -1;
 
         /// <summary>
-        /// 当前节点索引
+        /// Current node index
         /// </summary>
         [DefaultValue(-1)]
-        [Description("当前节点索引"), Category("SunnyUI")]
+        [Description("Current node index"), Category("SunnyUI")]
         public int ItemIndex
         {
             get => itemIndex;
@@ -144,10 +143,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制填充颜色
+        /// Draw fill color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Graphics path</param>
         protected override void OnPaintFill(Graphics g, GraphicsPath path)
         {
             float width = 0;
@@ -244,10 +243,10 @@ namespace Sunny.UI
         private int itemWidth;
 
         /// <summary>
-        /// 节点宽度
+        /// Node width
         /// </summary>
         [DefaultValue(160)]
-        [Description("节点宽度"), Category("SunnyUI")]
+        [Description("Node width"), Category("SunnyUI")]
         public int ItemWidth
         {
             get => itemWidth;
@@ -261,10 +260,10 @@ namespace Sunny.UI
         private int interval = 1;
 
         /// <summary>
-        /// 节点间隔
+        /// Node interval
         /// </summary>
         [DefaultValue(1)]
-        [Description("节点间隔"), Category("SunnyUI")]
+        [Description("Node interval"), Category("SunnyUI")]
         public int Interval
         {
             get => interval;
@@ -276,9 +275,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 已选节点颜色
+        /// Selected node color
         /// </summary>
-        [Description("已选节点颜色")]
+        [Description("Selected node color")]
         [Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color SelectedColor
@@ -288,9 +287,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 未选节点颜色
+        /// Unselected node color
         /// </summary>
-        [Description("未选节点颜色")]
+        [Description("Unselected node color")]
         [Category("SunnyUI")]
         [DefaultValue(typeof(Color), "185, 217, 255")]
         public Color UnSelectedColor
@@ -302,9 +301,9 @@ namespace Sunny.UI
         private Color unSelectedForeColor = Color.White;
 
         /// <summary>
-        /// 未选节点文字颜色
+        /// Unselected node text color
         /// </summary>
-        [Description("未选节点文字颜色")]
+        [Description("Unselected node text color")]
         [Category("SunnyUI")]
         [DefaultValue(typeof(Color), "White")]
         public Color UnSelectedForeColor
@@ -321,9 +320,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体颜色
+        /// Font color
         /// </summary>
-        [Description("字体颜色")]
+        [Description("Font color")]
         [Category("SunnyUI")]
         [DefaultValue(typeof(Color), "White")]
         public override Color ForeColor
@@ -333,9 +332,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -345,9 +344,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 鼠标点击事件
+        /// Mouse click event
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnMouseClick(MouseEventArgs e)
         {
             base.OnMouseClick(e);
@@ -363,7 +362,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(false)]
-        [Description("禁用鼠标点击，可通过代码设置ItemIndex")]
+        [Description("Disable mouse click, can set ItemIndex through code")]
         [Category("SunnyUI")]
         public bool Readonly { get; set; }
     }
