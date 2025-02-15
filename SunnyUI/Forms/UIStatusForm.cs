@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
- * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * SunnyUI open source control library, tool class library, extension class library, multi-page development framework.
+ * CopyRight (C) 2012-2025 ShenYongHua.
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,15 +9,14 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIStatusForm.cs
- * 文件说明: 进度提示窗体
- * 当前版本: V3.1
- * 创建日期: 2020-05-05
+ * File Name: UIStatusForm.cs
+ * Description: Progress prompt form
+ * Current Version: V3.1
+ * Creation Date: 2020-05-05
  *
- * 2020-05-05: V2.2.5 增加文件
-******************************************************************************/
+ * 2020-05-05: V2.2.5 Added file
+ ******************************************************************************/
 
 using System.ComponentModel;
 
@@ -73,7 +72,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 进度到达最大值时自动隐藏
+        /// Automatically hide when progress reaches maximum value
         /// </summary>
         [DefaultValue(true)]
         public bool MaxAutoHide { get; set; } = true;

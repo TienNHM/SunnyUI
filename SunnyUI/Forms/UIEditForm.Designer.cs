@@ -23,8 +23,7 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -66,7 +65,7 @@
             btnCancel.Size = new System.Drawing.Size(100, 35);
             btnCancel.Symbol = 361453;
             btnCancel.TabIndex = 1;
-            btnCancel.Text = "取消";
+            btnCancel.Text = "Cancel";
             btnCancel.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             btnCancel.TipsText = null;
             btnCancel.Click += btnCancel_Click;
@@ -84,7 +83,7 @@
             btnOK.ShowFocusColor = true;
             btnOK.Size = new System.Drawing.Size(100, 35);
             btnOK.TabIndex = 0;
-            btnOK.Text = "确定";
+            btnOK.Text = "OK";
             btnOK.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             btnOK.TipsText = null;
             btnOK.Click += btnOK_Click;

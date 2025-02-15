@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,25 +9,24 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIComboTreeView.cs
- * 文件说明: 树形列表框
- * 当前版本: V3.1
- * 创建日期: 2020-11-11
+ * File Name: UIComboTreeView.cs
+ * Description: Tree list box
+ * Current Version: V3.1
+ * Creation Date: 2020-11-11
  *
- * 2021-07-29: V3.0.5 修复SelectedNode=null的问题
- * 2021-11-11: V3.0.0 增加文件说明
- * 2022-05-15: V3.0.8 显示CheckBoxes时自己选中节点文字可切换状态
- * 2022-06-16: V3.2.0 增加下拉框宽度、高度
- * 2022-07-12: V3.2.1 修复CanSelectRootNode时可以展开子节点
- * 2022-11-30: V3.3.0 增加Clear方法
- * 2023-02-04: V3.3.1 下拉框增加显示全选选择框
- * 2023-04-02: V3.3.4 显示清除按钮
- * 2023-06-12: V3.3.8 修复使用清空按钮后，再次打开下拉框，上次的选择内容还是存在
- * 2024-03-22: V3.6.5 增加ShowDropDown()
- * 2024-07-13: V3.6.7 修改下拉框全选按钮跟随主题，修改一处内置国际化翻译
- * 2024-11-10: V3.7.2 增加StyleDropDown属性，手动修改Style时设置此属性以修改下拉框主题
+ * 2021-07-29: V3.0.5 Fixed the issue of SelectedNode=null
+ * 2021-11-11: V3.0.0 Added file description
+ * 2022-05-15: V3.0.8 When displaying CheckBoxes, the text of the selected node can be toggled
+ * 2022-06-16: V3.2.0 Added dropdown width and height
+ * 2022-07-12: V3.2.1 Fixed the issue of expanding child nodes when CanSelectRootNode is true
+ * 2022-11-30: V3.3.0 Added Clear method
+ * 2023-02-04: V3.3.1 Added a select all checkbox in the dropdown
+ * 2023-04-02: V3.3.4 Added clear button
+ * 2023-06-12: V3.3.8 Fixed the issue where the previous selection still exists after using the clear button and reopening the dropdown
+ * 2024-03-22: V3.6.5 Added ShowDropDown()
+ * 2024-07-13: V3.6.7 Modified the select all button in the dropdown to follow the theme, and modified a built-in international translation
+ * 2024-11-10: V3.7.2 Added StyleDropDown property, set this property to modify the dropdown theme when manually changing the Style
 ******************************************************************************/
 
 using System;
@@ -66,14 +65,14 @@ namespace Sunny.UI
         }
 
         /// <summary> 
-        /// 必需的设计器变量。
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary> 
-        /// 清理所有正在使用的资源。
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -89,7 +88,7 @@ namespace Sunny.UI
         public override string[] FormTranslatorProperties => null;
 
         [DefaultValue(false)]
-        [Description("显示清除按钮"), Category("SunnyUI")]
+        [Description("Show clear button"), Category("SunnyUI")]
         public bool ShowClearButton
         {
             get => showClearButton;
@@ -97,21 +96,21 @@ namespace Sunny.UI
         }
 
         [DefaultValue(true)]
-        [Description("下拉框显示全选选择框"), Category("SunnyUI")]
+        [Description("Show select all checkbox in dropdown"), Category("SunnyUI")]
         public bool ShowSelectedAllCheckBox { get; set; } = true;
 
         [DefaultValue(250)]
-        [Description("下拉框宽度"), Category("SunnyUI")]
+        [Description("Dropdown width"), Category("SunnyUI")]
         public int DropDownWidth { get; set; }
 
         [DefaultValue(220)]
-        [Description("下拉框高度"), Category("SunnyUI")]
+        [Description("Dropdown height"), Category("SunnyUI")]
         public int DropDownHeight { get; set; }
 
         /// <summary>
-        /// 需要额外设置ToolTip的控件
+        /// Control that needs additional ToolTip settings
         /// </summary>
-        /// <returns>控件</returns>
+        /// <returns>Control</returns>
         public Control ExToolTipControl()
         {
             return edit;
@@ -129,10 +128,10 @@ namespace Sunny.UI
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         [Localizable(true)]
         [MergableProperty(false)]
-        [Description("显示节点集合"), Category("SunnyUI")]
+        [Description("Display node collection"), Category("SunnyUI")]
         public TreeNodeCollection Nodes => item.TreeView.Nodes;
 
-        [DefaultValue(false), Description("是否显示单选框,该属性与CanSelectRootNode互斥"), Category("SunnyUI")]
+        [DefaultValue(false), Description("Show checkboxes, this property is mutually exclusive with CanSelectRootNode"), Category("SunnyUI")]
         public bool CheckBoxes
         {
             get => item.CheckBoxes;
@@ -146,7 +145,7 @@ namespace Sunny.UI
             }
         }
 
-        [DefaultValue(false), Description("单选时是否可选择父节点,该属性与CheckBoxes互斥"), Category("SunnyUI")]
+        [DefaultValue(false), Description("Can select root node in single selection mode, this property is mutually exclusive with CheckBoxes"), Category("SunnyUI")]
         public bool CanSelectRootNode
         {
             get => item.CanSelectRootNode;
@@ -160,7 +159,7 @@ namespace Sunny.UI
             }
         }
 
-        [DefaultValue(false), Description("是否显示连线"), Category("SunnyUI")]
+        [DefaultValue(false), Description("Show lines"), Category("SunnyUI")]
         public bool ShowLines
         {
             get => item.TreeView.ShowLines;
@@ -170,7 +169,7 @@ namespace Sunny.UI
         private readonly UIComboTreeViewItem item = new UIComboTreeViewItem();
 
         /// <summary>
-        /// 创建对象
+        /// Create object
         /// </summary>
         protected override void CreateInstance()
         {
@@ -195,10 +194,10 @@ namespace Sunny.UI
         public event OnNodesSelected NodesSelected;
 
         /// <summary>
-        /// 值改变事件
+        /// Value changed event
         /// </summary>
-        /// <param name="sender">控件</param>
-        /// <param name="value">值</param>
+        /// <param name="sender">Control</param>
+        /// <param name="value">Value</param>
         protected override void ItemForm_ValueChanged(object sender, object value)
         {
             if (!CheckBoxes)
@@ -268,7 +267,7 @@ namespace Sunny.UI
             ItemForm.Show(this, new Size(width, DropDownHeight));
         }
 
-        [DefaultValue(typeof(Size), "250, 220"), Description("下拉弹框界面大小"), Category("SunnyUI")]
+        [DefaultValue(typeof(Size), "250, 220"), Description("Dropdown interface size"), Category("SunnyUI")]
         public Size ItemSize { get; set; } = new Size(250, 220);
     }
 }

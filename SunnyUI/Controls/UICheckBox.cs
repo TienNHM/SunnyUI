@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,23 +9,22 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UICheckBox.cs
- * 文件说明: 复选框
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UICheckBox.cs
+ * Description: Checkbox
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-04-16: V2.2.1 增加ReadOnly属性
- * 2020-04-25: V2.2.4 更新主题配置类
- * 2021-04-26: V3.0.3 增加默认事件CheckedChanged
- * 2022-03-19: V3.1.1 重构主题配色
- * 2023-05-12: V3.3.6 重构DrawString函数
- * 2023-11-07: V3.5.2 增加修改图标大小
- * 2023-12-04: V3.6.1 增加属性可修改图标大小
- * 2024-08-26: V3.6.9 修复AutoSize在文字改变时未自动显示的问题，#IAKYX4
- * 2024-08-30: V3.7.0 修改AutoSize属性可以保存在Design.cs文件里面，#IAKYX4
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-04-16: V2.2.1 Added ReadOnly property
+ * 2020-04-25: V2.2.4 Updated theme configuration class
+ * 2021-04-26: V3.0.3 Added default event CheckedChanged
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2023-05-12: V3.3.6 Refactored DrawString function
+ * 2023-11-07: V3.5.2 Added option to modify icon size
+ * 2023-12-04: V3.6.1 Added property to modify icon size
+ * 2024-08-26: V3.6.9 Fixed issue where AutoSize did not automatically display when text changed, #IAKYX4
+ * 2024-08-30: V3.7.0 Modified AutoSize property to be saved in Design.cs file, #IAKYX4
 ******************************************************************************/
 
 using System;
@@ -37,7 +36,7 @@ using System.Windows.Forms;
 namespace Sunny.UI
 {
     /// <summary>
-    /// 复选框
+    /// Checkbox
     /// </summary>
     [DefaultEvent("CheckedChanged")]
     [DefaultProperty("Checked")]
@@ -45,7 +44,7 @@ namespace Sunny.UI
     public class UICheckBox : UIControl
     {
         /// <summary>
-        /// 构造函数
+        /// Constructor
         /// </summary>
         public UICheckBox()
         {
@@ -63,9 +62,9 @@ namespace Sunny.UI
         public override string[] FormTranslatorProperties => ["Text"];
 
         /// <summary>
-        /// 重载绘图
+        /// Override paint method
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Paint event arguments</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -97,14 +96,14 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 值改变事件
+        /// Value changed event
         /// </summary>
-        /// <param name="sender">控件</param>
-        /// <param name="value">值</param>
+        /// <param name="sender">Control</param>
+        /// <param name="value">Value</param>
         public delegate void OnValueChanged(object sender, bool value);
 
         /// <summary>
-        /// 值改变事件
+        /// Value changed event
         /// </summary>
         public event OnValueChanged ValueChanged;
 
@@ -112,7 +111,7 @@ namespace Sunny.UI
         private int _imageInterval = 3;
 
         [DefaultValue(16)]
-        [Description("图标大小"), Category("SunnyUI")]
+        [Description("Icon size"), Category("SunnyUI")]
         [Browsable(true)]
         public int CheckBoxSize
         {
@@ -126,17 +125,17 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 是否只读
+        /// Read-only property
         /// </summary>
         [DefaultValue(false)]
-        [Description("是否只读"), Category("SunnyUI")]
+        [Description("Read-only"), Category("SunnyUI")]
         public bool ReadOnly { get; set; }
 
         /// <summary>
-        /// 图标与文字之间间隔
+        /// Interval between icon and text
         /// </summary>
         [DefaultValue(3)]
-        [Description("图标与文字之间间隔"), Category("SunnyUI")]
+        [Description("Interval between icon and text"), Category("SunnyUI")]
         public int ImageInterval
         {
             get => _imageInterval;
@@ -150,9 +149,9 @@ namespace Sunny.UI
         private bool _checked;
 
         /// <summary>
-        /// 是否选中
+        /// Checked property
         /// </summary>
-        [Description("是否选中"), Category("SunnyUI")]
+        [Description("Checked"), Category("SunnyUI")]
         [DefaultValue(false)]
         public bool Checked
         {
@@ -171,18 +170,18 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 值改变事件
+        /// Checked changed event
         /// </summary>
         public event EventHandler CheckedChanged;
 
         /// <summary>
-        /// 绘制前景颜色
+        /// Draw foreground color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics</param>
+        /// <param name="path">Graphics path</param>
         protected override void OnPaintFore(Graphics g, GraphicsPath path)
         {
-            //填充文字
+            // Fill text
             Color color = ForeColor;
             color = Enabled ? color : UIDisableColor.Fore;
             Rectangle rect = new Rectangle(_imageSize + _imageInterval * 2, 0, Width - _imageSize + _imageInterval * 2, Height);
@@ -190,14 +189,14 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制填充颜色
+        /// Draw fill color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics</param>
+        /// <param name="path">Graphics path</param>
         protected override void OnPaintFill(Graphics g, GraphicsPath path)
         {
             int ImageSize = CheckBoxSize;
-            //图标
+            // Icon
             float top = (Height - ImageSize) / 2.0f;
             float left = Text.IsValid() ? ImageInterval : (Width - ImageSize) / 2.0f;
             Color color = Enabled ? fillColor : foreDisableColor;
@@ -224,9 +223,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 点击事件
+        /// Click event
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Event arguments</param>
         protected override void OnClick(EventArgs e)
         {
             if (!ReadOnly)
@@ -238,9 +237,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -249,9 +248,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is background color or transparent color or empty value, it will not be filled
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color CheckBoxColor
         {

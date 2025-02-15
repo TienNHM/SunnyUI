@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,20 +9,19 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UITransfer.cs
- * 文件说明: 穿梭框
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UITransfer.cs
+ * Description: Transfer Box
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-08-14: V2.2.7 增加左右列表项个数变化事件
- * 2021-07-18: V3.0.5 新增两个事件，可获取左侧、右侧Item点击事件
- * 2021-08-08: V3.0.5 增加了显示多个移动的属性
- * 2023-02-04: V3.3.1 支持鼠标框选和Shift，Ctrl多选移动
- * 2023-05-25: V3.3.7 增加列表框字体可调整
- * 2023-05-25: V3.3.7 增加列表框列表项高度可调整
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-08-14: V2.2.7 Added event for left and right list item count change
+ * 2021-07-18: V3.0.5 Added two events to get left and right item click events
+ * 2021-08-08: V3.0.5 Added property to display multiple moves
+ * 2023-02-04: V3.3.1 Support for mouse box selection and Shift, Ctrl multi-selection move
+ * 2023-05-25: V3.3.7 Added adjustable list box font
+ * 2023-05-25: V3.3.7 Added adjustable list item height
 ******************************************************************************/
 
 using System;
@@ -33,13 +32,13 @@ using System.Windows.Forms;
 namespace Sunny.UI
 {
     /// <summary>
-    /// 穿梭框
+    /// Transfer Box
     /// </summary>
     [DefaultProperty("ItemsLeft")]
     public sealed partial class UITransfer : UIPanel
     {
         /// <summary>
-        /// 构造函数
+        /// Constructor
         /// </summary>
         public UITransfer()
         {
@@ -61,7 +60,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(true)]
-        [Description("显示多选按钮"), Category("SunnyUI")]
+        [Description("Show multi-select button"), Category("SunnyUI")]
         public bool ShowMulti
         {
             get => b1.Visible;
@@ -81,23 +80,23 @@ namespace Sunny.UI
         public event EventHandler ItemsLeftCountChange;
         public event EventHandler ItemsRightCountChange;
         /// <summary>
-        /// 左侧列表
+        /// Left list
         /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         [Localizable(true)]
         [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         [MergableProperty(false)]
-        [Description("左侧列表"), Category("SunnyUI")]
+        [Description("Left list"), Category("SunnyUI")]
         public ListBox.ObjectCollection ItemsLeft => l1.Items;
 
         /// <summary>
-        /// 右侧列表
+        /// Right list
         /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         [Localizable(true)]
         [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         [MergableProperty(false)]
-        [Description("右侧列表"), Category("SunnyUI")]
+        [Description("Right list"), Category("SunnyUI")]
         public ListBox.ObjectCollection ItemsRight => l2.Items;
 
         [Browsable(false)]
@@ -216,9 +215,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载控件尺寸变更
+        /// Override control size change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
@@ -235,7 +234,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
         /// <param name="uiColor"></param>
         public override void SetStyleColor(UIBaseStyle uiColor)
@@ -256,9 +255,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 圆角切换事件
+        /// Corner radius change event
         /// </summary>
-        /// <param name="value">圆角值</param>
+        /// <param name="value">Corner radius value</param>
         protected override void OnRadiusChanged(int value)
         {
             base.OnRadiusChanged(value);
@@ -269,9 +268,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override painting
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Painting parameters</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);

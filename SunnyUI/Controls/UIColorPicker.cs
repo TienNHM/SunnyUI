@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,24 +9,23 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIColorPicker.cs
- * 文件说明: 颜色选择框
- * 当前版本: V3.1
- * 创建日期: 2020-05-29
+ * File Name: UIColorPicker.cs
+ * File Description: Color picker
+ * Current Version: V3.1
+ * Creation Date: 2020-05-29
  *
- * 2020-05-31: V2.2.5 增加文件
- * 2021-03-13: V3.0.2 增加单击事件以选中颜色
- * 2022-03-10: V3.1.1 修复选中颜色不显示
- * 2024-08-05: V3.6.8 增加ShowDropDown()函数
- * 2024-11-10: V3.7.2 增加StyleDropDown属性，手动修改Style时设置此属性以修改下拉框主题
+ * 2020-05-31: V2.2.5 Added file
+ * 2021-03-13: V3.0.2 Added click event to select color
+ * 2022-03-10: V3.1.1 Fixed selected color not displaying
+ * 2024-08-05: V3.6.8 Added ShowDropDown() function
+ * 2024-11-10: V3.7.2 Added StyleDropDown property, set this property to modify the dropdown theme when manually changing Style
  ******************************************************************************
- * 文件名称: UIColorPicker.cs
- * 文件说明: Color picker with color wheel and eye dropper
- * 文件作者: jkristia
- * 开源协议: CPOL
- * 引用地址: https://www.codeproject.com/Articles/21965/Color-Picker-with-Color-Wheel-and-Eye-Dropper
+ * File Name: UIColorPicker.cs
+ * File Description: Color picker with color wheel and eye dropper
+ * File Author: jkristia
+ * Open Source License: CPOL
+ * Reference: https://www.codeproject.com/Articles/21965/Color-Picker-with-Color-Wheel-and-Eye-Dropper
 ******************************************************************************/
 
 using System;
@@ -37,7 +36,7 @@ using System.Windows.Forms;
 namespace Sunny.UI
 {
     /// <summary>
-    /// 颜色选择框
+    /// Color picker
     /// </summary>
     [DefaultProperty("ValueChanged")]
     [ToolboxItem(true)]
@@ -56,15 +55,15 @@ namespace Sunny.UI
             PerformLayout();
         }
 
-        /// <summary> 
-        /// 必需的设计器变量。
+        /// <summary>
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// 清理所有正在使用的资源。
+        /// <summary>
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -80,19 +79,19 @@ namespace Sunny.UI
         public override string[] FormTranslatorProperties => null;
 
         /// <summary>
-        /// 颜色改变事件
+        /// Color change event
         /// </summary>
-        /// <param name="sender">控件</param>
-        /// <param name="value">颜色</param>
+        /// <param name="sender">Control</param>
+        /// <param name="value">Color</param>
         public delegate void OnColorChanged(object sender, Color value);
 
         /// <summary>
-        /// 颜色改变事件
+        /// Color change event
         /// </summary>
         public event OnColorChanged ValueChanged;
 
         /// <summary>
-        /// 构造函数
+        /// Constructor
         /// </summary>
         public UIColorPicker()
         {
@@ -116,10 +115,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 整个控件点击下拉选择颜色
+        /// Click the entire control to select color
         /// </summary>
         [DefaultValue(false)]
-        [Description("整个控件点击下拉选择颜色"), Category("SunnyUI")]
+        [Description("Click the entire control to select color"), Category("SunnyUI")]
         public bool FullControlSelect
         {
             get => fullControlSelect;
@@ -127,10 +126,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 值改变事件
+        /// Value change event
         /// </summary>
-        /// <param name="sender">控件</param>
-        /// <param name="value">值</param>
+        /// <param name="sender">Control</param>
+        /// <param name="value">Value</param>
         protected override void ItemForm_ValueChanged(object sender, object value)
         {
             if (Value != (Color)value)
@@ -144,7 +143,7 @@ namespace Sunny.UI
         private readonly UIColorItem item = new UIColorItem();
 
         /// <summary>
-        /// 创建对象
+        /// Create instance
         /// </summary>
         protected override void CreateInstance()
         {
@@ -154,10 +153,10 @@ namespace Sunny.UI
         private Color selectColor;
 
         /// <summary>
-        /// 选中颜色
+        /// Selected color
         /// </summary>
         [DefaultValue(typeof(Color), "80, 160, 255")]
-        [Description("选中颜色"), Category("SunnyUI")]
+        [Description("Selected color"), Category("SunnyUI")]
         public Color Value
         {
             get => selectColor;
@@ -170,10 +169,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制前景颜色
+        /// Draw foreground color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Graphics path</param>
         protected override void OnPaintFore(Graphics g, System.Drawing.Drawing2D.GraphicsPath path)
         {
             base.OnPaintFore(g, path);
@@ -183,9 +182,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override paint
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Paint event arguments</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);

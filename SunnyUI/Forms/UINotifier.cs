@@ -1,7 +1,7 @@
-﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
- * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+﻿/*******************************************************************************
+ * SunnyUI Open Source Controls Library, Utility Library, Extension Library, and Multi-page Development Framework.
+ * CopyRight (C) 2012-2025 ShenYongHua (沈永华).
+ * QQ Group: 56829229 QQ: 17612584 Email: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -10,13 +10,13 @@
  * SunnyUI can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
  * 如果您使用此代码，请保留此说明。
- ******************************************************************************
- * 文件名称: UINotifier.cs
- * 文件说明: 信息提示框
- * 文件作者: boschi84
- * 开源协议: CPOL
- * 引用地址: https://www.codeproject.com/Articles/1118187/Smart-UINotifier-for-Executables-Toast-for-NET
-******************************************************************************/
+ *******************************************************************************
+ * File Name: UINotifier.cs
+ * File Description: Notification Message Box
+ * File Author: boschi84
+ * Open Source License: CPOL
+ * Reference URL: https://www.codeproject.com/Articles/1118187/Smart-UINotifier-for-Executables-Toast-for-NET
+ ******************************************************************************/
 
 //
 //      UINotifier.cs
@@ -90,9 +90,9 @@ namespace Sunny.UI
 
         #region CONSTRUCTOR & DISPLAY
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Default constructor
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         private UINotifier(string dsc, UINotifierType type, string title, bool isDialog = false, int timeout_ms = 0, Form insideMe = null)
         {
             IsDialog = isDialog;
@@ -125,9 +125,9 @@ namespace Sunny.UI
             }
         }
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Handle the drag  drop and resize location of the notes
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Handles the drag, drop, and resize location of the notifications.
+        /// </summary>
         private void inApp_LocationChanged(object sender, EventArgs e)
         {
             foreach (var note in Notes.Values)
@@ -141,9 +141,9 @@ namespace Sunny.UI
             }
         }
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // On load form operations
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// On load form operations
+        /// </summary>
         private void OnLoad(object sender, EventArgs e)
         {
             BackColor = Color.Blue;                               // Initial default graphics
@@ -155,9 +155,9 @@ namespace Sunny.UI
             setNotifier(Description, _uiNotifierType, Title);
         }
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Create the Note and handle its location
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Create the Note and handle its location
+        /// </summary>
         private void setNotifier(string description, UINotifierType noteType, string title, bool isUpdate = false)
         {
             Title = title;
@@ -248,11 +248,11 @@ namespace Sunny.UI
             #endregion NOTE LOCATION
         }
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Find a valid position for the note into the note area:
-        // 1. Inside the Screen (support multiple screens)
-        // 2. Inside the father application (if specified)
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Find a valid position for the note within the note area: <br/>
+        /// 1. Inside the screen (supports multiple screens) <br/>
+        /// 2. Inside the parent application (if specified)
+        /// </summary>
         private NoteLocation adjustLocation(UINotifier note)
         {
             Rectangle notesArea;
@@ -321,9 +321,9 @@ namespace Sunny.UI
 
         #region EVENTS
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Close event for the note
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Close event for the note
+        /// </summary>
         private void onCloseClick(object sender, EventArgs e)
         {
             if (e == null || ((MouseEventArgs)e).Button != MouseButtons.Right)
@@ -332,26 +332,26 @@ namespace Sunny.UI
             }
         }
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Show the menu (for the menu button) event
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Show the menu (for the menu button) event
+        /// </summary>
         private void onMenuClick(object sender, EventArgs e)
         {
             closeAllToolStripMenuItem.Font = menu.Font.DPIScaleFont(menu.Font.Size);
             menu.Show(buttonMenu, new Point(0, buttonMenu.Height));
         }
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Close all the notes event
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Close all the notes event
+        /// </summary>
         private void onMenuCloseAllClick(object sender, EventArgs e)
         {
             CloseAll();
         }
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Dialog note Only (Ok button click event)
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Dialog note Only (Ok button click event)
+        /// </summary>
         private void onOkButtonClick(object sender, EventArgs e)
         {
             onCloseClick(null, null);        // It is the same as the close operation event
@@ -361,9 +361,9 @@ namespace Sunny.UI
 
         #region HELPERS
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Close the note event
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Close the note event
+        /// </summary>
         private void closeMe()
         {
             Notes.TryRemove(this.ID, out _);
@@ -373,9 +373,9 @@ namespace Sunny.UI
                 ID = 0;                                                 // Reset the ID counter if no notes is displayed
         }
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Check if a note with an inApp capabilities is set
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Check if a note with an inApp capabilities is set
+        /// </summary>
         private bool inAppNoteExists()
         {
             foreach (var note in Notes.Values)
@@ -386,10 +386,10 @@ namespace Sunny.UI
 
             return false;
         }
-
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // check if the specified location (X, Y) is already used by another note
-        //-------------------------------------------------------------------------------------------------------------------------------
+        
+        /// <summary>
+        /// Check if the specified location (X, Y) is already used by another note
+        /// </summary>
         private bool isLocationAlreadyUsed(NoteLocation location, UINotifier note)
         {
             foreach (var p in Notes.Values)
@@ -402,9 +402,9 @@ namespace Sunny.UI
             return false;
         }
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Close all the notes
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Close all the notes
+        /// </summary>
         public static void CloseAll()
         {
             foreach (var note in Notes.Values)
@@ -415,9 +415,9 @@ namespace Sunny.UI
             Notes.Clear();
         }
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Event used to draw a right side close icon
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Event used to draw a right side close icon
+        /// </summary>
         private void OnPaint(object sender, PaintEventArgs e)
         {
             var image = Properties.Resources.close;
@@ -438,9 +438,9 @@ namespace Sunny.UI
 
         #region NOTE CREATION AND MODIFY
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Show the note: it is the startup of the creation process of the note
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Show the note: it is the startup of the creation process of the note
+        /// </summary>
         public static short Show(string desc, UINotifierType type = UINotifierType.INFO, string title = "Notifier",
                                  bool isDialog = false, int timeout = 0, Form inApp = null, EventHandler<DescriptionEventArgs> clickevent = null)
         {
@@ -478,10 +478,10 @@ namespace Sunny.UI
             return updated_note_id;                                                 // Return the current ID of the created/updated Note
         }
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Check if the note is already present
-        // Point out the ID and the occurence of the already present note
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Check if the note is already present <br/>
+        /// Point out the ID and the occurrence of the already present note
+        /// </summary>
         private static bool NotifierAlreadyPresent(string desc, UINotifierType type, string title, bool isDialog,
                                                    out short updated_note_id, out short updated_note_occurence)
         {
@@ -522,9 +522,9 @@ namespace Sunny.UI
             return false;
         }
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Update the note with the new content. Reset the timeout if any
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Update the note with the new content. Reset the timeout if any
+        /// </summary>
         public static void Update(short ID, string desc, UINotifierType noteType, string title)
         {
             foreach (var note in Notes.Values)
@@ -543,9 +543,9 @@ namespace Sunny.UI
 
         #region TIMER
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Background Worker to handle the timeout of the note
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Background Worker to handle the timeout event of the note
+        /// </summary>
         private static void timer_DoWork(object sender, DoWorkEventArgs e)
         {
             UINotifier not = (UINotifier)e.Argument;
@@ -558,9 +558,9 @@ namespace Sunny.UI
             e.Result = e.Argument;
         }
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Background Worker to handle the timeout event
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Background Worker to handle the timeout event
+        /// </summary>
         private static void timer_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             UINotifier not = (UINotifier)e.Result;
@@ -571,9 +571,9 @@ namespace Sunny.UI
 
         #region DIALOG NOTE CREATION
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Show a Dialog note: with faded background if specified
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Show a Dialog note: with faded background if specified
+        /// </summary>
         public static DialogResult ShowDialog(string content, UINotifierType type = UINotifierType.INFO, string title = "Notifier",
             BackDialogStyle backDialogStyle = BackDialogStyle.FadedScreen, Form application = null)
         {
@@ -654,9 +654,9 @@ namespace Sunny.UI
             return DialogResult.OK;
         }
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Show a Dialog note: fast creation
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Show a Dialog note: fast creation
+        /// </summary>
         public static void ShowDialog(string content, string title = "Notifier", UINotifierType type = UINotifierType.INFO)
         {
             ShowDialog(content, type, title);
@@ -666,9 +666,9 @@ namespace Sunny.UI
 
         #region DRAG NOTE
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Handle the dragging event: change the position of the note
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Handle the drag event: change the position of the note
+        /// </summary>
         private void OnMouseMove(object sender, MouseEventArgs e)
         {
             if (noteLocation.mouseIsDown)
@@ -685,18 +685,18 @@ namespace Sunny.UI
             }
         }
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Handle the mouse down event
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Handle the mouse down event
+        /// </summary>
         private void OnMouseDown(object sender, MouseEventArgs e)
         {
             noteLocation.initialLocation = e.Location;
             noteLocation.mouseIsDown = true;
         }
 
-        //-------------------------------------------------------------------------------------------------------------------------------
-        // Handle the mouse up event
-        //-------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Handle the mouse up event
+        /// </summary>
         private void OnMouseUp(object sender, MouseEventArgs e)
         {
             noteLocation.mouseIsDown = false;
@@ -727,53 +727,53 @@ namespace Sunny.UI
     }
 
     /// <summary>
-    /// 窗体背景风格
+    /// Style of the background of the dialog
     /// </summary>
     public enum BackDialogStyle
     {
         /// <summary>
-        /// 无
+        /// None
         /// </summary>
         None,
 
         /// <summary>
-        /// 全屏
+        /// Faded Screen Background
         /// </summary>
         FadedScreen,
 
         /// <summary>
-        /// 当前窗体
+        /// Faded Application Background
         /// </summary>
         FadedApplication
     }
 
     /// <summary>
-    /// 类型
+    /// Type of the UINotifier
     /// </summary>
     public enum UINotifierType
     {
         /// <summary>
-        /// 信息
+        /// Information
         /// </summary>
         INFO,
 
         /// <summary>
-        /// 警告
+        /// Warning
         /// </summary>
         WARNING,
 
         /// <summary>
-        /// 错误
+        /// Error
         /// </summary>
         ERROR,
 
         /// <summary>
-        /// 正确
+        /// OK
         /// </summary>
         OK,
 
         /// <summary>
-        /// 询问
+        /// Ask
         /// </summary>
         Ask
     }

@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Sunny.UI
 {
-#pragma warning disable CS1591 // 缺少对公共可见类型或成员的 XML 注释
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     [ToolboxItem(false)]
     public class LabelRotate : Control, IStyleInterface, IZoomScale
     {
@@ -13,21 +13,21 @@ namespace Sunny.UI
         private ContentAlignment m_textAlignment = ContentAlignment.MiddleLeft;
 
         /// <summary>
-        /// 禁止控件跟随窗体缩放
+        /// Disable control zoom scaling
         /// </summary>
-        [DefaultValue(false), Category("SunnyUI"), Description("禁止控件跟随窗体缩放")]
+        [DefaultValue(false), Category("SunnyUI"), Description("Disable control zoom scaling")]
         public bool ZoomScaleDisabled { get; set; }
 
         /// <summary>
-        /// 控件缩放前在其容器里的位置
+        /// Control rectangle before zoom scaling
         /// </summary>
         [Browsable(false), DefaultValue(typeof(Rectangle), "0, 0, 0, 0")]
         public Rectangle ZoomScaleRect { get; set; }
 
         /// <summary>
-        /// 设置控件缩放比例
+        /// Set control zoom scale
         /// </summary>
-        /// <param name="scale">缩放比例</param>
+        /// <param name="scale">Zoom scale</param>
         public virtual void SetZoomScale(float scale)
         {
 
@@ -105,9 +105,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override paint method
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Paint event arguments</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             e.Graphics.FillRectangle(BackColor, ClientRectangle);
@@ -223,9 +223,9 @@ namespace Sunny.UI
         private UIStyle _style = UIStyle.Inherited;
 
         /// <summary>
-        /// 主题样式
+        /// Style
         /// </summary>
-        [DefaultValue(UIStyle.Inherited), Description("主题样式"), Category("SunnyUI")]
+        [DefaultValue(UIStyle.Inherited), Description("Style"), Category("SunnyUI")]
         public UIStyle Style
         {
             get => _style;
@@ -233,9 +233,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set style
         /// </summary>
-        /// <param name="style">主题样式</param>
+        /// <param name="style">Style</param>
         private void SetStyle(UIStyle style)
         {
             if (!style.IsCustom())
@@ -254,7 +254,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式颜色
+        /// Set style color
         /// </summary>
         /// <param name="uiColor"></param>
         public void SetStyleColor(UIBaseStyle uiColor)
@@ -264,21 +264,21 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 自定义主题风格
+        /// Custom style mode
         /// </summary>
         [DefaultValue(false), Browsable(false)]
-        [Description("获取或设置可以自定义主题风格"), Category("SunnyUI")]
+        [Description("Get or set whether to enable custom style mode"), Category("SunnyUI")]
         public bool StyleCustomMode { get; set; }
 
         public string Version { get; }
 
         /// <summary>
-        /// Tag字符串
+        /// Tag string
         /// </summary>
         [DefaultValue(null)]
-        [Description("获取或设置包含有关控件的数据的对象字符串"), Category("SunnyUI")]
+        [Description("Get or set the tag string related to the control"), Category("SunnyUI")]
         public string TagString { get; set; }
     }
 
-#pragma warning restore CS1591 // 缺少对公共可见类型或成员的 XML 注释
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 }

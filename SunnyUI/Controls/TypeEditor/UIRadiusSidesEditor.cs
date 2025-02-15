@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,14 +9,13 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIRadiusSidesEditor.cs
- * 文件说明: 边框属性类
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIRadiusSidesEditor.cs
+ * Description: Border property class
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
+ * 2020-01-01: V2.2.0 Added file description
 ******************************************************************************/
 
 using System;
@@ -32,7 +31,7 @@ using System.Windows.Forms.Design;
 namespace Sunny.UI
 {
     /// <summary>
-    /// 圆角位置
+    /// Corner position
     /// </summary>
     [ComVisible(true)]
     [ToolboxItem(false)]
@@ -41,53 +40,53 @@ namespace Sunny.UI
     public enum UICornerRadiusSides
     {
         /// <summary>
-        /// 四个角都有圆角。
+        /// All four corners have rounded corners.
         /// </summary>
         All = 15, // 0x0000000F
 
         /// <summary>
-        /// 左下角有圆角
+        /// The bottom left corner has a rounded corner
         /// </summary>
         LeftBottom = 8,
 
         /// <summary>
-        /// 左上角有圆角
+        /// The top left corner has a rounded corner
         /// </summary>
         LeftTop = 1,
 
         /// <summary>
-        /// 右下角有圆角
+        /// The bottom right corner has a rounded corner
         /// </summary>
         RightBottom = 4,
 
         /// <summary>
-        /// 右上角有圆角
+        /// The top right corner has a rounded corner
         /// </summary>
         RightTop = 2,
 
         /// <summary>
-        /// 没有圆角
+        /// No rounded corners
         /// </summary>
         None = 0,
     }
 
     /// <summary>
-    ///   提供设置的编辑器 <see cref="P:System.Windows.Forms.ToolStripStatusLabel.RectSides" /> 属性。
+    /// Provides an editor for the <see cref="P:System.Windows.Forms.ToolStripStatusLabel.RectSides" /> property.
     /// </summary>
     [SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.UnmanagedCode)]
     public class UIRadiusSidesEditor : UIDropEditor
     {
         /// <summary>
-        /// 创建窗体
+        /// Create form
         /// </summary>
-        /// <returns>窗体</returns>
+        /// <returns>Form</returns>
         protected override UIDropEditorUI CreateUI()
         {
             return new UICornerRadiusSidesUI();
         }
 
         /// <summary>
-        /// 属性窗体
+        /// Property form
         /// </summary>
         [ToolboxItem(false)]
         public class UICornerRadiusSidesUI : UIDropEditorUI
@@ -104,7 +103,7 @@ namespace Sunny.UI
             private bool noneChecked;
 
             /// <summary>
-            /// 构造函数
+            /// Constructor
             /// </summary>
             public UICornerRadiusSidesUI()
             {
@@ -114,9 +113,9 @@ namespace Sunny.UI
             }
 
             /// <summary>
-            /// 初始化数值
+            /// Initialize value
             /// </summary>
-            /// <param name="value">数值</param>
+            /// <param name="value">Value</param>
             protected override void InitValue(object value)
             {
                 UICornerRadiusSides sides = (UICornerRadiusSides)value;
@@ -141,7 +140,7 @@ namespace Sunny.UI
             }
 
             /// <summary>
-            /// 更新当前值
+            /// Update current value
             /// </summary>
             protected override void UpdateCurrentValue()
             {
@@ -190,7 +189,7 @@ namespace Sunny.UI
             }
 
             /// <summary>
-            /// 激活
+            /// Activate
             /// </summary>
             /// <param name="e"></param>
             protected override void OnGotFocus(EventArgs e)
@@ -376,27 +375,27 @@ namespace Sunny.UI
     }
 
     /// <summary>
-    /// 圆角位置属性编辑器帮助类
+    /// Helper class for corner position property editor
     /// </summary>
     public static class UICornerRadiusSidesHelper
     {
         /// <summary>
-        /// 获取圆角是否设置
+        /// Check if the corner is set
         /// </summary>
-        /// <param name="sides">所有圆角</param>
-        /// <param name="side">当前圆角</param>
-        /// <returns>是否有当前圆角</returns>
+        /// <param name="sides">All corners</param>
+        /// <param name="side">Current corner</param>
+        /// <returns>Whether the current corner is set</returns>
         public static bool GetValue(this UICornerRadiusSides sides, UICornerRadiusSides side)
         {
             return (sides & side) == side;
         }
 
         /// <summary>
-        /// 获取边框是否设置
+        /// Check if the border is set
         /// </summary>
-        /// <param name="sides">所有边框</param>
-        /// <param name="side">当前边框</param>
-        /// <returns>是否有当前边框</returns>
+        /// <param name="sides">All borders</param>
+        /// <param name="side">Current border</param>
+        /// <returns>Whether the current border is set</returns>
         public static bool GetValue(this ToolStripStatusLabelBorderSides sides, ToolStripStatusLabelBorderSides side)
         {
             return (sides & side) == side;

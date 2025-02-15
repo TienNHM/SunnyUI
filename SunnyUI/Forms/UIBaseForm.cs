@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,17 +9,16 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIBaseForm.cs
- * 文件说明: 窗体基类
- * 当前版本: V3.6
- * 创建日期: 2024-04-29
+ * File Name: UIBaseForm.cs
+ * File Description: Form base class
+ * Current Version: V3.6
+ * Creation Date: 2024-04-29
  *
- * 2024-04-29: V3.6.5 增加文件说明
- * 2024-04-29: V3.6.5 删除ShowTitleIcon，默认使用ShowIcon
- * 2024-10-05: V3.7.0 增加属性IconImage，以改善Icon转Image显示不佳，状态栏显示仍然用Icon属性
- * 2024-10-29: V3.7.2 IconImage增加IconImageSize属性，可调整大小
+ * 2024-04-29: V3.6.5 Added file description
+ * 2024-04-29: V3.6.5 Removed ShowTitleIcon, default to use ShowIcon
+ * 2024-10-05: V3.7.0 Added property IconImage to improve the display of Icon to Image, status bar still uses Icon property
+ * 2024-10-29: V3.7.2 IconImage added IconImageSize property, size adjustable
 ******************************************************************************/
 
 using System;

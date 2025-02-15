@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,19 +9,18 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIEdit.cs
- * 文件说明: 文本输入框
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIEdit.cs
+ * File Description: Text input box
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2022-12-18: V3.3.0 修复了一个最小值大于0是，显示类型为字符串Text为空仍有显示的问题
- * 2023-03-07: V3.3.3 修复了删除为空时小数位数和设置值不一致的问题
- * 2023-04-19: V3.3.5 修复了最大值最小值范围判断的问题
- * 2023-05-12: V3.3.6 重构DrawString函数
- * 2023-06-14: V3.3.8 修复输入范围判断的问题
+ * 2020-01-01: V2.2.0 Added file description
+ * 2022-12-18: V3.3.0 Fixed an issue where the display type was string and Text was empty but still displayed when the minimum value was greater than 0
+ * 2023-03-07: V3.3.3 Fixed an issue where the decimal places and set value were inconsistent when deleted to empty
+ * 2023-04-19: V3.3.5 Fixed an issue with the maximum and minimum range judgment
+ * 2023-05-12: V3.3.6 Refactored the DrawString function
+ * 2023-06-14: V3.3.8 Fixed an issue with input range judgment
 ******************************************************************************/
 
 using System;
@@ -217,9 +216,9 @@ namespace Sunny.UI
             public bool TouchPressClick { get; set; } = false;
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //////  WndProc窗口程序：
-            //////  当按压屏幕时，产生一个WM_POINTERDOWN消息时，我们通过API函数 PostMessage 投送出一个WM_LBUTTONDOWN消息
-            //////  WM_LBUTTONDOWN消息会产生一个相对应的鼠标按下左键的事件，于是我们只要在mouse_down事件里写下处理过程即可
+            //////  WndProc window procedure:
+            //////  When a WM_POINTERDOWN message is generated when the screen is pressed, we send a WM_LBUTTONDOWN message through the API function PostMessage
+            //////  The WM_LBUTTONDOWN message will generate a corresponding mouse left button down event, so we just need to write the processing procedure in the mouse_down event
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             #region WndProc 窗口程序

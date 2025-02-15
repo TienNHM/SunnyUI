@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,31 +9,30 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIComboDataGridView.cs
- * 文件说明: 表格列表框
- * 当前版本: V3.1
- * 创建日期: 2021-09-01
+ * File name: UIComboDataGridView.cs
+ * File description: Table list box
+ * Current version: V3.1
+ * Creation date: 2021-09-01
  *
- * 2020-09-01: V3.0.6 增加文件说明
- * 2021-11-05: V3.0.8 增加过滤
- * 2022-03-22: V3.1.1 增加自动过滤、单元格双击选中
- * 2022-04-16: V3.1.3 增加行多选
- * 2022-06-16: V3.2.0 增加下拉框宽度、高度
- * 2022-06-19: V3.2.0 增加FilterChanged，输出过滤文字和记录条数
- * 2022-09-08: V3.2.3 增加过滤字异常判断
- * 2022-11-03: V3.2.6 过滤时删除字符串前面、后面的空格
- * 2022-11-18: V3.2.9 增加过滤框输入逐一过滤属性Filter1by1
- * 2022-11-18: V3.2.9 过滤框输入增加回车确认
- * 2022-11-30: V3.3.0 增加Clear方法
- * 2023-07-25: V3.4.1 过滤输入后，按键盘下键切换至DataGridView，选中数据后按回车可快捷选中数据
- * 2023-09-25: V3.5.0 增加ClearFilter，可以清除弹窗的搜索栏文字
- * 2024-03-22: V3.6.5 增加ShowDropDown()
- * 2024-11-10: V3.7.2 增加StyleDropDown属性，手动修改Style时设置此属性以修改下拉框主题
- * 2024-11-12: V3.7.2 增加下拉框滚动条宽度调整属性
- * 2024-11-28: V3.8.0 解决下拉框显示过滤编辑框不能一直显示 #IB7AFB
- * 2024-12-04: V3.8.0 修复一个报错 #IB8YK9
+ * 2020-09-01: V3.0.6 Added file description
+ * 2021-11-05: V3.0.8 Added filtering
+ * 2022-03-22: V3.1.1 Added auto-filtering, cell double-click selection
+ * 2022-04-16: V3.1.3 Added row multi-selection
+ * 2022-06-16: V3.2.0 Added dropdown width and height
+ * 2022-06-19: V3.2.0 Added FilterChanged, output filter text and record count
+ * 2022-09-08: V3.2.3 Added filter text exception handling
+ * 2022-11-03: V3.2.6 Trimmed spaces before and after the string during filtering
+ * 2022-11-18: V3.2.9 Added Filter1by1 property for incremental filtering
+ * 2022-11-18: V3.2.9 Added Enter key confirmation for filter input
+ * 2022-11-30: V3.3.0 Added Clear method
+ * 2023-07-25: V3.4.1 After filter input, press the down key to switch to DataGridView, press Enter to quickly select data
+ * 2023-09-25: V3.5.0 Added ClearFilter to clear the search bar text in the popup
+ * 2024-03-22: V3.6.5 Added ShowDropDown()
+ * 2024-11-10: V3.7.2 Added StyleDropDown property to manually change the dropdown theme
+ * 2024-11-12: V3.7.2 Added dropdown scrollbar width adjustment property
+ * 2024-11-28: V3.8.0 Fixed issue where the filter edit box in the dropdown could not always be displayed #IB7AFB
+ * 2024-12-04: V3.8.0 Fixed an error #IB8YK9
 ******************************************************************************/
 
 using System;
@@ -62,14 +61,14 @@ namespace Sunny.UI
         }
 
         /// <summary> 
-        /// 必需的设计器变量。
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary> 
-        /// 清理所有正在使用的资源。
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -84,21 +83,21 @@ namespace Sunny.UI
         [Browsable(false)]
         public override string[] FormTranslatorProperties => null;
 
-        [DefaultValue(true), Description("过滤框输入逐一过滤"), Category("SunnyUI")]
+        [DefaultValue(true), Description("Incremental filtering for filter input"), Category("SunnyUI")]
         public bool Filter1by1 { get; set; } = true;
 
         [DefaultValue(false)]
-        [Description("过滤时删除字符串前面、后面的空格"), Category("SunnyUI")]
+        [Description("Trim spaces before and after the string during filtering"), Category("SunnyUI")]
         public bool TrimFilter { get; set; }
 
         public event OnComboDataGridViewFilterChanged FilterChanged;
 
         [DefaultValue(500)]
-        [Description("下拉框宽度"), Category("SunnyUI")]
+        [Description("Dropdown width"), Category("SunnyUI")]
         public int DropDownWidth { get; set; }
 
         [DefaultValue(300)]
-        [Description("下拉框高度"), Category("SunnyUI")]
+        [Description("Dropdown height"), Category("SunnyUI")]
         public int DropDownHeight { get; set; }
 
         private void UIComboDataGridView_ButtonClick(object sender, EventArgs e)
@@ -117,14 +116,14 @@ namespace Sunny.UI
             item.ComboDataGridViewFilterChanged += Item_ComboDataGridViewFilterChanged;
         }
 
-        [DefaultValue(0), Category("SunnyUI"), Description("垂直滚动条宽度，最小为原生滚动条宽度")]
+        [DefaultValue(0), Category("SunnyUI"), Description("Vertical scrollbar width, minimum is the native scrollbar width")]
         public int ScrollBarWidth
         {
             get => DataGridView.ScrollBarWidth;
             set => DataGridView.ScrollBarWidth = value;
         }
 
-        [DefaultValue(6), Category("SunnyUI"), Description("垂直滚动条滑块宽度，最小为原生滚动条宽度")]
+        [DefaultValue(6), Category("SunnyUI"), Description("Vertical scrollbar handle width, minimum is the native scrollbar width")]
         public int ScrollBarHandleWidth
         {
             get => DataGridView.ScrollBarHandleWidth;
@@ -152,7 +151,7 @@ namespace Sunny.UI
             FilterChanged?.Invoke(this, e);
         }
 
-        [DefaultValue(typeof(Size), "320, 240"), Description("下拉弹框界面大小"), Category("SunnyUI")]
+        [DefaultValue(typeof(Size), "320, 240"), Description("Dropdown popup size"), Category("SunnyUI")]
         public Size ItemSize { get; set; } = new Size(320, 240);
 
         public UIComboDataGridView()
@@ -165,21 +164,21 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 需要额外设置ToolTip的控件
+        /// Controls that need additional ToolTip settings
         /// </summary>
-        /// <returns>控件</returns>
+        /// <returns>Control</returns>
         public Control ExToolTipControl()
         {
             return edit;
         }
 
-        [DefaultValue(true), Description("下拉框显示过滤编辑框"), Category("SunnyUI")]
+        [DefaultValue(true), Description("Show filter edit box in dropdown"), Category("SunnyUI")]
         public bool ShowFilter { get; set; } = true;
 
         private readonly UIComboDataGridViewItem item = new UIComboDataGridViewItem();
 
         /// <summary>
-        /// 创建对象
+        /// Create object
         /// </summary>
         protected override void CreateInstance()
         {
@@ -194,10 +193,10 @@ namespace Sunny.UI
         public event OnValueChanged ValueChanged;
 
         /// <summary>
-        /// 值改变事件
+        /// Value changed event
         /// </summary>
-        /// <param name="sender">控件</param>
-        /// <param name="value">值</param>
+        /// <param name="sender">Control</param>
+        /// <param name="value">Value</param>
         protected override void ItemForm_ValueChanged(object sender, object value)
         {
             if (DataGridView.MultiSelect)

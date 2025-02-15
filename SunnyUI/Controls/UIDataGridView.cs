@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI Open Source Control Library, Utility Library, Extension Library, Multi-page Development Framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,47 +9,46 @@
  *
  * SunnyUI can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIDataGridView.cs
- * 文件说明: 表格
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIDataGridView.cs
+ * File Description: Data Grid
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-04-25: V2.2.4 功能增强、美化
- * 2020-07-15: V2.2.6 更改默认配置为原生
- * 2020-07-18: V2.2.6 重绘水平滚动条
- * 2020-08-22: V2.2.7 更新了水平和垂直滚动条的显示，优化滚动效果
- * 2020-08-28: V2.2.7 调整水平滚动条
- * 2021-03-25: V3.0.2 修改垂直滚动条和原版一致，并增加翻页方式滚动
- * 2021-04-01: V3.0.2 编辑输入时，用Enter键代替Tab键跳到下一个单元格
- * 2021-04-29: V3.0.3 设置数据行头部颜色
- * 2021-05-22: V3.0.4 增加了一个RowHeight，默认23
- * 2021-06-27: V3.0.4 自定义单元格颜色
- * 2022-01-21: V3.1.0 更新单选时选中值SelectedIndex值
- * 2022-04-16: V3.1.3 增加滚动条的颜色设置
- * 2022-04-26: V3.1.8 解决原生控件DataSource绑定List，并且List为空，出现”索引-1没有值“错误
- * 2022-06-10: V3.1.9 不再判断DataSource绑定List为空，出现”索引-1没有值“用户自行判断
- * 2022-06-11: V3.1.9 隐藏 ShowRect, 设置原生属性：
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-04-25: V2.2.4 Enhanced functionality and beautification
+ * 2020-07-15: V2.2.6 Changed default configuration to native
+ * 2020-07-18: V2.2.6 Redrawn horizontal scrollbar
+ * 2020-08-22: V2.2.7 Updated horizontal and vertical scrollbar display, optimized scrolling effect
+ * 2020-08-28: V2.2.7 Adjusted horizontal scrollbar
+ * 2021-03-25: V3.0.2 Modified vertical scrollbar to be consistent with the original version and added page scrolling
+ * 2021-04-01: V3.0.2 Use Enter key instead of Tab key to jump to the next cell when editing input
+ * 2021-04-29: V3.0.3 Set data row header color
+ * 2021-05-22: V3.0.4 Added RowHeight, default 23
+ * 2021-06-27: V3.0.4 Custom cell color
+ * 2022-01-21: V3.1.0 Updated SelectedIndex value when single selection is selected
+ * 2022-04-16: V3.1.3 Added scrollbar color settings
+ * 2022-04-26: V3.1.8 Fixed "Index -1 does not have a value" error when DataSource binds List and List is empty
+ * 2022-06-10: V3.1.9 No longer judge if DataSource binds List is empty, "Index -1 does not have a value" error should be judged by the user
+ * 2022-06-11: V3.1.9 Hide ShowRect, set native property:
  *                    BorderStyle = BorderStyle.FixedSingle;
- * 2022-06-11: V3.1.9 隐藏 ShowGridLine, 设置原生属性：
+ * 2022-06-11: V3.1.9 Hide ShowGridLine, set native property:
  *                    CellBorderStyle = DataGridViewCellBorderStyle.Single;
- * 2022-06-11: V3.1.9 隐藏 RowHeight, 用 SetRowHeight() 代替，或设置原生属性：
+ * 2022-06-11: V3.1.9 Hide RowHeight, use SetRowHeight() instead, or set native property:
  *                    AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None
- *                    RowTemplate.Height 设置为高度
- * 2022-06-22: V3.2.0 删除 ShowRect、ShowGridLine、RowHeight三个属性
- * 2022-07-11: V3.2.1 修复一处滚动条的显示位置
- * 2022-07-11: V3.2.1 增加滚动条边框线的设置
- * 2022-07-28: V3.2.2 修复了ScrollBars为None时仍然显示滚动条的问题
- * 2022-07-28: V3.2.2 修复了单行时表格高度低时，垂直滚动条拖拽至底部出错的问题
- * 2022-10-14: V3.2.6 增加了可设置垂直滚动条宽度的属性
- * 2023-06-28: V3.3.9 增加了可设置水平滚动条宽度的属性，但可能会遮挡最下面数据行的数据，看情况使用
- * 2023-07-12: V3.4.0 修复了有冻结行时垂直滚动条点击时出错的问题
- * 2023-11-05: V3.5.2 重构主题
- * 2024-06-19: V3.6.7 增加AddDateTimeColumn，解决默认时间列不显示秒数的问题
- * 2024-08-27: V3.7.0 增加属性AutoScrollToBottom，数据更新时是否自动滚动到最后一行
- * 2024-09-04: V3.7.0 解决有隐藏行时，滚动条滚动时出错的问题
+ *                    RowTemplate.Height set to height
+ * 2022-06-22: V3.2.0 Deleted ShowRect, ShowGridLine, RowHeight three properties
+ * 2022-07-11: V3.2.1 Fixed a display position issue with the scrollbar
+ * 2022-07-11: V3.2.1 Added scrollbar border line settings
+ * 2022-07-28: V3.2.2 Fixed the issue where the scrollbar still shows when ScrollBars is None
+ * 2022-07-28: V3.2.2 Fixed the issue where the vertical scrollbar error occurs when dragging to the bottom with a single row and low table height
+ * 2022-10-14: V3.2.6 Added property to set the width of the vertical scrollbar
+ * 2023-06-28: V3.3.9 Added property to set the width of the horizontal scrollbar, but it may cover the data of the bottom row, use as needed
+ * 2023-07-12: V3.4.0 Fixed the issue where the vertical scrollbar error occurs when clicking with frozen rows
+ * 2023-11-05: V3.5.2 Refactored theme
+ * 2024-06-19: V3.6.7 Added AddDateTimeColumn to solve the issue of default time column not displaying seconds
+ * 2024-08-27: V3.7.0 Added property AutoScrollToBottom, whether to automatically scroll to the last row when data is updated
+ * 2024-09-04: V3.7.0 Fixed the issue where the scrollbar error occurs when scrolling with hidden rows
 ******************************************************************************/
 
 using System;
@@ -124,7 +123,7 @@ namespace Sunny.UI
 
         private int scrollBarWidth = 0;
 
-        [DefaultValue(0), Category("SunnyUI"), Description("垂直滚动条宽度，最小为原生滚动条宽度")]
+        [DefaultValue(0), Category("SunnyUI"), Description("Vertical scrollbar width, minimum is the native scrollbar width")]
         public int ScrollBarWidth
         {
             get => scrollBarWidth;
@@ -137,7 +136,7 @@ namespace Sunny.UI
 
         private int scrollBarHandleWidth = 6;
 
-        [DefaultValue(6), Category("SunnyUI"), Description("垂直滚动条滑块宽度，最小为原生滚动条宽度")]
+        [DefaultValue(6), Category("SunnyUI"), Description("Vertical scrollbar handle width, minimum is the native scrollbar width")]
         public int ScrollBarHandleWidth
         {
             get => scrollBarHandleWidth;
@@ -150,7 +149,7 @@ namespace Sunny.UI
 
         private int scrollBarHeight = 0;
 
-        [DefaultValue(0), Category("SunnyUI"), Description("水平滚动条高度，最小为原生滚动条宽度")]
+        [DefaultValue(0), Category("SunnyUI"), Description("Horizontal scrollbar height, minimum is the native scrollbar width")]
         public int ScrollBarHeight
         {
             get => scrollBarHeight;
@@ -163,7 +162,7 @@ namespace Sunny.UI
 
         private int scrollBarHandleHeight = 6;
 
-        [DefaultValue(6), Category("SunnyUI"), Description("水平滚动条滑块高度，最小为原生滚动条宽度")]
+        [DefaultValue(6), Category("SunnyUI"), Description("Horizontal scrollbar handle height, minimum is the native scrollbar width")]
         public int ScrollBarHandleHeight
         {
             get => scrollBarHandleHeight;
@@ -177,13 +176,14 @@ namespace Sunny.UI
         /// <summary>
         /// 禁止控件跟随窗体缩放
         /// </summary>
-        [DefaultValue(false), Category("SunnyUI"), Description("禁止控件跟随窗体缩放")]
+        [DefaultValue(false), Category("SunnyUI"), Description("Disable control scaling with the form")]
         public bool ZoomScaleDisabled { get; set; }
 
         /// <summary>
         /// 控件缩放前在其容器里的位置
         /// </summary>
         [Browsable(false), DefaultValue(typeof(Rectangle), "0, 0, 0, 0")]
+        [Description("Position of the control in its container before scaling")]
         public Rectangle ZoomScaleRect { get; set; }
 
         /// <summary>
@@ -550,18 +550,18 @@ namespace Sunny.UI
             }
         }
 
-        [Description("垂直滚动条滚动方式"), Category("SunnyUI")]
+        [Description("Vertical scrollbar scroll mode"), Category("SunnyUI")]
         [DefaultValue(UIDataGridViewScrollMode.Normal)]
         public UIDataGridViewScrollMode ScrollMode { get; set; } = UIDataGridViewScrollMode.Normal;
 
         public enum UIDataGridViewScrollMode
         {
             /// <summary>
-            /// 正常
+            /// Normal
             /// </summary>
             Normal,
             /// <summary>
-            /// 翻页
+            /// Page
             /// </summary>
             Page
         }
@@ -671,7 +671,7 @@ namespace Sunny.UI
         /// <summary>
         /// 主题样式
         /// </summary>
-        [DefaultValue(UIStyle.Inherited), Description("主题样式"), Category("SunnyUI")]
+        [DefaultValue(UIStyle.Inherited), Description("Theme style"), Category("SunnyUI")]
         public UIStyle Style
         {
             get => _style;
@@ -679,7 +679,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "White")]
-        [Description("偶数行显示颜色"), Category("SunnyUI")]
+        [Description("Even row display color"), Category("SunnyUI")]
         public Color StripeEvenColor
         {
             get => RowsDefaultCellStyle.BackColor;
@@ -691,7 +691,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "243, 249, 255")]
-        [Description("奇数行显示颜色"), Category("SunnyUI")]
+        [Description("Odd row display color"), Category("SunnyUI")]
         public Color StripeOddColor
         {
             get => AlternatingRowsDefaultCellStyle.BackColor;
@@ -784,7 +784,7 @@ namespace Sunny.UI
         /// 自定义主题风格
         /// </summary>
         [DefaultValue(false), Browsable(false)]
-        [Description("获取或设置可以自定义主题风格"), Category("SunnyUI")]
+        [Description("Get or set whether custom theme style is allowed"), Category("SunnyUI")]
         public bool StyleCustomMode { get; set; }
 
         public string Version => UIGlobal.Version;
@@ -793,7 +793,7 @@ namespace Sunny.UI
         /// Tag字符串
         /// </summary>
         [DefaultValue(null)]
-        [Description("获取或设置包含有关控件的数据的对象字符串"), Category("SunnyUI")]
+        [Description("Get or set the object string containing data about the control"), Category("SunnyUI")]
         public string TagString { get; set; }
 
         protected override void OnCellBorderStyleChanged(EventArgs e)
@@ -805,7 +805,7 @@ namespace Sunny.UI
         private Color _rectColor = UIColor.Blue;
 
         [DefaultValue(typeof(Color), "80, 160, 255")]
-        [Description("边框颜色"), Category("SunnyUI")]
+        [Description("Border color"), Category("SunnyUI")]
         public Color RectColor
         {
             get => _rectColor;
@@ -997,7 +997,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(false)]
-        [Description("编辑输入时，用Enter键代替Tab键跳到下一个单元格"), Category("SunnyUI")]
+        [Description("Use Enter key instead of Tab key to jump to the next cell when editing input"), Category("SunnyUI")]
         public bool EnterAsTab { get; set; }
 
         private Color scrollBarColor = Color.FromArgb(80, 160, 255);
@@ -1005,7 +1005,7 @@ namespace Sunny.UI
         /// <summary>
         /// 填充颜色，当值为背景色或透明色或空值则不填充
         /// </summary>
-        [Description("滚动条填充颜色"), Category("SunnyUI")]
+        [Description("Scrollbar fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color ScrollBarColor
         {
@@ -1025,7 +1025,7 @@ namespace Sunny.UI
         /// <summary>
         /// 填充颜色，当值为背景色或透明色或空值则不填充
         /// </summary>
-        [Description("滚动条边框颜色"), Category("SunnyUI")]
+        [Description("Scrollbar border color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color ScrollBarRectColor
         {
@@ -1044,7 +1044,7 @@ namespace Sunny.UI
         /// <summary>
         /// 填充颜色，当值为背景色或透明色或空值则不填充
         /// </summary>
-        [Description("滚动条背景颜色"), Category("SunnyUI")]
+        [Description("Scrollbar background color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "243, 249, 255")]
         public Color ScrollBarBackColor
         {
@@ -1062,7 +1062,7 @@ namespace Sunny.UI
         /// <summary>
         /// 滚动条主题样式
         /// </summary>
-        [DefaultValue(true), Description("滚动条主题样式"), Category("SunnyUI")]
+        [DefaultValue(true), Description("Scrollbar theme style"), Category("SunnyUI")]
         public bool ScrollBarStyleInherited
         {
             get => HBar != null && HBar.Style == UIStyle.Inherited;
@@ -1081,7 +1081,7 @@ namespace Sunny.UI
             }
         }
 
-        [DefaultValue(false), Category("SunnyUI"), Description("指示当有新数据添加到DataGridView时，是否自动滚动到最后一行")]
+        [DefaultValue(false), Category("SunnyUI"), Description("Indicates whether to automatically scroll to the last row when new data is added to the DataGridView")]
         public bool AutoScrollToBottom { get; set; }
 
         protected override void OnDataBindingComplete(DataGridViewBindingCompleteEventArgs e)

@@ -1,7 +1,7 @@
 /******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
- * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * SunnyUI open source control library, tool class library, extension class library, multi-page development framework.
+ * CopyRight (C) 2012-2025 ShenYongHua.
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,22 +9,20 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UFontImage.cs
- * 文件说明: 字体图片帮助类
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UFontImage.cs
+ * Description: Font image helper class
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-05-21: V2.2.5 调整从资源文件中加载字体，不用另存为文件。
- *                    感谢：麦壳饼 https://gitee.com/maikebing
- * 2021-06-15: V3.0.4 增加FontAwesomeV5的字体图标，重构代码
- * 2021-06-15: V3.3.5 增加FontAwesomeV6的字体图标，重构代码
- * 2023-05-16: V3.3.6 重构DrawFontImage函数
- * 2022-05-17: V3.3.7 修复了一个窗体属性编辑器图标显示不全的问题
- * 2023-10-25: V3.5.1 MaterialIcons字体图标调大3个像素
-******************************************************************************/
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-05-21: V2.2.5 Moved font resource files to resource files, thanks to Maikebing https://gitee.com/maikebing
+ * 2021-06-15: V3.0.4 Added FontAwesomeV5 font icons, refactored code
+ * 2021-06-15: V3.3.5 Added FontAwesomeV6 font icons, refactored code
+ * 2023-05-16: V3.3.6 Refactored DrawFontImage method
+ * 2022-05-17: V3.3.7 Fixed an issue where the editor icon was not displayed correctly
+ * 2023-10-25: V3.5.1 Added 3 new MaterialIcons font icons
+ ******************************************************************************/
 
 using System.Collections.Generic;
 using System.Drawing;
@@ -35,14 +33,14 @@ using System.IO;
 namespace Sunny.UI
 {
     /// <summary>
-    /// 字体图片帮助类
+    /// Font image helper class
     /// </summary>
     public static class FontImageHelper
     {
         public static readonly Dictionary<UISymbolType, FontImages> Fonts = new Dictionary<UISymbolType, FontImages>();
 
         /// <summary>
-        /// 构造函数
+        /// Constructor
         /// </summary>
         static FontImageHelper()
         {
@@ -69,12 +67,12 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 获取字体大小
+        /// Get font image size
         /// </summary>
-        /// <param name="graphics">GDI绘图</param>
-        /// <param name="symbol">字符</param>
-        /// <param name="symbolSize">大小</param>
-        /// <returns>字体大小</returns>
+        /// <param name="graphics">GDI graphics</param>
+        /// <param name="symbol">Character</param>
+        /// <param name="symbolSize">Size</param>
+        /// <returns>Font image size</returns>
         internal static SizeF GetFontImageSize(this Graphics graphics, int symbol, int symbolSize)
         {
             Font font = GetFont(symbol, symbolSize);
@@ -97,15 +95,15 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制字体图片
+        /// Draw font image
         /// </summary>
-        /// <param name="graphics">GDI绘图</param>
-        /// <param name="symbol">字符</param>
-        /// <param name="symbolSize">大小</param>
-        /// <param name="color">颜色</param>
-        /// <param name="rect">区域</param>
-        /// <param name="xOffset">左右偏移</param>
-        /// <param name="yOffSet">上下偏移</param>
+        /// <param name="graphics">GDI graphics</param>
+        /// <param name="symbol">Character</param>
+        /// <param name="symbolSize">Size</param>
+        /// <param name="color">Color</param>
+        /// <param name="rect">Rectangle</param>
+        /// <param name="xOffset">X offset</param>
+        /// <param name="yOffSet">Y offset</param>
         public static void DrawFontImage(this Graphics graphics, int symbol, int symbolSize, Color color,
             RectangleF rect, int xOffset = 0, int yOffSet = 0, int angle = 0)
         {
@@ -114,11 +112,11 @@ namespace Sunny.UI
             float top = rect.Top + ((rect.Height - sf.Height) / 2.0f).RoundEx();
             //graphics.DrawFontImage(symbol, symbolSize, color, left, top + 1, xOffset, yOffSet);
 
-            // 把画板的原点(默认是左上角)定位移到文字中心
+            // Move the origin of the drawing (default is the top left corner) to the center of the rectangle
             graphics.TranslateTransform(left + sf.Width / 2, top + sf.Height / 2);
-            // 旋转画板
+            // Rotate the drawing
             graphics.RotateTransform(angle);
-            // 回退画板x,y轴移动过的距离
+            // Move the drawing back to the original position
             graphics.TranslateTransform(-(left + sf.Width / 2), -(top + sf.Height / 2));
 
             graphics.DrawFontImage(symbol, symbolSize, color, left, top, xOffset, yOffSet);
@@ -129,16 +127,16 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制字体图片
+        /// Draw font image
         /// </summary>
-        /// <param name="graphics">GDI绘图</param>
-        /// <param name="symbol">字符</param>
-        /// <param name="symbolSize">大小</param>
-        /// <param name="color">颜色</param>
-        /// <param name="left">左</param>
-        /// <param name="top">上</param>
-        /// <param name="xOffset">左右偏移</param>
-        /// <param name="yOffSet">上下偏移</param>
+        /// <param name="graphics">GDI graphics</param>
+        /// <param name="symbol">Character</param>
+        /// <param name="symbolSize">Size</param>
+        /// <param name="color">Color</param>
+        /// <param name="left">Left</param>
+        /// <param name="top">Top</param>
+        /// <param name="xOffset">X offset</param>
+        /// <param name="yOffSet">Y offset</param>
         private static void DrawFontImage(this Graphics graphics, int symbol, int symbolSize, Color color,
             float left, float top, int xOffset = 0, int yOffSet = 0)
         {
@@ -155,12 +153,12 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 创建图片
+        /// Create image
         /// </summary>
-        /// <param name="symbol">字符</param>
-        /// <param name="size">大小</param>
-        /// <param name="color">颜色</param>
-        /// <returns>图片</returns>
+        /// <param name="symbol">Character</param>
+        /// <param name="size">Size</param>
+        /// <param name="color">Color</param>
+        /// <returns>Image</returns>
         public static Image CreateImage(int symbol, int size, Color color)
         {
             Bitmap image = new Bitmap(size, size);
@@ -171,11 +169,11 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 获取字体
+        /// Get font
         /// </summary>
-        /// <param name="symbol">字符</param>
-        /// <param name="imageSize">大小</param>
-        /// <returns>字体</returns>
+        /// <param name="symbol">Character</param>
+        /// <param name="imageSize">Size</param>
+        /// <returns>Font</returns>
         public static Font GetFont(int symbol, int imageSize)
         {
             var symbolType = GetSymbolType(symbol);

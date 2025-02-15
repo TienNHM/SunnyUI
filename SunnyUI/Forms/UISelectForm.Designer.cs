@@ -57,7 +57,7 @@
             label.Name = "label";
             label.Size = new System.Drawing.Size(183, 16);
             label.TabIndex = 3;
-            label.Text = "请在下方编辑框中选择：";
+            label.Text = "Please select from the dropdown below:";
             label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ComboBox
@@ -87,7 +87,7 @@
             Controls.Add(ComboBox);
             Name = "UISelectForm";
             Padding = new System.Windows.Forms.Padding(1, 35, 1, 1);
-            Text = "选择";
+            Text = "Select";
             ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 473, 182);
             Controls.SetChildIndex(ComboBox, 0);
             Controls.SetChildIndex(pnlBtm, 0);

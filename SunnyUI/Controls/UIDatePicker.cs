@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI Open Source Control Library, Utility Library, Extension Library, Multi-page Development Framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,24 +9,23 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIDatePicker.cs
- * 文件说明: 日期选择框
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIDatePicker.cs
+ * File Description: Date Picker
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-08-07: V2.2.7 可编辑输入，日期范围控制以防止出错
- * 2021-04-15: V3.0.3 增加ShowToday显示今日属性
- * 2021-08-14: V3.0.6 增加可选择年、年月、年月日
- * 2022-11-08: V3.2.8 增加MaxDate,MinDate
- * 2023-05-14: V3.3.6 年、年月、年月日可单独设置格式化掩码
- * 2023-05-14: V3.3.6 修复文字格式化显示问题
- * 2024-06-09: V3.6.6 下拉框可选放大倍数为2
- * 2024-07-13: V3.6.7 修改选择日期在下拉框中显示方式
- * 2024-08-28: V3.7.0 修复格式化字符串包含/时显示错误
- * 2024-11-10: V3.7.2 增加StyleDropDown属性，手动修改Style时设置此属性以修改下拉框主题
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-08-07: V2.2.7 Editable input, date range control to prevent errors
+ * 2021-04-15: V3.0.3 Added ShowToday property to display today
+ * 2021-08-14: V3.0.6 Added options to select year, year and month, year, month, and day
+ * 2022-11-08: V3.2.8 Added MaxDate, MinDate
+ * 2023-05-14: V3.3.6 Year, year and month, year, month, and day can be set separately with format masks
+ * 2023-05-14: V3.3.6 Fixed text formatting display issue
+ * 2024-06-09: V3.6.6 Dropdown can be selected with a magnification of 2
+ * 2024-07-13: V3.6.7 Modified the display method of the selected date in the dropdown
+ * 2024-08-28: V3.7.0 Fixed display error when the format string contains '/'
+ * 2024-11-10: V3.7.2 Added StyleDropDown property, set this property to change the dropdown theme when manually modifying the Style
 ******************************************************************************/
 
 using System;
@@ -88,7 +87,7 @@ namespace Sunny.UI
         public static readonly DateTime MaxDateTime = new DateTime(9998, 12, 31);
 
         [DefaultValue(typeof(DateTime), "9998/12/31")]
-        [Description("最大日期"), Category("SunnyUI")]
+        [Description("Maximum date"), Category("SunnyUI")]
         public DateTime MaxDate
         {
             get
@@ -123,7 +122,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(DateTime), "1753/1/1")]
-        [Description("最小日期"), Category("SunnyUI")]
+        [Description("Minimum date"), Category("SunnyUI")]
         public DateTime MinDate
         {
             get
@@ -184,17 +183,17 @@ namespace Sunny.UI
         }
 
         [DefaultValue(false)]
-        [Description("日期输入时，是否可空显示"), Category("SunnyUI")]
+        [Description("Whether the date input can be empty"), Category("SunnyUI")]
         public bool CanEmpty { get; set; }
 
         [DefaultValue(false)]
-        [Description("日期输入时，显示今日按钮"), Category("SunnyUI")]
+        [Description("Display today button when entering date"), Category("SunnyUI")]
         public bool ShowToday { get; set; }
 
         private UIDateType showType = UIDateType.YearMonthDay;
 
         [DefaultValue(UIDateType.YearMonthDay)]
-        [Description("日期显示类型"), Category("SunnyUI")]
+        [Description("Date display type"), Category("SunnyUI")]
         public UIDateType ShowType
         {
             get => showType;
@@ -226,9 +225,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 需要额外设置ToolTip的控件
+        /// Control that needs additional ToolTip
         /// </summary>
-        /// <returns>控件</returns>
+        /// <returns>Control</returns>
         public Control ExToolTipControl()
         {
             return edit;
@@ -301,10 +300,10 @@ namespace Sunny.UI
         public event OnDateTimeChanged ValueChanged;
 
         /// <summary>
-        /// 值改变事件
+        /// Value changed event
         /// </summary>
-        /// <param name="sender">控件</param>
-        /// <param name="value">值</param>
+        /// <param name="sender">Control</param>
+        /// <param name="value">Value</param>
         protected override void ItemForm_ValueChanged(object sender, object value)
         {
             Value = (DateTime)value;
@@ -314,7 +313,7 @@ namespace Sunny.UI
         private readonly UIDateItem item = new UIDateItem();
 
         /// <summary>
-        /// 创建对象
+        /// Create object
         /// </summary>
         protected override void CreateInstance()
         {
@@ -322,7 +321,7 @@ namespace Sunny.UI
         }
 
         private bool DropSetted = false;
-        [Description("选中日期"), Category("SunnyUI")]
+        [Description("Selected date"), Category("SunnyUI")]
         public DateTime Value
         {
             get => item.Date;
@@ -357,7 +356,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(1)]
-        [Description("弹窗放大倍数，可以1或者2"), Category("SunnyUI")]
+        [Description("Popup magnification, can be 1 or 2"), Category("SunnyUI")]
         public int SizeMultiple { get => item.SizeMultiple; set => item.SizeMultiple = value; }
 
         private void UIDatetimePicker_ButtonClick(object sender, EventArgs e)
@@ -379,7 +378,7 @@ namespace Sunny.UI
 
         private string dateFormat = "yyyy-MM-dd";
 
-        [Description("日期格式化掩码"), Category("SunnyUI")]
+        [Description("Date format mask"), Category("SunnyUI")]
         [DefaultValue("yyyy-MM-dd")]
         public string DateFormat
         {
@@ -398,7 +397,7 @@ namespace Sunny.UI
 
         private string dateYearMonthFormat = "yyyy-MM";
 
-        [Description("日期格式化掩码"), Category("SunnyUI")]
+        [Description("Date format mask"), Category("SunnyUI")]
         [DefaultValue("yyyy-MM")]
         public string DateYearMonthFormat
         {
@@ -417,7 +416,7 @@ namespace Sunny.UI
 
         private string dateYearFormat = "yyyy";
 
-        [Description("日期格式化掩码"), Category("SunnyUI")]
+        [Description("Date format mask"), Category("SunnyUI")]
         [DefaultValue("yyyy")]
         public string DateYearFormat
         {

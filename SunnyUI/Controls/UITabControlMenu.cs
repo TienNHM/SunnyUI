@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,17 +9,17 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
+ * If you use this code, please keep this note.
  ******************************************************************************
- * 文件名称: UITabControlMenu.cs
- * 文件说明: 标签菜单控件
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File name: UITabControlMenu.cs
+ * File description: Tab menu control
+ * Current version: V3.1
+ * Creation date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2022-08-11: V3.0.2 重写ItemSize，将宽、高调整为正常显示
- * 2023-05-12: V3.3.6 重构DrawString函数
- * 2025-02-07: V3.8.1 修复切换主题色时，TabPage未设置背景色，#IBKDR7
+ * 2020-01-01: V2.2.0 Added file description
+ * 2022-08-11: V3.0.2 Rewritten ItemSize, adjusted width and height for normal display
+ * 2023-05-12: V3.3.6 Refactored DrawString function
+ * 2025-02-07: V3.8.1 Fixed the issue where TabPage background color was not set when switching theme colors, #IBKDR7
 ******************************************************************************/
 
 using System;
@@ -65,21 +65,21 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 禁止控件跟随窗体缩放
+        /// Disable control scaling with the form
         /// </summary>
-        [DefaultValue(false), Category("SunnyUI"), Description("禁止控件跟随窗体缩放")]
+        [DefaultValue(false), Category("SunnyUI"), Description("Disable control scaling with the form")]
         public bool ZoomScaleDisabled { get; set; }
 
         /// <summary>
-        /// 控件缩放前在其容器里的位置
+        /// Control position in its container before scaling
         /// </summary>
         [Browsable(false), DefaultValue(typeof(Rectangle), "0, 0, 0, 0")]
         public Rectangle ZoomScaleRect { get; set; }
 
         /// <summary>
-        /// 设置控件缩放比例
+        /// Set control scaling ratio
         /// </summary>
-        /// <param name="scale">缩放比例</param>
+        /// <param name="scale">Scaling ratio</param>
         public void SetZoomScale(float scale)
         {
 
@@ -96,24 +96,24 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 自定义主题风格
+        /// Custom theme style
         /// </summary>
         [DefaultValue(false), Browsable(false)]
-        [Description("获取或设置可以自定义主题风格"), Category("SunnyUI")]
+        [Description("Get or set custom theme style"), Category("SunnyUI")]
         public bool StyleCustomMode { get; set; }
 
         /// <summary>
-        /// Tag字符串
+        /// Tag string
         /// </summary>
         [DefaultValue(null)]
-        [Description("获取或设置包含有关控件的数据的对象字符串"), Category("SunnyUI")]
+        [Description("Get or set the object string containing data about the control"), Category("SunnyUI")]
         public string TagString { get; set; }
 
         public string Version { get; }
 
         private HorizontalAlignment textAlignment = HorizontalAlignment.Center;
 
-        [Description("文字显示方向"), Category("SunnyUI")]
+        [Description("Text display direction"), Category("SunnyUI")]
         [DefaultValue(HorizontalAlignment.Center)]
         public HorizontalAlignment TextAlignment
         {
@@ -129,9 +129,9 @@ namespace Sunny.UI
         private Color tabBackColor = Color.FromArgb(56, 56, 56);
 
         /// <summary>
-        /// 当使用边框时填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color when using borders, no fill if the value is background color, transparent color, or null
         /// </summary>
-        [Description("当使用边框时填充颜色，当值为背景色或透明色或空值则不填充"), Category("SunnyUI")]
+        [Description("Fill color when using borders, no fill if the value is background color, transparent color, or null"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "243, 249, 255")]
         public Color FillColor
         {
@@ -148,9 +148,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("边框颜色"), Category("SunnyUI")]
+        [Description("Border color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "56, 56, 56")]
         public Color TabBackColor
         {
@@ -169,9 +169,9 @@ namespace Sunny.UI
         private Color tabSelectedColor = Color.FromArgb(36, 36, 36);
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("选中Tab页背景色"), Category("SunnyUI")]
+        [Description("Selected Tab page background color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "36, 36, 36")]
         public Color TabSelectedColor
         {
@@ -190,9 +190,9 @@ namespace Sunny.UI
         private Color tabSelectedForeColor = UIColor.Blue;
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("选中Tab页字体色"), Category("SunnyUI")]
+        [Description("Selected Tab page font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color TabSelectedForeColor
         {
@@ -210,9 +210,9 @@ namespace Sunny.UI
         private Color tabUnSelectedForeColor = Color.Silver;
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("未选中Tab页字体色"), Category("SunnyUI")]
+        [Description("Unselected Tab page font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "Silver")]
         public Color TabUnSelectedForeColor
         {
@@ -231,9 +231,9 @@ namespace Sunny.UI
         private Color tabSelectedHighColor = UIColor.Blue;
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("选中Tab页高亮"), Category("SunnyUI")]
+        [Description("Selected Tab page highlight"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color TabSelectedHighColor
 
@@ -252,9 +252,9 @@ namespace Sunny.UI
         private UIStyle _style = UIStyle.Inherited;
 
         /// <summary>
-        /// 主题样式
+        /// Theme style
         /// </summary>
-        [DefaultValue(UIStyle.Inherited), Description("主题样式"), Category("SunnyUI")]
+        [DefaultValue(UIStyle.Inherited), Description("Theme style"), Category("SunnyUI")]
         public UIStyle Style
         {
             get => _style;
@@ -279,9 +279,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="style">主题样式</param>
+        /// <param name="style">Theme style</param>
         private void SetStyle(UIStyle style)
         {
             if (!style.IsCustom())
@@ -314,7 +314,7 @@ namespace Sunny.UI
         private UIMenuStyle _menuStyle = UIMenuStyle.Black;
 
         [DefaultValue(UIMenuStyle.Black)]
-        [Description("主题风格"), Category("SunnyUI")]
+        [Description("Theme style"), Category("SunnyUI")]
         public UIMenuStyle MenuStyle
         {
             get => _menuStyle;
@@ -356,14 +356,14 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override drawing
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Drawing parameters</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
 
-            // 绘制背景色
+            // Draw background color
             e.Graphics.Clear(TabBackColor);
             for (int index = 0; index <= TabCount - 1; index++)
             {
@@ -377,18 +377,18 @@ namespace Sunny.UI
 
                 if (index == SelectedIndex)
                 {
-                    // 绘制Tab选中背景色
+                    // Draw selected Tab background color
                     e.Graphics.FillRectangle(TabSelectedColor, TabRect.X, TabRect.Y, TabRect.Width, TabRect.Height + 4);
 
-                    // 绘制Tab选中高亮
+                    // Draw selected Tab highlight
                     e.Graphics.FillRectangle(TabSelectedHighColor, TabRect.X, TabRect.Y, 4, TabRect.Height + 3);
                 }
 
-                // 绘制标题
+                // Draw title
                 Color textColor = index == SelectedIndex ? tabSelectedForeColor : TabUnSelectedForeColor;
                 e.Graphics.DrawString(TabPages[index].Text, Font, textColor, new Rectangle(textLeft, TabRect.Top, TabRect.Width, TabRect.Height), ContentAlignment.MiddleLeft);
 
-                // 绘制图标
+                // Draw icon
                 if (ImageList != null)
                 {
                     int imageIndex = TabPages[index].ImageIndex;

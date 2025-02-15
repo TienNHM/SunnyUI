@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,15 +9,14 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIThermometer.cs
- * 文件说明: 温度计
- * 当前版本: V3.6.1
- * 创建日期: 2023-11-30
+ * File Name: UIThermometer.cs
+ * Description: Thermometer
+ * Current Version: V3.6.1
+ * Creation Date: 2023-11-30
  *
- * 2023-11-30: V3.6.1 增加文件说明
-******************************************************************************/
+ * 2023-11-30: V3.6.1 Added file description
+ ******************************************************************************/
 
 using System;
 using System.ComponentModel;
@@ -52,7 +51,7 @@ namespace Sunny.UI
         private int thermometerValue;
 
         [DefaultValue(100)]
-        [Description("最大值"), Category("SunnyUI")]
+        [Description("Maximum value"), Category("SunnyUI")]
         public int Maximum
         {
             get => _maximum;
@@ -67,7 +66,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(0)]
-        [Description("最小值"), Category("SunnyUI")]
+        [Description("Minimum value"), Category("SunnyUI")]
         public int Minimum
         {
             get => _minimum;
@@ -82,7 +81,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(0)]
-        [Description("当前值"), Category("SunnyUI")]
+        [Description("Current value"), Category("SunnyUI")]
         public int Value
         {
             get => thermometerValue;
@@ -99,9 +98,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -112,10 +111,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制填充颜色
+        /// Draw fill color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Drawing path</param>
         protected override void OnPaintFill(Graphics g, GraphicsPath path)
         {
             g.Clear(fillColor);
@@ -135,7 +134,7 @@ namespace Sunny.UI
         private int lineSize = 6;
 
         [DefaultValue(6)]
-        [Description("温度计管大小"), Category("SunnyUI")]
+        [Description("Thermometer tube size"), Category("SunnyUI")]
         public int LineSize
         {
             get => lineSize;
@@ -149,7 +148,7 @@ namespace Sunny.UI
         private int ballSize = 20;
 
         [DefaultValue(20)]
-        [Description("温度计球大小"), Category("SunnyUI")]
+        [Description("Thermometer bulb size"), Category("SunnyUI")]
         public int BallSize
         {
             get => ballSize;
@@ -160,10 +159,9 @@ namespace Sunny.UI
             }
         }
 
-        /// <summary>/// 重载鼠标抬起事件
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// <summary>/// Fill color, if the value is background color or transparent color or null, it will not be filled
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "243, 249, 255")]
         public Color FillColor
         {
@@ -172,9 +170,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("温度计颜色"), Category("SunnyUI")]
+        [Description("Thermometer color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color ThermometerColor
         {
@@ -183,7 +181,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "Silver")]
-        [Description("不可用时颜色"), Category("SunnyUI")]
+        [Description("Color when disabled"), Category("SunnyUI")]
         public Color DisableColor
         {
             get => rectDisableColor;

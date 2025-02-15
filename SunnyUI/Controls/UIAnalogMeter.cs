@@ -1,7 +1,7 @@
 /******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
- * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * SunnyUI source controls, components, extensions, and web open source projects.
+ * CopyRight (C) 2012-2025 ShenYongHua.
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,13 +9,12 @@
  *
  * SunnyUI can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIAnalogMeter.cs
- * 文件说明: 仪表
- * 文件作者: Luca Bonotto
- * 开源协议: CPOL
- * 引用地址: https://www.codeproject.com/Articles/24945/Analog-Meter
+ * File Name: UIAnalogMeter.cs
+ * Description: Analog Meter
+ * File Author: Luca Bonotto
+ * Source License: CPOL
+ * Original URL: https://www.codeproject.com/Articles/24945/Analog-Meter
 ******************************************************************************/
 
 /*
@@ -320,9 +319,9 @@ namespace Sunny.UI
         #region Events delegates
 
         /// <summary>
-        /// 重载控件尺寸变更
+        /// Handle control size change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Event arguments</param>
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
@@ -333,9 +332,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Handle control painting
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Paint event arguments</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             if (Width <= 0 || Height <= 0) return;

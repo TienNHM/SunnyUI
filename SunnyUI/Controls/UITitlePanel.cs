@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,25 +9,24 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UITitlePanel.cs
- * 文件说明: 带标题面板
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UITitlePanel.cs
+ * File Description: Panel with title
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-04-25: V2.2.4 更新主题配置类
- * 2020-07-30: V2.2.6 增加可收缩选项
- * 2020-09-03: V3.0.6 增加标题文字颜色
- * 2022-05-30: V3.1.9 修复Padding设置
- * 2022-10-28: V3.2.6 箭头图标可设置颜色
- * 2023-05-02: V3.3.6 增加了一个关闭按钮的属性，点击后隐藏控件
- * 2023-05-12: V3.3.6 标题栏文字位置属性由TextAlign改为TextAlignment
- * 2023-05-12: V3.3.6 重构DrawString函数
- * 2023-07-12: V3.4.0 删除Padding设置
- * 2023-08-07: V3.4.1 增加OnCollapsed事件
- * 2024-12-14: V3.8.0 增加Padding设置 #IBB1UF
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-04-25: V2.2.4 Updated theme configuration class
+ * 2020-07-30: V2.2.6 Added collapsible option
+ * 2020-09-03: V3.0.6 Added title text color
+ * 2022-05-30: V3.1.9 Fixed Padding setting
+ * 2022-10-28: V3.2.6 Arrow icon color can be set
+ * 2023-05-02: V3.3.6 Added a property for the close button, hides the control when clicked
+ * 2023-05-12: V3.3.6 Changed title text alignment property from TextAlign to TextAlignment
+ * 2023-05-12: V3.3.6 Refactored DrawString function
+ * 2023-07-12: V3.4.0 Removed Padding setting
+ * 2023-08-07: V3.4.1 Added OnCollapsed event
+ * 2024-12-14: V3.8.0 Added Padding setting #IBB1UF
 ******************************************************************************/
 
 using System;
@@ -43,7 +42,7 @@ namespace Sunny.UI
     {
         private int _titleHeight = 35;
 
-        [Description("面板高度"), Category("SunnyUI")]
+        [Description("Panel height"), Category("SunnyUI")]
         [DefaultValue(35)]
         public int TitleHeight
         {
@@ -74,9 +73,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -88,10 +87,10 @@ namespace Sunny.UI
         private HorizontalAlignment textAlign = HorizontalAlignment.Center;
 
         /// <summary>
-        /// 文字对齐方向
+        /// Text alignment direction
         /// </summary>
         [DefaultValue(HorizontalAlignment.Center)]
-        [Description("文字对齐方向"), Category("SunnyUI"), Browsable(false)]
+        [Description("Text alignment direction"), Category("SunnyUI"), Browsable(false)]
         public HorizontalAlignment TextAlign
         {
             get => textAlign;
@@ -105,7 +104,7 @@ namespace Sunny.UI
         private Color titleForeColor = Color.White;
 
         [DefaultValue(typeof(Color), "White")]
-        [Description("标题文字颜色"), Category("SunnyUI")]
+        [Description("Title text color"), Category("SunnyUI")]
         public Color TitleForeColor
         {
             get => titleForeColor;
@@ -119,7 +118,7 @@ namespace Sunny.UI
         private Color titleColor = UIColor.Blue;
 
         [DefaultValue(typeof(Color), "80, 160, 255")]
-        [Description("标题颜色"), Category("SunnyUI")]
+        [Description("Title color"), Category("SunnyUI")]
         public Color TitleColor
         {
             get => titleColor;
@@ -131,10 +130,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制填充颜色
+        /// Draw fill color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Drawing path</param>
         protected override void OnPaintFill(Graphics g, GraphicsPath path)
         {
             base.OnPaintFill(g, path);
@@ -184,9 +183,9 @@ namespace Sunny.UI
         private Color symbolColor = Color.White;
 
         /// <summary>
-        /// 字体图标颜色
+        /// Font icon color
         /// </summary>
-        [Description("图标颜色"), Category("SunnyUI")]
+        [Description("Icon color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "White")]
         public Color SymbolColor
         {
@@ -204,9 +203,9 @@ namespace Sunny.UI
         private bool InControlBox;
 
         /// <summary>
-        /// 重载鼠标移动事件
+        /// Override mouse move event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseMove(MouseEventArgs e)
         {
             bool inControlBox = e.Location.InRect(ControlBoxRect);
@@ -220,9 +219,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标离开事件
+        /// Override mouse leave event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseLeave(EventArgs e)
         {
             base.OnMouseLeave(e);
@@ -233,7 +232,7 @@ namespace Sunny.UI
         private int _titleInterval = 10;
 
         [DefaultValue(10)]
-        [Description("标题文字局左或者局右时与边框距离"), Category("SunnyUI")]
+        [Description("Distance from border when title text is left or right aligned"), Category("SunnyUI")]
         public int TitleInterval
         {
             get => _titleInterval;
@@ -283,7 +282,7 @@ namespace Sunny.UI
 
         private bool showCollapse;
 
-        [Description("是否打开缩放按钮"), Category("SunnyUI"), DefaultValue(false)]
+        [Description("Whether to open the collapse button"), Category("SunnyUI"), DefaultValue(false)]
         public bool ShowCollapse
         {
             get => showCollapse;
@@ -297,7 +296,7 @@ namespace Sunny.UI
 
         private bool showClose;
 
-        [Description("是否打开关闭按钮"), Category("SunnyUI"), DefaultValue(false)]
+        [Description("Whether to open the close button"), Category("SunnyUI"), DefaultValue(false)]
         public bool ShowClose
         {
             get => showClose;
@@ -314,7 +313,7 @@ namespace Sunny.UI
         private bool resizing;
 
 
-        [Description("是否缩放"), Category("SunnyUI"), DefaultValue(false)]
+        [Description("Whether to collapse"), Category("SunnyUI"), DefaultValue(false)]
         public bool Collapsed
         {
             get => collapsed;
@@ -336,6 +335,10 @@ namespace Sunny.UI
             }
         }
 
+        /// <summary>
+        /// Override mouse click event
+        /// </summary>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseClick(MouseEventArgs e)
         {
             if (ShowClose && e.Location.InRect(ControlBoxRect))
@@ -355,9 +358,9 @@ namespace Sunny.UI
         public EventHandler OnCollapsed;
 
         /// <summary>
-        /// 重载控件尺寸变更
+        /// Override control size change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
@@ -368,6 +371,10 @@ namespace Sunny.UI
             }
         }
 
+        /// <summary>
+        /// Override mouse double click event
+        /// </summary>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseDoubleClick(MouseEventArgs e)
         {
             if (ShowCollapse && e.Location.Y <= TitleHeight)

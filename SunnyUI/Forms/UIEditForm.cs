@@ -1,7 +1,7 @@
 /******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,23 +9,22 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIEditForm.cs
- * 文件说明: 编辑窗体基类
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIEditForm.cs
+ * File Description: Edit form base class
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2021-04-26: V3.0.3 代码生成增加Switch类型，代码生成增加Combobox类型
- * 2021-05-19: V3.0.3 动态生成表单，增加校验方法 
- * 2021-10-26: V3.0.8 代码生成增加ComboTreeView类型
- * 2021-10-28: V3.0.8 代码生成增加ComboCheckedListBox类型
- * 2022-04-18: V3.1.5 修改一处Show引起的无法获取控件值的问题
- * 2023-04-23: V3.3.5 代码生成增加，Double类型增加小数点位数
- * 2023-07-27: V3.4.1 默认提示弹窗TopMost为true
- * 2023-10-31: V3.5.2 代码生成增加ComboDataGridView类型
- * 2024-08-02: V3.6.8 代码生成增加文件选择和文件夹选择功能
+ * 2020-01-01: V2.2.0 Added file description
+ * 2021-04-26: V3.0.3 Code generation added Switch type, code generation added Combobox type
+ * 2021-05-19: V3.0.3 Dynamically generated form, added validation method
+ * 2021-10-26: V3.0.8 Code generation added ComboTreeView type
+ * 2021-10-28: V3.0.8 Code generation added ComboCheckedListBox type
+ * 2022-04-18: V3.1.5 Fixed an issue where Show caused the control value to not be retrieved
+ * 2023-04-23: V3.3.5 Code generation added, Double type increased decimal places
+ * 2023-07-27: V3.4.1 Default prompt dialog TopMost is true
+ * 2023-10-31: V3.5.2 Code generation added ComboDataGridView type
+ * 2024-08-02: V3.6.8 Code generation added file selection and folder selection functions
 ******************************************************************************/
 
 using System;
@@ -361,13 +360,13 @@ namespace Sunny.UI
 
         public bool IsOK { get; protected set; }
 
-        [Category("SunnyUI"), Description("确定按钮点击事件")]
+        [Category("SunnyUI"), Description("OK button click event")]
         public event EventHandler ButtonOkClick;
 
-        [Category("SunnyUI"), Description("取消按钮点击事件")]
+        [Category("SunnyUI"), Description("Cancel button click event")]
         public event EventHandler ButtonCancelClick;
 
-        [Description("确定按钮可用状态"), Category("SunnyUI")]
+        [Description("OK button enabled state"), Category("SunnyUI")]
         [DefaultValue(true)]
         public bool ButtonOKEnabled
         {
@@ -375,7 +374,7 @@ namespace Sunny.UI
             set => btnOK.Enabled = value;
         }
 
-        [Description("取消按钮可用状态"), Category("SunnyUI")]
+        [Description("Cancel button enabled state"), Category("SunnyUI")]
         [DefaultValue(true)]
         public bool ButtonCancelEnabled
         {
@@ -557,9 +556,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载控件尺寸变更
+        /// Override control size change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
