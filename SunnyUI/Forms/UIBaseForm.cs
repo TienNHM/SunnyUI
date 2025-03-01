@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,17 +9,16 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIBaseForm.cs
- * 文件说明: 窗体基类
- * 当前版本: V3.6
- * 创建日期: 2024-04-29
+ * File Name: UIBaseForm.cs
+ * File Description: Form base class
+ * Current Version: V3.6
+ * Creation Date: 2024-04-29
  *
- * 2024-04-29: V3.6.5 增加文件说明
- * 2024-04-29: V3.6.5 删除ShowTitleIcon，默认使用ShowIcon
- * 2024-10-05: V3.7.0 增加属性IconImage，以改善Icon转Image显示不佳，状态栏显示仍然用Icon属性
- * 2024-10-29: V3.7.2 IconImage增加IconImageSize属性，可调整大小
+ * 2024-04-29: V3.6.5 Added file description
+ * 2024-04-29: V3.6.5 Removed ShowTitleIcon, default to use ShowIcon
+ * 2024-10-05: V3.7.0 Added property IconImage to improve the display of Icon to Image, status bar still uses Icon property
+ * 2024-10-29: V3.7.2 IconImage added IconImageSize property, size adjustable
 ******************************************************************************/
 
 using System;
@@ -89,9 +88,9 @@ namespace Sunny.UI
         protected UIStyle _style = UIStyle.Inherited;
 
         /// <summary>
-        /// 配色主题
+        /// Theme color
         /// </summary>
-        [Description("配色主题"), Category("SunnyUI")]
+        [Description("Theme color"), Category("SunnyUI")]
         [DefaultValue(UIStyle.Inherited)]
         public UIStyle Style
         {
@@ -192,7 +191,7 @@ namespace Sunny.UI
         }
 
         [Browsable(false)]
-        [Description("显示标题栏图标"), Category("SunnyUI")]
+        [Description("Show title bar icon"), Category("SunnyUI")]
         [DefaultValue(false)]
         public bool ShowTitleIcon { get; set; }
 
@@ -206,7 +205,7 @@ namespace Sunny.UI
 
         private Image iconImage = null;
 
-        [Description("标题栏图标图片，状态栏显示仍然用Icon属性"), Category("SunnyUI")]
+        [Description("Title bar icon picture, status bar display still uses Icon attribute"), Category("SunnyUI")]
         [DefaultValue(null)]
         public Image IconImage
         {
@@ -220,7 +219,7 @@ namespace Sunny.UI
 
         private int iconImageSize = 24;
 
-        [Description("标题栏图标图片大小"), Category("SunnyUI")]
+        [Description("Title bar icon image size"), Category("SunnyUI")]
         [DefaultValue(24)]
         public int IconImageSize
         {
@@ -235,7 +234,7 @@ namespace Sunny.UI
 
         private StringAlignment textAlignment = StringAlignment.Near;
 
-        [Description("文字对齐方式"), Category("SunnyUI")]
+        [Description("Text alignment"), Category("SunnyUI")]
         public StringAlignment TextAlignment
         {
             get => textAlignment;
@@ -247,9 +246,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标离开事件
+        /// Overload mouse leave event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse event parameters</param>
         protected override void OnMouseLeave(EventArgs e)
         {
             base.OnMouseLeave(e);
@@ -260,9 +259,9 @@ namespace Sunny.UI
         private bool showFullScreen;
 
         /// <summary>
-        /// 是否以全屏模式进入最大化
+        /// Whether to enter maximized in full screen mode
         /// </summary>
-        [Description("是否以全屏模式进入最大化"), Category("WindowStyle")]
+        [Description("Whether to enter maximized in full screen mode"), Category("WindowStyle")]
         public bool ShowFullScreen
         {
             get => showFullScreen;
@@ -274,14 +273,14 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 是否显示窗体的控制按钮
+        /// Whether to display the form's control buttons
         /// </summary>
         private bool controlBox = true;
 
         /// <summary>
-        /// 是否显示窗体的控制按钮
+        /// Whether to display the form's control buttons
         /// </summary>
-        [Description("是否显示窗体的控制按钮"), Category("WindowStyle"), DefaultValue(true)]
+        [Description("Whether to display the form's control buttons"), Category("WindowStyle"), DefaultValue(true)]
         public new bool ControlBox
         {
             get => controlBox;
@@ -299,9 +298,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 是否显示窗体的最大化按钮
+        /// Whether to display the maximize button of the form
         /// </summary>
-        [Description("是否显示窗体的最大化按钮"), Category("WindowStyle"), DefaultValue(true)]
+        [Description("Whether to display the maximize button of the form"), Category("WindowStyle"), DefaultValue(true)]
         public new bool MaximizeBox
         {
             get => maximizeBox;
@@ -315,19 +314,19 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 是否显示窗体的最大化按钮
+        /// Whether to display the maximize button of the form
         /// </summary>
         private bool maximizeBox = true;
 
         /// <summary>
-        /// 是否显示窗体的最小化按钮
+        /// Whether to display the form's minimize button
         /// </summary>
         private bool minimizeBox = true;
 
         /// <summary>
-        /// 是否显示窗体的最小化按钮
+        /// Whether to display the form's minimize button
         /// </summary>
-        [Description("是否显示窗体的最小化按钮"), Category("WindowStyle"), DefaultValue(true)]
+        [Description("Whether to display the form's minimize button"), Category("WindowStyle"), DefaultValue(true)]
         public new bool MinimizeBox
         {
             get => minimizeBox;
@@ -370,17 +369,17 @@ namespace Sunny.UI
         protected ConcurrentDictionary<int, HotKey> hotKeys;
 
         /// <summary>
-        /// Tag字符串
+        /// Tag string
         /// </summary>
         [DefaultValue(null)]
-        [Description("获取或设置包含有关控件的数据的对象字符串"), Category("SunnyUI")]
+        [Description("Gets or sets an object string containing data about the control"), Category("SunnyUI")]
         public string TagString
         {
             get; set;
         }
 
         [DefaultValue(false)]
-        [Description("允许显示标题栏"), Category("SunnyUI")]
+        [Description("Allow title bar to be displayed"), Category("SunnyUI")]
         public bool AllowShowTitle
         {
             get => ShowTitle;
@@ -431,14 +430,14 @@ namespace Sunny.UI
             }
         }
 
-        [Description("窗体关闭时提示文字，为空则不提示"), Category("SunnyUI"), DefaultValue(null)]
+        [Description("Prompt text when the form is closed, no prompt if it is empty"), Category("SunnyUI"), DefaultValue(null)]
         public string CloseAskString
         {
             get; set;
         }
 
         /// <summary>
-        /// 通过Windows的API控制窗体的拖动
+        /// Control form dragging through Windows API
         /// </summary>
         public static void MousePressMove(IntPtr handle)
         {
@@ -447,7 +446,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 在构造函数中调用设置窗体移动
+        /// Call in the constructor to set the form movement
         /// </summary>
         /// <param name="cs">The cs.</param>
         protected void AddMousePressMove(params Control[] cs)
@@ -498,16 +497,16 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 是否屏蔽Alt+F4
+        /// Whether to block Alt+F4
         /// </summary>
-        [Description("是否屏蔽Alt+F4"), Category("Key")]
+        [Description("Whether to block Alt+F4"), Category("Key")]
         [DefaultValue(false)]
         public bool IsForbidAltF4
         {
             get; set;
         }
 
-        [Description("使用Esc键关闭窗口"), Category("SunnyUI")]
+        [Description("Close the window using the Esc key"), Category("SunnyUI")]
         [DefaultValue(false)]
         public bool EscClose { get; set; } = false;
 
@@ -525,11 +524,11 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 快捷键
+        /// Shortcut key
         /// </summary>
-        /// <param name="msg">通过引用传递的 <see cref="T:System.Windows.Forms.Message" />，它表示要处理的 Win32 消息。</param>
+        /// <param name="msg">Passed by reference <see cref="T:System.Windows.Forms.Message" />, which represents the Win32 message to be processed.</param>
         /// <param name="keyData"><see cref="T:System.Windows.Forms.Keys" /> 值之一，它表示要处理的键。</param>
-        /// <returns>如果控件处理并使用击键，则为 true；否则为 false，以允许进一步处理。</returns>
+        /// <returns>true if the control handles and uses keystrokes; otherwise, false to allow further processing.</returns>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             int num = 256;
@@ -538,7 +537,7 @@ namespace Sunny.UI
             {
                 if (keyData == (Keys.Alt | Keys.F4) && IsForbidAltF4)
                 {
-                    //屏蔽Alt+F4
+                    //Shield Alt+F4
                     return true;
                 }
 
@@ -553,16 +552,16 @@ namespace Sunny.UI
                 }
             }
 
-            return base.ProcessCmdKey(ref msg, keyData);   //其他键按默认处理
+            return base.ProcessCmdKey(ref msg, keyData);   //Other keys are processed by default
         }
 
 
         [DefaultValue(true)]
-        [Description("是否点击标题栏可以移动窗体"), Category("SunnyUI")]
+        [Description("Whether clicking the title bar can move the form"), Category("SunnyUI")]
         public bool Movable { get; set; } = true;
 
         [DefaultValue(false)]
-        [Description("允许在标题栏放置控件"), Category("SunnyUI")]
+        [Description("Allow placing controls in the title bar"), Category("SunnyUI")]
         public bool AllowAddControlOnTitle
         {
             get; set;
@@ -583,7 +582,7 @@ namespace Sunny.UI
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [Editor("Sunny.UI.UIImagePropertyEditor, " + AssemblyRefEx.SystemDesign, typeof(UITypeEditor))]
         [DefaultValue(0)]
-        [Description("扩展按钮字体图标"), Category("SunnyUI")]
+        [Description("Extension button font icon"), Category("SunnyUI")]
         public int ExtendSymbol
         {
             get => extendSymbol;
@@ -597,7 +596,7 @@ namespace Sunny.UI
         private int _symbolSize = 24;
 
         [DefaultValue(24)]
-        [Description("扩展按钮字体图标大小"), Category("SunnyUI")]
+        [Description("Expand button font icon size"), Category("SunnyUI")]
         public int ExtendSymbolSize
         {
             get => _symbolSize;
@@ -612,7 +611,7 @@ namespace Sunny.UI
         private Point extendSymbolOffset = new Point(0, 0);
 
         [DefaultValue(typeof(Point), "0, 0")]
-        [Description("扩展按钮字体图标偏移量"), Category("SunnyUI")]
+        [Description("Extend button font icon offset"), Category("SunnyUI")]
         public Point ExtendSymbolOffset
         {
             get => extendSymbolOffset;
@@ -624,7 +623,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(null)]
-        [Description("扩展按钮菜单"), Category("SunnyUI")]
+        [Description("Expand button menu"), Category("SunnyUI")]
         public UIContextMenuStrip ExtendMenu
         {
             get; set;
@@ -633,7 +632,7 @@ namespace Sunny.UI
         private bool extendBox;
 
         [DefaultValue(false)]
-        [Description("显示扩展按钮"), Category("SunnyUI")]
+        [Description("Show extension button"), Category("SunnyUI")]
         public bool ExtendBox
         {
             get => extendBox;
@@ -667,15 +666,15 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 标题字体
+        /// Title font
         /// </summary>
         protected Font titleFont = UIStyles.Font();
 
         /// <summary>
-        /// 标题字体
+        /// Title font
         /// </summary>
-        [Description("标题字体"), Category("SunnyUI")]
-        [DefaultValue(typeof(Font), "宋体, 12pt")]
+        [Description("Title font"), Category("SunnyUI")]
+        [DefaultValue(typeof(Font), "Segoe UI, 12pt")]
         public Font TitleFont
         {
             get => titleFont;
@@ -687,14 +686,14 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 标题栏高度
+        /// Title bar height
         /// </summary>
         protected int titleHeight = 35;
 
         /// <summary>
-        /// 标题栏高度
+        /// Title bar height
         /// </summary>
-        [Description("标题栏高度"), Category("SunnyUI"), DefaultValue(35)]
+        [Description("Title bar height"), Category("SunnyUI"), DefaultValue(35)]
         public int TitleHeight
         {
             get => titleHeight;
@@ -710,14 +709,14 @@ namespace Sunny.UI
         protected virtual void CalcSystemBoxPos() { }
 
         /// <summary>
-        /// 是否显示窗体的标题栏
+        /// Whether to display the title bar of the form
         /// </summary>
         protected bool showTitle = true;
 
         /// <summary>
-        /// 是否显示窗体的标题栏
+        /// Whether to display the title bar of the form
         /// </summary>
-        [Description("是否显示窗体的标题栏"), Category("WindowStyle"), DefaultValue(true)]
+        [Description("Whether to display the title bar of the form"), Category("WindowStyle"), DefaultValue(true)]
         public bool ShowTitle
         {
             get => showTitle;
@@ -755,14 +754,14 @@ namespace Sunny.UI
         public event EventHandler RectColorChanged;
 
         /// <summary>
-        /// 标题颜色
+        /// Title color
         /// </summary>
         protected Color titleForeColor;
 
         /// <summary>
-        /// 标题颜色
+        /// Title color
         /// </summary>
-        [Description("标题前景色（标题颜色）"), Category("SunnyUI"), DefaultValue(typeof(Color), "White")]
+        [Description("Title foreground color"), Category("SunnyUI"), DefaultValue(typeof(Color), "White")]
         public Color TitleForeColor
         {
             get => titleForeColor;
@@ -779,9 +778,9 @@ namespace Sunny.UI
         protected Color titleColor;
 
         /// <summary>
-        /// 标题栏颜色
+        /// Title bar color
         /// </summary>
-        [Description("标题栏颜色"), Category("SunnyUI"), DefaultValue(typeof(Color), "80, 160, 255")]
+        [Description("Title bar color"), Category("SunnyUI"), DefaultValue(typeof(Color), "80, 160, 255")]
         public Color TitleColor
         {
             get => titleColor;
@@ -798,10 +797,10 @@ namespace Sunny.UI
         protected Color rectColor;
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
         /// <value>The color of the border style.</value>
-        [Description("边框颜色"), Category("SunnyUI")]
+        [Description("Border color"), Category("SunnyUI")]
         public Color RectColor
         {
             get => rectColor;
@@ -817,9 +816,9 @@ namespace Sunny.UI
         protected Color controlBoxCloseFillHoverColor;
 
         /// <summary>
-        /// 标题栏颜色
+        /// Title bar color
         /// </summary>
-        [Description("标题栏关闭按钮移上背景颜色"), Category("SunnyUI"), DefaultValue(typeof(Color), "Red")]
+        [Description("Title bar close button moved to background color"), Category("SunnyUI"), DefaultValue(typeof(Color), "Red")]
         public Color ControlBoxCloseFillHoverColor
         {
             get => controlBoxCloseFillHoverColor;
@@ -836,9 +835,9 @@ namespace Sunny.UI
         protected Color controlBoxForeColor = Color.White;
 
         /// <summary>
-        /// 标题栏颜色
+        /// Title bar color
         /// </summary>
-        [Description("标题栏按钮颜色"), Category("SunnyUI"), DefaultValue(typeof(Color), "White")]
+        [Description("Title bar button color"), Category("SunnyUI"), DefaultValue(typeof(Color), "White")]
         public Color ControlBoxForeColor
         {
             get => controlBoxForeColor;
@@ -855,9 +854,9 @@ namespace Sunny.UI
         protected Color controlBoxFillHoverColor;
 
         /// <summary>
-        /// 标题栏颜色
+        /// Title bar color
         /// </summary>
-        [Description("标题栏按钮移上背景颜色"), Category("SunnyUI"), DefaultValue(typeof(Color), "115, 179, 255")]
+        [Description("Title bar button moved to background color"), Category("SunnyUI"), DefaultValue(typeof(Color), "115, 179, 255")]
         public Color ControlBoxFillHoverColor
         {
             get => controlBoxFillHoverColor;
@@ -872,15 +871,15 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 当前控件的版本
+        /// The version of the current control
         /// </summary>
-        [Description("控件版本"), Category("SunnyUI")]
+        [Description("Control version"), Category("SunnyUI")]
         public string Version
         {
             get;
         }
 
-        #region IFrame实现
+        #region IFrame implementation
 
         private UITabControl mainTabControl;
 
@@ -958,7 +957,7 @@ namespace Sunny.UI
 
             if (MainTabControl == null)
             {
-                throw (new ApplicationException("未指定MainTabControl，无法承载多页面。"));
+                throw (new ApplicationException("MainTabControl is not specified and cannot host multiple pages."));
             }
 
             page.Frame = this;
@@ -1027,7 +1026,7 @@ namespace Sunny.UI
             UIPage page = GetPage(pageIndex);
             if (page == null)
             {
-                throw new NullReferenceException("未能查找到页面的索引为: " + pageIndex);
+                throw new NullReferenceException("The index of the page that could not be found is: " + pageIndex);
             }
 
             var args = new UIPageParamsArgs(null, page, value);
@@ -1041,7 +1040,7 @@ namespace Sunny.UI
             UIPage page = GetPage(pageGuid);
             if (page == null)
             {
-                throw new NullReferenceException("未能查找到页面的索引为: " + pageGuid);
+                throw new NullReferenceException("The index of the page that could not be found is: " + pageGuid);
             }
 
             var args = new UIPageParamsArgs(null, page, value);
@@ -1082,23 +1081,23 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 初始化
+        /// Initialization
         /// </summary>
         public virtual void Init()
         {
         }
 
         /// <summary>
-        /// 结束
+        /// Final
         /// </summary>
         public virtual void Final()
         {
         }
 
-        #endregion IFrame实现
+        #endregion IFrame implementation
 
         [DefaultValue(true)]
-        [Description("控件在界面显示时需要多语翻译"), Category("SunnyUI")]
+        [Description("Controls require multilingual translation when displayed on the interface"), Category("SunnyUI")]
         public bool MultiLanguageSupport { get; set; } = true;
 
         public virtual void Translate()

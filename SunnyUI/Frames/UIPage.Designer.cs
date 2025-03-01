@@ -38,7 +38,7 @@
             BackColor = System.Drawing.Color.FromArgb(243, 249, 255);
             ClientSize = new System.Drawing.Size(802, 460);
             DoubleBuffered = true;
-            Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Margin = new System.Windows.Forms.Padding(5);
             Name = "UIPage";

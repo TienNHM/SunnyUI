@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,19 +9,18 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UISymbolLabel.cs
- * 文件说明: 带字体图标的标签
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UISymbolLabel.cs
+ * Description: Label with font icon
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-04-23: V2.2.4 增加UISymbolLabel
- * 2021-12-24: V3.0.9 修复Dock和AutoSize同时设置的Bug
- * 2022-03-19: V3.1.1 重构主题配色
- * 2023-05-12: V3.3.6 重构DrawString函数
- * 2023-05-16: V3.3.6 重构DrawFontImage函数
- * 2023-10-26: V3.5.1 字体图标增加旋转角度参数SymbolRotate
+ * 2020-04-23: V2.2.4 Added UISymbolLabel
+ * 2021-12-24: V3.0.9 Fixed bug with Dock and AutoSize set simultaneously
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2023-05-12: V3.3.6 Refactored DrawString function
+ * 2023-05-16: V3.3.6 Refactored DrawFontImage function
+ * 2023-10-26: V3.5.1 Added SymbolRotate parameter for font icon rotation
 ******************************************************************************/
 
 using System;
@@ -59,7 +58,7 @@ namespace Sunny.UI
         private bool autoSize;
 
         [Browsable(true)]
-        [Description("自动大小"), Category("SunnyUI")]
+        [Description("Auto size"), Category("SunnyUI")]
         public override bool AutoSize
         {
             get => autoSize;
@@ -71,9 +70,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体图标颜色
+        /// Icon color
         /// </summary>
-        [Description("图标颜色"), Category("SunnyUI")]
+        [Description("Icon color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "48, 48, 48")]
         public Color SymbolColor
         {
@@ -86,9 +85,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体颜色
+        /// Font color
         /// </summary>
-        [Description("字体颜色"), Category("SunnyUI")]
+        [Description("Font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "48, 48, 48")]
         public override Color ForeColor
         {
@@ -97,10 +96,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体图标大小
+        /// Font icon size
         /// </summary>
         [DefaultValue(24)]
-        [Description("字体图标大小"), Category("SunnyUI")]
+        [Description("Font icon size"), Category("SunnyUI")]
         public int SymbolSize
         {
             get => _symbolSize;
@@ -115,10 +114,10 @@ namespace Sunny.UI
         private int _symbolRotate = 0;
 
         /// <summary>
-        /// 字体图标旋转角度
+        /// Font icon rotation angle
         /// </summary>
         [DefaultValue(0)]
-        [Description("字体图标旋转角度"), Category("SunnyUI")]
+        [Description("Font icon rotation angle"), Category("SunnyUI")]
         public int SymbolRotate
         {
             get => _symbolRotate;
@@ -133,7 +132,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(0)]
-        [Description("图标和文字间间隔"), Category("SunnyUI")]
+        [Description("Interval between icon and text"), Category("SunnyUI")]
         public int ImageInterval
         {
             get => _imageInterval;
@@ -147,7 +146,7 @@ namespace Sunny.UI
         private bool _isCircle;
 
         [DefaultValue(false)]
-        [Description("显示为圆形"), Category("SunnyUI")]
+        [Description("Display as circle"), Category("SunnyUI")]
         public bool IsCircle
         {
             get => _isCircle;
@@ -168,12 +167,12 @@ namespace Sunny.UI
         private int _symbol = 361452;
 
         /// <summary>
-        /// 字体图标
+        /// Font icon
         /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [Editor("Sunny.UI.UIImagePropertyEditor, " + AssemblyRefEx.SystemDesign, typeof(UITypeEditor))]
         [DefaultValue(361452)]
-        [Description("字体图标"), Category("SunnyUI")]
+        [Description("Font icon"), Category("SunnyUI")]
         public int Symbol
         {
             get => _symbol;
@@ -187,10 +186,10 @@ namespace Sunny.UI
         private Point symbolOffset = new Point(0, 0);
 
         /// <summary>
-        /// 字体图标的偏移位置
+        /// Offset position of font icon
         /// </summary>
         [DefaultValue(typeof(Point), "0, 0")]
-        [Description("字体图标的偏移位置"), Category("SunnyUI")]
+        [Description("Offset position of font icon"), Category("SunnyUI")]
         public Point SymbolOffset
         {
             get => symbolOffset;
@@ -202,10 +201,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制填充颜色
+        /// Draw fill color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Graphics path</param>
         protected override void OnPaintFill(Graphics g, GraphicsPath path)
         {
             g.FillRectangle(BackColor, Bounds);
@@ -214,7 +213,7 @@ namespace Sunny.UI
         private int circleRectWidth = 1;
 
         [DefaultValue(1)]
-        [Description("圆形边框大小"), Category("SunnyUI")]
+        [Description("Circle border size"), Category("SunnyUI")]
         public int CircleRectWidth
         {
             get => circleRectWidth;
@@ -226,10 +225,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制边框颜色
+        /// Draw border color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Graphics path</param>
         protected override void OnPaintRect(Graphics g, GraphicsPath path)
         {
             if (IsCircle)
@@ -247,9 +246,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -258,9 +257,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override paint
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Paint event arguments</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             //重绘父类

@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -11,14 +11,14 @@
  * If you use this code, please keep this note.
  * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIMainFrame.cs
- * 文件说明: 页面框架基类
- * 当前版本: V3.1
- * 创建日期: 2020-05-05
+ * File Name: UIMainFrame.cs
+ * File Description: Base class for page framework
+ * Current Version: V3.1
+ * Creation Date: 2020-05-05
  *
- * 2020-05-05: V2.2.5 页面框架基类
- * 2021-08-17: V3.0.8 删除IFrame接口，移到父类UIForm
- * 2022-05-17: V3.1.9 修复了显示页面关闭按钮，移除最后一个页面出错的问题
+ * 2020-05-05: V2.2.5 Base class for page framework
+ * 2021-08-17: V3.0.8 Removed IFrame interface, moved to parent class UIForm
+ * 2022-05-17: V3.1.9 Fixed the issue of showing page close button and error when removing the last page
 ******************************************************************************/
 
 using System;
@@ -91,7 +91,7 @@ namespace Sunny.UI
 
         public delegate void OnSelecting(object sender, TabControlCancelEventArgs e, UIPage page);
 
-        [Description("页面选择事件"), Category("SunnyUI")]
+        [Description("Page selection event"), Category("SunnyUI")]
         public event OnSelecting Selecting;
     }
 }

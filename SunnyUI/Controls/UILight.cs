@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,19 +9,18 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UILight.cs
- * 文件说明: 提示灯
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UILight.cs
+ * Description: Indicator Light
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2021-06-19: V3.0.4 增加方形显示，优化渐变色
- * 2021-08-07: V3.0.5 默认不显示灯光亮线
- * 2022-05-15: V3.1.8 增加文字显示
- * 2023-05-12: V3.3.6 重构DrawString函数
- * 2023-08-28: V3.4.2 恢复全局矩形设计时圆形灯光效果
+ * 2020-01-01: V2.2.0 Added file description
+ * 2021-06-19: V3.0.4 Added square display, optimized gradient color
+ * 2021-08-07: V3.0.5 Default to not show light line
+ * 2022-05-15: V3.1.8 Added text display
+ * 2023-05-12: V3.3.6 Refactored DrawString function
+ * 2023-08-28: V3.4.2 Restored global rectangle design for circular light effect
 ******************************************************************************/
 
 using System;
@@ -55,9 +54,9 @@ namespace Sunny.UI
         private UIShape sharpType = UIShape.Circle;
 
         /// <summary>
-        /// 显示形状：圆形，正方形
+        /// Display shape: Circle, Square
         /// </summary>
-        [DefaultValue(UIShape.Circle), Description("显示形状：圆形，正方形"), Category("SunnyUI")]
+        [DefaultValue(UIShape.Circle), Description("Display shape: Circle, Square"), Category("SunnyUI")]
         public UIShape Shape
         {
             get => sharpType;
@@ -74,9 +73,9 @@ namespace Sunny.UI
         private int interval = 500;
 
         /// <summary>
-        /// 是否显示文字
+        /// Show text
         /// </summary>
-        [Description("是否显示文字"), Category("SunnyUI")]
+        [Description("Show text"), Category("SunnyUI")]
         [DefaultValue(false)]
         public new bool ShowText
         {
@@ -85,16 +84,16 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制前景颜色
+        /// Draw foreground color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Graphics path</param>
         protected override void OnPaintFore(Graphics g, GraphicsPath path)
         {
             g.DrawString(Text, Font, ForeColor, ClientRectangle, TextAlign);
         }
 
-        [DefaultValue(500), Description("显示间隔"), Category("SunnyUI")]
+        [DefaultValue(500), Description("Display interval"), Category("SunnyUI")]
         public int Interval
         {
             get => interval;
@@ -118,7 +117,7 @@ namespace Sunny.UI
         private UILightState state = UILightState.On;
 
         [DefaultValue(UILightState.On)]
-        [Description("显示状态"), Category("SunnyUI")]
+        [Description("Display state"), Category("SunnyUI")]
         public UILightState State
         {
             get => state;
@@ -152,10 +151,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制填充颜色
+        /// Draw fill color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Graphics path</param>
         protected override void OnPaintFill(Graphics g, GraphicsPath path)
         {
             int ShowSize = Math.Min(Width, Height);
@@ -235,7 +234,7 @@ namespace Sunny.UI
         private bool showCenterColor = true;
 
         [DefaultValue(true)]
-        [Description("是否显示中心颜色"), Category("SunnyUI")]
+        [Description("Show center color"), Category("SunnyUI")]
         public bool ShowCenterColor
         {
             get => showCenterColor;
@@ -249,7 +248,7 @@ namespace Sunny.UI
         private bool showLightLine;
 
         [DefaultValue(false)]
-        [Description("显示灯光亮线"), Category("SunnyUI")]
+        [Description("Show light line"), Category("SunnyUI")]
         public bool ShowLightLine
         {
             get => showLightLine;
@@ -263,7 +262,7 @@ namespace Sunny.UI
         private Color onColor = UIColor.Green;
 
         [DefaultValue(typeof(Color), "110, 190, 40")]
-        [Description("打开状态颜色"), Category("SunnyUI")]
+        [Description("On state color"), Category("SunnyUI")]
         public Color OnColor
         {
             get => onColor;
@@ -277,7 +276,7 @@ namespace Sunny.UI
         private Color centerColor = UIColor.White;
 
         [DefaultValue(typeof(Color), "White")]
-        [Description("中心颜色"), Category("SunnyUI"), Browsable(false)]
+        [Description("Center color"), Category("SunnyUI"), Browsable(false)]
         public Color CenterColor
         {
             get => centerColor;
@@ -289,7 +288,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "White")]
-        [Description("中心颜色"), Category("SunnyUI")]
+        [Description("Center color"), Category("SunnyUI")]
         public Color OnCenterColor
         {
             get => CenterColor;
@@ -300,7 +299,7 @@ namespace Sunny.UI
         private Color offCenterColor = UIColor.White;
 
         [DefaultValue(typeof(Color), "White")]
-        [Description("中心颜色"), Category("SunnyUI")]
+        [Description("Center color"), Category("SunnyUI")]
         public Color OffCenterColor
         {
             get => offCenterColor;
@@ -314,7 +313,7 @@ namespace Sunny.UI
         private Color offColor = UIColor.Gray;
 
         [DefaultValue(typeof(Color), "140, 140, 140")]
-        [Description("关闭状态颜色"), Category("SunnyUI")]
+        [Description("Off state color"), Category("SunnyUI")]
         public Color OffColor
         {
             get => offColor;

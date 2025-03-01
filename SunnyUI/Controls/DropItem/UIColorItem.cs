@@ -70,148 +70,148 @@ namespace Sunny.UI
             // 
             m_colorTable.BackColor = Color.Transparent;
             m_colorTable.Colors = new Color[]
-    {
-    Color.Black,
-    Color.DarkGreen,
-    Color.DarkSlateGray,
-    Color.Purple,
-    Color.Maroon,
-    Color.Teal,
-    Color.Green,
-    Color.Olive,
-    Color.Navy,
-    Color.Indigo,
-    Color.MidnightBlue,
-    Color.DarkRed,
-    Color.DarkMagenta,
-    Color.DarkBlue,
-    Color.DarkCyan,
-    Color.DarkOliveGreen,
-    Color.SaddleBrown,
-    Color.ForestGreen,
-    Color.OliveDrab,
-    Color.SeaGreen,
-    Color.DarkGoldenrod,
-    Color.DarkSlateBlue,
-    Color.MediumBlue,
-    Color.Sienna,
-    Color.Brown,
-    Color.DarkTurquoise,
-    Color.DimGray,
-    Color.LightSeaGreen,
-    Color.DarkViolet,
-    Color.Firebrick,
-    Color.MediumVioletRed,
-    Color.MediumSeaGreen,
-    Color.Crimson,
-    Color.Chocolate,
-    Color.MediumSpringGreen,
-    Color.Goldenrod,
-    Color.SteelBlue,
-    Color.LawnGreen,
-    Color.DarkOrchid,
-    Color.Orange,
-    Color.LimeGreen,
-    Color.Yellow,
-    Color.Gold,
-    Color.Red,
-    Color.Magenta,
-    Color.Lime,
-    Color.SpringGreen,
-    Color.YellowGreen,
-    Color.Chartreuse,
-    Color.DeepSkyBlue,
-    Color.Aqua,
-    Color.OrangeRed,
-    Color.Blue,
-    Color.DarkOrange,
-    Color.CadetBlue,
-    Color.Cyan,
-    Color.Fuchsia,
-    Color.Gray,
-    Color.SlateGray,
-    Color.Peru,
-    Color.BlueViolet,
-    Color.LightSlateGray,
-    Color.DeepPink,
-    Color.MediumTurquoise,
-    Color.DodgerBlue,
-    Color.Turquoise,
-    Color.RoyalBlue,
-    Color.SlateBlue,
-    Color.MediumOrchid,
-    Color.DarkKhaki,
-    Color.IndianRed,
-    Color.GreenYellow,
-    Color.MediumAquamarine,
-    Color.Tomato,
-    Color.DarkSeaGreen,
-    Color.Orchid,
-    Color.RosyBrown,
-    Color.PaleVioletRed,
-    Color.MediumPurple,
-    Color.Coral,
-    Color.CornflowerBlue,
-    Color.DarkGray,
-    Color.SandyBrown,
-    Color.MediumSlateBlue,
-    Color.Tan,
-    Color.DarkSalmon,
-    Color.BurlyWood,
-    Color.HotPink,
-    Color.Salmon,
-    Color.Violet,
-    Color.LightCoral,
-    Color.SkyBlue,
-    Color.LightSalmon,
-    Color.Khaki,
-    Color.Plum,
-    Color.LightGreen,
-    Color.Aquamarine,
-    Color.Silver,
-    Color.LightSkyBlue,
-    Color.LightSteelBlue,
-    Color.LightBlue,
-    Color.PaleGreen,
-    Color.PowderBlue,
-    Color.Thistle,
-    Color.PaleGoldenrod,
-    Color.PaleTurquoise,
-    Color.LightGray,
-    Color.Wheat,
-    Color.NavajoWhite,
-    Color.Moccasin,
-    Color.LightPink,
-    Color.PeachPuff,
-    Color.Gainsboro,
-    Color.Pink,
-    Color.Bisque,
-    Color.LightGoldenrodYellow,
-    Color.LemonChiffon,
-    Color.BlanchedAlmond,
-    Color.Beige,
-    Color.AntiqueWhite,
-    Color.PapayaWhip,
-    Color.Cornsilk,
-    Color.LightYellow,
-    Color.LightCyan,
-    Color.Lavender,
-    Color.Linen,
-    Color.MistyRose,
-    Color.OldLace,
-    Color.WhiteSmoke,
-    Color.SeaShell,
-    Color.Azure,
-    Color.Honeydew,
-    Color.Ivory,
-    Color.LavenderBlush,
-    Color.FloralWhite,
-    Color.AliceBlue,
-    Color.MintCream,
-    Color.GhostWhite,
-    Color.Snow,
-    Color.White
-    };
+            {
+            Color.Black,
+            Color.DarkGreen,
+            Color.DarkSlateGray,
+            Color.Purple,
+            Color.Maroon,
+            Color.Teal,
+            Color.Green,
+            Color.Olive,
+            Color.Navy,
+            Color.Indigo,
+            Color.MidnightBlue,
+            Color.DarkRed,
+            Color.DarkMagenta,
+            Color.DarkBlue,
+            Color.DarkCyan,
+            Color.DarkOliveGreen,
+            Color.SaddleBrown,
+            Color.ForestGreen,
+            Color.OliveDrab,
+            Color.SeaGreen,
+            Color.DarkGoldenrod,
+            Color.DarkSlateBlue,
+            Color.MediumBlue,
+            Color.Sienna,
+            Color.Brown,
+            Color.DarkTurquoise,
+            Color.DimGray,
+            Color.LightSeaGreen,
+            Color.DarkViolet,
+            Color.Firebrick,
+            Color.MediumVioletRed,
+            Color.MediumSeaGreen,
+            Color.Crimson,
+            Color.Chocolate,
+            Color.MediumSpringGreen,
+            Color.Goldenrod,
+            Color.SteelBlue,
+            Color.LawnGreen,
+            Color.DarkOrchid,
+            Color.Orange,
+            Color.LimeGreen,
+            Color.Yellow,
+            Color.Gold,
+            Color.Red,
+            Color.Magenta,
+            Color.Lime,
+            Color.SpringGreen,
+            Color.YellowGreen,
+            Color.Chartreuse,
+            Color.DeepSkyBlue,
+            Color.Aqua,
+            Color.OrangeRed,
+            Color.Blue,
+            Color.DarkOrange,
+            Color.CadetBlue,
+            Color.Cyan,
+            Color.Fuchsia,
+            Color.Gray,
+            Color.SlateGray,
+            Color.Peru,
+            Color.BlueViolet,
+            Color.LightSlateGray,
+            Color.DeepPink,
+            Color.MediumTurquoise,
+            Color.DodgerBlue,
+            Color.Turquoise,
+            Color.RoyalBlue,
+            Color.SlateBlue,
+            Color.MediumOrchid,
+            Color.DarkKhaki,
+            Color.IndianRed,
+            Color.GreenYellow,
+            Color.MediumAquamarine,
+            Color.Tomato,
+            Color.DarkSeaGreen,
+            Color.Orchid,
+            Color.RosyBrown,
+            Color.PaleVioletRed,
+            Color.MediumPurple,
+            Color.Coral,
+            Color.CornflowerBlue,
+            Color.DarkGray,
+            Color.SandyBrown,
+            Color.MediumSlateBlue,
+            Color.Tan,
+            Color.DarkSalmon,
+            Color.BurlyWood,
+            Color.HotPink,
+            Color.Salmon,
+            Color.Violet,
+            Color.LightCoral,
+            Color.SkyBlue,
+            Color.LightSalmon,
+            Color.Khaki,
+            Color.Plum,
+            Color.LightGreen,
+            Color.Aquamarine,
+            Color.Silver,
+            Color.LightSkyBlue,
+            Color.LightSteelBlue,
+            Color.LightBlue,
+            Color.PaleGreen,
+            Color.PowderBlue,
+            Color.Thistle,
+            Color.PaleGoldenrod,
+            Color.PaleTurquoise,
+            Color.LightGray,
+            Color.Wheat,
+            Color.NavajoWhite,
+            Color.Moccasin,
+            Color.LightPink,
+            Color.PeachPuff,
+            Color.Gainsboro,
+            Color.Pink,
+            Color.Bisque,
+            Color.LightGoldenrodYellow,
+            Color.LemonChiffon,
+            Color.BlanchedAlmond,
+            Color.Beige,
+            Color.AntiqueWhite,
+            Color.PapayaWhip,
+            Color.Cornsilk,
+            Color.LightYellow,
+            Color.LightCyan,
+            Color.Lavender,
+            Color.Linen,
+            Color.MistyRose,
+            Color.OldLace,
+            Color.WhiteSmoke,
+            Color.SeaShell,
+            Color.Azure,
+            Color.Honeydew,
+            Color.Ivory,
+            Color.LavenderBlush,
+            Color.FloralWhite,
+            Color.AliceBlue,
+            Color.MintCream,
+            Color.GhostWhite,
+            Color.Snow,
+            Color.White
+            };
             m_colorTable.Cols = 16;
             m_colorTable.FieldSize = new Size(12, 12);
             m_colorTable.FrameColor = Color.FromArgb(80, 160, 255);
@@ -245,7 +245,7 @@ namespace Sunny.UI
             // edtA
             // 
             edtA.Cursor = System.Windows.Forms.Cursors.IBeam;
-            edtA.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            edtA.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
             edtA.Location = new Point(29, 197);
             edtA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             edtA.Maximum = 255D;
@@ -266,7 +266,7 @@ namespace Sunny.UI
             // edtR
             // 
             edtR.Cursor = System.Windows.Forms.Cursors.IBeam;
-            edtR.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            edtR.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
             edtR.Location = new Point(93, 197);
             edtR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             edtR.Maximum = 255D;
@@ -287,7 +287,7 @@ namespace Sunny.UI
             // edtG
             // 
             edtG.Cursor = System.Windows.Forms.Cursors.IBeam;
-            edtG.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            edtG.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
             edtG.Location = new Point(158, 197);
             edtG.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             edtG.Maximum = 255D;
@@ -308,7 +308,7 @@ namespace Sunny.UI
             // edtB
             // 
             edtB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            edtB.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            edtB.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
             edtB.Location = new Point(222, 197);
             edtB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             edtB.Maximum = 255D;
@@ -330,7 +330,7 @@ namespace Sunny.UI
             // 
             lblA.AutoSize = true;
             lblA.BackColor = Color.Transparent;
-            lblA.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            lblA.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
             lblA.ForeColor = Color.FromArgb(48, 48, 48);
             lblA.Location = new Point(9, 200);
             lblA.Name = "lblA";
@@ -344,7 +344,7 @@ namespace Sunny.UI
             // 
             lblR.AutoSize = true;
             lblR.BackColor = Color.Transparent;
-            lblR.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            lblR.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
             lblR.ForeColor = Color.FromArgb(48, 48, 48);
             lblR.Location = new Point(74, 200);
             lblR.Name = "lblR";
@@ -358,7 +358,7 @@ namespace Sunny.UI
             // 
             lblG.AutoSize = true;
             lblG.BackColor = Color.Transparent;
-            lblG.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            lblG.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
             lblG.ForeColor = Color.FromArgb(48, 48, 48);
             lblG.Location = new Point(138, 200);
             lblG.Name = "lblG";
@@ -372,7 +372,7 @@ namespace Sunny.UI
             // 
             lblB.AutoSize = true;
             lblB.BackColor = Color.Transparent;
-            lblB.Font = new Font("宋体", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            lblB.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
             lblB.ForeColor = Color.FromArgb(48, 48, 48);
             lblB.Location = new Point(203, 200);
             lblB.Name = "lblB";
@@ -402,7 +402,7 @@ namespace Sunny.UI
             m_colorBar.Color1 = Color.Black;
             m_colorBar.Color2 = Color.FromArgb(127, 127, 127);
             m_colorBar.Color3 = Color.White;
-            m_colorBar.Font = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            m_colorBar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             m_colorBar.FrameColor = Color.FromArgb(80, 160, 255);
             m_colorBar.Location = new Point(422, 8);
             m_colorBar.Name = "m_colorBar";
@@ -427,7 +427,7 @@ namespace Sunny.UI
             m_opacitySlider.Color1 = Color.White;
             m_opacitySlider.Color2 = Color.Black;
             m_opacitySlider.Color3 = Color.Black;
-            m_opacitySlider.Font = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            m_opacitySlider.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             m_opacitySlider.ForeColor = Color.Black;
             m_opacitySlider.FrameColor = Color.FromArgb(80, 160, 255);
             m_opacitySlider.Location = new Point(269, 163);
@@ -449,7 +449,7 @@ namespace Sunny.UI
             // btnOK
             // 
             btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnOK.Font = new Font("宋体", 12F);
+            btnOK.Font = new Font("Segoe UI", 12F);
             btnOK.Location = new Point(269, 197);
             btnOK.MinimumSize = new Size(1, 1);
             btnOK.Name = "btnOK";
@@ -464,7 +464,7 @@ namespace Sunny.UI
             // btnCancel
             // 
             btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnCancel.Font = new Font("宋体", 12F);
+            btnCancel.Font = new Font("Segoe UI", 12F);
             btnCancel.Location = new Point(372, 197);
             btnCancel.MinimumSize = new Size(1, 1);
             btnCancel.Name = "btnCancel";

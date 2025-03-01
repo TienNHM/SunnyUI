@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
- * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
+ * CopyRight (C) 2012-2025 ShenYongHua.
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,28 +9,27 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIIntegerUpDown.cs
- * 文件说明: 数字上下选择框
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIIntegerUpDown.cs
+ * Description: Numeric up-down selection box
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-04-25: V2.2.4 更新主题配置类
- * 2020-08-14: V2.2.7 增加字体调整
- * 2020-12-10: V3.0.9 增加Readonly属性
- * 2022-02-07: V3.1.0 增加圆角控制
- * 2022-02-24: V3.1.1 可以设置按钮大小和颜色
- * 2022-05-05: V3.1.8 增加禁止输入属性
- * 2022-09-16: V3.2.4 增加是否可以双击输入属性
- * 2022-11-12: V3.2.8 修改整数离开判断为实时输入判断
- * 2022-11-12: V3.2.8 删除MaximumEnabled、MinimumEnabled、HasMaximum、HasMinimum属性
- * 2023-01-28: V3.3.1 修改文本框数据输入数据变更事件为MouseLeave
- * 2023-03-24: V3.3.3 删除ForbidInput属性，使用Inputable属性
- * 2023-12-28: V3.6.2 修复设置Style时按钮颜色不一致
- * 2024-08-27: V3.6.9 修改编辑框字体与显示字体一致
- * 2024-08-27: V3.7.0 增加加按钮字体图标的偏移位置
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-04-25: V2.2.4 Updated theme configuration class
+ * 2020-08-14: V2.2.7 Added font adjustment
+ * 2020-12-10: V3.0.9 Added Readonly property
+ * 2022-02-07: V3.1.0 Added corner radius control
+ * 2022-02-24: V3.1.1 Can set button size and color
+ * 2022-05-05: V3.1.8 Added disable input property
+ * 2022-09-16: V3.2.4 Added double-click input property
+ * 2022-11-12: V3.2.8 Changed integer leave check to real-time input check
+ * 2022-11-12: V3.2.8 Removed MaximumEnabled, MinimumEnabled, HasMaximum, HasMinimum properties
+ * 2023-01-28: V3.3.1 Changed text box data input change event to MouseLeave
+ * 2023-03-24: V3.3.3 Removed ForbidInput property, using Inputable property
+ * 2023-12-28: V3.6.2 Fixed inconsistent button color when setting Style
+ * 2024-08-27: V3.6.9 Modified edit box font to be consistent with display font
+ * 2024-08-27: V3.7.0 Added offset position for add button font icon
 ******************************************************************************/
 
 using System;
@@ -66,9 +65,9 @@ namespace Sunny.UI
         public override string[] FormTranslatorProperties => null;
 
         /// <summary>
-        /// 需要额外设置ToolTip的控件
+        /// Controls that need additional ToolTip settings
         /// </summary>
-        /// <returns>控件</returns>
+        /// <returns>Control</returns>
         public Control ExToolTipControl()
         {
             return pnlValue;
@@ -103,7 +102,7 @@ namespace Sunny.UI
         private int _value;
 
         [DefaultValue(0)]
-        [Description("选中数值"), Category("SunnyUI")]
+        [Description("Selected value"), Category("SunnyUI")]
         public int Value
         {
             get => _value;
@@ -120,9 +119,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载字体变更
+        /// Reload font change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnFontChanged(EventArgs e)
         {
             base.OnFontChanged(e);
@@ -133,7 +132,7 @@ namespace Sunny.UI
         private int step = 1;
 
         [DefaultValue(1)]
-        [Description("步进值"), Category("SunnyUI")]
+        [Description("Step value"), Category("SunnyUI")]
         public int Step
         {
             get => step;
@@ -164,7 +163,7 @@ namespace Sunny.UI
             }
         }
 
-        [Description("最大值"), Category("SunnyUI")]
+        [Description("Maximum value"), Category("SunnyUI")]
         [DefaultValue(int.MaxValue)]
         public int Maximum
         {
@@ -172,7 +171,7 @@ namespace Sunny.UI
             set => edit.MaxValue = value;
         }
 
-        [Description("最小值"), Category("SunnyUI")]
+        [Description("Minimum value"), Category("SunnyUI")]
         [DefaultValue(int.MinValue)]
         public int Minimum
         {
@@ -181,7 +180,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(true)]
-        [Description("是否可以双击输入"), Category("SunnyUI")]
+        [Description("Whether double-click input is allowed"), Category("SunnyUI")]
         public bool Inputable { get; set; } = true;
 
         private readonly UIEdit edit = new UIEdit();
@@ -206,7 +205,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(false)]
-        [Description("是否只读"), Category("SunnyUI")]
+        [Description("Read-only"), Category("SunnyUI")]
         public bool ReadOnly { get; set; }
 
         protected override void OnRadiusSidesChange()
@@ -228,9 +227,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载控件尺寸变更
+        /// Reload control size change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
@@ -250,9 +249,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, no fill if the value is background color, transparent color, or null
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color ButtonFillColor
         {
@@ -261,10 +260,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 鼠标移上时填充颜色
+        /// Mouse hover fill color
         /// </summary>
         [DefaultValue(typeof(Color), "115, 179, 255"), Category("SunnyUI")]
-        [Description("鼠标移上时填充颜色")]
+        [Description("Mouse hover fill color")]
         public Color ButtonFillHoverColor
         {
             get => btnAdd.FillHoverColor;
@@ -272,10 +271,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 鼠标按下时填充颜色
+        /// Mouse press fill color
         /// </summary>
         [DefaultValue(typeof(Color), "64, 128, 204"), Category("SunnyUI")]
-        [Description("鼠标按下时填充颜色")]
+        [Description("Mouse press fill color")]
         public Color ButtonFillPressColor
         {
             get => btnAdd.FillPressColor;
@@ -283,9 +282,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体图标颜色
+        /// Font icon color
         /// </summary>
-        [Description("图标颜色"), Category("SunnyUI")]
+        [Description("Icon color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "White")]
         public Color ButtonSymbolColor
         {
@@ -294,9 +293,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("边框颜色"), Category("SunnyUI")]
+        [Description("Border color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color ButtonRectColor
         {
@@ -326,10 +325,10 @@ namespace Sunny.UI
         public override Color ForeColor { get => pnlValue.ForeColor; set => pnlValue.ForeColor = value; }
 
         /// <summary>
-        /// 加按钮字体图标的偏移位置
+        /// Offset position for add button font icon
         /// </summary>
         [DefaultValue(typeof(Point), "0, 0")]
-        [Description("加按钮字体图标的偏移位置"), Category("SunnyUI")]
+        [Description("Offset position for add button font icon"), Category("SunnyUI")]
         public Point AddSymbolOffset
         {
             get => btnAdd.SymbolOffset;
@@ -337,10 +336,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 减按钮字体图标的偏移位置
+        /// Offset position for subtract button font icon
         /// </summary>
         [DefaultValue(typeof(Point), "0, 0")]
-        [Description("减按钮字体图标的偏移位置"), Category("SunnyUI")]
+        [Description("Offset position for subtract button font icon"), Category("SunnyUI")]
         public Point DecSymbolOffset
         {
             get => btnDec.SymbolOffset;

@@ -36,7 +36,7 @@
             listBox.BackColor = System.Drawing.Color.Transparent;
             listBox.Dock = System.Windows.Forms.DockStyle.Fill;
             listBox.FillColor = System.Drawing.Color.White;
-            listBox.Font = new System.Drawing.Font("宋体", 12F);
+            listBox.Font = new System.Drawing.Font("Segoe UI", 12F);
             listBox.HoverColor = System.Drawing.Color.FromArgb(155, 200, 255);
             listBox.ItemSelectForeColor = System.Drawing.Color.FromArgb(235, 243, 255);
             listBox.Location = new System.Drawing.Point(0, 0);

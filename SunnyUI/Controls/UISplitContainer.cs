@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,19 +9,18 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UISplitContainer.cs
- * 文件说明: 分割容器
- * 当前版本: V3.1
- * 创建日期: 2021-10-30
+ * File Name: UISplitContainer.cs
+ * Description: Split Container
+ * Current Version: V3.1
+ * Creation Date: 2021-10-30
  *
- * 2021-10-30: V3.0.8 增加文件说明
- * 2022-04-03: V3.1.3 增加主题样式
- * 2022-04-20: V3.1.5 修复调用Collapse()后，展开/收回操作失效
- * 2022-12-06: V3.3.0 去掉SplitterWidth限制
- * 2022-12-06: V3.3.0 SplitterWidth值小的时不绘制箭头
- * 2023-05-31: V3.6.6 增加了SplitPanelState只读属性以获取状态。
+ * 2021-10-30: V3.0.8 Added file description
+ * 2022-04-03: V3.1.3 Added theme style
+ * 2022-04-20: V3.1.5 Fixed issue where expand/collapse operation failed after calling Collapse()
+ * 2022-12-06: V3.3.0 Removed SplitterWidth restriction
+ * 2022-12-06: V3.3.0 No arrow drawn when SplitterWidth is small
+ * 2023-05-31: V3.6.6 Added read-only property SplitPanelState to get the state.
 ******************************************************************************/
 using System;
 using System.ComponentModel;
@@ -48,11 +47,11 @@ namespace Sunny.UI
         private enum UIControlState
         {
             /// <summary>
-            ///  正常。
+            ///  Normal.
             /// </summary>
             Normal,
             /// <summary>
-            /// 鼠标进入。
+            /// Mouse entered.
             /// </summary>
             Hover,
         }
@@ -84,21 +83,21 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 禁止控件跟随窗体缩放
+        /// Disable control scaling with the form
         /// </summary>
-        [DefaultValue(false), Category("SunnyUI"), Description("禁止控件跟随窗体缩放")]
+        [DefaultValue(false), Category("SunnyUI"), Description("Disable control scaling with the form")]
         public bool ZoomScaleDisabled { get; set; }
 
         /// <summary>
-        /// 控件缩放前在其容器里的位置
+        /// Position of the control in its container before scaling
         /// </summary>
         [Browsable(false), DefaultValue(typeof(Rectangle), "0, 0, 0, 0")]
         public Rectangle ZoomScaleRect { get; set; }
 
         /// <summary>
-        /// 设置控件缩放比例
+        /// Set the scaling ratio of the control
         /// </summary>
-        /// <param name="scale">缩放比例</param>
+        /// <param name="scale">Scaling ratio</param>
         public void SetZoomScale(float scale)
         {
 
@@ -107,7 +106,7 @@ namespace Sunny.UI
         private Color barColor = Color.FromArgb(56, 56, 56);
 
         [DefaultValue(typeof(Color), "56, 56, 56"), Category("SunnyUI")]
-        [Description("分割栏背景色")]
+        [Description("Background color of the split bar")]
         public Color BarColor
         {
             get => barColor;
@@ -121,7 +120,7 @@ namespace Sunny.UI
         private Color handleColor = Color.FromArgb(106, 106, 106);
 
         [DefaultValue(typeof(Color), "106, 106, 106"), Category("SunnyUI")]
-        [Description("分割栏按钮背景色")]
+        [Description("Background color of the split bar button")]
         public Color HandleColor
         {
             get => handleColor;
@@ -135,7 +134,7 @@ namespace Sunny.UI
         private Color handleHoverColor = Color.FromArgb(186, 186, 186);
 
         [DefaultValue(typeof(Color), "186, 186, 186"), Category("SunnyUI")]
-        [Description("分割栏按钮鼠标移上背景色")]
+        [Description("Background color of the split bar button when mouse hovers over")]
         public Color HandleHoverColor
         {
             get => handleHoverColor;
@@ -149,7 +148,7 @@ namespace Sunny.UI
         private Color arrowColor = Color.FromArgb(80, 160, 255);
 
         [DefaultValue(typeof(Color), "80, 160, 255"), Category("SunnyUI")]
-        [Description("分割栏按钮箭头背景色")]
+        [Description("Background color of the split bar button arrow")]
         public Color ArrowColor
         {
             get => arrowColor;
@@ -167,7 +166,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(UICollapsePanel.Panel1), Category("SunnyUI")]
-        [Description("点击后收起的Panel")]
+        [Description("Panel to collapse when clicked")]
         public UICollapsePanel CollapsePanel
         {
             get => _collapsePanel;
@@ -212,9 +211,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 折叠与展开状态
+        /// Collapse and expand state
         /// </summary>
-        [Description("折叠与展开状态"), Category("SunnyUI")]
+        [Description("Collapse and expand state"), Category("SunnyUI")]
         public UISplitPanelState SplitPanelState
         {
             get => _splitPanelState;
@@ -253,9 +252,9 @@ namespace Sunny.UI
         private UIStyle _style = UIStyle.Inherited;
 
         /// <summary>
-        /// 主题样式
+        /// Theme style
         /// </summary>
-        [DefaultValue(UIStyle.Inherited), Description("主题样式"), Category("SunnyUI")]
+        [DefaultValue(UIStyle.Inherited), Description("Theme style"), Category("SunnyUI")]
         public UIStyle Style
         {
             get => _style;
@@ -263,14 +262,14 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 自定义主题风格
+        /// Custom theme style
         /// </summary>
         [DefaultValue(false), Browsable(false)]
-        [Description("获取或设置可以自定义主题风格"), Category("SunnyUI")]
+        [Description("Get or set whether custom theme style is allowed"), Category("SunnyUI")]
         public bool StyleCustomMode { get; set; }
 
         /// <summary>
-        /// 版本
+        /// Version
         /// </summary>
         public string Version
         {
@@ -278,10 +277,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// Tag字符串
+        /// Tag string
         /// </summary>
         [DefaultValue(null)]
-        [Description("获取或设置包含有关控件的数据的对象字符串"), Category("SunnyUI")]
+        [Description("Get or set the object string containing data about the control"), Category("SunnyUI")]
         public string TagString
         {
             get; set;
@@ -313,9 +312,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载控件尺寸变更
+        /// Override control size change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
@@ -351,9 +350,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override drawing
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Drawing parameters</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -480,12 +479,12 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标移动事件
+        /// Override mouse move event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseMove(MouseEventArgs e)
         {
-            //如果鼠标的左键没有按下，重置鼠标状态
+            //If the left mouse button is not pressed, reset the mouse state
             if (e.Button != MouseButtons.Left)
             {
                 _uiMouseType = UIMouseType.None;
@@ -494,7 +493,7 @@ namespace Sunny.UI
             Rectangle collapseRect = CollapseRect;
             Point mousePoint = e.Location;
 
-            //鼠标在Button矩形里，并且不是在拖动
+            //Mouse is in the Button rectangle and not dragging
             if (collapseRect.Contains(mousePoint) && _uiMouseType != UIMouseType.Split)
             {
                 Capture = false;
@@ -503,12 +502,12 @@ namespace Sunny.UI
                 return;
             }
 
-            //鼠标在分隔栏矩形里
+            //Mouse is in the splitter rectangle
             if (SplitterRectangle.Contains(mousePoint))
             {
                 ControlState = UIControlState.Normal;
 
-                //如果已经在按钮按下了鼠标或者已经收缩，就不允许拖动了
+                //If the button is already pressed or already collapsed, dragging is not allowed
                 if (_uiMouseType == UIMouseType.Button ||
                     (_collapsePanel != UICollapsePanel.None && SplitPanelState == UISplitPanelState.Collapsed))
                 {
@@ -517,7 +516,7 @@ namespace Sunny.UI
                     return;
                 }
 
-                //鼠标没有按下，设置Split光标
+                //Mouse is not pressed, set Split cursor
                 if (_uiMouseType == UIMouseType.None && !IsSplitterFixed)
                 {
                     SetCursor(Orientation == Orientation.Horizontal ? Cursors.HSplit : Cursors.VSplit);
@@ -527,7 +526,7 @@ namespace Sunny.UI
 
             ControlState = UIControlState.Normal;
 
-            //正在拖动分隔栏
+            //Dragging the splitter
             if (_uiMouseType == UIMouseType.Split && !IsSplitterFixed)
             {
                 SetCursor(Orientation == Orientation.Horizontal ? Cursors.HSplit : Cursors.VSplit);
@@ -540,9 +539,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标离开事件
+        /// Override mouse leave event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseLeave(EventArgs e)
         {
             base.Cursor = Cursors.Default;
@@ -551,9 +550,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标按下事件
+        /// Override mouse down event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseDown(MouseEventArgs e)
         {
             Rectangle collapseRect = CollapseRect;
@@ -582,9 +581,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标抬起事件
+        /// Override mouse up event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseUp(MouseEventArgs e)
         {
             base.OnMouseUp(e);
@@ -601,6 +600,10 @@ namespace Sunny.UI
             _uiMouseType = UIMouseType.None;
         }
 
+        /// <summary>
+        /// Set the cursor
+        /// </summary>
+        /// <param name="cursor">Cursor</param>
         private void SetCursor(Cursor cursor)
         {
             if (base.Cursor != cursor)
@@ -609,6 +612,11 @@ namespace Sunny.UI
             }
         }
 
+        /// <summary>
+        /// Calculate arrow rectangle
+        /// </summary>
+        /// <param name="collapseRect">Collapse rectangle</param>
+        /// <returns>Arrow rectangle</returns>
         private Rectangle CalcArrowRect(Rectangle collapseRect)
         {
             if (Orientation == Orientation.Horizontal)
@@ -631,15 +639,19 @@ namespace Sunny.UI
             }
         }
 
+        /// <summary>
+        /// Set theme style color
+        /// </summary>
+        /// <param name="uiColor">UI color</param>
         public void SetStyleColor(UIBaseStyle uiColor)
         {
             arrowColor = uiColor.SplitContainerArrowColor;
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="style">主题样式</param>
+        /// <param name="style">Theme style</param>
         private void SetStyle(UIStyle style)
         {
             if (!style.IsCustom())
@@ -651,12 +663,19 @@ namespace Sunny.UI
             _style = style == UIStyle.Inherited ? UIStyle.Inherited : UIStyle.Custom;
         }
 
+        /// <summary>
+        /// Set inherited style
+        /// </summary>
+        /// <param name="style">Theme style</param>
         public void SetInheritedStyle(UIStyle style)
         {
             SetStyle(style);
             _style = UIStyle.Inherited;
         }
 
+        /// <summary>
+        /// Set DPI scale
+        /// </summary>
         public void SetDPIScale()
         {
             //

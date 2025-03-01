@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI Open Source Control Library, Utility Library, Extension Library, Multi-page Development Framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,36 +9,35 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UITreeView.cs
- * 文件说明: 树形列表
- * 当前版本: V3.1
- * 创建日期: 2020-05-05
+ * File Name: UITreeView.cs
+ * File Description: Tree List
+ * Current Version: V3.1
+ * Creation Date: 2020-05-05
  *
- * 2020-05-05: V2.2.5 增加文件
- * 2020-07-07: V2.2.6 全部重写，增加圆角，CheckBoxes等
- * 2020-08-12: V2.2.7 更新可设置背景色
- * 2021-07-19: V3.0.5 调整了显示CheckBoxes时图片位置
- * 2021-08-26: V3.0.6 CheckBoxes增加三态，感谢群友：笑口常开 
- * 2022-01-05: V3.0.9 TreeNodeStateSync: 节点点击时同步父节点和子节点的状态
- * 2022-03-19: V3.1.1 重构主题配色
- * 2022-04-01: V3.1.2 增加水平滚动条
- * 2022-04-01: V3.1.2 自定义行颜色，可通过代码给颜色值，SetNodePainter
- * 2022-05-15: V3.1.8 修复了一个设计期显示错误
- * 2022-05-15: V3.1.8 增加了点击文字改变CheckBox状态的NodeClickChangeCheckBoxes
- * 2022-10-28: V3.2.6 TreeNode支持imagekey绑定图标
- * 2022-11-03: V3.2.6 增加了可设置垂直滚动条宽度的属性
- * 2022-12-06: V3.3.0 增加了可自定义行的颜色
- * 2023-03-13: V3.3.3 增加MouseDoubleClick和MouseClick事件
- * 2023-03-26: V3.3.4 修改LabelEdit属性
- * 2023-05-13: V3.3.6 重构DrawString函数
- * 2023-07-02: V3.3.9 屏蔽DrawMode属性，默认为OwnerDrawAll
- * 2023-11-13: V3.5.2 重构主题
- * 2024-01-01: V3.6.2 增加可修改滚动条颜色
- * 2024-01-20: V3.6.3 自定义行颜色，可通过代码给颜色值，SetNodePainter，增加选中颜色
- * 2024-05-27: V3.6.6 防止控件闪烁
- * 2024-08-06: V3.6.8 不显示连线时，重绘节点前展开与收缩的图标
+ * 2020-05-05: V2.2.5 Added file
+ * 2020-07-07: V2.2.6 Completely rewritten, added rounded corners, CheckBoxes, etc.
+ * 2020-08-12: V2.2.7 Updated to allow setting background color
+ * 2021-07-19: V3.0.5 Adjusted image position when displaying CheckBoxes
+ * 2021-08-26: V3.0.6 CheckBoxes added three states, thanks to group member: Always Smiling
+ * 2022-01-05: V3.0.9 TreeNodeStateSync: Synchronize the state of parent and child nodes when a node is clicked
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2022-04-01: V3.1.2 Added horizontal scrollbar
+ * 2022-04-01: V3.1.2 Custom row colors, can set color values through code, SetNodePainter
+ * 2022-05-15: V3.1.8 Fixed a design-time display error
+ * 2022-05-15: V3.1.8 Added NodeClickChangeCheckBoxes to change CheckBox state by clicking text
+ * 2022-10-28: V3.2.6 TreeNode supports imagekey binding icon
+ * 2022-11-03: V3.2.6 Added property to set vertical scrollbar width
+ * 2022-12-06: V3.3.0 Added customizable row colors
+ * 2023-03-13: V3.3.3 Added MouseDoubleClick and MouseClick events
+ * 2023-03-26: V3.3.4 Modified LabelEdit property
+ * 2023-05-13: V3.3.6 Refactored DrawString function
+ * 2023-07-02: V3.3.9 Disabled DrawMode property, default is OwnerDrawAll
+ * 2023-11-13: V3.5.2 Refactored theme
+ * 2024-01-01: V3.6.2 Added ability to modify scrollbar color
+ * 2024-01-20: V3.6.3 Custom row colors, can set color values through code, SetNodePainter, added selection color
+ * 2024-05-27: V3.6.6 Prevented control flickering
+ * 2024-08-06: V3.6.8 Redraw node expand and collapse icons when lines are not displayed
 ******************************************************************************/
 
 using System;
@@ -103,9 +102,9 @@ namespace Sunny.UI
         private Color scrollBarColor = Color.FromArgb(80, 160, 255);
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, when the value is the background color or transparent color or empty value, it is not filled
         /// </summary>
-        [Description("滚动条填充颜色"), Category("SunnyUI")]
+        [Description("Scrollbar fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color ScrollBarColor
         {
@@ -123,9 +122,9 @@ namespace Sunny.UI
         private Color scrollBarRectColor = Color.FromArgb(80, 160, 255);
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, when the value is the background color or transparent color or empty value, it is not filled
         /// </summary>
-        [Description("滚动条边框颜色"), Category("SunnyUI")]
+        [Description("Scrollbar border color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color ScrollBarRectColor
         {
@@ -142,9 +141,9 @@ namespace Sunny.UI
         private Color scrollBarBackColor = Color.FromArgb(243, 249, 255);
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, when the value is the background color or transparent color or empty value, it is not filled
         /// </summary>
-        [Description("滚动条背景颜色"), Category("SunnyUI")]
+        [Description("Scrollbar background color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "243, 249, 255")]
         public Color ScrollBarBackColor
         {
@@ -160,9 +159,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 滚动条主题样式
+        /// Scrollbar theme style
         /// </summary>
-        [DefaultValue(true), Description("滚动条主题样式"), Category("SunnyUI")]
+        [DefaultValue(true), Description("Scrollbar theme style"), Category("SunnyUI")]
         public bool ScrollBarStyleInherited
         {
             get => HBar != null && HBar.Style == UIStyle.Inherited;
@@ -229,7 +228,7 @@ namespace Sunny.UI
 
         private int scrollBarWidth = 0;
 
-        [DefaultValue(0), Category("SunnyUI"), Description("垂直滚动条宽度，最小为原生滚动条宽度")]
+        [DefaultValue(0), Category("SunnyUI"), Description("Vertical scrollbar width, minimum is the native scrollbar width")]
         public int ScrollBarWidth
         {
             get => scrollBarWidth;
@@ -242,7 +241,7 @@ namespace Sunny.UI
 
         private int scrollBarHandleWidth = 6;
 
-        [DefaultValue(6), Category("SunnyUI"), Description("垂直滚动条滑块宽度，最小为原生滚动条宽度")]
+        [DefaultValue(6), Category("SunnyUI"), Description("Vertical scrollbar handle width, minimum is the native scrollbar width")]
         public int ScrollBarHandleWidth
         {
             get => scrollBarHandleWidth;
@@ -313,7 +312,7 @@ namespace Sunny.UI
             view.Invalidate();
         }
 
-        [Description("节点点击时同步父节点和子节点的状态"), Category("SunnyUI")]
+        [Description("Synchronize the state of parent and child nodes when a node is clicked"), Category("SunnyUI")]
         [DefaultValue(true)]
         public bool TreeNodeStateSync
         {
@@ -321,7 +320,7 @@ namespace Sunny.UI
             set => view.TreeNodeStateSync = value;
         }
 
-        [Description("点击文字改变CheckBox状态"), Category("SunnyUI")]
+        [Description("Change CheckBox state by clicking text"), Category("SunnyUI")]
         [DefaultValue(false)]
         public bool NodeClickChangeCheckBoxes
         {
@@ -335,9 +334,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 需要额外设置ToolTip的控件
+        /// Controls that need additional ToolTip settings
         /// </summary>
-        /// <returns>控件</returns>
+        /// <returns>Control</returns>
         public Control ExToolTipControl()
         {
             return view;
@@ -394,9 +393,9 @@ namespace Sunny.UI
         public TreeView TreeView => view;
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -851,9 +850,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载字体变更
+        /// Override font change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnFontChanged(EventArgs e)
         {
             base.OnFontChanged(e);
@@ -874,9 +873,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载控件尺寸变更
+        /// Override control size change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
@@ -954,7 +953,7 @@ namespace Sunny.UI
             // 
             // Bar
             // 
-            Bar.Font = new Font("宋体", 12F);
+            Bar.Font = new Font("Segoe UI", 12F);
             Bar.Location = new Point(247, 3);
             Bar.MinimumSize = new Size(1, 1);
             Bar.Name = "Bar";
@@ -967,7 +966,7 @@ namespace Sunny.UI
             // 
             // HBar
             // 
-            HBar.Font = new Font("宋体", 12F);
+            HBar.Font = new Font("Segoe UI", 12F);
             HBar.Location = new Point(247, 3);
             HBar.MinimumSize = new Size(1, 1);
             HBar.Name = "HBar";
@@ -1080,9 +1079,9 @@ namespace Sunny.UI
             }
 
             /// <summary>
-            /// 重载鼠标移动事件
+            /// Override mouse move event
             /// </summary>
-            /// <param name="e">鼠标参数</param>
+            /// <param name="e">Mouse parameters</param>
             protected override void OnMouseMove(MouseEventArgs e)
             {
                 base.OnMouseMove(e);
@@ -1103,9 +1102,9 @@ namespace Sunny.UI
             }
 
             /// <summary>
-            /// 重载鼠标离开事件
+            /// Override mouse leave event
             /// </summary>
-            /// <param name="e">鼠标参数</param>
+            /// <param name="e">Mouse parameters</param>
             protected override void OnMouseLeave(EventArgs e)
             {
                 using var g = CreateGraphics();
@@ -1284,7 +1283,7 @@ namespace Sunny.UI
                                     //location.Offset(-29, 10);
                                     var location = new Point(checkBoxLeft + 5, e.Bounds.Y + (ItemHeight - 12) / 2 + 2);
                                     var size = new Size(7, 7);
-                                    e.Graphics.FillRectangle(checkboxColor, new Rectangle(location, size)); //这里绘制的是正方形
+                                    e.Graphics.FillRectangle(checkboxColor, new Rectangle(location, size)); //here is drawing a square
 
                                 }
                             }
@@ -1301,7 +1300,7 @@ namespace Sunny.UI
                         {
                             try
                             {
-                                //绘制虚线
+                                //draw dotted line
                                 using var pn = new Pen(LineColor);
                                 pn.DashStyle = DashStyle.Dot;
                                 e.Graphics.DrawLine(pn, lineX, lineY, lineX + 10, lineY);
@@ -1352,7 +1351,7 @@ namespace Sunny.UI
                         else
                             lineX = -(int)(Width * HBar.Value * 1.0 / HBar.Maximum) + 3 + e.Node.Level * Indent + 9;
 
-                        //绘制左侧+号
+                        //draw left + sign
                         if (ShowPlusMinus && e.Node.Nodes.Count > 0)
                         {
                             if (ShowLinesEx)
@@ -1421,7 +1420,7 @@ namespace Sunny.UI
             protected override void OnAfterCheck(TreeViewEventArgs e)
             {
                 base.OnAfterCheck(e);
-                if (e.Action == TreeViewAction.ByMouse && TreeNodeStateSync) //鼠标点击
+                if (e.Action == TreeViewAction.ByMouse && TreeNodeStateSync) //mouse click
                 {
                     DicNodeStatus[e.Node.GetHashCode()] = false;
 
@@ -1439,10 +1438,10 @@ namespace Sunny.UI
                     return;
                 }
 
-                TreeNode parentNode = currNode.Parent; //获得当前节点的父节点
+                TreeNode parentNode = currNode.Parent; //get the parent node of the current node
                 var count = parentNode.Nodes.Cast<TreeNode>().Where(n => n.Checked).ToList().Count;
 
-                //判断节点Checked是否改变，只有改变时才赋值，否则不变更，以防止频繁触发OnAfterCheck事件
+                //Determine whether the node Checked has changed, and only assign a value when it changes, otherwise it will not change to prevent frequent triggering of the OnAfterCheck event
                 bool bChecked = count == parentNode.Nodes.Count;
                 if (parentNode.Checked != bChecked)
                 {
@@ -1465,24 +1464,24 @@ namespace Sunny.UI
                     using var g = CreateGraphics();
                     OnDrawNode(new DrawTreeNodeEventArgs(g, parentNode, new Rectangle(0, parentNode.Bounds.Y, Width, parentNode.Bounds.Height), TreeNodeStates.Hot));
 
-                    if (parentNode.Parent != null) //如果父节点之上还有父节点
+                    if (parentNode.Parent != null) //if there is a parent node above the parent node
                     {
-                        SetParentNodeCheckedState(parentNode, true); //递归调用
+                        SetParentNodeCheckedState(parentNode, true); //recursive call
                     }
                 }
             }
 
-            //选中节点之后，选中节点的所有子节点
+            //After selecting a node, select all child nodes of the node
             private void SetChildNodeCheckedState(TreeNode currNode, bool state)
             {
-                TreeNodeCollection nodes = currNode.Nodes; //获取所有子节点
-                if (nodes.Count > 0) //存在子节点
+                TreeNodeCollection nodes = currNode.Nodes; //get all child nodes
+                if (nodes.Count > 0) //there are child nodes
                 {
                     foreach (TreeNode tn in nodes)
                     {
                         DicNodeStatus[tn.GetHashCode()] = false;
                         tn.Checked = state;
-                        SetChildNodeCheckedState(tn, state);//递归调用子节点的子节点
+                        SetChildNodeCheckedState(tn, state);//recursive call to child nodes of child nodes
                     }
                 }
             }

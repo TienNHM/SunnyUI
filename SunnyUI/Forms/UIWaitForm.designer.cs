@@ -36,19 +36,19 @@
             // 
             labelDescription.AutoSize = true;
             labelDescription.BackColor = System.Drawing.Color.Transparent;
-            labelDescription.Font = new System.Drawing.Font("宋体", 12F);
+            labelDescription.Font = new System.Drawing.Font("Segoe UI", 12F);
             labelDescription.ForeColor = System.Drawing.Color.FromArgb(48, 48, 48);
             labelDescription.Location = new System.Drawing.Point(32, 55);
             labelDescription.Name = "labelDescription";
             labelDescription.Size = new System.Drawing.Size(207, 16);
             labelDescription.TabIndex = 4;
-            labelDescription.Text = "系统正在处理中，请稍候...";
+            labelDescription.Text = "The system is processing, please wait...";
             labelDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Bar
             // 
             Bar.FillColor = System.Drawing.Color.FromArgb(243, 249, 255);
-            Bar.Font = new System.Drawing.Font("宋体", 12F);
+            Bar.Font = new System.Drawing.Font("Segoe UI", 12F);
             Bar.ForeColor = System.Drawing.Color.FromArgb(80, 160, 255);
             Bar.Location = new System.Drawing.Point(32, 91);
             Bar.MinimumSize = new System.Drawing.Size(70, 23);
@@ -70,7 +70,7 @@
             MinimizeBox = false;
             Name = "UIWaitForm";
             ShowIcon = false;
-            Text = "提示";
+            Text = "Hint";
             TopMost = true;
             ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 473, 153);
             ResumeLayout(false);

@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,16 +9,15 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIGifAvatar.cs
- * 文件说明: Gif动态头像
- * 当前版本: V3.1
- * 创建日期: 2022-07-01
+ * File Name: UIGifAvatar.cs
+ * File Description: Gif dynamic avatar
+ * Current Version: V3.1
+ * Creation Date: 2022-07-01
  *
- * 2022-07-01: V3.2.0 增加文件说明
- * 2022-07-25: V3.2.2 重写图片刷新流程，减少内存及GC
- * 2023-11-12: V3.5.2 重构主题
+ * 2022-07-01: V3.2.0 Added file description
+ * 2022-07-25: V3.2.2 Rewrote image refresh process to reduce memory and GC
+ * 2023-11-12: V3.5.2 Refactored theme
 ******************************************************************************/
 
 using System;
@@ -53,9 +52,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is the background color or transparent color or empty value, it will not be filled
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color FillColor
         {
@@ -64,9 +63,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("边框颜色"), Category("SunnyUI")]
+        [Description("Border color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color RectColor
         {
@@ -151,7 +150,7 @@ namespace Sunny.UI
 
         private int avatarSize = 120;
 
-        [DefaultValue(120), Description("头像大小"), Category("SunnyUI")]
+        [DefaultValue(120), Description("Avatar size"), Category("SunnyUI")]
         public int AvatarSize
         {
             get => avatarSize;

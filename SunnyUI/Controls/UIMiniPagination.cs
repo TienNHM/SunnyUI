@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -11,16 +11,16 @@
  * If you use this code, please keep this note.
  * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIMiniPagination.cs
- * 文件说明: 分页
- * 当前版本: V3.1
- * 创建日期: 2023-02-19
+ * File name: UIMiniPagination.cs
+ * Description: Pagination
+ * Current version: V3.1
+ * Creation date: 2023-02-19
  *
- * 2023-02-19: V3.3.2 新增迷你分页控件，只有分页按钮，无其他
- * 2023-06-14: V3.3.9 按钮图标位置修正
- * 2023-06-27: V3.3.9 内置按钮关联值由Tag改为TagString
- * 2023-08-30: V3.4.2 左右跳转按钮的文字换成字体图标
- * 2024-05-29: V3.6.6 优化按钮自定义配色逻辑
+ * 2023-02-19: V3.3.2 Added mini pagination control, only pagination buttons, no others
+ * 2023-06-14: V3.3.9 Fixed button icon position
+ * 2023-06-27: V3.3.9 Changed built-in button associated value from Tag to TagString
+ * 2023-08-30: V3.4.2 Changed the text of the left and right jump buttons to font icons
+ * 2024-05-29: V3.6.6 Optimized button custom color logic
 ******************************************************************************/
 
 using System;
@@ -66,10 +66,10 @@ namespace Sunny.UI
         private bool inSetDataConnection;
 
         /// <summary>
-        /// 总页数
+        /// Total pages
         /// </summary>
         [Browsable(false)]
-        [Description("总页数"), Category("SunnyUI")]
+        [Description("Total pages"), Category("SunnyUI")]
         public int PageCount { get; private set; }
 
         private int pagerCount = 9;
@@ -151,7 +151,7 @@ namespace Sunny.UI
         private int buttonInterval = 8;
 
         [DefaultValue(8)]
-        [Description("按钮间隔")]
+        [Description("Button interval")]
         [Category("SunnyUI")]
         public int ButtonInterval
         {
@@ -165,9 +165,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        ///     总条目数
+        /// Total items
         /// </summary>
-        [Description("总条目数")]
+        [Description("Total items")]
         [Category("SunnyUI")]
         public int TotalCount
         {
@@ -182,10 +182,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        ///     每页显示条目个数
+        /// Number of items displayed per page
         /// </summary>
         [DefaultValue(20)]
-        [Description("每页显示条目个数")]
+        [Description("Number of items displayed per page")]
         [Category("SunnyUI")]
         public int PageSize
         {
@@ -202,11 +202,11 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        ///     页码按钮的数量，当总页数超过该值时会折叠
-        ///     大于等于 5 且小于等于 13 的奇数
+        /// Number of page buttons, will fold when total pages exceed this value
+        /// Greater than or equal to 5 and less than or equal to 13 odd numbers
         /// </summary>
         [DefaultValue(9)]
-        [Description("页码按钮的数量，当总页数超过该值时会折叠，大于等于5且小于等于13的奇数")]
+        [Description("Number of page buttons, will fold when total pages exceed this value, greater than or equal to 5 and less than or equal to 13 odd numbers")]
         [Category("SunnyUI")]
         public int PagerCount
         {
@@ -227,10 +227,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        ///     选中页面
+        /// Selected page
         /// </summary>
         [DefaultValue(1)]
-        [Description("选中页面")]
+        [Description("Selected page")]
         [Category("SunnyUI")]
         public int ActivePage
         {
@@ -246,10 +246,13 @@ namespace Sunny.UI
 
         public event EventHandler DataSourceChanged;
 
+        /// <summary>
+        /// Data source
+        /// </summary>
         [DefaultValue(null)]
         [RefreshProperties(RefreshProperties.Repaint)]
         [AttributeProvider(typeof(IListSource))]
-        [Description("数据源"), Category("SunnyUI")]
+        [Description("Data source"), Category("SunnyUI")]
         public object DataSource
         {
             get => dataSource;
@@ -336,7 +339,7 @@ namespace Sunny.UI
             // b0
             // 
             b0.Cursor = Cursors.Hand;
-            b0.Font = new Font("宋体", 10.5F);
+            b0.Font = new Font("Segoe UI", 10.5F);
             b0.ImageAlign = ContentAlignment.MiddleLeft;
             b0.Location = new Point(3, 4);
             b0.MinimumSize = new Size(1, 1);
@@ -348,12 +351,12 @@ namespace Sunny.UI
             b0.TabIndex = 0;
             b0.TagString = "<";
             b0.TextAlign = ContentAlignment.MiddleRight;
-            b0.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b0.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             // 
             // b1
             // 
             b1.Cursor = Cursors.Hand;
-            b1.Font = new Font("宋体", 12F);
+            b1.Font = new Font("Segoe UI", 12F);
             b1.Location = new Point(81, 4);
             b1.MinimumSize = new Size(1, 1);
             b1.Name = "b1";
@@ -362,12 +365,12 @@ namespace Sunny.UI
             b1.Symbol = 0;
             b1.TabIndex = 1;
             b1.Text = "0";
-            b1.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b1.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             // 
             // b3
             // 
             b3.Cursor = Cursors.Hand;
-            b3.Font = new Font("宋体", 12F);
+            b3.Font = new Font("Segoe UI", 12F);
             b3.Location = new Point(145, 4);
             b3.MinimumSize = new Size(1, 1);
             b3.Name = "b3";
@@ -376,12 +379,12 @@ namespace Sunny.UI
             b3.Symbol = 0;
             b3.TabIndex = 3;
             b3.Text = "0";
-            b3.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b3.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             // 
             // b2
             // 
             b2.Cursor = Cursors.Hand;
-            b2.Font = new Font("宋体", 12F);
+            b2.Font = new Font("Segoe UI", 12F);
             b2.Location = new Point(113, 4);
             b2.MinimumSize = new Size(1, 1);
             b2.Name = "b2";
@@ -390,12 +393,12 @@ namespace Sunny.UI
             b2.Symbol = 0;
             b2.TabIndex = 2;
             b2.Text = "0";
-            b2.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b2.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             // 
             // b7
             // 
             b7.Cursor = Cursors.Hand;
-            b7.Font = new Font("宋体", 12F);
+            b7.Font = new Font("Segoe UI", 12F);
             b7.Location = new Point(273, 4);
             b7.MinimumSize = new Size(1, 1);
             b7.Name = "b7";
@@ -404,12 +407,12 @@ namespace Sunny.UI
             b7.Symbol = 0;
             b7.TabIndex = 7;
             b7.Text = "0";
-            b7.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b7.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             // 
             // b6
             // 
             b6.Cursor = Cursors.Hand;
-            b6.Font = new Font("宋体", 12F);
+            b6.Font = new Font("Segoe UI", 12F);
             b6.Location = new Point(241, 4);
             b6.MinimumSize = new Size(1, 1);
             b6.Name = "b6";
@@ -418,12 +421,12 @@ namespace Sunny.UI
             b6.Symbol = 0;
             b6.TabIndex = 6;
             b6.Text = "0";
-            b6.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b6.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             // 
             // b5
             // 
             b5.Cursor = Cursors.Hand;
-            b5.Font = new Font("宋体", 12F);
+            b5.Font = new Font("Segoe UI", 12F);
             b5.Location = new Point(209, 4);
             b5.MinimumSize = new Size(1, 1);
             b5.Name = "b5";
@@ -432,12 +435,12 @@ namespace Sunny.UI
             b5.Symbol = 0;
             b5.TabIndex = 5;
             b5.Text = "0";
-            b5.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b5.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             // 
             // b4
             // 
             b4.Cursor = Cursors.Hand;
-            b4.Font = new Font("宋体", 12F);
+            b4.Font = new Font("Segoe UI", 12F);
             b4.Location = new Point(177, 4);
             b4.MinimumSize = new Size(1, 1);
             b4.Name = "b4";
@@ -446,12 +449,12 @@ namespace Sunny.UI
             b4.Symbol = 0;
             b4.TabIndex = 4;
             b4.Text = "0";
-            b4.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b4.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             // 
             // b15
             // 
             b15.Cursor = Cursors.Hand;
-            b15.Font = new Font("宋体", 12F);
+            b15.Font = new Font("Segoe UI", 12F);
             b15.Location = new Point(529, 4);
             b15.MinimumSize = new Size(1, 1);
             b15.Name = "b15";
@@ -460,12 +463,12 @@ namespace Sunny.UI
             b15.Symbol = 0;
             b15.TabIndex = 15;
             b15.Text = "0";
-            b15.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b15.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             // 
             // b14
             // 
             b14.Cursor = Cursors.Hand;
-            b14.Font = new Font("宋体", 12F);
+            b14.Font = new Font("Segoe UI", 12F);
             b14.Location = new Point(497, 4);
             b14.MinimumSize = new Size(1, 1);
             b14.Name = "b14";
@@ -474,12 +477,12 @@ namespace Sunny.UI
             b14.Symbol = 0;
             b14.TabIndex = 14;
             b14.Text = "0";
-            b14.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b14.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             // 
             // b13
             // 
             b13.Cursor = Cursors.Hand;
-            b13.Font = new Font("宋体", 12F);
+            b13.Font = new Font("Segoe UI", 12F);
             b13.Location = new Point(465, 4);
             b13.MinimumSize = new Size(1, 1);
             b13.Name = "b13";
@@ -488,12 +491,12 @@ namespace Sunny.UI
             b13.Symbol = 0;
             b13.TabIndex = 13;
             b13.Text = "0";
-            b13.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b13.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             // 
             // b12
             // 
             b12.Cursor = Cursors.Hand;
-            b12.Font = new Font("宋体", 12F);
+            b12.Font = new Font("Segoe UI", 12F);
             b12.Location = new Point(433, 4);
             b12.MinimumSize = new Size(1, 1);
             b12.Name = "b12";
@@ -502,12 +505,12 @@ namespace Sunny.UI
             b12.Symbol = 0;
             b12.TabIndex = 12;
             b12.Text = "0";
-            b12.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b12.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             // 
             // b11
             // 
             b11.Cursor = Cursors.Hand;
-            b11.Font = new Font("宋体", 12F);
+            b11.Font = new Font("Segoe UI", 12F);
             b11.Location = new Point(401, 4);
             b11.MinimumSize = new Size(1, 1);
             b11.Name = "b11";
@@ -516,12 +519,12 @@ namespace Sunny.UI
             b11.Symbol = 0;
             b11.TabIndex = 11;
             b11.Text = "0";
-            b11.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b11.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             // 
             // b10
             // 
             b10.Cursor = Cursors.Hand;
-            b10.Font = new Font("宋体", 12F);
+            b10.Font = new Font("Segoe UI", 12F);
             b10.Location = new Point(369, 4);
             b10.MinimumSize = new Size(1, 1);
             b10.Name = "b10";
@@ -530,12 +533,12 @@ namespace Sunny.UI
             b10.Symbol = 0;
             b10.TabIndex = 10;
             b10.Text = "0";
-            b10.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b10.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             // 
             // b9
             // 
             b9.Cursor = Cursors.Hand;
-            b9.Font = new Font("宋体", 12F);
+            b9.Font = new Font("Segoe UI", 12F);
             b9.Location = new Point(337, 4);
             b9.MinimumSize = new Size(1, 1);
             b9.Name = "b9";
@@ -544,12 +547,12 @@ namespace Sunny.UI
             b9.Symbol = 0;
             b9.TabIndex = 9;
             b9.Text = "0";
-            b9.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b9.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             // 
             // b8
             // 
             b8.Cursor = Cursors.Hand;
-            b8.Font = new Font("宋体", 12F);
+            b8.Font = new Font("Segoe UI", 12F);
             b8.Location = new Point(305, 4);
             b8.MinimumSize = new Size(1, 1);
             b8.Name = "b8";
@@ -558,12 +561,12 @@ namespace Sunny.UI
             b8.Symbol = 0;
             b8.TabIndex = 8;
             b8.Text = "0";
-            b8.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b8.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             // 
             // b16
             // 
             b16.Cursor = Cursors.Hand;
-            b16.Font = new Font("宋体", 10.5F);
+            b16.Font = new Font("Segoe UI", 10.5F);
             b16.ImageAlign = ContentAlignment.MiddleRight;
             b16.Location = new Point(561, 4);
             b16.MinimumSize = new Size(1, 1);
@@ -575,7 +578,7 @@ namespace Sunny.UI
             b16.TabIndex = 16;
             b16.TagString = ">";
             b16.TextAlign = ContentAlignment.MiddleLeft;
-            b16.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b16.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             // 
             // UIMiniPagination
             // 
@@ -795,9 +798,9 @@ namespace Sunny.UI
         public event OnPageChangeEventHandler PageChanged;
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -811,9 +814,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, no fill if the value is background color or transparent color or empty value
         /// </summary>
-        [Description("按钮填充颜色"), Category("SunnyUI")]
+        [Description("Button fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color ButtonFillColor
         {
@@ -829,9 +832,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体颜色
+        /// Font color
         /// </summary>
-        [Description("按钮字体颜色"), Category("SunnyUI")]
+        [Description("Button font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "White")]
         public Color ButtonForeColor
         {
@@ -846,8 +849,11 @@ namespace Sunny.UI
             }
         }
 
+        /// <summary>
+        /// Button fill color when mouse hovers
+        /// </summary>
         [DefaultValue(typeof(Color), "115, 179, 255"), Category("SunnyUI")]
-        [Description("按钮鼠标移上时填充颜色")]
+        [Description("Button fill color when mouse hovers")]
         public Color ButtonFillHoverColor
         {
             get => b0.FillHoverColor;
@@ -861,8 +867,11 @@ namespace Sunny.UI
             }
         }
 
+        /// <summary>
+        /// Button font color when mouse hovers
+        /// </summary>
         [DefaultValue(typeof(Color), "White"), Category("SunnyUI")]
-        [Description("按钮鼠标移上时字体颜色")]
+        [Description("Button font color when mouse hovers")]
         public Color ButtonForeHoverColor
         {
             get => b0.ForeHoverColor;
@@ -876,8 +885,11 @@ namespace Sunny.UI
             }
         }
 
+        /// <summary>
+        /// Button fill color when mouse is pressed
+        /// </summary>
         [DefaultValue(typeof(Color), "64, 128, 204"), Category("SunnyUI")]
-        [Description("按钮鼠标按下时填充颜色")]
+        [Description("Button fill color when mouse is pressed")]
         public Color ButtonFillPressColor
         {
             get => b0.FillPressColor;
@@ -891,8 +903,11 @@ namespace Sunny.UI
             }
         }
 
+        /// <summary>
+        /// Button font color when mouse is pressed
+        /// </summary>
         [DefaultValue(typeof(Color), "White"), Category("SunnyUI")]
-        [Description("按钮鼠标按下时字体颜色")]
+        [Description("Button font color when mouse is pressed")]
         public Color ButtonForePressColor
         {
             get => b0.ForePressColor;
@@ -906,8 +921,11 @@ namespace Sunny.UI
             }
         }
 
+        /// <summary>
+        /// Button fill color when selected
+        /// </summary>
         [DefaultValue(typeof(Color), "White"), Category("SunnyUI")]
-        [Description("按钮鼠标按下时字体颜色")]
+        [Description("Button fill color when selected")]
         public Color ButtonFillSelectedColor
         {
             get => b0.FillSelectedColor;
@@ -922,9 +940,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 滚动条主题样式
+        /// Scroll bar theme style
         /// </summary>
-        [DefaultValue(true), Description("滚动条主题样式"), Category("SunnyUI")]
+        [DefaultValue(true), Description("Scroll bar theme style"), Category("SunnyUI")]
         public bool ButtonStyleInherited
         {
             get => b0 != null && b0.Style == UIStyle.Inherited;

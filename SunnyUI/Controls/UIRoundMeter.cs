@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI Open Source Control Library, Utility Library, Extension Library, Multi-page Development Framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,14 +9,14 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
+ * If you use this code, please keep this note.
  ******************************************************************************
- * 文件名称: UIRoundMeter.cs
- * 文件说明: 圆形图表
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIRoundMeter.cs
+ * File Description: Circular Chart
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
+ * 2020-01-01: V2.2.0 Added file description
 ******************************************************************************/
 
 using Sunny.UI.Properties;
@@ -75,7 +75,7 @@ namespace Sunny.UI
         private Image _backImage;
 
         /// <summary>
-        ///     必需的设计器变量。
+        ///     Required designer variable.
         /// </summary>
         private IContainer components;
 
@@ -83,7 +83,7 @@ namespace Sunny.UI
         private TRunType _runType;
 
         /// <summary>
-        /// 构造函数
+        /// Constructor
         /// </summary>
         public UIRoundMeter()
         {
@@ -97,10 +97,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 旋转方式
+        /// Rotation Type
         /// </summary>
         [DefaultValue(TRunType.ClockWise)]
-        [Description("旋转方式"), Category("SunnyUI")]
+        [Description("Rotation Type"), Category("SunnyUI")]
         public TRunType RunType
         {
             get => _runType;
@@ -117,7 +117,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(TMeterType.Gps)]
-        [Description("显示类型"), Category("SunnyUI")]
+        [Description("Display Type"), Category("SunnyUI")]
         public TMeterType MeterType
         {
             get => _meterType;
@@ -147,9 +147,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 背景图片
+        /// Background Image
         /// </summary>
-        [Description("背景图片"), Category("SunnyUI")]
+        [Description("Background Image"), Category("SunnyUI")]
         public new Image BackgroundImage
         {
             get => _backImage;
@@ -173,9 +173,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 箭头图片
+        /// Arrow Image
         /// </summary>
-        [Description("箭头图片"), Category("SunnyUI")]
+        [Description("Arrow Image"), Category("SunnyUI")]
         public Image AngleImage
         {
             get => _angleImage;
@@ -187,10 +187,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 角度
+        /// Angle
         /// </summary>
         [DefaultValue(0D)]
-        [Description("角度"), Category("SunnyUI")]
+        [Description("Angle"), Category("SunnyUI")]
         public double Angle
         {
             get => _angle;
@@ -213,9 +213,9 @@ namespace Sunny.UI
         public new ImageLayout BackgroundImageLayout { get; set; }
 
         /// <summary>
-        ///     清理所有正在使用的资源。
+        ///     Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -227,9 +227,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override Paint
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Paint Event Args</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             if (_backImage != null)
@@ -260,17 +260,17 @@ namespace Sunny.UI
             rawImage.Dispose();
         }
 
-        #region 组件设计器生成的代码
+        #region Designer generated code
 
         /// <summary>
-        ///     设计器支持所需的方法 - 不要
-        ///     使用代码编辑器修改此方法的内容。
+        ///     Required method for Designer support - do not modify
+        ///     the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             components = new Container();
         }
 
-        #endregion 组件设计器生成的代码
+        #endregion Designer generated code
     }
 }

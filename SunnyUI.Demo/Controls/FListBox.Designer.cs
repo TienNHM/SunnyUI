@@ -40,21 +40,21 @@ namespace Sunny.UI.Demo
             // uiButton1
             // 
             this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiButton1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiButton1.Location = new System.Drawing.Point(30, 441);
             this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton1.Name = "uiButton1";
             this.uiButton1.Size = new System.Drawing.Size(100, 35);
             this.uiButton1.TabIndex = 29;
             this.uiButton1.Text = "Add Item";
-            this.uiButton1.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiButton1.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
             // 
             // uiCheckBox1
             // 
             this.uiCheckBox1.Checked = true;
             this.uiCheckBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiCheckBox1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiCheckBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiCheckBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiCheckBox1.Location = new System.Drawing.Point(352, 440);
             this.uiCheckBox1.MinimumSize = new System.Drawing.Size(1, 1);
@@ -68,7 +68,7 @@ namespace Sunny.UI.Demo
             // uiListBox1
             // 
             this.uiListBox1.FillColor = System.Drawing.Color.White;
-            this.uiListBox1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiListBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiListBox1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.uiListBox1.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.uiListBox1.Location = new System.Drawing.Point(30, 85);
@@ -86,7 +86,7 @@ namespace Sunny.UI.Demo
             // uiLine2
             // 
             this.uiLine2.BackColor = System.Drawing.Color.Transparent;
-            this.uiLine2.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLine2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLine2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLine2.Location = new System.Drawing.Point(352, 51);
             this.uiLine2.MinimumSize = new System.Drawing.Size(16, 16);
@@ -99,7 +99,7 @@ namespace Sunny.UI.Demo
             // uiLine1
             // 
             this.uiLine1.BackColor = System.Drawing.Color.Transparent;
-            this.uiLine1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLine1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLine1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLine1.Location = new System.Drawing.Point(30, 55);
             this.uiLine1.MinimumSize = new System.Drawing.Size(16, 16);
@@ -112,7 +112,7 @@ namespace Sunny.UI.Demo
             // uiImageListBox1
             // 
             this.uiImageListBox1.FillColor = System.Drawing.Color.White;
-            this.uiImageListBox1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiImageListBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiImageListBox1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.uiImageListBox1.ItemHeight = 80;
             this.uiImageListBox1.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));

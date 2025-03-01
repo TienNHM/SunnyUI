@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
- * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
+ * CopyRight (C) 2012-2025 ShenYongHua(Shen Yonghua).
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,25 +9,24 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIPanel.cs
- * 文件说明: 面板
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIPanel.cs
+ * Description: Panel
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-04-25: V2.2.4 更新主题配置类
- * 2021-05-09: V3.0.3 增加双缓冲，减少闪烁
- * 2021-09-03: V3.0.6 支持背景图片显示
- * 2021-12-11: V3.0.9 增加了渐变色
- * 2021-12-13: V3.0.9 边框线宽可设置1或者2
- * 2022-01-10: V3.1.0 调整边框和圆角的绘制
- * 2022-01-27: V3.1.0 禁止显示滚动条
- * 2022-02-16: V3.1.1 基类增加只读颜色设置
- * 2022-03-19: V3.1.1 重构主题配色
- * 2022-06-10: V3.1.9 尺寸改变时重绘
- * 2024-11-19: V3.7.2 增加透明度
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-04-25: V2.2.4 Updated theme configuration class
+ * 2021-05-09: V3.0.3 Added double buffering to reduce flickering
+ * 2021-09-03: V3.0.6 Support for background image display
+ * 2021-12-11: V3.0.9 Added gradient color
+ * 2021-12-13: V3.0.9 Border line width can be set to 1 or 2
+ * 2022-01-10: V3.1.0 Adjusted border and corner drawing
+ * 2022-01-27: V3.1.0 Disabled scrollbar display
+ * 2022-02-16: V3.1.1 Base class added read-only color setting
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2022-06-10: V3.1.9 Redraw on size change
+ * 2024-11-19: V3.7.2 Added opacity
 ******************************************************************************/
 
 using System.ComponentModel;
@@ -51,9 +50,9 @@ namespace Sunny.UI
         public override string[] FormTranslatorProperties => ["Text"];
 
         /// <summary>
-        /// 字体颜色
+        /// Font color
         /// </summary>
-        [Description("字体颜色"), Category("SunnyUI")]
+        [Description("Font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "48, 48, 48")]
         public override Color ForeColor
         {
@@ -67,14 +66,14 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "109, 109, 103")]
-        [Description("不可用时字体颜色"), Category("SunnyUI")]
+        [Description("Font color when disabled"), Category("SunnyUI")]
         public Color ForeDisableColor
         {
             get => foreDisableColor;
             set => SetForeDisableColor(value);
         }
 
-        [Description("是否显示文字"), Category("SunnyUI")]
+        [Description("Show text"), Category("SunnyUI")]
         [DefaultValue(true)]
         [Browsable(false)]
         public bool ShowText
@@ -91,9 +90,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置字体只读颜色
+        /// Set read-only font color
         /// </summary>
-        /// <param name="color">颜色</param>
+        /// <param name="color">Color</param>
         protected void SetForeReadOnlyColor(Color color)
         {
             foreReadOnlyColor = color;
@@ -102,7 +101,7 @@ namespace Sunny.UI
         }
 
         private byte _opacity = 255;
-        [Description("透明度"), Category("SunnyUI")]
+        [Description("Opacity"), Category("SunnyUI")]
         [DefaultValue(typeof(byte), "255")]
         public byte Opacity
         {

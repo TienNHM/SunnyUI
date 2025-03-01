@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,15 +9,14 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UILedLabel.cs
- * 文件说明: LED标签
- * 当前版本: V3.1
- * 创建日期: 2021-04-11
+ * File name: UILedLabel.cs
+ * File description: LED label
+ * Current version: V3.1
+ * Creation date: 2021-04-11
  *
- * 2021-04-11: V3.0.2 增加文件说明
- * 2022-03-19: V3.1.1 重构主题配色
+ * 2021-04-11: V3.0.2 Added file description
+ * 2022-03-19: V3.1.1 Refactored theme colors
 ******************************************************************************/
 
 using System.Collections;
@@ -40,9 +39,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override painting
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Painting parameters</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -136,9 +135,9 @@ namespace Sunny.UI
         private int CharCount => Text.Length;
 
         /// <summary>
-        /// LED亮块间距
+        /// LED block spacing
         /// </summary>
-        [DefaultValue(1), Description("LED亮块间距"), Category("SunnyUI")]
+        [DefaultValue(1), Description("LED block spacing"), Category("SunnyUI")]
         public int IntervalIn
         {
             get => intervalIn;
@@ -153,9 +152,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// LED亮块大小
+        /// LED block size
         /// </summary>
-        [DefaultValue(2), Description("LED亮块大小"), Category("SunnyUI")]
+        [DefaultValue(2), Description("LED block size"), Category("SunnyUI")]
         public int IntervalOn
         {
             get => intervalOn;
@@ -170,9 +169,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        ///     字体颜色
+        /// Font color
         /// </summary>
-        [Description("字体颜色")]
+        [Description("Font color")]
         [Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public override Color ForeColor
@@ -182,9 +181,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);

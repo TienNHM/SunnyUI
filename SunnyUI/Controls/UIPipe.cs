@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI Open Source Control Library, Utility Library, Extension Library, Multi-page Development Framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,16 +9,15 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIPipe.cs
- * 文件说明: 管道
- * 当前版本: V3.1
- * 创建日期: 2021-07-26
+ * File Name: UIPipe.cs
+ * Description: Pipe
+ * Current Version: V3.1
+ * Creation Date: 2021-07-26
  *
- * 2020-07-26: V3.0.5 增加管道控件
- * 2021-07-29: V3.0.5 优化管道连接
- * 2023-02-24: V3.3.2 修复了管道宽度调大后水流不显示的问题
+ * 2020-07-26: V3.0.5 Added pipe control
+ * 2021-07-29: V3.0.5 Optimized pipe connection
+ * 2023-02-24: V3.3.2 Fixed the issue where water flow was not displayed when the pipe width was increased
 ******************************************************************************/
 
 using System;
@@ -58,7 +57,7 @@ namespace Sunny.UI
         private UILine.LineDirection direction = UILine.LineDirection.Horizontal;
 
         [DefaultValue(UILine.LineDirection.Horizontal)]
-        [Description("线条方向"), Category("SunnyUI")]
+        [Description("Line direction"), Category("SunnyUI")]
         public UILine.LineDirection Direction
         {
             get => direction;
@@ -87,9 +86,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("边框颜色"), Category("SunnyUI")]
+        [Description("Border color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "Silver")]
         public Color RectColor
         {
@@ -98,9 +97,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, no fill if the value is background color, transparent color, or null
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "White")]
         public Color FillColor
         {
@@ -108,11 +107,11 @@ namespace Sunny.UI
             set => SetFillColor(value);
         }
 
-        [Description("流动开启"), Category("SunnyUI")]
+        [Description("Flow enabled"), Category("SunnyUI")]
         [DefaultValue(false)]
         public bool Active { get; set; }
 
-        [Description("流动方向"), Category("SunnyUI")]
+        [Description("Flow direction"), Category("SunnyUI")]
         [DefaultValue(UIFlowDirection.Forward)]
         public UIFlowDirection FlowDirection
         {
@@ -121,7 +120,7 @@ namespace Sunny.UI
         }
 
         public int flowSpeed = 6;
-        [Description("流动速度"), Category("SunnyUI")]
+        [Description("Flow speed"), Category("SunnyUI")]
         [DefaultValue(6)]
         public int FlowSpeed
         {
@@ -129,12 +128,12 @@ namespace Sunny.UI
             set => flowSpeed = Math.Max(value, 1);
         }
 
-        [Description("流动填充块颜色"), Category("SunnyUI")]
+        [Description("Flow fill block color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "Purple")]
         public Color FlowColor { get; set; } = Color.Purple;
 
         private int flowColorAlpha = 200;
-        [Description("流动填充块颜色透明度"), Category("SunnyUI")]
+        [Description("Flow fill block color transparency"), Category("SunnyUI")]
         [DefaultValue(200)]
         public int FlowColorAlpha
         {
@@ -143,7 +142,7 @@ namespace Sunny.UI
         }
 
         public int flowSize = 35;
-        [Description("流动填充块大小"), Category("SunnyUI")]
+        [Description("Flow fill block size"), Category("SunnyUI")]
         [DefaultValue(35)]
         public int FlowSize
         {
@@ -152,7 +151,7 @@ namespace Sunny.UI
         }
 
         public int flowInterval = 22;
-        [Description("流动填充块间隔"), Category("SunnyUI")]
+        [Description("Flow fill block interval"), Category("SunnyUI")]
         [DefaultValue(22)]
         public int FlowInterval
         {
@@ -163,12 +162,12 @@ namespace Sunny.UI
         public enum UIFlowDirection
         {
             /// <summary>
-            /// 正向
+            /// Forward
             /// </summary>
             Forward,
 
             /// <summary>
-            /// 反向
+            /// Reverse
             /// </summary>
             Reverse
         }
@@ -176,10 +175,10 @@ namespace Sunny.UI
         Color[] colors;
 
         /// <summary>
-        /// 绘制边框颜色
+        /// Draw border color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Graphics path</param>
         protected override void OnPaintRect(Graphics g, GraphicsPath path)
         {
             base.OnPaintRect(g, path);
@@ -231,10 +230,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制填充颜色
+        /// Draw fill color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Graphics path</param>
         protected override void OnPaintFill(Graphics g, GraphicsPath path)
         {
             base.OnPaintFill(g, path);

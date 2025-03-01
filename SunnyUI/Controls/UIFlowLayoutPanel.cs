@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,28 +9,27 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIFlowLayoutPanel.cs
- * 文件说明: FlowLayoutPanel
- * 当前版本: V3.1
- * 创建日期: 2020-09-29
+ * File Name: UIFlowLayoutPanel.cs
+ * File Description: FlowLayoutPanel
+ * Current Version: V3.1
+ * Creation Date: 2020-09-29
  *
- * 2020-09-29: V2.2.8 增加文件说明
- * 2021-07-10: V3.0.4 增加滚动条颜色属性 
- * 2021-07-31: V3.0.5 可像原生控件一样通过Controls.Add增加
- * 2021-08-11: V3.0.5 删除点击的Focus事件
- * 2021-10-18: V3.0.8 增加Scroll事件
- * 2021-11-05: V3.0.8 修改不同DPI缩放滚动条未覆盖的问题
- * 2022-11-03: V3.2.6 增加了可设置垂直滚动条宽度的属性
- * 2022-11-13: V3.2.8 增加滚动条背景色调整
- * 2022-11-13: V3.2.8 删除AddControl、RemoveControl方法
- * 2022-11-25: V3.2.9 增加Get方法以获取控件
- * 2023-01-11: V3.3.1 增加AutoScroll属性
- * 2023-01-11: V3.3.1 修复只显示水平滚动条时，鼠标滚轮滚动水平滚动条不动的问题
- * 2023-11-05: V3.5.2 重构主题
- * 2024-01-17: V3.6.3 重写ScrollControlIntoView函数
- * 2024-04-28: V3.6.5 增加Render方法，尝试解决点击状态栏恢复窗体后右侧滚动条未消失的问题
+ * 2020-09-29: V2.2.8 Added file description
+ * 2021-07-10: V3.0.4 Added scrollbar color property 
+ * 2021-07-31: V3.0.5 Can add controls through Controls.Add like native controls
+ * 2021-08-11: V3.0.5 Removed click Focus event
+ * 2021-10-18: V3.0.8 Added Scroll event
+ * 2021-11-05: V3.0.8 Fixed an issue where the scrollbar was not covered under different DPI scaling
+ * 2022-11-03: V3.2.6 Added property to set vertical scrollbar width
+ * 2022-11-13: V3.2.8 Added scrollbar background color adjustment
+ * 2022-11-13: V3.2.8 Removed AddControl and RemoveControl methods
+ * 2022-11-25: V3.2.9 Added Get method to retrieve controls
+ * 2023-01-11: V3.3.1 Added AutoScroll property
+ * 2023-01-11: V3.3.1 Fixed an issue where the horizontal scrollbar did not move when the mouse wheel scrolled with only the horizontal scrollbar visible
+ * 2023-11-05: V3.5.2 Refactored theme
+ * 2024-01-17: V3.6.3 Rewrote ScrollControlIntoView function
+ * 2024-04-28: V3.6.5 Added Render method to try to solve the issue where the right scrollbar did not disappear after clicking the status bar to restore the form
 ******************************************************************************/
 
 using System;
@@ -94,7 +93,7 @@ namespace Sunny.UI
 
         private int scrollBarWidth = 0;
 
-        [DefaultValue(0), Category("SunnyUI"), Description("垂直滚动条宽度，最小为原生滚动条宽度")]
+        [DefaultValue(0), Category("SunnyUI"), Description("Vertical scrollbar width, minimum is the native scrollbar width")]
         public int ScrollBarWidth
         {
             get => scrollBarWidth;
@@ -107,7 +106,7 @@ namespace Sunny.UI
 
         private int scrollBarHandleWidth = 6;
 
-        [DefaultValue(6), Category("SunnyUI"), Description("垂直滚动条滑块宽度，最小为原生滚动条宽度")]
+        [DefaultValue(6), Category("SunnyUI"), Description("Vertical scrollbar handle width, minimum is the native scrollbar width")]
         public int ScrollBarHandleWidth
         {
             get => scrollBarHandleWidth;
@@ -125,9 +124,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载字体变更
+        /// Overload font change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnFontChanged(EventArgs e)
         {
             base.OnFontChanged(e);
@@ -139,9 +138,9 @@ namespace Sunny.UI
         public new event ScrollEventHandler Scroll;
 
         /// <summary>
-        /// 需要额外设置ToolTip的控件
+        /// Control that needs additional ToolTip settings
         /// </summary>
-        /// <returns>控件</returns>
+        /// <returns>Control</returns>
         public Control ExToolTipControl()
         {
             return Panel;
@@ -317,10 +316,10 @@ namespace Sunny.UI
         public FlowLayoutPanel FlowLayoutPanel => flowLayoutPanel;
 
         /// <summary>
-        /// 绘制前景颜色
+        /// Draw foreground color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Graphics path</param>
         protected override void OnPaintFore(Graphics g, GraphicsPath path)
         {
         }
@@ -332,9 +331,9 @@ namespace Sunny.UI
         //}
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -370,9 +369,9 @@ namespace Sunny.UI
         private Color scrollBarColor = Color.FromArgb(80, 160, 255);
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is the background color or transparent color or empty value, it will not be filled
         /// </summary>
-        [Description("滚动条填充颜色"), Category("SunnyUI")]
+        [Description("Scrollbar fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color ScrollBarColor
         {
@@ -390,9 +389,9 @@ namespace Sunny.UI
         private Color scrollBarBackColor = Color.FromArgb(243, 249, 255);
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is the background color or transparent color or empty value, it will not be filled
         /// </summary>
-        [Description("滚动条背景颜色"), Category("SunnyUI")]
+        [Description("Scrollbar background color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "243, 249, 255")]
         public Color ScrollBarBackColor
         {
@@ -408,9 +407,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 滚动条主题样式
+        /// Scrollbar theme style
         /// </summary>
-        [DefaultValue(true), Description("滚动条主题样式"), Category("SunnyUI")]
+        [DefaultValue(true), Description("Scrollbar theme style"), Category("SunnyUI")]
         public bool ScrollBarStyleInherited
         {
             get => HBar != null && HBar.Style == UIStyle.Inherited;
@@ -435,9 +434,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标进入事件
+        /// Overload mouse enter event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseEnter(EventArgs e)
         {
             base.OnMouseEnter(e);
@@ -534,7 +533,7 @@ namespace Sunny.UI
             // 
             // VBar
             // 
-            VBar.Font = new Font("宋体", 12F);
+            VBar.Font = new Font("Segoe UI", 12F);
             VBar.Location = new Point(410, 5);
             VBar.MinimumSize = new Size(1, 1);
             VBar.Name = "VBar";
@@ -546,7 +545,7 @@ namespace Sunny.UI
             // 
             // HBar
             // 
-            HBar.Font = new Font("宋体", 12F);
+            HBar.Font = new Font("Segoe UI", 12F);
             HBar.Location = new Point(5, 364);
             HBar.MinimumSize = new Size(1, 1);
             HBar.Name = "HBar";
@@ -568,9 +567,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载控件尺寸变更
+        /// Overload control size change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);

@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,14 +9,14 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
+ * If you use this code, please keep this note.
  ******************************************************************************
- * 文件名称: UAudio.cs
- * 文件说明: 声音播放辅助类
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UAudio.cs
+ * File Description: Audio playback helper class
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
+ * 2020-01-01: V2.2.0 Added file description
 ******************************************************************************/
 
 using System;
@@ -24,12 +24,12 @@ using System.ComponentModel;
 using System.Media;
 using System.Security;
 using System.Security.Permissions;
-#pragma warning disable SYSLIB0003 // 类型或成员已过时
+#pragma warning disable SYSLIB0003 // Type or member is obsolete
 
 namespace Sunny.UI
 {
     /// <summary>
-    /// Wav声音播放辅助类
+    /// Wav audio playback helper class
     /// </summary>
     [HostProtection(SecurityAction.LinkDemand, Resources = HostProtectionResource.ExternalProcessMgmt)]
     [Browsable(false)]
@@ -37,22 +37,22 @@ namespace Sunny.UI
     public static class WavPlayer
     {
         /// <summary>
-        /// 指示如何调用音频方法时，播放声音。
+        /// Indicates how to play a sound when calling audio methods.
         /// </summary>
         public enum AudioPlayMode
         {
             /// <summary>
-            /// 播放声音，并等待，直到它完成之前调用代码继续。
+            /// Play the sound and wait until it completes before the calling code continues.
             /// </summary>
             WaitToComplete,
 
             /// <summary>
-            /// 在后台播放声音。调用代码继续执行。
+            /// Play the sound in the background. The calling code continues to execute.
             /// </summary>
             Background,
 
             /// <summary>
-            /// 直到stop方法被称为播放背景声音。调用代码继续执行。
+            /// Play the background sound until the stop method is called. The calling code continues to execute.
             /// </summary>
             BackgroundLoop
         }
@@ -62,9 +62,9 @@ namespace Sunny.UI
         #region Methods
 
         /// <summary>
-        /// 停止播放声音。
+        /// Stop playing the sound.
         /// </summary>
-        /// <param name="sound">SoundPlayer 对象。</param>
+        /// <param name="sound">SoundPlayer object.</param>
         private static void InternalStop(SoundPlayer sound)
         {
             new SecurityPermission(SecurityPermissionFlag.UnmanagedCode).Assert();
@@ -79,19 +79,19 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 播放 .wav 声音文件。
+        /// Play a .wav sound file.
         /// </summary>
-        /// <param name="location">包含声音文件的名称的字符串。</param>
+        /// <param name="location">A string containing the name of the sound file.</param>
         public static void Play(string location)
         {
             Play(location, AudioPlayMode.Background);
         }
 
         /// <summary>
-        /// 播放 .wav 声音文件。
+        /// Play a .wav sound file.
         /// </summary>
-        /// <param name="location">包含声音文件的名称的字符串。</param>
-        /// <param name="playMode">AudioPlayMode 枚举，指示播放模式。</param>
+        /// <param name="location">A string containing the name of the sound file.</param>
+        /// <param name="playMode">AudioPlayMode enumeration indicating the play mode.</param>
         public static void Play(string location, AudioPlayMode playMode)
         {
             ValidateAudioPlayModeEnum(playMode, nameof(playMode));
@@ -101,10 +101,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 根据播放模式播放声音。
+        /// Play the sound based on the play mode.
         /// </summary>
-        /// <param name="sound">SoundPlayer 对象。</param>
-        /// <param name="mode">AudioPlayMode 枚举，指示播放模式。</param>
+        /// <param name="sound">SoundPlayer object.</param>
+        /// <param name="mode">AudioPlayMode enumeration indicating the play mode.</param>
         private static void Play(SoundPlayer sound, AudioPlayMode mode)
         {
             if (_soundPlayer != null)
@@ -130,9 +130,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 播放系统声音。
+        /// Play a system sound.
         /// </summary>
-        /// <param name="systemSound">SystemSound 对象，代表系统播放声音。</param>
+        /// <param name="systemSound">SystemSound object representing the system sound to play.</param>
         public static void PlaySystemSound(SystemSound systemSound)
         {
             if (systemSound == null)
@@ -144,7 +144,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 停止在后台播放声音。
+        /// Stop playing the background sound.
         /// </summary>
         public static void Stop()
         {
@@ -153,10 +153,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 验证 AudioPlayMode 枚举值。
+        /// Validate AudioPlayMode enumeration value.
         /// </summary>
-        /// <param name="value">AudioPlayMode 枚举值。</param>
-        /// <param name="paramName">参数名称。</param>
+        /// <param name="value">AudioPlayMode enumeration value.</param>
+        /// <param name="paramName">Parameter name.</param>
         private static void ValidateAudioPlayModeEnum(AudioPlayMode value, string paramName)
         {
             if (!Enum.IsDefined(typeof(AudioPlayMode), value))
@@ -166,10 +166,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 验证文件名。
+        /// Validate the filename.
         /// </summary>
-        /// <param name="location">文件名字符串。</param>
-        /// <returns>验证后的文件名。</returns>
+        /// <param name="location">Filename string.</param>
+        /// <returns>Validated filename.</returns>
         private static string ValidateFilename(string location)
         {
             if (string.IsNullOrEmpty(location))
@@ -184,15 +184,15 @@ namespace Sunny.UI
     }
 
     /// <summary>
-    /// MP3文件播放操作辅助类
+    /// MP3 file playback helper class
     /// </summary>
     public static class Mp3Player
     {
         /// <summary>
-        /// 播放 MP3 文件。
+        /// Play an MP3 file.
         /// </summary>
-        /// <param name="mp3FileName">文件名。</param>
-        /// <param name="repeat">是否重复播放。</param>
+        /// <param name="mp3FileName">Filename.</param>
+        /// <param name="repeat">Whether to repeat playback.</param>
         public static void Play(string mp3FileName, bool repeat)
         {
             Win32.WinMM.mciSendString($"open \"{mp3FileName}\" type mpegvideo alias MediaFile", null, 0, IntPtr.Zero);
@@ -200,7 +200,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 暂停播放。
+        /// Pause playback.
         /// </summary>
         public static void Pause()
         {
@@ -208,7 +208,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 停止播放。
+        /// Stop playback.
         /// </summary>
         public static void Stop()
         {

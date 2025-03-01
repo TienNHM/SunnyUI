@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
- * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * SunnyUI open source control library, tool class library, extension class library, multi-page development framework.
+ * CopyRight (C) 2012-2025 ShenYongHua.
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,15 +9,14 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UFontAweSome.cs
- * 文件说明: 字体图片定义类：FontAweSome，V4.7.0
- * 当前版本: V3.1
- * 创建日期: 2020-02-26
+ * File Name: UFontAweSome.cs
+ * Description: Font image definition class: FontAweSome, V4.7.0
+ * Current Version: V3.1
+ * Creation Date: 2020-02-26
  *
- * 2020-02-26: V3.0.2 增加文件说明
-******************************************************************************/
+ * 2020-02-26: V3.0.2 Added file description
+ ******************************************************************************/
 
 /******************************************************************************
  * https://fontawesome.com/icons?d=listing&p=2&m=free
@@ -62,7 +61,7 @@ to represent the company, product, or service to which they refer.
 
 namespace Sunny.UI
 {
-#pragma warning disable CS1591 // 缺少对公共可见类型或成员的 XML 注释
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     /// <summary>
     /// FontAwesome.ttf V4.7
     /// 61440..62176
@@ -881,5 +880,5 @@ namespace Sunny.UI
         public const int fa_youtube_play = 0xf16a;
         public const int fa_youtube_square = 0xf166;
     }
-#pragma warning restore CS1591 // 缺少对公共可见类型或成员的 XML 注释
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 }

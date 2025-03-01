@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI Open Source Control Library, Utility Library, Extension Library, Multi-page Development Framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,25 +9,24 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIHeaderButton.cs
- * 文件说明: 顶部图标按钮
- * 当前版本: V3.1
- * 创建日期: 2021-02-10
+ * File Name: UIHeaderButton.cs
+ * Description: Top Icon Button
+ * Current Version: V3.1
+ * Creation Date: 2021-02-10
  *
- * 2021-02-10: V3.0.1 增加文件说明
- * 2021-03-27: V3.0.2 增加字体图标背景时鼠标移上背景色
- * 2021-06-01: V3.0.4 增加图片与文字的位置
- * 2021-06-22: V3.0.4 增加ShowSelected，是否显示选中状态
- * 2021-09-21: V3.0.7 增加Disabled颜色
- * 2021-12-07: V3.0.9 更改图片自动刷新
- * 2022-01-02: V3.0.9 增加角标
- * 2022-03-19: V3.1.1 重构主题配色
- * 2023-05-13: V3.3.6 重构DrawString函数
- * 2023-05-16: V3.3.6 重构DrawFontImage函数
- * 2023-10-26: V3.5.1 字体图标增加旋转角度参数SymbolRotate
- * 2024-01-21: V3.6.3 增加分组编号
+ * 2021-02-10: V3.0.1 Added file description
+ * 2021-03-27: V3.0.2 Added background color when mouse hovers over font icon
+ * 2021-06-01: V3.0.4 Added position of image and text
+ * 2021-06-22: V3.0.4 Added ShowSelected, whether to show selected state
+ * 2021-09-21: V3.0.7 Added Disabled color
+ * 2021-12-07: V3.0.9 Changed image auto-refresh
+ * 2022-01-02: V3.0.9 Added badge
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2023-05-13: V3.3.6 Refactored DrawString function
+ * 2023-05-16: V3.3.6 Refactored DrawFontImage function
+ * 2023-10-26: V3.5.1 Added rotation angle parameter SymbolRotate for font icon
+ * 2024-01-21: V3.6.3 Added group index
 ******************************************************************************/
 
 using System;
@@ -75,9 +74,9 @@ namespace Sunny.UI
         public override string[] FormTranslatorProperties => ["Text"];
 
         /// <summary>
-        /// 设置控件缩放比例
+        /// Set control zoom scale
         /// </summary>
-        /// <param name="scale">缩放比例</param>
+        /// <param name="scale">Zoom scale</param>
         public override void SetZoomScale(float scale)
         {
             base.SetZoomScale(scale);
@@ -86,7 +85,7 @@ namespace Sunny.UI
 
         private bool showTips = false;
 
-        [Description("是否显示角标"), Category("SunnyUI")]
+        [Description("Show badge"), Category("SunnyUI")]
         [DefaultValue(false)]
         public bool ShowTips
         {
@@ -106,7 +105,7 @@ namespace Sunny.UI
 
         private string tipsText = "";
 
-        [Description("角标文字"), Category("SunnyUI")]
+        [Description("Badge text"), Category("SunnyUI")]
         [DefaultValue("")]
         public string TipsText
         {
@@ -126,7 +125,7 @@ namespace Sunny.UI
 
         private Color tipsColor = Color.Red;
 
-        [Description("角标背景颜色"), Category("SunnyUI")]
+        [Description("Badge background color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "Red")]
         public Color TipsColor
         {
@@ -140,7 +139,7 @@ namespace Sunny.UI
 
         private Color tipsForeColor = Color.White;
 
-        [DefaultValue(typeof(Color), "White"), Category("SunnyUI"), Description("角标文字颜色")]
+        [DefaultValue(typeof(Color), "White"), Category("SunnyUI"), Description("Badge text color")]
         public Color TipsForeColor
         {
             get => tipsForeColor;
@@ -153,8 +152,8 @@ namespace Sunny.UI
 
         private Font tipsFont = UIStyles.SubFont();
 
-        [Description("角标文字字体"), Category("SunnyUI")]
-        [DefaultValue(typeof(Font), "宋体, 9pt")]
+        [Description("Badge text font"), Category("SunnyUI")]
+        [DefaultValue(typeof(Font), "Segoe UI, 9pt")]
         public Font TipsFont
         {
             get { return tipsFont; }
@@ -182,9 +181,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 点击事件
+        /// Click event
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnClick(EventArgs e)
         {
             Focus();
@@ -207,11 +206,11 @@ namespace Sunny.UI
         }
 
         [DefaultValue(0)]
-        [Description("分组编号"), Category("SunnyUI")]
+        [Description("Group index"), Category("SunnyUI")]
         public int GroupIndex { get; set; }
 
         [DefaultValue(true)]
-        [Description("显示选中状态"), Category("SunnyUI")]
+        [Description("Show selected state"), Category("SunnyUI")]
         public bool ShowSelected { get; set; } = true;
 
         public event EventHandler SelectedChanged;
@@ -219,10 +218,10 @@ namespace Sunny.UI
         private int _symbolSize = 48;
 
         /// <summary>
-        /// 字体图标大小
+        /// Font icon size
         /// </summary>
         [DefaultValue(48)]
-        [Description("字体图标大小"), Category("SunnyUI")]
+        [Description("Font icon size"), Category("SunnyUI")]
         public int SymbolSize
         {
             get => _symbolSize;
@@ -235,16 +234,16 @@ namespace Sunny.UI
         }
 
         [DefaultValue(0)]
-        [Description("多页面框架的页面索引"), Category("SunnyUI")]
+        [Description("Page index of multi-page framework"), Category("SunnyUI")]
         public int PageIndex { get; set; }
 
         private Color symbolColor = Color.White;
 
         /// <summary>
-        /// 字体图标颜色
+        /// Font icon color
         /// </summary>
         [DefaultValue(typeof(Color), "White")]
-        [Description("字体图标颜色"), Category("SunnyUI")]
+        [Description("Font icon color"), Category("SunnyUI")]
         public Color SymbolColor
         {
             get => symbolColor;
@@ -258,10 +257,10 @@ namespace Sunny.UI
         private int _symbolRotate = 0;
 
         /// <summary>
-        /// 字体图标旋转角度
+        /// Font icon rotation angle
         /// </summary>
         [DefaultValue(0)]
-        [Description("字体图标旋转角度"), Category("SunnyUI")]
+        [Description("Font icon rotation angle"), Category("SunnyUI")]
         public int SymbolRotate
         {
             get => _symbolRotate;
@@ -276,9 +275,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -297,7 +296,7 @@ namespace Sunny.UI
             foreDisableColor = foreColor;
         }
 
-        [Description("不可用颜色"), Category("SunnyUI")]
+        [Description("Disabled color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "173, 178, 181")]
         public Color CircleDisabledColor
         {
@@ -306,9 +305,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is background color or transparent color or empty value, it will not be filled
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color FillColor
         {
@@ -316,7 +315,7 @@ namespace Sunny.UI
             set => SetFillColor(value);
         }
 
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color FillDisableColor
         {
@@ -325,9 +324,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体颜色
+        /// Font color
         /// </summary>
-        [Description("字体颜色"), Category("SunnyUI")]
+        [Description("Font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "White")]
         public override Color ForeColor
         {
@@ -336,7 +335,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "White"), Category("SunnyUI")]
-        [Description("不可用时字体颜色")]
+        [Description("Font color when disabled")]
         public Color ForeDisableColor
         {
             get => foreDisableColor;
@@ -344,7 +343,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "115, 179, 255"), Category("SunnyUI")]
-        [Description("鼠标移上时填充颜色")]
+        [Description("Fill color when mouse hovers")]
         public Color FillHoverColor
         {
             get => fillHoverColor;
@@ -352,7 +351,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "64, 128, 204"), Category("SunnyUI")]
-        [Description("鼠标按下时填充颜色")]
+        [Description("Fill color when mouse is pressed")]
         public Color FillPressColor
         {
             get => fillPressColor;
@@ -360,7 +359,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "White"), Category("SunnyUI")]
-        [Description("鼠标移上时字体颜色")]
+        [Description("Font color when mouse hovers")]
         public Color ForeHoverColor
         {
             get => foreHoverColor;
@@ -368,7 +367,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "White"), Category("SunnyUI")]
-        [Description("鼠标按下时字体颜色")]
+        [Description("Font color when mouse is pressed")]
         public Color ForePressColor
         {
             get => forePressColor;
@@ -376,7 +375,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "64, 128, 204"), Category("SunnyUI")]
-        [Description("选中时填充颜色")]
+        [Description("Fill color when selected")]
         public Color FillSelectedColor
         {
             get => fillSelectedColor;
@@ -384,7 +383,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "White"), Category("SunnyUI")]
-        [Description("选中时字体颜色")]
+        [Description("Font color when selected")]
         public Color ForeSelectedColor
         {
             get => foreSelectedColor;
@@ -394,7 +393,7 @@ namespace Sunny.UI
         private Image image;
 
         [DefaultValue(null)]
-        [Description("图片"), Category("SunnyUI")]
+        [Description("Image"), Category("SunnyUI")]
         public Image Image
         {
             get => image;
@@ -411,12 +410,12 @@ namespace Sunny.UI
         private int _symbol = FontAwesomeIcons.fa_check;
 
         /// <summary>
-        /// 字体图标
+        /// Font icon
         /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [Editor("Sunny.UI.UIImagePropertyEditor, " + AssemblyRefEx.SystemDesign, typeof(UITypeEditor))]
         [DefaultValue(61452)]
-        [Description("字体图标"), Category("SunnyUI")]
+        [Description("Font icon"), Category("SunnyUI")]
         public int Symbol
         {
             get => _symbol;
@@ -430,7 +429,7 @@ namespace Sunny.UI
         private int imageTop;
 
         [DefaultValue(0)]
-        [Description("图片距离顶部距离"), Category("SunnyUI")]
+        [Description("Distance from top of image"), Category("SunnyUI")]
         public int ImageTop
         {
             get => imageTop;
@@ -444,10 +443,10 @@ namespace Sunny.UI
         private Point symbolOffset = new Point(0, 0);
 
         /// <summary>
-        /// 字体图标的偏移位置
+        /// Offset position of font icon
         /// </summary>
         [DefaultValue(typeof(Point), "0, 0")]
-        [Description("字体图标的偏移位置"), Category("SunnyUI")]
+        [Description("Offset position of font icon"), Category("SunnyUI")]
         public Point SymbolOffset
         {
             get => symbolOffset;
@@ -461,7 +460,7 @@ namespace Sunny.UI
         private Color circleColor = Color.Bisque;
 
         [DefaultValue(typeof(Color), "Bisque")]
-        [Description("字体图标背景颜色"), Category("SunnyUI")]
+        [Description("Font icon background color"), Category("SunnyUI")]
         public Color CircleColor
         {
             get => circleColor;
@@ -473,13 +472,13 @@ namespace Sunny.UI
         }
 
         [DefaultValue(false)]
-        [Description("是否显示字体图标鼠标移上背景颜色"), Category("SunnyUI")]
+        [Description("Show font icon hover background color"), Category("SunnyUI")]
         public bool ShowCircleHoverColor { get; set; }
 
         private Color circleHoverColor = Color.Bisque;
 
         [DefaultValue(typeof(Color), "Bisque")]
-        [Description("字体图标鼠标移上背景颜色"), Category("SunnyUI")]
+        [Description("Font icon hover background color"), Category("SunnyUI")]
         public Color CircleHoverColor
         {
             get => circleHoverColor;
@@ -500,7 +499,7 @@ namespace Sunny.UI
         private int baseCircleSize = 50;
 
         [DefaultValue(50)]
-        [Description("字体图标背景大小"), Category("SunnyUI")]
+        [Description("Font icon background size"), Category("SunnyUI")]
         public int CircleSize
         {
             get => circleSize;
@@ -512,10 +511,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制填充颜色
+        /// Draw fill color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Graphics path</param>
         protected override void OnPaintFill(Graphics g, GraphicsPath path)
         {
             if (!selected)
@@ -530,10 +529,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 是否选中
+        /// Whether selected
         /// </summary>
         [DefaultValue(false)]
-        [Description("是否选中"), Category("SunnyUI")]
+        [Description("Whether selected"), Category("SunnyUI")]
         public bool Selected
         {
             get => selected;
@@ -551,7 +550,7 @@ namespace Sunny.UI
         private TextImageRelation textImageRelation = TextImageRelation.ImageAboveText;
 
         [DefaultValue(TextImageRelation.ImageAboveText)]
-        [Description("指定图像与文本的相对位置"), Category("SunnyUI")]
+        [Description("Specifies the relative position of the image and text"), Category("SunnyUI")]
         public TextImageRelation TextImageRelation
         {
             get => textImageRelation;
@@ -563,9 +562,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标按下事件
+        /// Override mouse down event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
@@ -574,9 +573,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标抬起事件
+        /// Override mouse up event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseUp(MouseEventArgs e)
         {
             base.OnMouseUp(e);
@@ -585,9 +584,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标离开事件
+        /// Override mouse leave event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseLeave(EventArgs e)
         {
             base.OnMouseLeave(e);
@@ -597,9 +596,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标进入事件
+        /// Override mouse enter event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseEnter(EventArgs e)
         {
             base.OnMouseEnter(e);
@@ -612,7 +611,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(DialogResult.None)]
-        [Description("指定标识符以指示对话框的返回值"), Category("SunnyUI")]
+        [Description("Specifies the identifier indicating the return value of the dialog box"), Category("SunnyUI")]
         public DialogResult DialogResult { get; set; } = DialogResult.None;
 
         protected override void OnKeyDown(KeyEventArgs e)
@@ -636,12 +635,12 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override paint
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Paint parameters</param>
         protected override void OnPaint(PaintEventArgs e)
         {
-            //重绘父类
+            // Redraw parent class
             base.OnPaint(e);
             Size ImageSize = new Size(0, 0);
             if (Symbol > 0)
@@ -654,10 +653,10 @@ namespace Sunny.UI
             {
                 case TextImageRelation.TextAboveImage:
                     {
-                        #region  文本在上
+                        #region Text above image
                         e.Graphics.DrawString(Text, Font, color, new Rectangle(0, Padding.Top, Width, Height), ContentAlignment.TopCenter);
 
-                        //字体图标
+                        // Font icon
                         if (Symbol > 0 && Image == null)
                         {
                             Color bcColor = CircleColor;
@@ -679,8 +678,8 @@ namespace Sunny.UI
                     break;
                 case TextImageRelation.ImageBeforeText:
                     {
-                        #region  图片在前   
-                        //字体图标
+                        #region  Image before text   
+                        // Font icon
                         if (Symbol > 0 && Image == null)
                         {
                             Color bcColor = CircleColor;
@@ -704,10 +703,10 @@ namespace Sunny.UI
                     break;
                 case TextImageRelation.TextBeforeImage:
                     {
-                        #region  文本在前
+                        #region  Text before image
                         e.Graphics.DrawString(Text, Font, color, new Rectangle(Padding.Left, 0, Width, Height), ContentAlignment.MiddleLeft);
 
-                        //字体图标
+                        // Font icon
                         if (Symbol > 0 && Image == null)
                         {
                             Color bcColor = CircleColor;
@@ -729,8 +728,8 @@ namespace Sunny.UI
                     break;
                 default:
                     {
-                        #region  图片在上
-                        //字体图标
+                        #region  Image above text
+                        // Font icon
                         if (Symbol > 0 && Image == null)
                         {
                             Color bcColor = CircleColor;
@@ -768,7 +767,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(null)]
-        [Description("关联的TabControl"), Category("SunnyUI")]
+        [Description("Associated TabControl"), Category("SunnyUI")]
         public UITabControl TabControl { get; set; }
     }
 }

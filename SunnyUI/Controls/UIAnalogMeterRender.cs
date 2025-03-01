@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,13 +9,12 @@
  *
  * SunnyUI can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIAnalogMeterRender.cs
- * 文件说明: 仪表渲染类
- * 文件作者: Luca Bonotto
- * 开源协议: CPOL
- * 引用地址: https://www.codeproject.com/Articles/24945/Analog-Meter
+ * File Name: UIAnalogMeterRender.cs
+ * File Description: Analog meter rendering class
+ * File Author: Luca Bonotto
+ * Open Source License: CPOL
+ * Reference Address: https://www.codeproject.com/Articles/24945/Analog-Meter
 ******************************************************************************/
 
 /*

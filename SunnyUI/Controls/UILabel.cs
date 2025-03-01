@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
- * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
+ * CopyRight (C) 2012-2025 ShenYongHua.
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,20 +9,19 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UILabel.cs
- * 文件说明: 标签
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UILabel.cs
+ * Description: Label
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-04-23: V2.2.4 增加UISymbolLabel
- * 2020-04-25: V2.2.4 更新主题配置类
- * 2020-11-12: V3.0.8 增加文字旋转角度
- * 2022-03-19: V3.1.1 重构主题配色
- * 2023-11-16: V3.5.2 重构主题
- * 2024-07-10: V3.6.7 文字位置默认TopLeft
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-04-23: V2.2.4 Added UISymbolLabel
+ * 2020-04-25: V2.2.4 Updated theme configuration class
+ * 2020-11-12: V3.0.8 Added text rotation angle
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2023-11-16: V3.5.2 Refactored theme
+ * 2024-07-10: V3.6.7 Default text position TopLeft
 ******************************************************************************/
 
 using System.ComponentModel;
@@ -44,29 +43,29 @@ namespace Sunny.UI
         }
 
         [Browsable(false)]
-        [Description("控件在界面显示时需要多语翻译的属性名称数组"), Category("SunnyUI")]
+        [Description("Array of property names that need multilingual translation when the control is displayed"), Category("SunnyUI")]
         public string[] FormTranslatorProperties => ["Text"];
 
         [DefaultValue(true)]
-        [Description("控件在界面显示时需要多语翻译"), Category("SunnyUI")]
+        [Description("Whether the control needs multilingual translation when displayed"), Category("SunnyUI")]
         public bool MultiLanguageSupport { get; set; } = true;
 
         /// <summary>
-        /// 禁止控件跟随窗体缩放
+        /// Disable control scaling with the form
         /// </summary>
-        [DefaultValue(false), Category("SunnyUI"), Description("禁止控件跟随窗体缩放")]
+        [DefaultValue(false), Category("SunnyUI"), Description("Disable control scaling with the form")]
         public bool ZoomScaleDisabled { get; set; }
 
         /// <summary>
-        /// 控件缩放前在其容器里的位置
+        /// Position of the control in its container before scaling
         /// </summary>
         [Browsable(false), DefaultValue(typeof(Rectangle), "0, 0, 0, 0")]
         public Rectangle ZoomScaleRect { get; set; }
 
         /// <summary>
-        /// 设置控件缩放比例
+        /// Set the scaling ratio of the control
         /// </summary>
-        /// <param name="scale">缩放比例</param>
+        /// <param name="scale">Scaling ratio</param>
         public virtual void SetZoomScale(float scale)
         {
 
@@ -74,7 +73,7 @@ namespace Sunny.UI
 
         private int angle;
 
-        [DefaultValue(0), Category("SunnyUI"), Description("居中时旋转角度")]
+        [DefaultValue(0), Category("SunnyUI"), Description("Rotation angle when centered")]
         public int Angle
         {
             get => angle;
@@ -95,18 +94,18 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// Tag字符串
+        /// Tag string
         /// </summary>
         [DefaultValue(null)]
-        [Description("获取或设置包含有关控件的数据的对象字符串"), Category("SunnyUI")]
+        [Description("Get or set the object string containing data about the control"), Category("SunnyUI")]
         public string TagString { get; set; }
 
         public string Version { get; }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="style">主题样式</param>
+        /// <param name="style">Theme style</param>
         private void SetStyle(UIStyle style)
         {
             if (!style.IsCustom())
@@ -125,10 +124,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 自定义主题风格
+        /// Custom theme style
         /// </summary>
         [DefaultValue(false), Browsable(false)]
-        [Description("获取或设置可以自定义主题风格"), Category("SunnyUI")]
+        [Description("Get or set whether the theme style can be customized"), Category("SunnyUI")]
         public bool StyleCustomMode { get; set; }
 
         public virtual void SetStyleColor(UIBaseStyle uiColor)
@@ -139,9 +138,9 @@ namespace Sunny.UI
         private UIStyle _style = UIStyle.Inherited;
 
         /// <summary>
-        /// 主题样式
+        /// Theme style
         /// </summary>
-        [DefaultValue(UIStyle.Inherited), Description("主题样式"), Category("SunnyUI")]
+        [DefaultValue(UIStyle.Inherited), Description("Theme style"), Category("SunnyUI")]
         public UIStyle Style
         {
             get => _style;
@@ -149,9 +148,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override painting
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Painting parameters</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             if (TextAlign == ContentAlignment.MiddleCenter && Angle != 0 && !AutoSize)
@@ -183,29 +182,29 @@ namespace Sunny.UI
         }
 
         [Browsable(false)]
-        [Description("控件在界面显示时需要多语翻译的属性名称数组"), Category("SunnyUI")]
+        [Description("Array of property names that need multilingual translation when the control is displayed"), Category("SunnyUI")]
         public string[] FormTranslatorProperties => ["Text"];
 
         [DefaultValue(true)]
-        [Description("控件在界面显示时需要多语翻译"), Category("SunnyUI")]
+        [Description("Whether the control needs multilingual translation when displayed"), Category("SunnyUI")]
         public bool MultiLanguageSupport { get; set; } = true;
 
         /// <summary>
-        /// 禁止控件跟随窗体缩放
+        /// Disable control scaling with the form
         /// </summary>
-        [DefaultValue(false), Category("SunnyUI"), Description("禁止控件跟随窗体缩放")]
+        [DefaultValue(false), Category("SunnyUI"), Description("Disable control scaling with the form")]
         public bool ZoomScaleDisabled { get; set; }
 
         /// <summary>
-        /// 控件缩放前在其容器里的位置
+        /// Position of the control in its container before scaling
         /// </summary>
         [Browsable(false), DefaultValue(typeof(Rectangle), "0, 0, 0, 0")]
         public Rectangle ZoomScaleRect { get; set; }
 
         /// <summary>
-        /// 设置控件缩放比例
+        /// Set the scaling ratio of the control
         /// </summary>
-        /// <param name="scale">缩放比例</param>
+        /// <param name="scale">Scaling ratio</param>
         public void SetZoomScale(float scale)
         {
 
@@ -221,25 +220,25 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// Tag字符串
+        /// Tag string
         /// </summary>
         [DefaultValue(null)]
-        [Description("获取或设置包含有关控件的数据的对象字符串"), Category("SunnyUI")]
+        [Description("Get or set the object string containing data about the control"), Category("SunnyUI")]
         public string TagString { get; set; }
 
         public string Version { get; }
 
         /// <summary>
-        /// 自定义主题风格
+        /// Custom theme style
         /// </summary>
         [DefaultValue(false), Browsable(false)]
-        [Description("获取或设置可以自定义主题风格"), Category("SunnyUI")]
+        [Description("Get or set whether the theme style can be customized"), Category("SunnyUI")]
         public bool StyleCustomMode { get; set; }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="style">主题样式</param>
+        /// <param name="style">Theme style</param>
         private void SetStyle(UIStyle style)
         {
             if (!style.IsCustom())
@@ -267,9 +266,9 @@ namespace Sunny.UI
         private UIStyle _style = UIStyle.Inherited;
 
         /// <summary>
-        /// 主题样式
+        /// Theme style
         /// </summary>
-        [DefaultValue(UIStyle.Inherited), Description("主题样式"), Category("SunnyUI")]
+        [DefaultValue(UIStyle.Inherited), Description("Theme style"), Category("SunnyUI")]
         public UIStyle Style
         {
             get => _style;
@@ -278,9 +277,9 @@ namespace Sunny.UI
 
         private Color linkColor;
         /// <summary>
-        /// 字体颜色
+        /// Font color
         /// </summary>
-        [Description("字体颜色"), Category("SunnyUI")]
+        [Description("Font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "48, 48, 48")]
         public new Color LinkColor
         {

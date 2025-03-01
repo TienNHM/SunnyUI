@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,28 +9,27 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UINavBar.cs
- * 文件说明: 导航栏
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UINavBar.cs
+ * Description: Navigation bar
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-08-28: V2.2.7 增加节点的Image绘制
- * 2021-03-20: V3.0.2 增加可设置背景图片
- * 2021-06-08: V3.0.4 标题选中高亮颜色增加可调整高度
- * 2021-08-07: V3.0.5 显示/隐藏子节点提示箭头，增加选中项圆角
- * 2022-03-19: V3.1.1 重构主题配色
- * 2022-04-14: V3.1.3 重构扩展函数
- * 2022-07-28: V3.2.2 删除界面此控件的编辑器 
- * 2023-02-22: V3.3.2 去除下拉菜单宽度调整
- * 2023-05-12: V3.3.6 重构DrawString函数
- * 2023-05-16: V3.3.6 重构DrawFontImage函数
- * 2023-10-17: V3.5.1 修正下拉菜单文字显示垂直居中
- * 2023-10-17: V3.5.1 ImageList为空时，下拉菜单增加Symbol绘制
- * 2023-11-16: V3.5.2 重构主题
- * 2024-11-11: V3.7.2 增加StyleDropDown属性，手动修改Style时设置此属性以修改下拉框主题
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-08-28: V2.2.7 Added Image drawing for nodes
+ * 2021-03-20: V3.0.2 Added background image setting
+ * 2021-06-08: V3.0.4 Added adjustable height for title selection highlight color
+ * 2021-08-07: V3.0.5 Show/hide child node hint arrow, added rounded corners for selected items
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2022-04-14: V3.1.3 Refactored extension functions
+ * 2022-07-28: V3.2.2 Removed editor for this control in the interface
+ * 2023-02-22: V3.3.2 Removed dropdown menu width adjustment
+ * 2023-05-12: V3.3.6 Refactored DrawString function
+ * 2023-05-16: V3.3.6 Refactored DrawFontImage function
+ * 2023-10-17: V3.5.1 Fixed vertical centering of text in dropdown menu
+ * 2023-10-17: V3.5.1 Added Symbol drawing in dropdown menu when ImageList is empty
+ * 2023-11-16: V3.5.2 Refactored theme
+ * 2024-11-11: V3.7.2 Added StyleDropDown property, set this property to modify dropdown theme when manually changing Style
 ******************************************************************************/
 
 using System;
@@ -73,21 +72,21 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 禁止控件跟随窗体缩放
+        /// Disable control scaling with the form
         /// </summary>
-        [DefaultValue(false), Category("SunnyUI"), Description("禁止控件跟随窗体缩放")]
+        [DefaultValue(false), Category("SunnyUI"), Description("Disable control scaling with the form")]
         public bool ZoomScaleDisabled { get; set; }
 
         /// <summary>
-        /// 控件缩放前在其容器里的位置
+        /// Control position in its container before scaling
         /// </summary>
         [Browsable(false), DefaultValue(typeof(Rectangle), "0, 0, 0, 0")]
         public Rectangle ZoomScaleRect { get; set; }
 
         /// <summary>
-        /// 设置控件缩放比例
+        /// Set control scaling ratio
         /// </summary>
-        /// <param name="scale">缩放比例</param>
+        /// <param name="scale">Scaling ratio</param>
         public void SetZoomScale(float scale)
         {
             _nodeInterval = UIZoomScale.Calc(baseNodeInterval, scale);
@@ -106,8 +105,11 @@ namespace Sunny.UI
 
         private int radius;
 
+        /// <summary>
+        /// Show selected item rounded corners
+        /// </summary>
         [DefaultValue(0)]
-        [Description("显示选择项圆角"), Category("SunnyUI")]
+        [Description("Show selected item rounded corners"), Category("SunnyUI")]
         public int Radius
         {
             get => radius;
@@ -120,8 +122,11 @@ namespace Sunny.UI
 
         private bool showItemsArrow = true;
 
+        /// <summary>
+        /// Show child node hint arrow
+        /// </summary>
         [DefaultValue(true)]
-        [Description("显示子节点提示箭头"), Category("SunnyUI")]
+        [Description("Show child node hint arrow"), Category("SunnyUI")]
         public bool ShowItemsArrow
         {
             get => showItemsArrow;
@@ -133,9 +138,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载控件尺寸变更
+        /// Override control size change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
@@ -148,21 +153,24 @@ namespace Sunny.UI
             MenuHelper.Clear();
         }
 
+        /// <summary>
+        /// Associated TabControl
+        /// </summary>
         [DefaultValue(null)]
-        [Description("关联的TabControl"), Category("SunnyUI")]
+        [Description("Associated TabControl"), Category("SunnyUI")]
         public UITabControl TabControl { get; set; }
 
         /// <summary>
-        /// Tag字符串
+        /// Tag string
         /// </summary>
         [DefaultValue(null)]
-        [Description("获取或设置包含有关控件的数据的对象字符串"), Category("SunnyUI")]
+        [Description("Get or set the object string containing data about the control"), Category("SunnyUI")]
         public string TagString { get; set; }
 
         private UIMenuStyle _menuStyle = UIMenuStyle.Black;
 
         [DefaultValue(UIMenuStyle.Black)]
-        [Description("导航栏主题风格"), Category("SunnyUI")]
+        [Description("Navigation bar theme style"), Category("SunnyUI")]
         public UIMenuStyle MenuStyle
         {
             get => _menuStyle;
@@ -180,9 +188,9 @@ namespace Sunny.UI
         private Color foreColor = Color.Silver;
 
         /// <summary>
-        /// 字体颜色
+        /// Font color
         /// </summary>
-        [Description("字体颜色"), Category("SunnyUI")]
+        [Description("Font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "Silver")]
         public override Color ForeColor
         {
@@ -200,8 +208,11 @@ namespace Sunny.UI
 
         private Color backColor = Color.FromArgb(56, 56, 56);
 
+        /// <summary>
+        /// Background color
+        /// </summary>
         [DefaultValue(typeof(Color), "56, 56, 56")]
-        [Description("背景颜色"), Category("SunnyUI")]
+        [Description("Background color"), Category("SunnyUI")]
         public override Color BackColor
         {
             get => backColor;
@@ -227,8 +238,11 @@ namespace Sunny.UI
 
         private Color menuSelectedColor = Color.FromArgb(36, 36, 36);
 
+        /// <summary>
+        /// Menu bar selected background color
+        /// </summary>
         [DefaultValue(typeof(Color), "36, 36, 36")]
-        [Description("菜单栏选中背景颜色"), Category("SunnyUI")]
+        [Description("Menu bar selected background color"), Category("SunnyUI")]
         public Color MenuSelectedColor
         {
             get => menuSelectedColor;
@@ -243,13 +257,19 @@ namespace Sunny.UI
             }
         }
 
-        [Description("选中使用菜单栏选中背景颜色MenuSelectedColor，不选用则使用背景色BackColor"), Category("SunnyUI"), DefaultValue(false)]
+        /// <summary>
+        /// Use MenuSelectedColor for selected background, otherwise use BackColor
+        /// </summary>
+        [Description("Use MenuSelectedColor for selected background, otherwise use BackColor"), Category("SunnyUI"), DefaultValue(false)]
         public bool MenuSelectedColorUsed { get; set; }
 
         private Color menuHoverColor = Color.FromArgb(76, 76, 76);
 
+        /// <summary>
+        /// Menu bar mouse hover color
+        /// </summary>
         [DefaultValue(typeof(Color), "76, 76, 76")]
-        [Description("菜单栏鼠标移上颜色"), Category("SunnyUI")]
+        [Description("Menu bar mouse hover color"), Category("SunnyUI")]
         public Color MenuHoverColor
         {
             get => menuHoverColor;
@@ -267,9 +287,9 @@ namespace Sunny.UI
         private Color selectedHighColor = UIColor.Blue;
 
         /// <summary>
-        /// 边框颜色
+        /// Selected Tab page highlight
         /// </summary>
-        [Description("选中Tab页高亮"), Category("SunnyUI")]
+        [Description("Selected Tab page highlight"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color SelectedHighColor
 
@@ -288,9 +308,9 @@ namespace Sunny.UI
         private int selectedHighColorSize = 4;
 
         /// <summary>
-        /// 选中页高亮高度
+        /// Selected Tab page highlight height
         /// </summary>
-        [Description("选中Tab页高亮高度"), Category("SunnyUI")]
+        [Description("Selected Tab page highlight height"), Category("SunnyUI")]
         [DefaultValue(4)]
         public int SelectedHighColorSize
 
@@ -308,9 +328,9 @@ namespace Sunny.UI
         private UIStyle _style = UIStyle.Inherited;
 
         /// <summary>
-        /// 主题样式
+        /// Theme style
         /// </summary>
-        [DefaultValue(UIStyle.Inherited), Description("主题样式"), Category("SunnyUI")]
+        [DefaultValue(UIStyle.Inherited), Description("Theme style"), Category("SunnyUI")]
         public UIStyle Style
         {
             get => _style;
@@ -325,12 +345,12 @@ namespace Sunny.UI
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         [Localizable(true)]
         [MergableProperty(false)]
-        [Description("菜单栏显示节点集合"), Category("SunnyUI")]
+        [Description("Menu bar node collection"), Category("SunnyUI")]
         //[Editor("System.Windows.Forms.Design.TreeNodeCollectionEditor", typeof(UITypeEditor))]
         public TreeNodeCollection Nodes => Menu.Nodes;
 
         [DefaultValue(null)]
-        [Description("图片列表"), Category("SunnyUI")]
+        [Description("Image list"), Category("SunnyUI")]
         public ImageList ImageList
         {
             get => Menu.ImageList;
@@ -339,7 +359,7 @@ namespace Sunny.UI
 
         [DefaultValue(null)]
         [Browsable(false)]
-        [Description("下拉菜单图片列表"), Category("SunnyUI")]
+        [Description("Dropdown menu image list"), Category("SunnyUI")]
         public ImageList DropMenuImageList
         {
             get => NavBarMenu.ImageList;
@@ -349,10 +369,10 @@ namespace Sunny.UI
         private Font dropMenuFont = UIStyles.Font();
 
         /// <summary>
-        /// 标题字体
+        /// Title font
         /// </summary>
-        [Description("标题字体"), Category("SunnyUI")]
-        [DefaultValue(typeof(Font), "宋体, 12pt")]
+        [Description("Title font"), Category("SunnyUI")]
+        [DefaultValue(typeof(Font), "Segoe UI, 12pt")]
         public Font DropMenuFont
         {
             get => dropMenuFont;
@@ -366,7 +386,7 @@ namespace Sunny.UI
         private StringAlignment nodeAlignment = StringAlignment.Far;
 
         [DefaultValue(StringAlignment.Far)]
-        [Description("显示节点位置"), Category("SunnyUI")]
+        [Description("Node alignment"), Category("SunnyUI")]
         public StringAlignment NodeAlignment
         {
             get => nodeAlignment;
@@ -386,7 +406,7 @@ namespace Sunny.UI
         private readonly NavMenuHelper MenuHelper = new NavMenuHelper();
 
         [DefaultValue(-1)]
-        [Description("选中菜单索引"), Category("SunnyUI")]
+        [Description("Selected menu index"), Category("SunnyUI")]
         public int SelectedIndex
         {
             get => selectedIndex;
@@ -410,8 +430,11 @@ namespace Sunny.UI
 
         private Color selectedForeColor = UIColor.Blue;
 
+        /// <summary>
+        /// Selected menu font color
+        /// </summary>
         [DefaultValue(typeof(Color), "80, 160, 255")]
-        [Description("选中菜单字体颜色"), Category("SunnyUI")]
+        [Description("Selected menu font color"), Category("SunnyUI")]
         public Color SelectedForeColor
         {
             get => selectedForeColor;
@@ -426,9 +449,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override paint
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Paint parameters</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -549,8 +572,11 @@ namespace Sunny.UI
         private int _nodeInterval = 100;
         private int baseNodeInterval = 100;
 
+        /// <summary>
+        /// Menu margin
+        /// </summary>
         [DefaultValue(100)]
-        [Description("显示菜单边距"), Category("SunnyUI")]
+        [Description("Menu margin"), Category("SunnyUI")]
         public int NodeInterval
         {
             get => _nodeInterval;
@@ -567,8 +593,11 @@ namespace Sunny.UI
         private Size nodeSize = new Size(130, 45);
         private Size baseNodeSize = new Size(130, 45);
 
+        /// <summary>
+        /// Menu size
+        /// </summary>
         [DefaultValue(typeof(Size), "130, 45")]
-        [Description("显示菜单大小"), Category("SunnyUI")]
+        [Description("Menu size"), Category("SunnyUI")]
         public Size NodeSize
         {
             get => nodeSize;
@@ -583,9 +612,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标离开事件
+        /// Override mouse leave event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseLeave(EventArgs e)
         {
             base.OnMouseLeave(e);
@@ -594,9 +623,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标移动事件
+        /// Override mouse move event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseMove(MouseEventArgs e)
         {
             base.OnMouseMove(e);
@@ -626,9 +655,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 主题样式
+        /// Dropdown theme style
         /// </summary>
-        [DefaultValue(UIStyle.Inherited), Description("下拉框主题样式"), Category("SunnyUI")]
+        [DefaultValue(UIStyle.Inherited), Description("Dropdown theme style"), Category("SunnyUI")]
         public UIStyle StyleDropDown { get; set; } = UIStyle.Inherited;
 
         protected override void OnMouseClick(MouseEventArgs e)
@@ -693,12 +722,18 @@ namespace Sunny.UI
             NavBarMenu.Show(this, NodeMenuLeft(SelectedIndex), Height);
         }
 
+        /// <summary>
+        /// Dropdown menu node height
+        /// </summary>
         [DefaultValue(30)]
-        [Description("下拉菜单节点高度"), Category("SunnyUI")]
+        [Description("Dropdown menu node height"), Category("SunnyUI")]
         public int DropDownItemHeight { get; set; } = 30;
 
+        /// <summary>
+        /// Dropdown menu node auto height
+        /// </summary>
         [DefaultValue(false)]
-        [Description("下拉菜单节点自动高度"), Category("SunnyUI")]
+        [Description("Dropdown menu node auto height"), Category("SunnyUI")]
         public bool DropDownItemAutoHeight { get; set; } = false;
 
         private void Item_Click(object sender, EventArgs e)
@@ -746,9 +781,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="style">主题样式</param>
+        /// <param name="style">Theme style</param>
         private void SetStyle(UIStyle style)
         {
             if (!style.IsCustom())
@@ -773,15 +808,15 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 自定义主题风格
+        /// Custom theme style
         /// </summary>
         [DefaultValue(false), Browsable(false)]
-        [Description("获取或设置可以自定义主题风格"), Category("SunnyUI")]
+        [Description("Get or set the ability to customize the theme style"), Category("SunnyUI")]
         public bool StyleCustomMode { get; set; }
 
         public string Version { get; }
 
-        #region 扩展函数
+        #region Extension Functions
 
         public UINavBar SetNodePageIndex(TreeNode node, int pageIndex)
         {
@@ -871,6 +906,6 @@ namespace Sunny.UI
             return childNode;
         }
 
-        #endregion 扩展函数
+        #endregion Extension Functions
     }
 }

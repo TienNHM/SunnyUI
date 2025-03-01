@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
- * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
+ * CopyRight (C) 2012-2025 ShenYongHua.
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,14 +9,13 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIStatusBox.cs
- * 文件说明: 根据状态显示图片控件
- * 当前版本: V3.8.1
- * 创建日期: 2025-01-18
+ * File Name: UIStatusBox.cs
+ * Description: Control to display images based on status
+ * Current Version: V3.8.1
+ * Creation Date: 2025-01-18
  *
- * 2025-01-18: V3.8.1 增加文件
+ * 2025-01-18: V3.8.1 Added file
 ******************************************************************************/
 
 using System.ComponentModel;
@@ -28,7 +27,7 @@ namespace Sunny.UI
     public class UIStatusBox : PictureBox
     {
         /// <summary>
-        /// 构造函数
+        /// Constructor
         /// </summary>
         public UIStatusBox()
         {
@@ -54,42 +53,42 @@ namespace Sunny.UI
 
         [Browsable(false)]
         [DefaultValue(typeof(Image), "null")]
-        [Description("初始化图片"), Category("SunnyUI")]
+        [Description("Initial image"), Category("SunnyUI")]
         public new Image InitialImage { get; set; }
 
         [Browsable(false)]
         [DefaultValue(typeof(Image), "null")]
-        [Description("出错图片"), Category("SunnyUI")]
+        [Description("Error image"), Category("SunnyUI")]
         public new Image ErrorImage { get; set; }
 
         [DefaultValue(typeof(Image), "null")]
-        [Description("图片1"), Category("SunnyUI")]
+        [Description("Image 1"), Category("SunnyUI")]
         public Image Status1 { get; set; }
 
         [DefaultValue(typeof(Image), "null")]
-        [Description("图片2"), Category("SunnyUI")]
+        [Description("Image 2"), Category("SunnyUI")]
         public Image Status2 { get; set; }
 
         [DefaultValue(typeof(Image), "null")]
-        [Description("图片3"), Category("SunnyUI")]
+        [Description("Image 3"), Category("SunnyUI")]
         public Image Status3 { get; set; }
 
         [DefaultValue(typeof(Image), "null")]
-        [Description("图片4"), Category("SunnyUI")]
+        [Description("Image 4"), Category("SunnyUI")]
         public Image Status4 { get; set; }
 
         [DefaultValue(typeof(Image), "null")]
-        [Description("图片5"), Category("SunnyUI")]
+        [Description("Image 5"), Category("SunnyUI")]
         public Image Status5 { get; set; }
 
         [DefaultValue(typeof(Image), "null")]
-        [Description("图片6"), Category("SunnyUI")]
+        [Description("Image 6"), Category("SunnyUI")]
         public Image Status6 { get; set; }
 
         private int _status;
 
         [DefaultValue(0)]
-        [Description("状态"), Category("SunnyUI")]
+        [Description("Status"), Category("SunnyUI")]
         public int Status
         {
             get => _status;
@@ -101,7 +100,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制状态图片
+        /// Draw status image
         /// </summary>
         /// <param name="pe">pe</param>
         protected override void OnPaint(PaintEventArgs pe)

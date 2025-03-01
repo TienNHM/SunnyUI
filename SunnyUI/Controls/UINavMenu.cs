@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
-* SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+* SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
 * CopyRight (C) 2012-2023 ShenYongHua(沈永华).
-* QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+* QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
 *
 * Blog:   https://www.cnblogs.com/yhuse
 * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,36 +9,36 @@
 *
 * SunnyUI.dll can be used for free under the GPL-3.0 license.
 * If you use this code, please keep this note.
-* 如果您使用此代码，请保留此说明。
+* If you use this code, please keep this note.
 ******************************************************************************
-* 文件名称: UINavMenu.cs
-* 文件说明: 导航菜单
-* 当前版本: V3.1
-* 创建日期: 2020-01-01
+* File Name: UINavMenu.cs
+* File Description: Navigation Menu
+* Current Version: V3.1
+* Creation Date: 2020-01-01
 *
-* 2020-01-01: V2.2.0 增加文件说明
-* 2020-07-01: V2.2.6 解决引发事件所有结点重绘导致闪烁；解决滚轮失效问题。
-* 2020-03-12: V3.0.2 增加设置二级菜单底色
-* 2021-06-14: V3.0.4 增加右侧图标
-* 2021-08-07: V3.0.5 显示/隐藏子节点提示箭头
-* 2021-08-27: V3.0.6 增加自定义TipsText显示的颜色 
-* 2021-12-13: V3.0.9 选中项可设置背景色渐变
-* 2022-01-02: V3.0.9 滚动条可设置颜色
-* 2022-03-19: V3.1.1 重构主题配色
-* 2022-03-24: V3.1.1 修复TipsText显示位置
-* 2022-04-14: V3.1.3 重构扩展函数
-* 2022-06-23: V3.2.0 绘制节点字体图标增加偏移SymbolOffset
-* 2022-08-19: V3.2.3 修复选中节点右侧图标前景色
-* 2022-11-03: V3.2.6 增加了可设置垂直滚动条宽度的属性
-* 2022-11-03: V3.2.6 重写了节点右侧图标的绘制
-* 2023-02-02: V3.3.1 修复了鼠标离开事件
-* 2023-02-10: V3.3.2 有子节点时，鼠标左键点击父级点展开/收缩，右键选中
-* 2023-05-12: V3.3.6 重构DrawString函数
-* 2023-05-16: V3.3.6 重构DrawFontImage函数
-* 2023-05-29: V3.3.7 增加PageGuid相关扩展方法
-* 2023-11-16: V3.5.2 重构主题
-* 2024-04-13: V3.6.5 修复通过代码设置背景色无效的问题
-* 2024-05-17: V3.6.6 防止控件闪烁
+* 2020-01-01: V2.2.0 Added file description
+* 2020-07-01: V2.2.6 Fixed flickering caused by redrawing all nodes when events are triggered; fixed scroll wheel failure issue.
+* 2020-03-12: V3.0.2 Added setting for secondary menu background color
+* 2021-06-14: V3.0.4 Added right-side icon
+* 2021-08-07: V3.0.5 Show/hide child node hint arrow
+* 2021-08-27: V3.0.6 Added custom TipsText display color
+* 2021-12-13: V3.0.9 Selected item can set background color gradient
+* 2022-01-02: V3.0.9 Scroll bar color can be set
+* 2022-03-19: V3.1.1 Refactored theme colors
+* 2022-03-24: V3.1.1 Fixed TipsText display position
+* 2022-04-14: V3.1.3 Refactored extension functions
+* 2022-06-23: V3.2.0 Added SymbolOffset for drawing node font icons
+* 2022-08-19: V3.2.3 Fixed selected node right-side icon foreground color
+* 2022-11-03: V3.2.6 Added property to set vertical scroll bar width
+* 2022-11-03: V3.2.6 Rewrote the drawing of the node right-side icon
+* 2023-02-02: V3.3.1 Fixed mouse leave event
+* 2023-02-10: V3.3.2 When there are child nodes, left-click on the parent node to expand/collapse, right-click to select
+* 2023-05-12: V3.3.6 Refactored DrawString function
+* 2023-05-16: V3.3.6 Refactored DrawFontImage function
+* 2023-05-29: V3.3.7 Added PageGuid related extension methods
+* 2023-11-16: V3.5.2 Refactored theme
+* 2024-04-13: V3.6.5 Fixed issue where setting background color through code was ineffective
+* 2024-05-17: V3.6.6 Prevented control flickering
 ******************************************************************************/
 
 using System;
@@ -115,7 +115,7 @@ namespace Sunny.UI
 
         private int scrollBarWidth = 0;
 
-        [DefaultValue(0), Category("SunnyUI"), Description("垂直滚动条宽度，最小为原生滚动条宽度")]
+        [DefaultValue(0), Category("SunnyUI"), Description("Vertical scroll bar width, minimum is the native scroll bar width")]
         public int ScrollBarWidth
         {
             get => scrollBarWidth;
@@ -128,7 +128,7 @@ namespace Sunny.UI
 
         private int scrollBarHandleWidth = 6;
 
-        [DefaultValue(6), Category("SunnyUI"), Description("垂直滚动条滑块宽度，最小为原生滚动条宽度")]
+        [DefaultValue(6), Category("SunnyUI"), Description("Vertical scroll bar handle width, minimum is the native scroll bar width")]
         public int ScrollBarHandleWidth
         {
             get => scrollBarHandleWidth;
@@ -140,27 +140,27 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 禁止控件跟随窗体缩放
+        /// Disable control scaling with the form
         /// </summary>
-        [DefaultValue(false), Category("SunnyUI"), Description("禁止控件跟随窗体缩放")]
+        [DefaultValue(false), Category("SunnyUI"), Description("Disable control scaling with the form")]
         public bool ZoomScaleDisabled { get; set; }
 
         /// <summary>
-        /// 控件缩放前在其容器里的位置
+        /// Control position in its container before scaling
         /// </summary>
         [Browsable(false), DefaultValue(typeof(Rectangle), "0, 0, 0, 0")]
         public Rectangle ZoomScaleRect { get; set; }
 
         /// <summary>
-        /// 设置控件缩放比例
+        /// Set control scaling ratio
         /// </summary>
-        /// <param name="scale">缩放比例</param>
+        /// <param name="scale">Scaling ratio</param>
         public void SetZoomScale(float scale)
         {
 
         }
 
-        [Description("滚动条填充颜色"), Category("SunnyUI")]
+        [Description("Scroll bar fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "56, 56, 56")]
         public Color ScrollFillColor
         {
@@ -173,7 +173,7 @@ namespace Sunny.UI
             }
         }
 
-        [Description("滚动条填充颜色"), Category("SunnyUI")]
+        [Description("Scroll bar color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "Silver")]
         public Color ScrollBarColor
         {
@@ -186,7 +186,7 @@ namespace Sunny.UI
             }
         }
 
-        [Description("滚动条移上填充颜色"), Category("SunnyUI")]
+        [Description("Scroll bar hover color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "Silver")]
         public Color ScrollBarHoverColor
         {
@@ -199,7 +199,7 @@ namespace Sunny.UI
             }
         }
 
-        [Description("滚动条按下填充颜色"), Category("SunnyUI")]
+        [Description("Scroll bar press color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "Silver")]
         public Color ScrollBarPressColor
         {
@@ -222,13 +222,13 @@ namespace Sunny.UI
         }
 
         [DefaultValue(false)]
-        [Description("只显示一个打开的节点"), Category("SunnyUI")]
+        [Description("Only show one open node"), Category("SunnyUI")]
         public bool ShowOneNode { get; set; }
 
         private bool showItemsArrow = true;
 
         [DefaultValue(true)]
-        [Description("显示子节点提示箭头"), Category("SunnyUI")]
+        [Description("Show child node hint arrow"), Category("SunnyUI")]
         public bool ShowItemsArrow
         {
             get => showItemsArrow;
@@ -240,10 +240,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// Tag字符串
+        /// Tag string
         /// </summary>
         [DefaultValue(null)]
-        [Description("获取或设置包含有关控件的数据的对象字符串"), Category("SunnyUI")]
+        [Description("Get or set the object string containing data about the control"), Category("SunnyUI")]
         public string TagString { get; set; }
 
         public void ClearAll()
@@ -255,7 +255,7 @@ namespace Sunny.UI
         private Color backColor = Color.FromArgb(56, 56, 56);
 
         [DefaultValue(typeof(Color), "56, 56, 56")]
-        [Description("背景颜色"), Category("SunnyUI")]
+        [Description("Background color"), Category("SunnyUI")]
         public override Color BackColor
         {
             get => backColor;
@@ -274,9 +274,9 @@ namespace Sunny.UI
         private Color fillColor = Color.FromArgb(56, 56, 56);
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is the background color or transparent color or empty value, it will not be filled
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "56, 56, 56")]
         public Color FillColor
         {
@@ -295,9 +295,9 @@ namespace Sunny.UI
         private Color foreColor = Color.Silver;
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is the background color or transparent color or empty value, it will not be filled
         /// </summary>
-        [Description("字体颜色"), Category("SunnyUI")]
+        [Description("Font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "Silver")]
         public override Color ForeColor
         {
@@ -319,21 +319,21 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 自定义主题风格
+        /// Custom theme style
         /// </summary>
         [DefaultValue(false), Browsable(false)]
-        [Description("获取或设置可以自定义主题风格"), Category("SunnyUI")]
+        [Description("Get or set the ability to customize the theme style"), Category("SunnyUI")]
         public bool StyleCustomMode { get; set; }
 
         [DefaultValue(null)]
-        [Description("关联的TabControl"), Category("SunnyUI")]
+        [Description("Associated TabControl"), Category("SunnyUI")]
         public UITabControl TabControl { get; set; }
 
         private Color selectedColor = Color.FromArgb(36, 36, 36);
 
         private bool showTips;
 
-        [Description("是否显示角标"), Category("SunnyUI")]
+        [Description("Show badge"), Category("SunnyUI")]
         [DefaultValue(false)]
         public bool ShowTips
         {
@@ -350,8 +350,8 @@ namespace Sunny.UI
 
         private Font tipsFont = UIStyles.SubFont();
 
-        [Description("角标文字字体"), Category("SunnyUI")]
-        [DefaultValue(typeof(Font), "宋体, 9pt")]
+        [Description("Badge text font"), Category("SunnyUI")]
+        [DefaultValue(typeof(Font), "Segoe UI, 9pt")]
         public Font TipsFont
         {
             get => tipsFont;
@@ -366,7 +366,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "36, 36, 36")]
-        [Description("选中节点颜色"), Category("SunnyUI")]
+        [Description("Selected node color"), Category("SunnyUI")]
         public Color SelectedColor
         {
             get => selectedColor;
@@ -383,7 +383,7 @@ namespace Sunny.UI
 
         private bool fillColorGradient;
 
-        [Description("填充颜色渐变"), Category("SunnyUI")]
+        [Description("Fill color gradient"), Category("SunnyUI")]
         [DefaultValue(false)]
         public bool SelectedColorGradient
         {
@@ -399,9 +399,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置填充颜色
+        /// Set fill color
         /// </summary>
-        /// <param name="value">颜色</param>
+        /// <param name="value">Color</param>
         private void SetFillColor2(Color value)
         {
             if (selectedColor2 != value)
@@ -413,14 +413,14 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色
+        /// Fill color
         /// </summary>
         private Color selectedColor2 = Color.FromArgb(36, 36, 36);
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is the background color or transparent color or empty value, it will not be filled
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "36, 36, 36")]
         public Color SelectedColor2
         {
@@ -431,9 +431,9 @@ namespace Sunny.UI
         private Color selectedHighColor = UIColor.Blue;
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("选中节点高亮颜色"), Category("SunnyUI")]
+        [Description("Selected node highlight color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color SelectedHighColor
 
@@ -449,7 +449,7 @@ namespace Sunny.UI
         private Color hoverColor = Color.FromArgb(76, 76, 76);
 
         [DefaultValue(typeof(Color), "76, 76, 76")]
-        [Description("鼠标移上颜色"), Category("SunnyUI")]
+        [Description("Mouse hover color"), Category("SunnyUI")]
         public Color HoverColor
         {
             get => hoverColor;
@@ -466,9 +466,9 @@ namespace Sunny.UI
         private UIStyle _style = UIStyle.Inherited;
 
         /// <summary>
-        /// 主题样式
+        /// Theme style
         /// </summary>
-        [DefaultValue(UIStyle.Inherited), Description("主题样式"), Category("SunnyUI")]
+        [DefaultValue(UIStyle.Inherited), Description("Theme style"), Category("SunnyUI")]
         public UIStyle Style
         {
             get => _style;
@@ -476,9 +476,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="style">主题样式</param>
+        /// <param name="style">Theme style</param>
         private void SetStyle(UIStyle style)
         {
             if (!style.IsCustom())
@@ -505,7 +505,7 @@ namespace Sunny.UI
         private UIMenuStyle menuStyle = UIMenuStyle.Black;
 
         [DefaultValue(UIMenuStyle.Black)]
-        [Description("导航菜单主题风格"), Category("SunnyUI")]
+        [Description("Navigation menu theme style"), Category("SunnyUI")]
         public UIMenuStyle MenuStyle
         {
             get => menuStyle;
@@ -544,7 +544,7 @@ namespace Sunny.UI
         private Color selectedForeColor = UIColor.Blue;
 
         [DefaultValue(typeof(Color), "80, 160, 255")]
-        [Description("选中节点字体颜色"), Category("SunnyUI")]
+        [Description("Selected node font color"), Category("SunnyUI")]
         public Color SelectedForeColor
         {
             get => selectedForeColor;
@@ -563,9 +563,9 @@ namespace Sunny.UI
         private TreeNode CurrentNode;
 
         /// <summary>
-        /// 重载鼠标移动事件
+        /// Override mouse move event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseMove(MouseEventArgs e)
         {
             base.OnMouseMove(e);
@@ -598,9 +598,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标离开事件
+        /// Override mouse leave event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseLeave(EventArgs e)
         {
             using Graphics g = CreateGraphics();
@@ -620,7 +620,7 @@ namespace Sunny.UI
         private bool showSecondBackColor;
 
         [DefaultValue(false)]
-        [Description("显示二级节点背景颜色"), Category("SunnyUI")]
+        [Description("Show secondary node background color"), Category("SunnyUI")]
         public bool ShowSecondBackColor
         {
             get => showSecondBackColor;
@@ -637,7 +637,7 @@ namespace Sunny.UI
         private Color secondBackColor = Color.FromArgb(66, 66, 66);
 
         [DefaultValue(typeof(Color), "66, 66, 66")]
-        [Description("二级节点背景颜色"), Category("SunnyUI")]
+        [Description("Secondary node background color"), Category("SunnyUI")]
         public Color SecondBackColor
         {
             get => secondBackColor;
@@ -795,7 +795,7 @@ namespace Sunny.UI
 
         private Color tipsColor = Color.Red;
 
-        [DefaultValue(typeof(Color), "Red"), Category("SunnyUI"), Description("节点提示圆点背景颜色")]
+        [DefaultValue(typeof(Color), "Red"), Category("SunnyUI"), Description("Node tip circle background color")]
         public Color TipsColor
         {
             get => tipsColor;
@@ -808,7 +808,7 @@ namespace Sunny.UI
 
         private Color tipsForeColor = Color.White;
 
-        [DefaultValue(typeof(Color), "White"), Category("SunnyUI"), Description("节点提示圆点文字颜色")]
+        [DefaultValue(typeof(Color), "White"), Category("SunnyUI"), Description("Node tip circle text color")]
         public Color TipsForeColor
         {
             get => tipsForeColor;
@@ -819,7 +819,7 @@ namespace Sunny.UI
             }
         }
 
-        [Description("展开节点后选中第一个子节点"), Category("SunnyUI"), DefaultValue(true)]
+        [Description("Select the first child node after expanding the node"), Category("SunnyUI"), DefaultValue(true)]
         public bool ExpandSelectFirst { get; set; } = true;
 
         public string Version { get; }
@@ -1027,7 +1027,7 @@ namespace Sunny.UI
             Win32.User.ShowScrollBar(Handle, 3, false);
         }
 
-        #region 扩展函数
+        #region Extension functions
         private readonly NavMenuHelper MenuHelper = new NavMenuHelper();
 
         public void SelectPage(int pageIndex)
@@ -1228,7 +1228,7 @@ namespace Sunny.UI
             }
         }
 
-        #endregion 扩展函数
+        #endregion Extension functions
 
         public delegate void OnNodeRightSymbolClick(object sender, TreeNode node, int index, int symbol);
 

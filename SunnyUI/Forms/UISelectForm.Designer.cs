@@ -51,13 +51,13 @@
             // 
             label.AutoSize = true;
             label.BackColor = System.Drawing.Color.Transparent;
-            label.Font = new System.Drawing.Font("宋体", 12F);
+            label.Font = new System.Drawing.Font("Segoe UI", 12F);
             label.ForeColor = System.Drawing.Color.FromArgb(48, 48, 48);
             label.Location = new System.Drawing.Point(29, 57);
             label.Name = "label";
             label.Size = new System.Drawing.Size(183, 16);
             label.TabIndex = 3;
-            label.Text = "请在下方编辑框中选择：";
+            label.Text = "Please select from the dropdown below:";
             label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ComboBox
@@ -65,7 +65,7 @@
             ComboBox.DataSource = null;
             ComboBox.DropDownStyle = UIDropDownStyle.DropDownList;
             ComboBox.FillColor = System.Drawing.Color.White;
-            ComboBox.Font = new System.Drawing.Font("宋体", 12F);
+            ComboBox.Font = new System.Drawing.Font("Segoe UI", 12F);
             ComboBox.ItemHoverColor = System.Drawing.Color.FromArgb(155, 200, 255);
             ComboBox.ItemSelectForeColor = System.Drawing.Color.FromArgb(235, 243, 255);
             ComboBox.Location = new System.Drawing.Point(29, 92);
@@ -87,7 +87,7 @@
             Controls.Add(ComboBox);
             Name = "UISelectForm";
             Padding = new System.Windows.Forms.Padding(1, 35, 1, 1);
-            Text = "选择";
+            Text = "Select";
             ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 473, 182);
             Controls.SetChildIndex(ComboBox, 0);
             Controls.SetChildIndex(pnlBtm, 0);

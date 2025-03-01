@@ -1,24 +1,24 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
- * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * SunnyUI open source control library, tool library, extension class library, and multi-page development framework.
+ * CopyRight (C) 2012-2025 ShenYongHua(Shen Yonghua).
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
- * Blog:   https://www.cnblogs.com/yhuse
- * Gitee:  https://gitee.com/yhuse/SunnyUI
+ * Blog: https://www.cnblogs.com/yhuse
+ * Gitee: https://gitee.com/yhuse/SunnyUI
  * GitHub: https://github.com/yhuse/SunnyUI
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
+ * If you use this code, please keep this description.
  ******************************************************************************
- * 文件名称: UIMessageForm2.cs
- * 文件说明: 消息提示窗体2
- * 当前版本: V3.6
- * 创建日期: 2024-05-16
+ * File name: UIMessageForm2.cs
+ * File description: Message prompt form 2
+ * Current version: V3.6
+ * Creation date: 2024-05-16
  *
- * 2024-05-16: V3.6.6 增加文件说明
- * 2024-06-08: V3.6.6 统一配色
- * 2024-08-10: V3.6.8 重构文字显示位置，重绘
+ * 2024-05-16: V3.6.6 added file description
+ * 2024-06-08: V3.6.6 unified color matching
+ * 2024-08-10: V3.6.8 Reconstruct text display position and redraw
 ******************************************************************************/
 
 using System.Drawing;

@@ -6,7 +6,7 @@ namespace Sunny.UI.Demo
     static class Program
     {
         /// <summary>
-        /// 应用程序的主入口点。
+        /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
@@ -14,11 +14,13 @@ namespace Sunny.UI.Demo
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //增加一个繁体中文的内置资源配置
-            UIStyles.BuiltInResources.TryAdd(CultureInfos.zh_TW.LCID, new zh_TW_Resources());
-            //从项目方案生成多语言配置文件，生成文件在可执行文件夹的Language目录下
-            //生成后界面没有修改的情况下，可注释掉下一行，只运行一次即可
-            //TranslateHelper.LoadCsproj(@"D:\Source\SunnyUI\SunnyUI.Demo\SunnyUI.Demo.csproj");
+            // Add a built-in resource configuration for Traditional Chinese
+            UIStyles.BuiltInResources.TryAdd(CultureInfos.en_US.LCID, new en_US_Resources());
+            //UIStyles.BuiltInResources.TryAdd(CultureInfos.zh_TW.LCID, new zh_TW_Resources());
+
+            // Generate multi-language configuration files from the project solution, files are generated in the Language directory under the executable folder
+            // After generation, if the interface has not been modified, you can comment out the next line, only run once
+            //TranslateHelper.LoadCsproj(@"D:\repos\SunnyUI\SunnyUI.Demo\SunnyUI.Demo.csproj");
 
             Application.Run(new FMain());
         }

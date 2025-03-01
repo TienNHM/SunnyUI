@@ -115,9 +115,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Redraw the graphics
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Paint event arguments</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -132,9 +132,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标移动事件
+        /// Mouse move event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse event arguments</param>
         protected override void OnMouseMove(MouseEventArgs e)
         {
             base.OnMouseMove(e);
@@ -144,9 +144,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标按下事件
+        /// Mouse down event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse event arguments</param>
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);

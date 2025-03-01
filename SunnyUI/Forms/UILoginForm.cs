@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,15 +9,14 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UILoginForm.cs
- * 文件说明: 登录窗体基类
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UILoginForm.cs
+ * File Description: Base class for login form
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2023-04-19: V3.3.5 增加可选择显示时激活的控件
+ * 2020-01-01: V2.2.0 Added file description
+ * 2023-04-19: V3.3.5 Added optional control to activate on display
 ******************************************************************************/
 
 using Sunny.UI.Properties;
@@ -36,7 +35,7 @@ namespace Sunny.UI
             lblSubText.Text = lblSubText.Version;
         }
 
-        [Description("显示时激活的控件"), Category("SunnyUI")]
+        [Description("Control to activate on display"), Category("SunnyUI")]
         [DefaultValue(UILoginFormFocusControl.UserName)]
         public UILoginFormFocusControl FocusControl { get; set; } = UILoginFormFocusControl.UserName;
 
@@ -59,7 +58,7 @@ namespace Sunny.UI
             }
         }
 
-        [Description("顶部标题"), Category("SunnyUI")]
+        [Description("Title"), Category("SunnyUI")]
         [DefaultValue("SunnyUI.Net")]
         public string Title
         {
@@ -67,7 +66,7 @@ namespace Sunny.UI
             set => lblTitle.Text = value;
         }
 
-        [Description("底部说明"), Category("SunnyUI")]
+        [Description("Description"), Category("SunnyUI")]
         [DefaultValue("SunnyUI")]
         public string SubText
         {
@@ -75,8 +74,8 @@ namespace Sunny.UI
             set => lblSubText.Text = value;
         }
 
-        [Description("用户登录"), Category("SunnyUI")]
-        [DefaultValue("用户登录")]
+        [Description("User login"), Category("SunnyUI")]
+        [DefaultValue("User login")]
         public string LoginText
         {
             get => uiLine1.Text;
@@ -86,7 +85,7 @@ namespace Sunny.UI
         private UILoginImage loginImage;
 
         [DefaultValue(UILoginImage.Login1)]
-        [Description("背景图片"), Category("SunnyUI")]
+        [Description("Background image"), Category("SunnyUI")]
         public UILoginImage LoginImage
         {
             get => loginImage;
@@ -144,10 +143,10 @@ namespace Sunny.UI
             uiLine1.FillColor = UIColor.White;
         }
 
-        [Description("确认按钮事件"), Category("SunnyUI")]
+        [Description("Confirm button event"), Category("SunnyUI")]
         public event EventHandler ButtonLoginClick;
 
-        [Description("取消按钮事件"), Category("SunnyUI")]
+        [Description("Cancel button event"), Category("SunnyUI")]
         public event EventHandler ButtonCancelClick;
 
         [DefaultValue(false), Browsable(false)]
@@ -155,11 +154,11 @@ namespace Sunny.UI
 
         public delegate bool OnLoginHandle(string userName, string password);
 
-        [Description("登录校验事件"), Category("SunnyUI")]
+        [Description("Login validation event"), Category("SunnyUI")]
         public event OnLoginHandle OnLogin;
 
         [DefaultValue(null)]
-        [Description("账号"), Category("SunnyUI")]
+        [Description("Account"), Category("SunnyUI")]
         public string UserName
         {
             get => edtUser.Text;
@@ -167,15 +166,15 @@ namespace Sunny.UI
         }
 
         [DefaultValue(null)]
-        [Description("密码"), Category("SunnyUI")]
+        [Description("Password"), Category("SunnyUI")]
         public string Password
         {
             get => edtPassword.Text;
             set => edtPassword.Text = value;
         }
 
-        [DefaultValue("请输入账号")]
-        [Description("账号水印文字"), Category("SunnyUI")]
+        [DefaultValue("Please enter account")]
+        [Description("Account watermark text"), Category("SunnyUI")]
         public string UserNameWatermark
         {
             get => edtUser.Watermark;
@@ -183,7 +182,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(null)]
-        [Description("请输入密码"), Category("SunnyUI")]
+        [Description("Please enter password"), Category("SunnyUI")]
         public string PasswordWatermark
         {
             get => edtPassword.Watermark;
@@ -191,7 +190,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(null)]
-        [Description("登录"), Category("SunnyUI")]
+        [Description("Login"), Category("SunnyUI")]
         public string ButtonLoginText
         {
             get => btnLogin.Text;
@@ -199,7 +198,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(null)]
-        [Description("取消"), Category("SunnyUI")]
+        [Description("Cancel"), Category("SunnyUI")]
         public string ButtonCancelText
         {
             get => btnCancel.Text;

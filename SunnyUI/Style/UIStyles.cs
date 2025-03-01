@@ -57,7 +57,7 @@ namespace Sunny.UI
 
         [Editor("System.Drawing.Design.FontNameEditor", "System.Drawing.Design.UITypeEditor")]
         [TypeConverter(typeof(FontNameConverter))]
-        public static string GlobalFontName { get; set; } = "宋体";
+        public static string GlobalFontName { get; set; } = "Segoe UI";
 
         public static int GlobalFontScale { get; set; } = 100;
 

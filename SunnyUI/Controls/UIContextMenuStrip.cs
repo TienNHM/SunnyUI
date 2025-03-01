@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,20 +9,19 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIContextMenuStrip.cs
- * 文件说明: 上下文菜单
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIContextMenuStrip.cs
+ * Description: Context menu
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-04-25: V2.2.4 更新主题配置类
- * 2022-03-19: V3.1.1 重构主题配色
- * 2023-10-17: V3.5.1 修正文字显示垂直居中
- * 2023-10-17: V3.5.1 当右键菜单未绑定ImageList，并且ImageIndex>0时，将ImageIndex绑定为Symbol绘制
- * 2024-02-21: V3.6.3 修复显示快捷键文本位置
- * 2024-02-22: V3.6.3 节点AutoSize时不重绘，重绘时考虑Enabled为False时颜色显示
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-04-25: V2.2.4 Updated theme configuration class
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2023-10-17: V3.5.1 Corrected text vertical alignment
+ * 2023-10-17: V3.5.1 When the right-click menu is not bound to ImageList and ImageIndex>0, bind ImageIndex to Symbol for drawing
+ * 2024-02-21: V3.6.3 Fixed the display position of shortcut key text
+ * 2024-02-22: V3.6.3 Do not redraw when node AutoSize, consider color display when Enabled is False during redraw
 ******************************************************************************/
 
 using System.ComponentModel;
@@ -47,21 +46,21 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 禁止控件跟随窗体缩放
+        /// Disable control scaling with the form
         /// </summary>
-        [DefaultValue(false), Category("SunnyUI"), Description("禁止控件跟随窗体缩放")]
+        [DefaultValue(false), Category("SunnyUI"), Description("Disable control scaling with the form")]
         public bool ZoomScaleDisabled { get; set; }
 
         /// <summary>
-        /// 控件缩放前在其容器里的位置
+        /// Control position in its container before scaling
         /// </summary>
         [Browsable(false), DefaultValue(typeof(Rectangle), "0, 0, 0, 0")]
         public Rectangle ZoomScaleRect { get; set; }
 
         /// <summary>
-        /// 设置控件缩放比例
+        /// Set control scaling ratio
         /// </summary>
-        /// <param name="scale">缩放比例</param>
+        /// <param name="scale">Scaling ratio</param>
         public void SetZoomScale(float scale)
         {
 
@@ -83,23 +82,23 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 自定义主题风格
+        /// Custom theme style
         /// </summary>
         [DefaultValue(false), Browsable(false)]
-        [Description("获取或设置可以自定义主题风格"), Category("SunnyUI")]
+        [Description("Get or set the ability to customize the theme style"), Category("SunnyUI")]
         public bool StyleCustomMode { get; set; }
 
         /// <summary>
-        /// Tag字符串
+        /// Tag string
         /// </summary>
         [DefaultValue(null)]
-        [Description("获取或设置包含有关控件的数据的对象字符串"), Category("SunnyUI")]
+        [Description("Get or set the object string containing data about the control"), Category("SunnyUI")]
         public string TagString { get; set; }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="style">主题样式</param>
+        /// <param name="style">Theme style</param>
         private void SetStyle(UIStyle style)
         {
             if (!style.IsCustom())
@@ -129,9 +128,9 @@ namespace Sunny.UI
         private UIStyle _style = UIStyle.Inherited;
 
         /// <summary>
-        /// 主题样式
+        /// Theme style
         /// </summary>
-        [DefaultValue(UIStyle.Inherited), Description("主题样式"), Category("SunnyUI")]
+        [DefaultValue(UIStyle.Inherited), Description("Theme style"), Category("SunnyUI")]
         public UIStyle Style
         {
             get => _style;
@@ -167,7 +166,7 @@ namespace Sunny.UI
                 return;
             }
 
-            //调整文本区域的位置和大小以实现垂直居中
+            // Adjust the position and size of the text area to achieve vertical centering
             Rectangle textRect = new Rectangle(e.TextRectangle.Left, e.Item.ContentRectangle.Top, e.TextRectangle.Width, e.Item.ContentRectangle.Height);
             ToolStripMenuItem stripItem = (ToolStripMenuItem)e.Item;
             Rectangle backRect = new Rectangle(e.Item.Bounds.Left + 2, e.Item.Bounds.Top - 2, e.Item.Bounds.Width - 4, e.Item.Bounds.Height);
@@ -190,7 +189,7 @@ namespace Sunny.UI
 
             Color textColor = e.TextColor;
             if (!e.Item.Enabled) textColor = Color.Gray;
-            //设置文本绘制格式
+            // Set text drawing format
             TextFormatFlags flags = TextFormatFlags.VerticalCenter | TextFormatFlags.SingleLine | TextFormatFlags.Left;
             TextRenderer.DrawText(e.Graphics, e.Item.Text, e.TextFont, textRect, textColor, flags);
 
@@ -200,7 +199,7 @@ namespace Sunny.UI
                 TextRenderer.DrawText(e.Graphics, ShortcutToText(stripItem.ShortcutKeys, stripItem.ShortcutKeyDisplayString), e.TextFont, textRect, textColor, flags);
             }
 
-            //当右键菜单未绑定ImageList，并且ImageIndex>0时，将ImageIndex绑定为Symbol绘制
+            // When the right-click menu is not bound to ImageList and ImageIndex>0, bind ImageIndex to Symbol for drawing
             ToolStripItem item = e.Item;
             while (!(item.Owner is ContextMenuStrip))
             {

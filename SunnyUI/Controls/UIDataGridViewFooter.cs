@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI Open Source Control Library, Utility Library, Extension Library, Multi-page Development Framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,19 +9,18 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIDataGridViewFooter
- * 文件说明: DataGridView页脚，可做统计显示
- * 当前版本: V3.1
- * 创建日期: 2021-04-20
+ * File Name: UIDataGridViewFooter
+ * File Description: DataGridView footer, can be used for statistics display
+ * Current Version: V3.1
+ * Creation Date: 2021-04-20
  *
- * 2021-04-20: V3.0.3 增加文件说明
- * 2021-09-24: V3.0.7 文字显示方向与Column列显示方向一致
- * 2021-11-22: V3.0.9 修复一处可能不显示的问题 
- * 2022-09-05: V3.2.3 重构文字显示
- * 2023-05-15: V3.3.6 重构DrawString函数
- * 2024-06-01: V3.6.6 增加绑定列的ColumnName或者DataPropertyName都可以显示
+ * 2021-04-20: V3.0.3 Added file description
+ * 2021-09-24: V3.0.7 Text display direction is consistent with Column column display direction
+ * 2021-11-22: V3.0.9 Fixed a possible display issue
+ * 2022-09-05: V3.2.3 Refactored text display
+ * 2023-05-15: V3.3.6 Refactored DrawString function
+ * 2024-06-01: V3.6.6 Added binding column's ColumnName or DataPropertyName can be displayed
 ******************************************************************************/
 
 using System.Collections.Generic;
@@ -88,10 +87,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制前景颜色
+        /// Draw foreground color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Graphics path</param>
         protected override void OnPaintFore(Graphics g, GraphicsPath path)
         {
             if (dgv != null && dgv.ColumnCount > 0 && dgv.RowCount > 0)
@@ -165,9 +164,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -177,9 +176,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is background color or transparent color or empty value, it will not be filled
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "243, 249, 255")]
         public Color FillColor
         {
@@ -188,9 +187,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("边框颜色"), Category("SunnyUI")]
+        [Description("Border color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color RectColor
         {
@@ -199,9 +198,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体颜色
+        /// Font color
         /// </summary>
-        [Description("字体颜色"), Category("SunnyUI")]
+        [Description("Font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "48, 48, 48")]
         public override Color ForeColor
         {

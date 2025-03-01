@@ -71,7 +71,7 @@ namespace Sunny.UI
             // 
             treeView.Dock = System.Windows.Forms.DockStyle.Fill;
             treeView.FillColor = System.Drawing.Color.White;
-            treeView.Font = new System.Drawing.Font("宋体", 12F);
+            treeView.Font = new System.Drawing.Font("Segoe UI", 12F);
             treeView.LineColor = System.Drawing.Color.FromArgb(48, 48, 48);
             treeView.Location = new System.Drawing.Point(0, 0);
             treeView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -91,7 +91,7 @@ namespace Sunny.UI
             panel.Controls.Add(btnCancel);
             panel.Controls.Add(btnOK);
             panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            panel.Font = new System.Drawing.Font("宋体", 12F);
+            panel.Font = new System.Drawing.Font("Segoe UI", 12F);
             panel.Location = new System.Drawing.Point(0, 176);
             panel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             panel.MinimumSize = new System.Drawing.Size(1, 1);
@@ -107,7 +107,7 @@ namespace Sunny.UI
             // uiCheckBox1
             // 
             uiCheckBox1.BackColor = System.Drawing.Color.Transparent;
-            uiCheckBox1.Font = new System.Drawing.Font("宋体", 12F);
+            uiCheckBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
             uiCheckBox1.ForeColor = System.Drawing.Color.FromArgb(48, 48, 48);
             uiCheckBox1.Location = new System.Drawing.Point(3, 8);
             uiCheckBox1.MinimumSize = new System.Drawing.Size(1, 1);
@@ -122,7 +122,7 @@ namespace Sunny.UI
             // 
             btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnCancel.Font = new System.Drawing.Font("宋体", 10.5F);
+            btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             btnCancel.Location = new System.Drawing.Point(159, 8);
             btnCancel.MinimumSize = new System.Drawing.Size(1, 1);
             btnCancel.Name = "btnCancel";
@@ -132,14 +132,14 @@ namespace Sunny.UI
             btnCancel.SymbolSize = 22;
             btnCancel.TabIndex = 1;
             btnCancel.Text = "取消";
-            btnCancel.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
+            btnCancel.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             btnCancel.Click += btnCancel_Click;
             // 
             // btnOK
             // 
             btnOK.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnOK.Font = new System.Drawing.Font("宋体", 10.5F);
+            btnOK.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             btnOK.Location = new System.Drawing.Point(70, 8);
             btnOK.MinimumSize = new System.Drawing.Size(1, 1);
             btnOK.Name = "btnOK";
@@ -147,7 +147,7 @@ namespace Sunny.UI
             btnOK.SymbolSize = 22;
             btnOK.TabIndex = 0;
             btnOK.Text = "确定";
-            btnOK.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
+            btnOK.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             btnOK.Click += btnOK_Click;
             // 
             // UIComboTreeViewItem

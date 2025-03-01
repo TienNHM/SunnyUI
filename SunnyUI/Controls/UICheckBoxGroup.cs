@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,25 +9,24 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UICheckBoxGroup.cs
- * 文件说明: 多选框组
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UICheckBoxGroup.cs
+ * Description: Checkbox group
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-04-19: V2.2.3 增加单元
- * 2020-04-25: V2.2.4 更新主题配置类
- * 2020-07-03: V2.2.6 修正调整ItemSize无效的Bug
- * 2020-07-04: V2.2.6 可以设置初始选中值
- * 2022-06-30: V3.2.0 设置条目状态前判断是否创建
- * 2022-11-21: V3.2.9 修复未显示时切换节点文本为空的问题
- * 2023-04-19: V3.3.5 设置选择项ForeColor
- * 2023-06-27: V3.3.9 内置条目关联值由Tag改为TagString
- * 2023-11-07: V3.5.2 重写UICheckBoxGroup
- * 2023-12-04: V3.6.1 增加属性可修改图标大小
- * 2024-09-09: V3.7.0 更改计算节点位置的方法，解决问题：#IAPY94
- * 2024-11-29: V3.8.0 修复TitleTop为0时，条目显示错位的问题 #IB7STO
+ * 2020-04-19: V2.2.3 Added unit
+ * 2020-04-25: V2.2.4 Updated theme configuration class
+ * 2020-07-03: V2.2.6 Fixed bug where adjusting ItemSize was ineffective
+ * 2020-07-04: V2.2.6 Can set initial selected value
+ * 2022-06-30: V3.2.0 Check if created before setting item state
+ * 2022-11-21: V3.2.9 Fixed issue where node text was empty when not displayed
+ * 2023-04-19: V3.3.5 Set selected item ForeColor
+ * 2023-06-27: V3.3.9 Internal item associated value changed from Tag to TagString
+ * 2023-11-07: V3.5.2 Rewritten UICheckBoxGroup
+ * 2023-12-04: V3.6.1 Added property to modify icon size
+ * 2024-09-09: V3.7.0 Changed method of calculating node position, resolved issue: #IAPY94
+ * 2024-11-29: V3.8.0 Fixed issue where items were misaligned when TitleTop was 0 #IB7STO
 ******************************************************************************/
 
 using System;
@@ -40,28 +39,28 @@ using System.Windows.Forms;
 namespace Sunny.UI
 {
     /// <summary>
-    /// 多选框组
+    /// Checkbox group
     /// </summary>
     [DefaultProperty("Items")]
     [DefaultEvent("ValueChanged")]
     public class UICheckBoxGroup : UIGroupBox
     {
         /// <summary>
-        /// 值切换事件
+        /// Value change event
         /// </summary>
-        /// <param name="sender">控件</param>
-        /// <param name="index">索引</param>
-        /// <param name="text">文字</param>
-        /// <param name="isChecked">是否选中</param>
+        /// <param name="sender">Control</param>
+        /// <param name="index">Index</param>
+        /// <param name="text">Text</param>
+        /// <param name="isChecked">Is checked</param>
         public delegate void OnValueChanged(object sender, CheckBoxGroupEventArgs e);
 
         /// <summary>
-        /// 值切换事件
+        /// Value change event
         /// </summary>
         public event OnValueChanged ValueChanged;
 
         /// <summary>
-        /// 构造函数
+        /// Constructor
         /// </summary>
         public UICheckBoxGroup()
         {
@@ -80,7 +79,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 获取和设置条目值
+        /// Get and set item value
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
@@ -100,7 +99,7 @@ namespace Sunny.UI
         private int _imageSize = 16;
 
         [DefaultValue(16)]
-        [Description("图标大小"), Category("SunnyUI")]
+        [Description("Icon size"), Category("SunnyUI")]
         [Browsable(true)]
         public int CheckBoxSize
         {
@@ -114,7 +113,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 清除所有条目
+        /// Clear all items
         /// </summary>
         public void Clear()
         {
@@ -126,21 +125,21 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 条目列表
+        /// Item list
         /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         [Localizable(true)]
         [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         [MergableProperty(false)]
-        [Description("获取该多选框组中项的集合"), Category("SunnyUI")]
+        [Description("Get the collection of items in this checkbox group"), Category("SunnyUI")]
         public UIObjectCollection Items => items;
 
         private readonly UIObjectCollection items = new UIObjectCollection();
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -152,9 +151,9 @@ namespace Sunny.UI
         private Color hoverColor;
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is background color or transparent color or empty value, it will not be filled
         /// </summary>
-        [Description("鼠标滑过填充颜色"), Category("SunnyUI")]
+        [Description("Mouse hover fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "155, 200, 255")]
         public Color HoverColor
         {
@@ -167,9 +166,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is background color or transparent color or empty value, it will not be filled
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color CheckBoxColor
         {
@@ -201,9 +200,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override paint
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Paint event args</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -229,7 +228,7 @@ namespace Sunny.UI
                 Rectangle rect = new Rectangle(left, top, ItemSize.Width, ItemSize.Height);
                 int ImageSize = CheckBoxSize;
 
-                //图标
+                //Icon
                 top = rect.Top + (rect.Height - ImageSize) / 2;
                 left = rect.Left + 6;
                 Color color = Enabled ? checkBoxColor : foreDisableColor;
@@ -306,7 +305,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 选中状态列表
+        /// Selected state list
         /// </summary>
         [Browsable(false)]
         public List<int> SelectedIndexes
@@ -342,10 +341,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置条目状态
+        /// Set item state
         /// </summary>
-        /// <param name="index">索引</param>
-        /// <param name="isChecked">是否选中</param>
+        /// <param name="index">Index</param>
+        /// <param name="isChecked">Is checked</param>
         private void SetItemCheckState(int index, bool isChecked)
         {
             if (index >= 0 && index < Items.Count && CheckStates.NotContainsKey(index))
@@ -357,10 +356,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 获取条目状态
+        /// Get item state
         /// </summary>
-        /// <param name="index">索引</param>
-        /// <returns>是否选中</returns>
+        /// <param name="index">Index</param>
+        /// <returns>Is checked</returns>
         private bool GetItemCheckState(int index)
         {
             if (index >= 0 && index < items.Count && CheckStates.ContainsKey(index))
@@ -370,7 +369,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 所有选中条目列表
+        /// All selected item list
         /// </summary>
         [Browsable(false)]
         public List<object> SelectedItems
@@ -391,10 +390,10 @@ namespace Sunny.UI
         private int columnCount = 1;
 
         /// <summary>
-        /// 显示列的个数
+        /// Number of columns displayed
         /// </summary>
         [DefaultValue(1)]
-        [Description("显示列的个数"), Category("SunnyUI")]
+        [Description("Number of columns displayed"), Category("SunnyUI")]
         public int ColumnCount
         {
             get => columnCount;
@@ -409,10 +408,10 @@ namespace Sunny.UI
         private Size _itemSize = new Size(150, 29);
 
         /// <summary>
-        /// 显示项的大小
+        /// Size of displayed items
         /// </summary>
         [DefaultValue(typeof(Size), "150, 29")]
-        [Description("显示项的大小"), Category("SunnyUI")]
+        [Description("Size of displayed items"), Category("SunnyUI")]
         public Size ItemSize
         {
             get => _itemSize;
@@ -427,10 +426,10 @@ namespace Sunny.UI
         private Point startPos = new Point(12, 12);
 
         /// <summary>
-        /// 显示项的起始位置
+        /// Starting position of displayed items
         /// </summary>
         [DefaultValue(typeof(Point), "12, 12")]
-        [Description("显示项的起始位置"), Category("SunnyUI")]
+        [Description("Starting position of displayed items"), Category("SunnyUI")]
         public Point StartPos
         {
             get => startPos;
@@ -446,10 +445,10 @@ namespace Sunny.UI
         private int columnInterval = 6;
 
         /// <summary>
-        /// 显示项列之间的间隔
+        /// Interval between columns of displayed items
         /// </summary>
         [DefaultValue(6)]
-        [Description("显示项列之间的间隔"), Category("SunnyUI")]
+        [Description("Interval between columns of displayed items"), Category("SunnyUI")]
         public int ColumnInterval
         {
             get => columnInterval;
@@ -464,10 +463,10 @@ namespace Sunny.UI
         private int rowInterval = 2;
 
         /// <summary>
-        /// 显示项行之间的间隔
+        /// Interval between rows of displayed items
         /// </summary>
         [DefaultValue(2)]
-        [Description("显示项行之间的间隔"), Category("SunnyUI")]
+        [Description("Interval between rows of displayed items"), Category("SunnyUI")]
         public int RowInterval
         {
             get => rowInterval;
@@ -480,7 +479,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 全部选择
+        /// Select all
         /// </summary>
         public void SelectAll()
         {
@@ -494,7 +493,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 全部不选
+        /// Unselect all
         /// </summary>
         public void UnSelectAll()
         {
@@ -508,7 +507,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 反转选择
+        /// Reverse selection
         /// </summary>
         public void ReverseSelected()
         {

@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,17 +9,16 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIAvatar.cs
- * 文件说明: 头像
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIAvatar.cs
+ * Description: Avatar
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2022-03-19: V3.1.1 重构主题配色
- * 2023-05-12: V3.3.6 重构DrawString函数
- * 2023-10-26: V3.5.1 字体图标增加旋转角度参数SymbolRotate
+ * 2020-01-01: V2.2.0 Added file description
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2023-05-12: V3.3.6 Refactored DrawString function
+ * 2023-10-26: V3.5.1 Added rotation angle parameter SymbolRotate to font icons
 ******************************************************************************/
 
 using System;
@@ -32,7 +31,7 @@ using System.Windows.Forms;
 namespace Sunny.UI
 {
     /// <summary>
-    /// 头像
+    /// Avatar
     /// </summary>
     [DefaultEvent("Click")]
     [DefaultProperty("Symbol")]
@@ -40,28 +39,28 @@ namespace Sunny.UI
     public sealed class UIAvatar : UIControl, ISymbol, IZoomScale
     {
         /// <summary>
-        /// 头像图标类型
+        /// Avatar icon type
         /// </summary>
         public enum UIIcon
         {
             /// <summary>
-            /// 图像
+            /// Image
             /// </summary>
             Image,
 
             /// <summary>
-            /// 符号
+            /// Symbol
             /// </summary>
             Symbol,
 
             /// <summary>
-            /// 文字
+            /// Text
             /// </summary>
             Text
         }
 
         /// <summary>
-        /// 构造函数
+        /// Constructor
         /// </summary>
         public UIAvatar()
         {
@@ -78,9 +77,9 @@ namespace Sunny.UI
         private int baseAvatorSize = 60;
 
         /// <summary>
-        /// 头像大小
+        /// Avatar size
         /// </summary>
-        [DefaultValue(60), Description("头像大小"), Category("SunnyUI")]
+        [DefaultValue(60), Description("Avatar size"), Category("SunnyUI")]
         public int AvatarSize
         {
             get => avatarSize;
@@ -93,9 +92,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, no fill if the value is background color, transparent color, or null
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "Silver")]
         public Color FillColor
         {
@@ -104,9 +103,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体颜色
+        /// Font color
         /// </summary>
-        [Description("前景颜色"), Category("SunnyUI")]
+        [Description("Font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public override Color ForeColor
         {
@@ -115,9 +114,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -129,9 +128,9 @@ namespace Sunny.UI
         private UIIcon icon = UIIcon.Symbol;
 
         /// <summary>
-        /// 显示方式：图像（Image）、符号（Symbol）、文字（Text）
+        /// Display mode: Image, Symbol, Text
         /// </summary>
-        [DefaultValue(UIIcon.Symbol), Description("显示方式：图像（Image）、符号（Symbol）、文字（Text）"), Category("SunnyUI")]
+        [DefaultValue(UIIcon.Symbol), Description("Display mode: Image, Symbol, Text"), Category("SunnyUI")]
         public UIIcon Icon
         {
             get => icon;
@@ -148,9 +147,9 @@ namespace Sunny.UI
         private UIShape sharpType = UIShape.Circle;
 
         /// <summary>
-        /// 显示形状：圆形，正方形
+        /// Display shape: Circle, Square
         /// </summary>
-        [DefaultValue(UIShape.Circle), Description("显示形状：圆形，正方形"), Category("SunnyUI")]
+        [DefaultValue(UIShape.Circle), Description("Display shape: Circle, Square"), Category("SunnyUI")]
         public UIShape Shape
         {
             get => sharpType;
@@ -167,9 +166,9 @@ namespace Sunny.UI
         private Image image;
 
         /// <summary>
-        /// 图片
+        /// Image
         /// </summary>
-        [DefaultValue(typeof(Image), "null"), Description("图片"), Category("SunnyUI")]
+        [DefaultValue(typeof(Image), "null"), Description("Image"), Category("SunnyUI")]
         public Image Image
         {
             get => image;
@@ -187,9 +186,9 @@ namespace Sunny.UI
         private int baseSymbolSize = 45;
 
         /// <summary>
-        /// 字体图标大小
+        /// Font icon size
         /// </summary>
-        [DefaultValue(45), Description("字体图标大小"), Category("SunnyUI")]
+        [DefaultValue(45), Description("Font icon size"), Category("SunnyUI")]
         public int SymbolSize
         {
             get => symbolSize;
@@ -208,11 +207,11 @@ namespace Sunny.UI
         private int symbol = 61447;
 
         /// <summary>
-        /// 字体图标
+        /// Font icon
         /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [Editor("Sunny.UI.UIImagePropertyEditor, " + AssemblyRefEx.SystemDesign, typeof(UITypeEditor))]
-        [DefaultValue(61447), Description("字体图标"), Category("SunnyUI")]
+        [DefaultValue(61447), Description("Font icon"), Category("SunnyUI")]
         public int Symbol
         {
             get => symbol;
@@ -229,10 +228,10 @@ namespace Sunny.UI
         private Point symbolOffset = new Point(0, 0);
 
         /// <summary>
-        /// 字体图标的偏移位置
+        /// Font icon offset position
         /// </summary>
         [DefaultValue(typeof(Point), "0, 0")]
-        [Description("字体图标的偏移位置"), Category("SunnyUI")]
+        [Description("Font icon offset position"), Category("SunnyUI")]
         public Point SymbolOffset
         {
             get => symbolOffset;
@@ -246,10 +245,10 @@ namespace Sunny.UI
         private int _symbolRotate = 0;
 
         /// <summary>
-        /// 字体图标旋转角度
+        /// Font icon rotation angle
         /// </summary>
         [DefaultValue(0)]
-        [Description("字体图标旋转角度"), Category("SunnyUI")]
+        [Description("Font icon rotation angle"), Category("SunnyUI")]
         public int SymbolRotate
         {
             get => _symbolRotate;
@@ -266,10 +265,10 @@ namespace Sunny.UI
         private Point textOffset = new Point(0, 0);
 
         /// <summary>
-        /// 文字的偏移位置
+        /// Text offset position
         /// </summary>
         [DefaultValue(typeof(Point), "0, 0")]
-        [Description("文字的偏移位置"), Category("SunnyUI")]
+        [Description("Text offset position"), Category("SunnyUI")]
         public Point TextOffset
         {
             get => textOffset;
@@ -283,10 +282,10 @@ namespace Sunny.UI
         private Point imageOffset = new Point(0, 0);
 
         /// <summary>
-        /// 图片的偏移位置
+        /// Image offset position
         /// </summary>
         [DefaultValue(typeof(Point), "0, 0")]
-        [Description("图片的偏移位置"), Category("SunnyUI")]
+        [Description("Image offset position"), Category("SunnyUI")]
         public Point ImageOffset
         {
             get => imageOffset;
@@ -298,10 +297,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制填充颜色
+        /// Draw fill color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Graphics path</param>
         protected override void OnPaintFill(Graphics g, GraphicsPath path)
         {
             Rectangle rect = new Rectangle((Width - avatarSize) / 2, (Height - avatarSize) / 2, avatarSize, avatarSize);
@@ -319,26 +318,26 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 水平偏移
+        /// Horizontal offset
         /// </summary>
-        [Browsable(false), DefaultValue(0), Description("水平偏移"), Category("SunnyUI")]
+        [Browsable(false), DefaultValue(0), Description("Horizontal offset"), Category("SunnyUI")]
         public int OffsetX { get; set; } = 0;
 
         /// <summary>
-        /// 垂直偏移
+        /// Vertical offset
         /// </summary>
-        [Browsable(false), DefaultValue(0), Description("垂直偏移"), Category("SunnyUI")]
+        [Browsable(false), DefaultValue(0), Description("Vertical offset"), Category("SunnyUI")]
         public int OffsetY { get; set; } = 0;
 
         /// <summary>
-        /// 继续绘制
+        /// Continue drawing
         /// </summary>
         public event PaintEventHandler PaintAgain;
 
         /// <summary>
-        /// 重载绘图
+        /// Override drawing
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Drawing parameters</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -397,9 +396,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置控件缩放比例
+        /// Set control zoom scale
         /// </summary>
-        /// <param name="scale">缩放比例</param>
+        /// <param name="scale">Zoom scale</param>
         public override void SetZoomScale(float scale)
         {
             base.SetZoomScale(scale);

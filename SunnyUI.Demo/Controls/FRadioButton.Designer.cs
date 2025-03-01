@@ -55,33 +55,33 @@ namespace Sunny.UI.Demo
             // uiButton4
             // 
             this.uiButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton4.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiButton4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiButton4.Location = new System.Drawing.Point(145, 481);
             this.uiButton4.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton4.Name = "uiButton4";
             this.uiButton4.Size = new System.Drawing.Size(100, 35);
             this.uiButton4.TabIndex = 86;
             this.uiButton4.Text = "选择";
-            this.uiButton4.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiButton4.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiButton4.Click += new System.EventHandler(this.uiButton4_Click);
             // 
             // uiButton2
             // 
             this.uiButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton2.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiButton2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiButton2.Location = new System.Drawing.Point(30, 481);
             this.uiButton2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton2.Name = "uiButton2";
             this.uiButton2.Size = new System.Drawing.Size(100, 35);
             this.uiButton2.TabIndex = 85;
             this.uiButton2.Text = "全不选";
-            this.uiButton2.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiButton2.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiButton2.Click += new System.EventHandler(this.uiButton2_Click);
             // 
             // uiRadioButtonGroup1
             // 
             this.uiRadioButtonGroup1.ColumnCount = 3;
-            this.uiRadioButtonGroup1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiRadioButtonGroup1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiRadioButtonGroup1.Items.AddRange(new object[] {
             "0",
             "1",
@@ -108,7 +108,7 @@ namespace Sunny.UI.Demo
             // 
             this.uiRadioButton12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uiRadioButton12.Enabled = false;
-            this.uiRadioButton12.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiRadioButton12.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiRadioButton12.GroupIndex = 4;
             this.uiRadioButton12.Location = new System.Drawing.Point(516, 83);
             this.uiRadioButton12.MinimumSize = new System.Drawing.Size(1, 1);
@@ -123,7 +123,7 @@ namespace Sunny.UI.Demo
             this.uiRadioButton13.Checked = true;
             this.uiRadioButton13.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uiRadioButton13.Enabled = false;
-            this.uiRadioButton13.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiRadioButton13.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiRadioButton13.GroupIndex = 4;
             this.uiRadioButton13.Location = new System.Drawing.Point(354, 83);
             this.uiRadioButton13.MinimumSize = new System.Drawing.Size(1, 1);
@@ -136,7 +136,7 @@ namespace Sunny.UI.Demo
             // uiLabel3
             // 
             this.uiLabel3.AutoSize = true;
-            this.uiLabel3.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLabel3.Location = new System.Drawing.Point(49, 254);
             this.uiLabel3.Name = "uiLabel3";
@@ -149,7 +149,7 @@ namespace Sunny.UI.Demo
             // 
             this.uiRadioButton9.Checked = true;
             this.uiRadioButton9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiRadioButton9.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiRadioButton9.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiRadioButton9.GroupIndex = 3;
             this.uiRadioButton9.Location = new System.Drawing.Point(516, 247);
             this.uiRadioButton9.MinimumSize = new System.Drawing.Size(1, 1);
@@ -162,7 +162,7 @@ namespace Sunny.UI.Demo
             // uiRadioButton10
             // 
             this.uiRadioButton10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiRadioButton10.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiRadioButton10.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiRadioButton10.GroupIndex = 3;
             this.uiRadioButton10.Location = new System.Drawing.Point(354, 247);
             this.uiRadioButton10.MinimumSize = new System.Drawing.Size(1, 1);
@@ -175,7 +175,7 @@ namespace Sunny.UI.Demo
             // uiRadioButton11
             // 
             this.uiRadioButton11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiRadioButton11.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiRadioButton11.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiRadioButton11.GroupIndex = 3;
             this.uiRadioButton11.Location = new System.Drawing.Point(192, 247);
             this.uiRadioButton11.MinimumSize = new System.Drawing.Size(1, 1);
@@ -188,7 +188,7 @@ namespace Sunny.UI.Demo
             // uiLabel2
             // 
             this.uiLabel2.AutoSize = true;
-            this.uiLabel2.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLabel2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLabel2.Location = new System.Drawing.Point(49, 213);
             this.uiLabel2.Name = "uiLabel2";
@@ -200,7 +200,7 @@ namespace Sunny.UI.Demo
             // uiRadioButton5
             // 
             this.uiRadioButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiRadioButton5.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiRadioButton5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiRadioButton5.GroupIndex = 2;
             this.uiRadioButton5.Location = new System.Drawing.Point(516, 206);
             this.uiRadioButton5.MinimumSize = new System.Drawing.Size(1, 1);
@@ -214,7 +214,7 @@ namespace Sunny.UI.Demo
             // 
             this.uiRadioButton7.Checked = true;
             this.uiRadioButton7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiRadioButton7.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiRadioButton7.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiRadioButton7.GroupIndex = 2;
             this.uiRadioButton7.Location = new System.Drawing.Point(354, 206);
             this.uiRadioButton7.MinimumSize = new System.Drawing.Size(1, 1);
@@ -227,7 +227,7 @@ namespace Sunny.UI.Demo
             // uiRadioButton8
             // 
             this.uiRadioButton8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiRadioButton8.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiRadioButton8.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiRadioButton8.GroupIndex = 2;
             this.uiRadioButton8.Location = new System.Drawing.Point(192, 206);
             this.uiRadioButton8.MinimumSize = new System.Drawing.Size(1, 1);
@@ -240,7 +240,7 @@ namespace Sunny.UI.Demo
             // uiLabel1
             // 
             this.uiLabel1.AutoSize = true;
-            this.uiLabel1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLabel1.Location = new System.Drawing.Point(49, 172);
             this.uiLabel1.Name = "uiLabel1";
@@ -252,7 +252,7 @@ namespace Sunny.UI.Demo
             // uiRadioButton6
             // 
             this.uiRadioButton6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiRadioButton6.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiRadioButton6.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiRadioButton6.GroupIndex = 1;
             this.uiRadioButton6.Location = new System.Drawing.Point(516, 165);
             this.uiRadioButton6.MinimumSize = new System.Drawing.Size(1, 1);
@@ -265,7 +265,7 @@ namespace Sunny.UI.Demo
             // uiRadioButton3
             // 
             this.uiRadioButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiRadioButton3.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiRadioButton3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiRadioButton3.GroupIndex = 1;
             this.uiRadioButton3.Location = new System.Drawing.Point(354, 165);
             this.uiRadioButton3.MinimumSize = new System.Drawing.Size(1, 1);
@@ -279,7 +279,7 @@ namespace Sunny.UI.Demo
             // 
             this.uiRadioButton4.Checked = true;
             this.uiRadioButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiRadioButton4.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiRadioButton4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiRadioButton4.GroupIndex = 1;
             this.uiRadioButton4.Location = new System.Drawing.Point(192, 165);
             this.uiRadioButton4.MinimumSize = new System.Drawing.Size(1, 1);
@@ -292,7 +292,7 @@ namespace Sunny.UI.Demo
             // uiLine3
             // 
             this.uiLine3.BackColor = System.Drawing.Color.Transparent;
-            this.uiLine3.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLine3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLine3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLine3.Location = new System.Drawing.Point(30, 131);
             this.uiLine3.MinimumSize = new System.Drawing.Size(16, 16);
@@ -305,7 +305,7 @@ namespace Sunny.UI.Demo
             // uiRadioButton2
             // 
             this.uiRadioButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiRadioButton2.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiRadioButton2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiRadioButton2.Location = new System.Drawing.Point(192, 83);
             this.uiRadioButton2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiRadioButton2.Name = "uiRadioButton2";
@@ -318,7 +318,7 @@ namespace Sunny.UI.Demo
             // 
             this.uiRadioButton1.Checked = true;
             this.uiRadioButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiRadioButton1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiRadioButton1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiRadioButton1.Location = new System.Drawing.Point(30, 83);
             this.uiRadioButton1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiRadioButton1.Name = "uiRadioButton1";
@@ -331,7 +331,7 @@ namespace Sunny.UI.Demo
             // uiLine2
             // 
             this.uiLine2.BackColor = System.Drawing.Color.Transparent;
-            this.uiLine2.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLine2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLine2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLine2.Location = new System.Drawing.Point(30, 55);
             this.uiLine2.MinimumSize = new System.Drawing.Size(16, 16);

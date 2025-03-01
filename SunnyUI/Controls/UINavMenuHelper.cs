@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,18 +9,17 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UINavMenuHelper.cs
- * 文件说明: 导航菜单帮助类
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UINavMenuHelper.cs
+ * Description: Navigation menu helper class
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2022-04-14: V3.1.3 重构扩展函数
- * 2022-11-29: V3.3.0 重构RemovePage方法
- * 2023-10-26: V3.5.1 字体图标增加旋转角度参数SymbolRotate
- * 2024-08-07: V3.6.8 窗体移除时调用Close()
+ * 2020-01-01: V2.2.0 Added file description
+ * 2022-04-14: V3.1.3 Refactored extension functions
+ * 2022-11-29: V3.3.0 Refactored RemovePage method
+ * 2023-10-26: V3.5.1 Added rotation angle parameter SymbolRotate for font icons
+ * 2024-08-07: V3.6.8 Called Close() when form is removed
 ******************************************************************************/
 
 using System;
@@ -214,22 +213,22 @@ namespace Sunny.UI
         public int SelectedImageIndex { get; set; } = -1;
 
         /// <summary>
-        /// 字体图标
+        /// Font icon
         /// </summary>
         public int Symbol { get; set; }
 
         /// <summary>
-        /// 字体图标大小
+        /// Font icon size
         /// </summary>
         public int SymbolSize { get; set; } = 24;
 
         /// <summary>
-        /// 字体图标的偏移位置
+        /// Offset position of the font icon
         /// </summary>
         public Point SymbolOffset { get; set; } = new Point(0, 0);
 
         /// <summary>
-        /// 字体图标旋转角度
+        /// Rotation angle of the font icon
         /// </summary>
         public int SymbolRotate { get; set; } = 0;
 

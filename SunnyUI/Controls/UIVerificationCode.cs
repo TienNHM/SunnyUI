@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,17 +9,16 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIVerificationCode.cs
- * 文件说明: 验证码控件
- * 当前版本: V3.1
- * 创建日期: 2022-06-11
+ * File Name: UIVerificationCode.cs
+ * Description: Verification code control
+ * Current Version: V3.1
+ * Creation Date: 2022-06-11
  *
- * 2022-06-11: V3.1.9 增加文件说明
- * 2023-05-16: V3.3.6 重构DrawString函数
- * 2022-05-28: V3.3.7 修改字体缩放时显示
- * 2024-12-12: V3.8.0 可以自定义颜色 #IBABW1
+ * 2022-06-11: V3.1.9 Added file description
+ * 2023-05-16: V3.3.6 Refactored DrawString function
+ * 2022-05-28: V3.3.7 Modified display when scaling fonts
+ * 2024-12-12: V3.8.0 Customizable colors #IBABW1
 ******************************************************************************/
 
 using System;
@@ -45,9 +44,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -56,9 +55,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 点击事件
+        /// Click event
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnClick(EventArgs e)
         {
             base.OnClick(e);
@@ -66,9 +65,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("边框颜色"), Category("SunnyUI")]
+        [Description("Border color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color RectColor
         {
@@ -77,9 +76,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体颜色
+        /// Font color
         /// </summary>
-        [Description("字体颜色"), Category("SunnyUI")]
+        [Description("Font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public override Color ForeColor
         {
@@ -88,10 +87,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制填充颜色
+        /// Draw fill color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Graphics path</param>
         protected override void OnPaintFill(Graphics g, GraphicsPath path)
         {
             base.OnPaintFill(g, path);
@@ -101,10 +100,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制前景颜色
+        /// Draw foreground color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Graphics path</param>
         protected override void OnPaintFore(Graphics g, GraphicsPath path)
         {
             if (Text != "") Text = "";
@@ -112,21 +111,21 @@ namespace Sunny.UI
         }
 
         [DefaultValue(4)]
-        [Description("验证码长度"), Category("SunnyUI")]
+        [Description("Verification code length"), Category("SunnyUI")]
         public int CodeLength { get; set; } = 4;
 
         [DefaultValue(18)]
-        [Description("验证码字体大小"), Category("SunnyUI")]
+        [Description("Verification code font size"), Category("SunnyUI")]
         public int CodeFontSize { get; set; } = 18;
 
         [DefaultValue(null)]
-        [Description("验证码文字"), Category("SunnyUI")]
+        [Description("Verification code text"), Category("SunnyUI")]
         public string Code { get; private set; }
 
         /// <summary>
-        /// 生成图片
+        /// Generate image
         /// </summary>
-        /// <param name="code">验证码表达式</param>
+        /// <param name="code">Verification code expression</param>
         private Bitmap CreateImage(string code)
         {
             byte gdiCharSet = UIStyles.GetGdiCharSet(Font.Name);
@@ -136,14 +135,14 @@ namespace Sunny.UI
             Size sf = TextRenderer.MeasureText(code, fontex);
             using Bitmap image = new Bitmap((int)sf.Width + 16, Height - 2);
 
-            //创建画布
+            //Create canvas
             Graphics g = Graphics.FromImage(image);
             Random random = new Random();
 
-            //图片背景色
+            //Image background color
             g.Clear(fillColor);
 
-            //画图片背景线
+            //Draw image background lines
             for (int i = 0; i < 5; i++)
             {
                 int x1 = random.Next(image.Width);
@@ -154,7 +153,7 @@ namespace Sunny.UI
                 g.DrawLine(Color.Black, x1, y1, x2, y2, true);
             }
 
-            //画图片的前景噪音点
+            //Draw image foreground noise points
             for (int i = 0; i < 30; i++)
             {
                 int x = random.Next(image.Width);
@@ -168,18 +167,18 @@ namespace Sunny.UI
         }
 
         ///<summary>
-        ///正弦曲线Wave扭曲图片
+        ///Sine wave distortion of the image
         ///</summary>
-        ///<param name="srcBmp">图片路径</param>
-        ///<param name="bXDir">如果扭曲则选择为True</param>
-        ///<param name="nMultValue">波形的幅度倍数，越大扭曲的程度越高，一般为3</param>
-        ///<param name="dPhase">波形的起始相位，取值区间[0-2*PI)</param>
+        ///<param name="srcBmp">Image path</param>
+        ///<param name="bXDir">If distorted, choose True</param>
+        ///<param name="nMultValue">Amplitude multiplier of the waveform, the larger the value, the higher the degree of distortion, generally 3</param>
+        ///<param name="dPhase">Starting phase of the waveform, range [0-2*PI)</param>
         ///<returns></returns>
         private Bitmap TwistImage(Bitmap srcBmp, bool bXDir, double dMultValue, double dPhase)
         {
             Bitmap destBmp = new Bitmap(srcBmp.Width, srcBmp.Height);
 
-            // 将位图背景填充为白色
+            // Fill the bitmap background with white
             using Graphics graph = Graphics.FromImage(destBmp);
             using SolidBrush br = new SolidBrush(fillColor);
             graph.FillRectangle(br, 0, 0, destBmp.Width, destBmp.Height);
@@ -193,7 +192,7 @@ namespace Sunny.UI
                     dx += dPhase;
                     double dy = Math.Sin(dx);
 
-                    // 取得当前点的颜色
+                    // Get the color of the current point
                     int nOldX = 0, nOldY = 0;
                     nOldX = bXDir ? i + (int)(dy * dMultValue) : i;
                     nOldY = bXDir ? j : j + (int)(dy * dMultValue);

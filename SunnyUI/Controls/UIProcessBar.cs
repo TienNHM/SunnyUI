@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,23 +9,22 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIProcessBar.cs
- * 文件说明: 进度条
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIProcessBar.cs
+ * Description: Progress Bar
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-04-19: V2.2.5 增加数值变化事件
- * 2021-08-07: V3.0.5 增加垂直方向的进度显示
- * 2021-08-14: V3.0.6 修改不显示百分比时，显示数值
- * 2021-10-14: V3.0.8 调整最小高度为3
- * 2022-03-19: V3.1.1 重构主题配色
- * 2022-09-05: V3.2.3 修改最大值至少为1
- * 2023-05-12: V3.3.6 重构DrawString函数
- * 2023-09-05: V3.4.2 修复值计算过程中的Int越界问题
- * 2024-05-09: V3.6.6 调整最小宽度，以适应垂直方向显示
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-04-19: V2.2.5 Added value change event
+ * 2021-08-07: V3.0.5 Added vertical progress display
+ * 2021-08-14: V3.0.6 Modified to display value when percentage is not shown
+ * 2021-10-14: V3.0.8 Adjusted minimum height to 3
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2022-09-05: V3.2.3 Modified maximum value to be at least 1
+ * 2023-05-12: V3.3.6 Refactored DrawString function
+ * 2023-09-05: V3.4.2 Fixed int overflow issue during value calculation
+ * 2024-05-09: V3.6.6 Adjusted minimum width to accommodate vertical display
 ******************************************************************************/
 
 using System;
@@ -59,7 +58,7 @@ namespace Sunny.UI
         private UILine.LineDirection direction = UILine.LineDirection.Horizontal;
 
         [DefaultValue(UILine.LineDirection.Horizontal)]
-        [Description("线条方向"), Category("SunnyUI")]
+        [Description("Line direction"), Category("SunnyUI")]
         public UILine.LineDirection Direction
         {
             get => direction;
@@ -74,7 +73,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(100)]
-        [Description("最大值"), Category("SunnyUI")]
+        [Description("Maximum value"), Category("SunnyUI")]
         public int Maximum
         {
             get => maximum;
@@ -88,7 +87,7 @@ namespace Sunny.UI
         private int posValue;
 
         [DefaultValue(0)]
-        [Description("当前位置"), Category("SunnyUI")]
+        [Description("Current position"), Category("SunnyUI")]
         public int Value
         {
             get => posValue;
@@ -108,7 +107,7 @@ namespace Sunny.UI
         private bool showValue = true;
 
         [DefaultValue(true)]
-        [Description("显示进度值"), Category("SunnyUI")]
+        [Description("Show progress value"), Category("SunnyUI")]
         public bool ShowValue
         {
             get => showValue;
@@ -120,7 +119,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(1)]
-        [Description("步进值"), Category("SunnyUI")]
+        [Description("Step value"), Category("SunnyUI")]
         public int Step { get; set; } = 1;
 
         public void StepIt()
@@ -132,9 +131,9 @@ namespace Sunny.UI
         private int imageRadius;
 
         /// <summary>
-        /// 重载绘图
+        /// Override paint method
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Paint event arguments</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -246,9 +245,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载控件尺寸变更
+        /// Override size changed event
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Event arguments</param>
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
@@ -257,7 +256,7 @@ namespace Sunny.UI
 
         private bool showPercent = true;
 
-        [Description("显示文字百分比"), Category("SunnyUI")]
+        [Description("Show percentage text"), Category("SunnyUI")]
         [DefaultValue(true)]
         public bool ShowPercent
         {
@@ -269,7 +268,7 @@ namespace Sunny.UI
             }
         }
 
-        [Description("显示文字小数位数"), Category("SunnyUI")]
+        [Description("Decimal places for text"), Category("SunnyUI")]
         [DefaultValue(1)]
         public int DecimalPlaces
         {
@@ -280,9 +279,9 @@ namespace Sunny.UI
         private int decimalCount = 1;
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -291,9 +290,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is background color, transparent color, or null, it will not be filled
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "243, 249, 255")]
         public Color FillColor
         {
@@ -302,9 +301,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体颜色
+        /// Font color
         /// </summary>
-        [Description("字体颜色"), Category("SunnyUI")]
+        [Description("Font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public override Color ForeColor
         {
@@ -313,9 +312,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("边框颜色"), Category("SunnyUI")]
+        [Description("Border color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color RectColor
         {

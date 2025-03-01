@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,16 +9,15 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIMessageBox.cs
- * 文件说明: 消息提示窗体
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIMessageBox.cs
+ * Description: Message prompt form
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2021-11-09: V3.0.8 多个按钮显示时增加FocusLine
- * 2022-07-13: V3.2.1 消息弹窗文本增加滚动条
+ * 2020-01-01: V2.2.0 Added file description
+ * 2021-11-09: V3.0.8 Added FocusLine when multiple buttons are displayed
+ * 2022-07-13: V3.2.1 Added scrollbar to message prompt text
 ******************************************************************************/
 
 using System;
@@ -30,7 +29,7 @@ namespace Sunny.UI
     public sealed partial class UIMessageForm : UIForm
     {
         /// <summary>
-        /// 消息提示窗体
+        /// Message prompt form
         /// </summary>
         public UIMessageForm()
         {
@@ -41,7 +40,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 是否OK
+        /// Is OK
         /// </summary>
         public bool IsOK
         {
@@ -51,7 +50,7 @@ namespace Sunny.UI
         private bool _showCancel = true;
 
         /// <summary>
-        /// 显示取消按钮
+        /// Show cancel button
         /// </summary>
         public bool ShowCancel
         {
@@ -65,9 +64,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载控件尺寸变更
+        /// Override control size change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
@@ -95,7 +94,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 回车事件
+        /// Enter event
         /// </summary>
         protected override void DoEnter()
         {
@@ -121,9 +120,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -158,12 +157,12 @@ namespace Sunny.UI
         public UIMessageDialogButtons DefaultButton { get; set; } = UIMessageDialogButtons.Ok;
 
         /// <summary>
-        /// 显示消息提示窗体
+        /// Show message prompt form
         /// </summary>
-        /// <param name="message">消息</param>
-        /// <param name="title">标题</param>
-        /// <param name="showCancel">显示取消按钮</param>
-        /// <param name="style">主题风格</param>
+        /// <param name="message">Message</param>
+        /// <param name="title">Title</param>
+        /// <param name="showCancel">Show cancel button</param>
+        /// <param name="style">Theme style</param>
         public void ShowMessage(string message, string title, bool showCancel, UIStyle style = UIStyle.Blue)
         {
             Style = style;

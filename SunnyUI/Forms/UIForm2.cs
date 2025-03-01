@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,22 +9,22 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
+ * If you use this code, please keep this note.
  ******************************************************************************
- * 文件名称: UIForm2.cs
- * 文件说明: 窗体基类
- * 当前版本: V3.6
- * 创建日期: 2024-01-20
+ * File Name: UIForm2.cs
+ * File Description: Form base class
+ * Current Version: V3.6
+ * Creation Date: 2024-01-20
  *
- * 2024-01-20: V3.6.3 增加文件说明
- * 2024-01-25: V3.6.3 增加主题等
- * 2024-04-16: V3.6.5 设置默认Padding.Top为TitleHeight
- * 2024-04-28: V3.6.5 增加WindowStateChanged事件
- * 2024-05-16: V3.6.6 Resizable替代ShowDragStretch，显示边框可拖拽调整窗体大小
- * 2024-06-08: V3.6.6 防止图标转换错误
- * 2024-07-20: V3.6.8 修改最大化时按钮位置
- * 2024-07-21: V3.6.8 修改属性与UIForm兼容
- * 2024-07-26: V3.6.8 修复鼠标点击事件
+ * 2024-01-20: V3.6.3 Added file description
+ * 2024-01-25: V3.6.3 Added themes, etc.
+ * 2024-04-16: V3.6.5 Set default Padding.Top to TitleHeight
+ * 2024-04-28: V3.6.5 Added WindowStateChanged event
+ * 2024-05-16: V3.6.6 Resizable replaces ShowDragStretch, display border can be dragged to adjust form size
+ * 2024-06-08: V3.6.6 Prevent icon conversion error
+ * 2024-07-20: V3.6.8 Modify button position when maximized
+ * 2024-07-21: V3.6.8 Modify properties to be compatible with UIForm
+ * 2024-07-26: V3.6.8 Fix mouse click event
 ******************************************************************************/
 
 using System;
@@ -51,9 +51,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 禁止控件跟随窗体缩放
+        /// Disable control scaling with form
         /// </summary>
-        [DefaultValue(false), Category("SunnyUI"), Description("禁止控件跟随窗体缩放")]
+        [DefaultValue(false), Category("SunnyUI"), Description("Disable control scaling with form")]
         public bool ZoomScaleDisabled { get; set; }
 
         private void SetZoomScaleRect()
@@ -74,7 +74,7 @@ namespace Sunny.UI
         public event OnZoomScaleRectChanged ZoomScaleRectChanged;
 
         [DefaultValue(typeof(Size), "0, 0")]
-        [Description("设计界面大小"), Category("SunnyUI")]
+        [Description("Design interface size"), Category("SunnyUI")]
         public Size ZoomScaleSize
         {
             get;
@@ -82,15 +82,15 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 控件缩放前在其容器里的位置
+        /// Position of the control before scaling in its container
         /// </summary>
         [Browsable(false), DefaultValue(typeof(Rectangle), "0, 0, 0, 0")]
         public Rectangle ZoomScaleRect { get; set; }
 
         /// <summary>
-        /// 设置控件缩放比例
+        /// Set control scaling ratio
         /// </summary>
-        /// <param name="scale">缩放比例</param>
+        /// <param name="scale">Scaling ratio</param>
         private void SetZoomScale()
         {
             if (ZoomScaleDisabled) return;
@@ -118,7 +118,7 @@ namespace Sunny.UI
             SetZoomScaleRect();
         }
 
-        [Description("显示边框可拖拽调整窗体大小"), Category("SunnyUI"), DefaultValue(false)]
+        [Description("Display border can be dragged to adjust form size"), Category("SunnyUI"), DefaultValue(false)]
         public bool Resizable
         {
             get => showDragStretch;
@@ -126,7 +126,7 @@ namespace Sunny.UI
         }
 
         [Browsable(false)]
-        [Description("显示边框可拖拽调整窗体大小"), Category("SunnyUI"), DefaultValue(false)]
+        [Description("Display border can be dragged to adjust form size"), Category("SunnyUI"), DefaultValue(false)]
         public bool ShowDragStretch
         {
             get => showDragStretch;
@@ -138,9 +138,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override painting
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Painting parameters</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -183,7 +183,7 @@ namespace Sunny.UI
                 }
                 catch
                 {
-                    Console.WriteLine("图标转换错误");
+                    Console.WriteLine("Icon conversion error");
                 }
             }
 
@@ -369,9 +369,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标移动事件
+        /// Override mouse move event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseMove(MouseEventArgs e)
         {
             bool inControlBox = e.Location.InRect(ControlBoxRect);
@@ -455,9 +455,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标按下事件
+        /// Override mouse down event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
@@ -481,9 +481,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载控件尺寸变更
+        /// Override control size change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);

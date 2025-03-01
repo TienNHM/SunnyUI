@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,15 +9,14 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: ListBoxEx.cs
- * 文件说明: 列表框基类
- * 当前版本: V3.1
- * 创建日期: 2022-05-12
+ * File Name: ListBoxEx.cs
+ * Description: ListBox base class
+ * Current Version: V3.1
+ * Creation Date: 2022-05-12
  *
- * 2023-05-12: V3.3.6 增加文件说明
- * 2023-05-12: V3.3.6 重构DrawString函数
+ * 2023-05-12: V3.3.6 Added file description
+ * 2023-05-12: V3.3.6 Refactored DrawString function
 ******************************************************************************/
 
 using System;
@@ -36,10 +35,10 @@ namespace Sunny.UI
         private UIScrollBar bar;
 
         /// <summary>
-        /// Tag字符串
+        /// Tag string
         /// </summary>
         [DefaultValue(null)]
-        [Description("获取或设置包含有关控件的数据的对象字符串"), Category("SunnyUI")]
+        [Description("Gets or sets the object string containing data about the control"), Category("SunnyUI")]
         public string TagString { get; set; }
 
         private float DefaultFontSize = -1;
@@ -124,9 +123,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载控件尺寸变更
+        /// Override control size change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnSizeChanged(EventArgs e)
         {
             if (Bar != null && Bar.Visible)
@@ -168,17 +167,17 @@ namespace Sunny.UI
         public string Version { get; }
 
         /// <summary>
-        /// 自定义主题风格
+        /// Custom theme style
         /// </summary>
         [DefaultValue(false), Browsable(false)]
-        [Description("获取或设置可以自定义主题风格"), Category("SunnyUI")]
+        [Description("Gets or sets the ability to customize the theme style"), Category("SunnyUI")]
         public bool StyleCustomMode { get; set; }
 
-        #region 组件设计器生成的代码
+        #region Designer support required method
 
         /// <summary>
-        ///     设计器支持所需的方法 - 不要
-        ///     使用代码编辑器修改此方法的内容。
+        /// Designer support required method - do not
+        /// use the code editor to modify the contents of this method.
         /// </summary>
         private void InitializeComponent()
         {
@@ -195,16 +194,16 @@ namespace Sunny.UI
             ResumeLayout(false);
         }
 
-        #endregion 组件设计器生成的代码
+        #endregion Designer support required method
 
         private UIStyle _style = UIStyle.Inherited;
         private Color _itemSelectBackColor = UIColor.Blue;
         private Color _itemSelectForeColor = Color.White;
 
         /// <summary>
-        /// 主题样式
+        /// Theme style
         /// </summary>
-        [DefaultValue(UIStyle.Inherited), Description("主题样式"), Category("SunnyUI")]
+        [DefaultValue(UIStyle.Inherited), Description("Theme style"), Category("SunnyUI")]
         public UIStyle Style
         {
             get => _style;
@@ -234,9 +233,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="style">主题样式</param>
+        /// <param name="style">Theme style</param>
         private void SetStyle(UIStyle style)
         {
             if (!style.IsCustom())
@@ -416,9 +415,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标移动事件
+        /// Override mouse move event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseMove(MouseEventArgs e)
         {
             base.OnMouseMove(e);
@@ -427,9 +426,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标离开事件
+        /// Override mouse leave event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseLeave(EventArgs e)
         {
             base.OnMouseLeave(e);

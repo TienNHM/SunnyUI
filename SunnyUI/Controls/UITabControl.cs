@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,34 +9,33 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UITabControl.cs
- * 文件说明: 标签控件
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UITabControl.cs
+ * File Description: Tab control
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-06-27: V2.2.5 重绘左右选择按钮
- * 2020-08-12: V2.2.7 标题垂直居中
- * 2021-04-01: V3.0.2 修改第一个TabPage关不掉的Bug
- * 2021-06-08: V3.0.4 Tab页标题选中高亮颜色增加可调整高度
- * 2021-07-14: V3.0.5 支持Tab在下方显示
- * 2021-08-14: V3.0.6 增加DisposeTabPageAfterRemove标志，移除TabPage后，是否自动销毁TabPage
- * 2022-01-02: V3.0.9 增加角标
- * 2022-01-13: V3.1.0 修改删除页面时的页面跳转
- * 2022-04-18: V3.1.5 关闭按钮增加鼠标移入的效果
- * 2022-04-20: V3.1.5 不显示标签页时屏蔽左右键
- * 2022-05-11: V3.1.8 修复屏蔽左右键后其他控件无法使用左右键的问题
- * 2022-05-17: V3.1.9 修复了一个首页无法关闭的问题
- * 2022-06-19: V3.2.0 多页面框架关闭页面时执行UIPage的FormClosed事件
- * 2023-05-12: V3.3.6 重构DrawString函数
- * 2023-11-06: V3.5.2 重构主题
- * 2023-12-13: V3.6.2 优化UIPage的Init和Final加载逻辑
- * 2024-11-29: V3.8.0 修复了SelectedIndex=-1时的报错
- * 2024-12-12: V3.8.0 修复标签文字越界显示 #IB8571
- * 2024-12-12: V3.8.0 增加未选页签颜色 #IB7U69
- * 2025-02-07: V3.8.1 修复切换主题色时，TabPage未设置背景色，#IBKDR7
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-06-27: V2.2.5 Redraw left and right selection buttons
+ * 2020-08-12: V2.2.7 Title vertically centered
+ * 2021-04-01: V3.0.2 Fixed the bug that the first TabPage could not be closed
+ * 2021-06-08: V3.0.4 Added adjustable height for selected tab title highlight color
+ * 2021-07-14: V3.0.5 Support for displaying tabs at the bottom
+ * 2021-08-14: V3.0.6 Added DisposeTabPageAfterRemove flag to automatically destroy TabPage after removal
+ * 2022-01-02: V3.0.9 Added badge
+ * 2022-01-13: V3.1.0 Modified page navigation when deleting pages
+ * 2022-04-18: V3.1.5 Added mouse hover effect to close button
+ * 2022-04-20: V3.1.5 Disabled left and right keys when tabs are not visible
+ * 2022-05-11: V3.1.8 Fixed issue where other controls could not use left and right keys after disabling left and right keys
+ * 2022-05-17: V3.1.9 Fixed an issue where the home page could not be closed
+ * 2022-06-19: V3.2.0 Execute UIPage's FormClosed event when closing pages in multi-page framework
+ * 2023-05-12: V3.3.6 Refactored DrawString function
+ * 2023-11-06: V3.5.2 Refactored theme
+ * 2023-12-13: V3.6.2 Optimized UIPage's Init and Final loading logic
+ * 2024-11-29: V3.8.0 Fixed error when SelectedIndex=-1
+ * 2024-12-12: V3.8.0 Fixed tab text overflow display #IB8571
+ * 2024-12-12: V3.8.0 Added unselected tab color #IB7U69
+ * 2025-02-07: V3.8.1 Fixed issue where TabPage background color was not set when switching theme colors, #IBKDR7
 ******************************************************************************/
 
 using System;
@@ -93,21 +92,21 @@ namespace Sunny.UI
         public IFrame Frame { get; set; }
 
         /// <summary>
-        /// 禁止控件跟随窗体缩放
+        /// Disable control scaling with the form
         /// </summary>
-        [DefaultValue(false), Category("SunnyUI"), Description("禁止控件跟随窗体缩放")]
+        [DefaultValue(false), Category("SunnyUI"), Description("Disable control scaling with the form")]
         public bool ZoomScaleDisabled { get; set; }
 
         /// <summary>
-        /// 控件缩放前在其容器里的位置
+        /// Control's position in its container before scaling
         /// </summary>
         [Browsable(false), DefaultValue(typeof(Rectangle), "0, 0, 0, 0")]
         public Rectangle ZoomScaleRect { get; set; }
 
         /// <summary>
-        /// 设置控件缩放比例
+        /// Set control scaling ratio
         /// </summary>
-        /// <param name="scale">缩放比例</param>
+        /// <param name="scale">Scaling ratio</param>
         public void SetZoomScale(float scale)
         {
 
@@ -132,7 +131,10 @@ namespace Sunny.UI
 
         private Color tipsColor = Color.Red;
 
-        [Description("角标背景颜色"), Category("SunnyUI")]
+        /// <summary>
+        /// Badge background color
+        /// </summary>
+        [Description("Badge background color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "Red")]
         public Color TipsColor
         {
@@ -146,7 +148,10 @@ namespace Sunny.UI
 
         private Color tipsForeColor = Color.White;
 
-        [DefaultValue(typeof(Color), "White"), Category("SunnyUI"), Description("角标文字颜色")]
+        /// <summary>
+        /// Badge text color
+        /// </summary>
+        [DefaultValue(typeof(Color), "White"), Category("SunnyUI"), Description("Badge text color")]
         public Color TipsForeColor
         {
             get => tipsForeColor;
@@ -159,8 +164,11 @@ namespace Sunny.UI
 
         private Font tipsFont = UIStyles.SubFont();
 
-        [Description("角标文字字体"), Category("SunnyUI")]
-        [DefaultValue(typeof(Font), "宋体, 9pt")]
+        /// <summary>
+        /// Badge text font
+        /// </summary>
+        [Description("Badge text font"), Category("SunnyUI")]
+        [DefaultValue(typeof(Font), "Segoe UI, 9pt")]
         public Font TipsFont
         {
             get { return tipsFont; }
@@ -192,8 +200,11 @@ namespace Sunny.UI
 
         private string mainPage = "";
 
+        /// <summary>
+        /// Home page name, this page does not display the close button
+        /// </summary>
         [DefaultValue(true)]
-        [Description("主页名称，此页面不显示关闭按钮"), Category("SunnyUI")]
+        [Description("Home page name, this page does not display the close button"), Category("SunnyUI")]
         public string MainPage
         {
             get => mainPage;
@@ -239,8 +250,11 @@ namespace Sunny.UI
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
+        /// <summary>
+        /// Disable Ctrl+Tab
+        /// </summary>
         [DefaultValue(true)]
-        [Description("是否禁用Ctrl+Tab"), Category("SunnyUI")]
+        [Description("Disable Ctrl+Tab"), Category("SunnyUI")]
         public bool ForbidCtrlTab { get; set; } = true;
 
         public bool SelectPage(int pageIndex) => Helper.SelectPage(pageIndex);
@@ -288,26 +302,29 @@ namespace Sunny.UI
         private Color tabBackColor = Color.FromArgb(56, 56, 56);
 
         /// <summary>
-        /// Tag字符串
+        /// Get or set the object string containing data about the control
         /// </summary>
         [DefaultValue(null)]
-        [Description("获取或设置包含有关控件的数据的对象字符串"), Category("SunnyUI")]
+        [Description("Get or set the object string containing data about the control"), Category("SunnyUI")]
         public string TagString
         {
             get; set;
         }
 
         /// <summary>
-        /// 自定义主题风格
+        /// Get or set the ability to customize the theme style
         /// </summary>
         [DefaultValue(false), Browsable(false)]
-        [Description("获取或设置可以自定义主题风格"), Category("SunnyUI")]
+        [Description("Get or set the ability to customize the theme style"), Category("SunnyUI")]
         public bool StyleCustomMode { get; set; }
 
         private HorizontalAlignment textAlignment = HorizontalAlignment.Center;
 
+        /// <summary>
+        /// Text display direction
+        /// </summary>
         [DefaultValue(HorizontalAlignment.Center)]
-        [Description("文字显示方向"), Category("SunnyUI")]
+        [Description("Text display direction"), Category("SunnyUI")]
         public HorizontalAlignment TextAlignment
         {
             get => textAlignment;
@@ -320,8 +337,11 @@ namespace Sunny.UI
 
         private bool tabVisible = true;
 
+        /// <summary>
+        /// Whether to display the tab page
+        /// </summary>
         [DefaultValue(true)]
-        [Description("标签页是否显示"), Category("SunnyUI")]
+        [Description("Whether to display the tab page"), Category("SunnyUI")]
         public bool TabVisible
         {
             get => tabVisible;
@@ -345,9 +365,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 当使用边框时填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color when using borders, no fill if the value is background color, transparent color, or null
         /// </summary>
-        [Description("当使用边框时填充颜色，当值为背景色或透明色或空值则不填充"), Category("SunnyUI")]
+        [Description("Fill color when using borders, no fill if the value is background color, transparent color, or null"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "243, 249, 255")]
         public Color FillColor
         {
@@ -361,9 +381,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("边框颜色"), Category("SunnyUI")]
+        [Description("Border color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "56, 56, 56")]
         public Color TabBackColor
         {
@@ -382,9 +402,9 @@ namespace Sunny.UI
         private Color tabSelectedColor = Color.FromArgb(36, 36, 36);
 
         /// <summary>
-        /// 边框颜色
+        /// Selected Tab page background color
         /// </summary>
-        [Description("选中Tab页背景色"), Category("SunnyUI")]
+        [Description("Selected Tab page background color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "36, 36, 36")]
         public Color TabSelectedColor
         {
@@ -403,9 +423,9 @@ namespace Sunny.UI
         private Color tabUnSelectedColor = Color.FromArgb(56, 56, 56);
 
         /// <summary>
-        /// 边框颜色
+        /// Unselected Tab page background color
         /// </summary>
-        [Description("选中Tab页背景色"), Category("SunnyUI")]
+        [Description("Unselected Tab page background color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "56, 56, 56")]
         public Color TabUnSelectedColor
         {
@@ -424,9 +444,9 @@ namespace Sunny.UI
         private Color tabSelectedForeColor = UIColor.Blue;
 
         /// <summary>
-        /// 边框颜色
+        /// Selected Tab page font color
         /// </summary>
-        [Description("选中Tab页字体色"), Category("SunnyUI")]
+        [Description("Selected Tab page font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color TabSelectedForeColor
         {
@@ -444,9 +464,9 @@ namespace Sunny.UI
         private Color tabUnSelectedForeColor = Color.FromArgb(240, 240, 240);
 
         /// <summary>
-        /// 边框颜色
+        /// Unselected Tab page font color
         /// </summary>
-        [Description("未选中Tab页字体色"), Category("SunnyUI")]
+        [Description("Unselected Tab page font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "240, 240, 240")]
         public Color TabUnSelectedForeColor
         {
@@ -465,9 +485,9 @@ namespace Sunny.UI
         private Color tabSelectedHighColor = UIColor.Blue;
 
         /// <summary>
-        /// 边框颜色
+        /// Selected Tab page highlight
         /// </summary>
-        [Description("选中Tab页高亮"), Category("SunnyUI")]
+        [Description("Selected Tab page highlight"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color TabSelectedHighColor
 
@@ -486,9 +506,9 @@ namespace Sunny.UI
         private int tabSelectedHighColorSize = 4;
 
         /// <summary>
-        /// 选中Tab页高亮高度
+        /// Selected Tab page highlight height
         /// </summary>
-        [Description("选中Tab页高亮高度"), Category("SunnyUI")]
+        [Description("Selected Tab page highlight height"), Category("SunnyUI")]
         [DefaultValue(4)]
         public int TabSelectedHighColorSize
 
@@ -506,9 +526,9 @@ namespace Sunny.UI
         private UIStyle _style = UIStyle.Inherited;
 
         /// <summary>
-        /// 主题样式
+        /// Theme style
         /// </summary>
-        [DefaultValue(UIStyle.Inherited), Description("主题样式"), Category("SunnyUI")]
+        [DefaultValue(UIStyle.Inherited), Description("Theme style"), Category("SunnyUI")]
         public UIStyle Style
         {
             get => _style;
@@ -541,9 +561,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="style">主题样式</param>
+        /// <param name="style">Theme style</param>
         private void SetStyle(UIStyle style)
         {
             if (!style.IsCustom())
@@ -576,7 +596,7 @@ namespace Sunny.UI
         private UIMenuStyle _menuStyle = UIMenuStyle.Black;
 
         [DefaultValue(UIMenuStyle.Black)]
-        [Description("主题风格"), Category("SunnyUI")]
+        [Description("Theme style"), Category("SunnyUI")]
         public UIMenuStyle MenuStyle
         {
             get => _menuStyle;
@@ -611,7 +631,10 @@ namespace Sunny.UI
 
         private bool showCloseButton;
 
-        [DefaultValue(false), Description("所有Tab页面标题显示关闭按钮"), Category("SunnyUI")]
+        /// <summary>
+        /// Show close button on all Tab page titles
+        /// </summary>
+        [DefaultValue(false), Description("Show close button on all Tab page titles"), Category("SunnyUI")]
         public bool ShowCloseButton
         {
             get => showCloseButton;
@@ -628,7 +651,10 @@ namespace Sunny.UI
 
         private bool showActiveCloseButton;
 
-        [DefaultValue(false), Description("当前激活的Tab页面标题显示关闭按钮"), Category("SunnyUI")]
+        /// <summary>
+        /// Show close button on the currently active Tab page title
+        /// </summary>
+        [DefaultValue(false), Description("Show close button on the currently active Tab page title"), Category("SunnyUI")]
         public bool ShowActiveCloseButton
         {
             get => showActiveCloseButton;
@@ -646,14 +672,14 @@ namespace Sunny.UI
         private ConcurrentDictionary<int, bool> CloseRects = new ConcurrentDictionary<int, bool>();
 
         /// <summary>
-        /// 重载绘图
+        /// Override drawing
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Drawing parameters</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
 
-            // 绘制背景色
+            // Draw background color
             e.Graphics.Clear(TabBackColor);
 
             if (!TabVisible)
@@ -759,9 +785,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标移动事件
+        /// Override mouse move event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseMove(MouseEventArgs e)
         {
             base.OnMouseMove(e);
@@ -786,9 +812,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标按下事件
+        /// Override mouse down event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
@@ -879,8 +905,11 @@ namespace Sunny.UI
             Right
         }
 
+        /// <summary>
+        /// Tab page display position
+        /// </summary>
         [DefaultValue(UITabPosition.Left)]
-        [Description("标签页显示位置"), Category("SunnyUI")]
+        [Description("Tab page display position"), Category("SunnyUI")]
         public UITabPosition TabPosition
         {
             get => (RightToLeftLayout && RightToLeft == RightToLeft.Yes)
@@ -1054,6 +1083,10 @@ namespace Sunny.UI
             }
         }
 
+        /// <summary>
+        /// Override control added event
+        /// </summary>
+        /// <param name="e">Event parameters</param>
         protected override void OnControlAdded(ControlEventArgs e)
         {
             base.OnControlAdded(e);
@@ -1077,9 +1110,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载控件尺寸变更
+        /// Override control size changed event
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Event parameters</param>
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);

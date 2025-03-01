@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
- * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * SunnyUI Open Source Control Library, Utility Class Library, Extension Class Library, Multi-page Development Framework.
+ * CopyRight (C) 2012-2025 ShenYongHua.
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,16 +9,15 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UISmoothLabel.cs
- * 文件说明: 平滑文字带边框的标签
- * 当前版本: V3.1
- * 创建日期: 2022-01-22
+ * File Name: UISmoothLabel.cs
+ * Description: Smooth text label with border
+ * Current Version: V3.1
+ * Creation Date: 2022-01-22
  *
- * 2022-01-22: V3.1.0 增加文件说明
- * 2022-03-19: V3.1.1 重构主题配色
- * 2023-11-16: V3.5.2 重构主题
+ * 2022-01-22: V3.1.0 Added file description
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2023-11-16: V3.5.2 Refactored theme
 ******************************************************************************/
 
 
@@ -56,11 +55,11 @@ namespace Sunny.UI
         }
 
         [Browsable(false)]
-        [Description("控件在界面显示时需要多语翻译的属性名称数组"), Category("SunnyUI")]
+        [Description("Array of property names that need multi-language translation when the control is displayed"), Category("SunnyUI")]
         public string[] FormTranslatorProperties => ["Text"];
 
         [DefaultValue(true)]
-        [Description("控件在界面显示时需要多语翻译"), Category("SunnyUI")]
+        [Description("Multi-language support when the control is displayed"), Category("SunnyUI")]
         public bool MultiLanguageSupport { get; set; } = true;
 
         protected override void Dispose(bool disposing)
@@ -76,21 +75,21 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 禁止控件跟随窗体缩放
+        /// Disable control scaling with the form
         /// </summary>
-        [DefaultValue(false), Category("SunnyUI"), Description("禁止控件跟随窗体缩放")]
+        [DefaultValue(false), Category("SunnyUI"), Description("Disable control scaling with the form")]
         public bool ZoomScaleDisabled { get; set; }
 
         /// <summary>
-        /// 控件缩放前在其容器里的位置
+        /// Position of the control in its container before scaling
         /// </summary>
         [Browsable(false), DefaultValue(typeof(Rectangle), "0, 0, 0, 0")]
         public Rectangle ZoomScaleRect { get; set; }
 
         /// <summary>
-        /// 设置控件缩放比例
+        /// Set the control scaling ratio
         /// </summary>
-        /// <param name="scale">缩放比例</param>
+        /// <param name="scale">Scaling ratio</param>
         public void SetZoomScale(float scale)
         {
 
@@ -108,16 +107,16 @@ namespace Sunny.UI
         private Color foreColor;
 
         /// <summary>
-        /// Tag字符串
+        /// Tag string
         /// </summary>
         [DefaultValue(null)]
-        [Description("获取或设置包含有关控件的数据的对象字符串"), Category("SunnyUI")]
+        [Description("Get or set the object string containing data about the control"), Category("SunnyUI")]
         public string TagString { get; set; }
 
         /// <summary>
-        /// 字体颜色
+        /// Font color
         /// </summary>
-        [Description("字体颜色"), Category("SunnyUI")]
+        [Description("Font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "White")]
         public override Color ForeColor
         {
@@ -133,9 +132,9 @@ namespace Sunny.UI
         public string Version { get; }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="style">主题样式</param>
+        /// <param name="style">Theme style</param>
         private void SetStyle(UIStyle style)
         {
             if (!style.IsCustom())
@@ -154,10 +153,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 自定义主题风格
+        /// Custom theme style
         /// </summary>
         [DefaultValue(false), Browsable(false)]
-        [Description("获取或设置可以自定义主题风格"), Category("SunnyUI")]
+        [Description("Get or set the ability to customize the theme style"), Category("SunnyUI")]
         public bool StyleCustomMode { get; set; }
 
         public void SetStyleColor(UIBaseStyle uiColor)
@@ -173,9 +172,9 @@ namespace Sunny.UI
         private UIStyle _style = UIStyle.Inherited;
 
         /// <summary>
-        /// 主题样式
+        /// Theme style
         /// </summary>
-        [DefaultValue(UIStyle.Inherited), Description("主题样式"), Category("SunnyUI")]
+        [DefaultValue(UIStyle.Inherited), Description("Theme style"), Category("SunnyUI")]
         public UIStyle Style
         {
             get => _style;
@@ -183,9 +182,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载字体变更
+        /// Override font change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Event arguments</param>
         protected override void OnFontChanged(EventArgs e)
         {
             base.OnFontChanged(e);
@@ -201,9 +200,9 @@ namespace Sunny.UI
         private Color rectColor;
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("边框颜色"), Category("SunnyUI")]
+        [Description("Border color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color RectColor
         {
@@ -228,9 +227,9 @@ namespace Sunny.UI
         private int rectSize = 2;
 
         /// <summary>
-        /// 边框颜色
+        /// Border width
         /// </summary>
-        [Description("边框宽度"), Category("SunnyUI")]
+        [Description("Border width"), Category("SunnyUI")]
         [DefaultValue(2)]
         public int RectSize
         {
@@ -258,9 +257,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override paint method
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Paint event arguments</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             if (Text.IsNullOrEmpty()) return;

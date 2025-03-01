@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,14 +9,13 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UILedStopwatch.cs
- * 文件说明: LED计时器
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File name: UILedStopwatch.cs
+ * Description: LED Stopwatch
+ * Current version: V3.1
+ * Creation date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
+ * 2020-01-01: V2.2.0 Added file description
 ******************************************************************************/
 
 using System;
@@ -25,7 +24,7 @@ using System.ComponentModel;
 namespace Sunny.UI
 {
     /// <summary>
-    /// LED计时器
+    /// LED Stopwatch
     /// </summary>
     [DefaultEvent("TimerTick")]
     [DefaultProperty("Text")]
@@ -34,12 +33,12 @@ namespace Sunny.UI
         private readonly System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
 
         /// <summary>
-        /// 当定时器启动后，Text变化时触发一次
+        /// Triggered once when the timer starts and the Text changes
         /// </summary>
         public event EventHandler TimerTick;
 
         /// <summary>
-        /// 构造函数
+        /// Constructor
         /// </summary>
         public UILedStopwatch()
         {
@@ -61,7 +60,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(TimeShowType.mmss)]
-        [Description("显示方式"), Category("SunnyUI")]
+        [Description("Display mode"), Category("SunnyUI")]
         public TimeShowType ShowType { get; set; } = TimeShowType.mmss;
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -99,7 +98,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 计时
+        /// Timing
         /// </summary>
         [Browsable(false)]
         public TimeSpan TimeSpan { get; private set; }
@@ -107,7 +106,7 @@ namespace Sunny.UI
         private DateTime StartTime;
 
         /// <summary>
-        /// 开始
+        /// Start
         /// </summary>
         public void Start()
         {
@@ -117,7 +116,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 停止
+        /// Stop
         /// </summary>
         public void Stop()
         {
@@ -125,14 +124,14 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 是否开始工作
+        /// Whether it has started working
         /// </summary>
         [Browsable(false)]
         public bool IsWorking => timer.Enabled;
 
         private bool _active;
 
-        [DefaultValue(false), Description("是否开始工作"), Category("SunnyUI")]
+        [DefaultValue(false), Description("Whether it has started working"), Category("SunnyUI")]
         public bool Active
         {
             get => _active;

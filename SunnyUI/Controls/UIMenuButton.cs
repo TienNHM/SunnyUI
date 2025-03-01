@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
- * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
+ * CopyRight (C) 2012-2025 ShenYongHua.
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,16 +9,15 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIMenuButton.cs
- * 文件说明: 下拉菜单按钮
- * 当前版本: V3.8
- * 创建日期: 2024-12-16
+ * File Name: UIMenuButton.cs
+ * Description: Dropdown menu button
+ * Current Version: V3.8
+ * Creation Date: 2024-12-16
  *
- * 2024-12-16: V3.8.0 增加文件说明
- * 2025-01-15: V3.8.1 更改属性描述
-******************************************************************************/
+ * 2024-12-16: V3.8.0 Added file description
+ * 2025-01-15: V3.8.1 Changed property description
+ ******************************************************************************/
 
 using System.ComponentModel;
 using System.Drawing;
@@ -32,7 +31,7 @@ namespace Sunny.UI
     {
         private bool _showDropArrow = true;
 
-        [Description("当用户左键点击按钮时，显示的快捷菜单"), Category("SunnyUI")]
+        [Description("The shortcut menu displayed when the user left-clicks the button"), Category("SunnyUI")]
         public UIContextMenuStrip Menu { get; set; }
 
         protected override void OnMouseClick(MouseEventArgs e)
@@ -54,10 +53,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体图标
+        /// Font icon
         /// </summary>
         [DefaultValue(true)]
-        [Description("显示下拉按钮"), Category("SunnyUI")]
+        [Description("Show dropdown button"), Category("SunnyUI")]
         public bool ShowDropArrow
         {
             get => _showDropArrow;

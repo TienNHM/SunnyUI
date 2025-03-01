@@ -17,7 +17,7 @@ namespace Sunny.UI.Demo
                 Data data = new Data();
                 data.Column1 = "Data" + i.ToString("D2");
                 data.Column2 = i.Mod(2) == 0 ? "A" : "B";
-                data.Column3 = "编辑";
+                data.Column3 = "Edit" + i.ToString("D2");
                 data.Column4 = i.Mod(4) == 0;
                 dataList.Add(data);
             }

@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,22 +9,21 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UISwitch.cs
- * 文件说明: 开关
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UISwitch.cs
+ * File Description: Switch
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-04-25: V2.2.4 更新主题配置类
- * 2021-05-06: V3.0.3 更新Active状态改变时触发ValueChanged事件
- * 2021-09-14: V3.0.7 增加Disabled颜色
- * 2022-01-02: V3.0.9 增加是否只读属性
- * 2022-03-19: V3.1.1 重构主题配色
- * 2022-09-26: V3.2.4 修复了Readonly时，双击还可以改变值的问题
- * 2022-04-23: V3.3.5 增加ActiveChanging事件，在状态改变前可以进行判断
- * 2023-05-13: V3.3.6 重构DrawString函数
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-04-25: V2.2.4 Updated theme configuration class
+ * 2021-05-06: V3.0.3 Triggered ValueChanged event when Active state changes
+ * 2021-09-14: V3.0.7 Added Disabled color
+ * 2022-01-02: V3.0.9 Added ReadOnly property
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2022-09-26: V3.2.4 Fixed issue where value could still be changed by double-clicking when ReadOnly
+ * 2022-04-23: V3.3.5 Added ActiveChanging event to allow judgment before state changes
+ * 2023-05-13: V3.3.6 Refactored DrawString function
 ******************************************************************************/
 
 using System;
@@ -42,8 +41,8 @@ namespace Sunny.UI
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="sender">对象</param>
-        /// <param name="value">开关值</param>
+        /// <param name="sender">Object</param>
+        /// <param name="value">Switch value</param>
         public delegate void OnValueChanged(object sender, bool value);
 
         public enum UISwitchShape
@@ -73,12 +72,12 @@ namespace Sunny.UI
         }
 
         [DefaultValue(false)]
-        [Description("是否只读"), Category("SunnyUI")]
+        [Description("Read-only"), Category("SunnyUI")]
         public bool ReadOnly { get; set; }
 
         private UISwitchShape switchShape = UISwitchShape.Round;
 
-        [Description("开关形状"), Category("SunnyUI")]
+        [Description("Switch shape"), Category("SunnyUI")]
         [DefaultValue(UISwitchShape.Round)]
         public UISwitchShape SwitchShape
         {
@@ -95,9 +94,9 @@ namespace Sunny.UI
         public event EventHandler ActiveChanged;
 
         /// <summary>
-        /// 字体颜色
+        /// Font color
         /// </summary>
-        [Description("字体颜色"), Category("SunnyUI")]
+        [Description("Font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "White")]
         public override Color ForeColor
         {
@@ -108,7 +107,7 @@ namespace Sunny.UI
         private bool activeValue;
 
         [DefaultValue(false)]
-        [Description("是否打开"), Category("SunnyUI")]
+        [Description("Is active"), Category("SunnyUI")]
         public bool Active
         {
             get => activeValue;
@@ -124,10 +123,10 @@ namespace Sunny.UI
             }
         }
 
-        private string activeText = "开";
+        private string activeText = "On";
 
-        [DefaultValue("开")]
-        [Description("打开文字"), Category("SunnyUI")]
+        [DefaultValue("On")]
+        [Description("Active text"), Category("SunnyUI")]
         public string ActiveText
         {
             get => activeText;
@@ -138,10 +137,10 @@ namespace Sunny.UI
             }
         }
 
-        private string inActiveText = "关";
+        private string inActiveText = "Off";
 
-        [DefaultValue("关")]
-        [Description("关闭文字"), Category("SunnyUI")]
+        [DefaultValue("Off")]
+        [Description("Inactive text"), Category("SunnyUI")]
         public string InActiveText
         {
             get => inActiveText;
@@ -155,7 +154,7 @@ namespace Sunny.UI
         private Color inActiveColor;
 
         [DefaultValue(typeof(Color), "Gray")]
-        [Description("关闭颜色"), Category("SunnyUI")]
+        [Description("Inactive color"), Category("SunnyUI")]
         public Color InActiveColor
         {
             get => inActiveColor;
@@ -167,9 +166,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Button color, if the value is the background color or transparent color or null, it will not be filled
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Button color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "White")]
         public Color ButtonColor
         {
@@ -178,9 +177,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("打开颜色"), Category("SunnyUI")]
+        [Description("Active color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color ActiveColor
         {
@@ -189,9 +188,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 点击事件
+        /// Click event
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnClick(EventArgs e)
         {
             ActiveChange();
@@ -228,9 +227,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -241,7 +240,7 @@ namespace Sunny.UI
             rectDisableColor = uiColor.SwitchRectDisableColor;
         }
 
-        [Description("不可用颜色"), Category("SunnyUI")]
+        [Description("Disabled color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "173, 178, 181")]
         public Color DisabledColor
         {
@@ -256,10 +255,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制填充颜色
+        /// Draw fill color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Graphics path</param>
         protected override void OnPaintFill(Graphics g, GraphicsPath path)
         {
             Color color = Active ? ActiveColor : InActiveColor;

@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI Open Source Control Library, Utility Library, Extension Library, Multi-Page Development Framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,16 +9,15 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIWaitingBar.cs
- * 文件说明: 等待滚动条控件
- * 当前版本: V3.1
- * 创建日期: 2020-07-20
+ * File Name: UIWaitingBar.cs
+ * Description: Waiting Scroll Bar Control
+ * Current Version: V3.1
+ * Creation Date: 2020-07-20
  *
- * 2020-07-20: V2.2.6 新增等待滚动条控件
- * 2022-03-19: V3.1.1 重构主题配色
- * 2024-02-23: V3.6.3 修改可自定义配色
+ * 2020-07-20: V2.2.6 Added waiting scroll bar control
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2024-02-23: V3.6.3 Modified to allow custom colors
 ******************************************************************************/
 
 using System;
@@ -67,16 +66,16 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override painting
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Painting parameters</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
             e.Graphics.FillRoundRectangle(foreColor, (int)dz + 1, 1, sliderWidth, Height - 3, Radius);
         }
 
-        //d是度数，不是弧度
+        // d is degrees, not radians
         private double d;
 
         private double dz;
@@ -84,7 +83,7 @@ namespace Sunny.UI
         private int blockCount = 20;
 
         [DefaultValue(20)]
-        [Description("显示块个数，此数越大，移动速度越快"), Category("SunnyUI")]
+        [Description("Number of display blocks, the larger the number, the faster the movement"), Category("SunnyUI")]
         public int BlockCount
         {
             get => blockCount;
@@ -95,21 +94,21 @@ namespace Sunny.UI
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            //移动距离要减去滑块本身的宽度
+            // The moving distance needs to subtract the width of the slider itself
             double dMoveDistance = Width - SliderWidth - 3;
-            //需要变化的次数
+            // The number of changes required
             double dStep = dMoveDistance / blockCount;
-            //每次变化所增加的度数
+            // The degree added each time it changes
             double dPer = 180.0 / dStep;
 
             d += dPer;
             if (d > 360)
             {
-                //一个周期是360度
+                // A cycle is 360 degrees
                 d = 0;
             }
 
-            //通过公式：弧度=度*π/180，将度数i转为Math.Sin()所需要的弧度数
+            // Convert degrees to radians required by Math.Sin() using the formula: radians = degrees * π / 180
             dz = dMoveDistance * (1 + Math.Sin((d - 90) * Math.PI / 180)) / 2;
 
             Invalidate();
@@ -118,7 +117,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(200)]
-        [Description("移动显示时间间隔"), Category("SunnyUI")]
+        [Description("Movement display interval"), Category("SunnyUI")]
         public int Interval
         {
             get => timer.Interval;
@@ -133,7 +132,7 @@ namespace Sunny.UI
         private int sliderWidth = 60;
 
         [DefaultValue(60)]
-        [Description("滑块宽度"), Category("SunnyUI")]
+        [Description("Slider width"), Category("SunnyUI")]
         public int SliderWidth
         {
             get => sliderWidth;
@@ -145,9 +144,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -156,9 +155,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("边框颜色"), Category("SunnyUI")]
+        [Description("Border color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color RectColor
         {
@@ -167,9 +166,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is background color or transparent color or empty, it will not be filled
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color FillColor
         {
@@ -178,9 +177,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体颜色
+        /// Font color
         /// </summary>
-        [Description("前景颜色"), Category("SunnyUI")]
+        [Description("Foreground color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "White")]
         public override Color ForeColor
         {

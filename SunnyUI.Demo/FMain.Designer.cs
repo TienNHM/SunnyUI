@@ -65,45 +65,45 @@
             this.NZhTW,
             this.NEnUS});
             this.uiContextMenuStrip1.Name = "uiContextMenuStrip1";
-            this.uiContextMenuStrip1.Size = new System.Drawing.Size(143, 130);
+            this.uiContextMenuStrip1.Size = new System.Drawing.Size(244, 130);
             // 
             // NHome
             // 
             this.NHome.Name = "NHome";
-            this.NHome.Size = new System.Drawing.Size(142, 24);
+            this.NHome.Size = new System.Drawing.Size(243, 24);
             this.NHome.Text = "主页";
             this.NHome.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
             // 
             // NAbout
             // 
             this.NAbout.Name = "NAbout";
-            this.NAbout.Size = new System.Drawing.Size(142, 24);
+            this.NAbout.Size = new System.Drawing.Size(243, 24);
             this.NAbout.Text = "关于";
             this.NAbout.Click += new System.EventHandler(this.关于ToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(139, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(240, 6);
             // 
             // NZhCN
             // 
             this.NZhCN.Name = "NZhCN";
-            this.NZhCN.Size = new System.Drawing.Size(142, 24);
-            this.NZhCN.Text = "简体中文";
+            this.NZhCN.Size = new System.Drawing.Size(243, 24);
+            this.NZhCN.Text = "简体中文 - Trung Quốc";
             this.NZhCN.Click += new System.EventHandler(this.NZhCN_Click);
             // 
             // NZhTW
             // 
             this.NZhTW.Name = "NZhTW";
-            this.NZhTW.Size = new System.Drawing.Size(142, 24);
-            this.NZhTW.Text = "繁体中文";
+            this.NZhTW.Size = new System.Drawing.Size(243, 24);
+            this.NZhTW.Text = "繁体中文 - Đài Loan";
             this.NZhTW.Click += new System.EventHandler(this.NZhTW_Click);
             // 
             // NEnUS
             // 
             this.NEnUS.Name = "NEnUS";
-            this.NEnUS.Size = new System.Drawing.Size(142, 24);
+            this.NEnUS.Size = new System.Drawing.Size(243, 24);
             this.NEnUS.Text = "English";
             this.NEnUS.Click += new System.EventHandler(this.NEnUS_Click);
             // 
@@ -120,8 +120,8 @@
             this.uiNavBar1.Controls.Add(this.uiAvatar1);
             this.uiNavBar1.Controls.Add(this.uiLogo1);
             this.uiNavBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.uiNavBar1.DropMenuFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiNavBar1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiNavBar1.DropMenuFont = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiNavBar1.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiNavBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiNavBar1.Location = new System.Drawing.Point(2, 36);
             this.uiNavBar1.MenuHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
@@ -136,7 +136,7 @@
             // uiAvatar1
             // 
             this.uiAvatar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiAvatar1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiAvatar1.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiAvatar1.Location = new System.Drawing.Point(1048, 33);
             this.uiAvatar1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiAvatar1.Name = "uiAvatar1";
@@ -146,7 +146,7 @@
             // 
             // uiLogo1
             // 
-            this.uiLogo1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLogo1.Font = new System.Drawing.Font("SimSun", 12F);
             this.uiLogo1.Location = new System.Drawing.Point(8, 23);
             this.uiLogo1.MaximumSize = new System.Drawing.Size(300, 80);
             this.uiLogo1.MinimumSize = new System.Drawing.Size(300, 80);
@@ -161,7 +161,7 @@
             this.uiPanel1.Controls.Add(this.uiPanel3);
             this.uiPanel1.Controls.Add(this.uiPanel2);
             this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.uiPanel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiPanel1.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiPanel1.Location = new System.Drawing.Point(2, 812);
             this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
@@ -176,7 +176,7 @@
             // uiPanel4
             // 
             this.uiPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiPanel4.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiPanel4.Location = new System.Drawing.Point(286, 0);
             this.uiPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel4.MinimumSize = new System.Drawing.Size(1, 1);
@@ -191,7 +191,7 @@
             // uiPanel3
             // 
             this.uiPanel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.uiPanel3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiPanel3.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiPanel3.Location = new System.Drawing.Point(842, 0);
             this.uiPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
@@ -207,7 +207,7 @@
             // uiPanel2
             // 
             this.uiPanel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uiPanel2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiPanel2.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiPanel2.Location = new System.Drawing.Point(0, 0);
             this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
@@ -225,7 +225,7 @@
             this.uiNavMenu1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.uiNavMenu1.Dock = System.Windows.Forms.DockStyle.Left;
             this.uiNavMenu1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
-            this.uiNavMenu1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiNavMenu1.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiNavMenu1.FullRowSelect = true;
             this.uiNavMenu1.HotTracking = true;
             this.uiNavMenu1.ItemHeight = 35;
@@ -237,13 +237,13 @@
             this.uiNavMenu1.ShowRootLines = false;
             this.uiNavMenu1.Size = new System.Drawing.Size(286, 650);
             this.uiNavMenu1.TabIndex = 4;
-            this.uiNavMenu1.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiNavMenu1.TipsFont = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             // 
             // uiTabControl1
             // 
             this.uiTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.uiTabControl1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiTabControl1.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiTabControl1.Frame = this;
             this.uiTabControl1.ItemSize = new System.Drawing.Size(0, 1);
             this.uiTabControl1.Location = new System.Drawing.Point(288, 162);
@@ -254,7 +254,7 @@
             this.uiTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.uiTabControl1.TabIndex = 5;
             this.uiTabControl1.TabVisible = false;
-            this.uiTabControl1.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiTabControl1.TipsFont = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             // 
             // timer1
             // 
@@ -283,6 +283,7 @@
             this.HotKeyEventHandler += new Sunny.UI.HotKeyEventHandler(this.Form1_HotKeyEventHandler);
             this.PageSelected += new Sunny.UI.OnUIPageChanged(this.Form1_PageSelected);
             this.ReceiveParams += new Sunny.UI.OnReceiveParams(this.Form1_ReceiveParams);
+            this.Load += new System.EventHandler(this.FMain_Load);
             this.uiContextMenuStrip1.ResumeLayout(false);
             this.uiNavBar1.ResumeLayout(false);
             this.uiPanel1.ResumeLayout(false);

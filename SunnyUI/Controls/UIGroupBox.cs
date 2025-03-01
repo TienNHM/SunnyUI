@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,20 +9,19 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIGroupBox.cs
- * 文件说明: 组框
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIGroupBox.cs
+ * Description: Group Box
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-04-25: V2.2.4 更新主题配置类
- * 2022-05-30: V3.1.9 修复Padding设置
- * 2023-05-13: V3.3.6 重构DrawString函数
- * 2023-07-11: V3.4.0 解决BackColor,FillColor设置为透明时，标题下面会出现横线
- * 2023-07-19: V3.4.1 解决BackColor,FillColor设置为透明时，文本位置与边框线重叠的问题
- * 2024-03-22: V3.6.5 修复Enabled为false时标题行框线绘制颜色
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-04-25: V2.2.4 Updated theme configuration class
+ * 2022-05-30: V3.1.9 Fixed Padding setting
+ * 2023-05-13: V3.3.6 Refactored DrawString function
+ * 2023-07-11: V3.4.0 Solved the issue where a horizontal line appears under the title when BackColor and FillColor are set to transparent
+ * 2023-07-19: V3.4.1 Solved the issue where text overlaps with the border line when BackColor and FillColor are set to transparent
+ * 2024-03-22: V3.6.5 Fixed the drawing color of the title line when Enabled is false
 ******************************************************************************/
 
 using System;
@@ -53,20 +52,20 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制填充颜色
+        /// Draw fill color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Drawing path</param>
         protected override void OnPaintFill(Graphics g, GraphicsPath path)
         {
             g.Clear(FillColor);
         }
 
         /// <summary>
-        /// 绘制边框颜色
+        /// Draw border color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Drawing path</param>
         protected override void OnPaintRect(Graphics g, GraphicsPath path)
         {
             if (RectSides == ToolStripStatusLabelBorderSides.None)
@@ -88,10 +87,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制前景颜色
+        /// Draw foreground color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Drawing path</param>
         protected override void OnPaintFore(Graphics g, GraphicsPath path)
         {
             Size size = TextRenderer.MeasureText(Text, Font);
@@ -137,7 +136,7 @@ namespace Sunny.UI
         private int _titleTop = 16;
 
         [DefaultValue(16)]
-        [Description("标题高度"), Category("SunnyUI")]
+        [Description("Title height"), Category("SunnyUI")]
         public int TitleTop
         {
             get => _titleTop;
@@ -164,7 +163,7 @@ namespace Sunny.UI
         private int _titleInterval = 10;
 
         [DefaultValue(10)]
-        [Description("标题显示间隔"), Category("SunnyUI")]
+        [Description("Title display interval"), Category("SunnyUI")]
         public int TitleInterval
         {
             get => _titleInterval;
@@ -179,7 +178,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(HorizontalAlignment.Left)]
-        [Description("文字显示位置"), Category("SunnyUI")]
+        [Description("Text display position"), Category("SunnyUI")]
         [Browsable(false)]
         public HorizontalAlignment TitleAlignment { get; set; }
     }

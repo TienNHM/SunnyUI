@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,15 +9,15 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
+ * If you use this code, please keep this note.
  ******************************************************************************
- * 文件名称: UIInputForm.cs
- * 文件说明: 输入窗体
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIInputForm.cs
+ * File Description: Input form
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2024-05-30: V3.6.6 修复调用时自定义主题参数不起作用的问题
+ * 2020-01-01: V2.2.0 Added file description
+ * 2024-05-30: V3.6.6 Fixed issue where custom theme parameters did not work when called
 ******************************************************************************/
 
 namespace Sunny.UI
@@ -70,9 +70,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);

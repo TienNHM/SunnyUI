@@ -45,7 +45,7 @@ namespace Sunny.UI.Demo
             // uiAnalogMeter1
             // 
             this.uiAnalogMeter1.BackColor = System.Drawing.Color.Transparent;
-            this.uiAnalogMeter1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiAnalogMeter1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiAnalogMeter1.Location = new System.Drawing.Point(381, 96);
             this.uiAnalogMeter1.MaxValue = 100D;
             this.uiAnalogMeter1.MinimumSize = new System.Drawing.Size(1, 1);
@@ -60,7 +60,7 @@ namespace Sunny.UI.Demo
             // uiLine9
             // 
             this.uiLine9.BackColor = System.Drawing.Color.Transparent;
-            this.uiLine9.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLine9.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLine9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLine9.Location = new System.Drawing.Point(381, 55);
             this.uiLine9.MinimumSize = new System.Drawing.Size(16, 16);
@@ -76,7 +76,7 @@ namespace Sunny.UI.Demo
             this.uiRoundMeter2.BackColor = System.Drawing.Color.Transparent;
             this.uiRoundMeter2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uiRoundMeter2.BackgroundImage")));
             this.uiRoundMeter2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.uiRoundMeter2.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiRoundMeter2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiRoundMeter2.Location = new System.Drawing.Point(186, 91);
             this.uiRoundMeter2.MeterType = Sunny.UI.UIRoundMeter.TMeterType.Wind;
             this.uiRoundMeter2.MinimumSize = new System.Drawing.Size(1, 1);
@@ -88,7 +88,7 @@ namespace Sunny.UI.Demo
             // uiLine6
             // 
             this.uiLine6.BackColor = System.Drawing.Color.Transparent;
-            this.uiLine6.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLine6.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLine6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLine6.Location = new System.Drawing.Point(30, 55);
             this.uiLine6.MinimumSize = new System.Drawing.Size(16, 16);
@@ -104,7 +104,7 @@ namespace Sunny.UI.Demo
             this.uiRoundMeter1.BackColor = System.Drawing.Color.Transparent;
             this.uiRoundMeter1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uiRoundMeter1.BackgroundImage")));
             this.uiRoundMeter1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.uiRoundMeter1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiRoundMeter1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiRoundMeter1.Location = new System.Drawing.Point(30, 91);
             this.uiRoundMeter1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiRoundMeter1.Name = "uiRoundMeter1";
@@ -116,7 +116,7 @@ namespace Sunny.UI.Demo
             // 
             this.uiRuler3.BackColor = System.Drawing.Color.Transparent;
             this.uiRuler3.Direction = Sunny.UI.UITrackBar.BarDirection.Vertical;
-            this.uiRuler3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiRuler3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiRuler3.Location = new System.Drawing.Point(56, 287);
             this.uiRuler3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiRuler3.MinorCount = 4;
@@ -127,7 +127,7 @@ namespace Sunny.UI.Demo
             // 
             // uiThermometer1
             // 
-            this.uiThermometer1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiThermometer1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiThermometer1.Location = new System.Drawing.Point(78, 294);
             this.uiThermometer1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiThermometer1.Name = "uiThermometer1";
@@ -139,7 +139,7 @@ namespace Sunny.UI.Demo
             // uiLine1
             // 
             this.uiLine1.BackColor = System.Drawing.Color.Transparent;
-            this.uiLine1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLine1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLine1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLine1.LineColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.uiLine1.Location = new System.Drawing.Point(30, 261);
@@ -154,7 +154,7 @@ namespace Sunny.UI.Demo
             // 
             this.uiRuler1.BackColor = System.Drawing.Color.Transparent;
             this.uiRuler1.Direction = Sunny.UI.UITrackBar.BarDirection.Vertical;
-            this.uiRuler1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiRuler1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiRuler1.Location = new System.Drawing.Point(213, 287);
             this.uiRuler1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiRuler1.MinorCount = 4;
@@ -167,7 +167,7 @@ namespace Sunny.UI.Demo
             // 
             // uiThermometer2
             // 
-            this.uiThermometer2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiThermometer2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiThermometer2.Location = new System.Drawing.Point(235, 294);
             this.uiThermometer2.Minimum = -20;
             this.uiThermometer2.MinimumSize = new System.Drawing.Size(1, 1);

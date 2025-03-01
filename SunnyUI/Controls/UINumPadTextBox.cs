@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,19 +9,18 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UINumPadTextBox.cs
- * 文件说明: 模拟数字键盘输入框
- * 当前版本: V3.3
- * 创建日期: 2023-03-18
+ * File Name: UINumPadTextBox.cs
+ * File Description: Simulated numeric keypad input box
+ * Current Version: V3.3
+ * Creation Date: 2023-03-18
  *
- * 2023-03-18: V3.3.3 增加文件说明
- * 2023-03-26: V3.3.3 增加默认事件ValueChanged，下键盘Enter事件相应此事件
- * 2023-03-26: V3.3.4 增加了最大值、最小值等属性
- * 2023-06-11: V3.6.6 下拉框可选放大倍数为2
- * 2024-09-03: V3.7.0 增加ShowDropDown()弹窗方法
- * 2024-11-10: V3.7.2 增加StyleDropDown属性，手动修改Style时设置此属性以修改下拉框主题
+ * 2023-03-18: V3.3.3 Added file description
+ * 2023-03-26: V3.3.3 Added default event ValueChanged, the Enter key on the keyboard triggers this event
+ * 2023-03-26: V3.3.4 Added properties such as maximum value and minimum value
+ * 2023-06-11: V3.6.6 Drop-down box selectable magnification is 2
+ * 2024-09-03: V3.7.0 Added ShowDropDown() popup method
+ * 2024-11-10: V3.7.2 Added StyleDropDown property, set this property to modify the drop-down box theme when manually modifying the Style
 ******************************************************************************/
 
 using System;
@@ -52,7 +51,7 @@ namespace Sunny.UI
         private NumPadType numPadType = NumPadType.Text;
 
         [DefaultValue(NumPadType.Text)]
-        [Description("小键盘类型"), Category("SunnyUI")]
+        [Description("Numeric keypad type"), Category("SunnyUI")]
         public NumPadType NumPadType
         {
             get => numPadType;
@@ -258,7 +257,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(1)]
-        [Description("弹窗放大倍数，可以1或者2"), Category("SunnyUI")]
+        [Description("Popup magnification, can be 1 or 2"), Category("SunnyUI")]
         public int SizeMultiple { get => item.SizeMultiple; set => item.SizeMultiple = value; }
 
         private void InitializeComponent()
@@ -278,14 +277,14 @@ namespace Sunny.UI
         }
 
         /// <summary> 
-        /// 必需的设计器变量。
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary> 
-        /// 清理所有正在使用的资源。
+        /// Clean up all resources being used.
         /// </summary>
-        /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        /// <param name="disposing">If managed resources should be disposed, true; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -316,9 +315,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 当InputType为数字类型时，能输入的最大值
+        /// When InputType is a numeric type, the maximum value that can be entered
         /// </summary>
-        [Description("当InputType为数字类型时，能输入的最大值。"), Category("SunnyUI")]
+        [Description("When InputType is a numeric type, the maximum value that can be entered"), Category("SunnyUI")]
         [DefaultValue(2147483647D)]
         public double Maximum
         {
@@ -327,9 +326,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 当InputType为数字类型时，能输入的最小值
+        /// When InputType is a numeric type, the minimum value that can be entered
         /// </summary>
-        [Description("当InputType为数字类型时，能输入的最小值。"), Category("SunnyUI")]
+        [Description("When InputType is a numeric type, the minimum value that can be entered"), Category("SunnyUI")]
         [DefaultValue(-2147483648D)]
         public double Minimum
         {
@@ -337,7 +336,7 @@ namespace Sunny.UI
             set => edit.MinValue = value;
         }
 
-        [Description("浮点数，显示文字小数位数"), Category("SunnyUI")]
+        [Description("Floating point number, number of decimal places displayed"), Category("SunnyUI")]
         [DefaultValue(2)]
         public int DecimalPlaces
         {

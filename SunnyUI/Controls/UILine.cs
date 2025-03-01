@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI Open Source Control Library, Utility Class Library, Extension Class Library, Multi-Page Development Framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,20 +9,19 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UILine.cs
- * 文件说明: 分割线
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UILine.cs
+ * Description: Divider Line
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2022-01-05: V3.0.9 增加线的样式，支持透明背景
- * 2022-01-10: V3.1.0 修复了文本为空不显示的问题
- * 2022-03-19: V3.1.1 重构主题配色
- * 2022-11-26: V3.2.9 水平方向文字不居中时，可设置线条渐变色
- * 2023-05-12: V3.3.6 重构DrawString函数
- * 2023-11-16: V3.5.2 重构主题
+ * 2020-01-01: V2.2.0 Added file description
+ * 2022-01-05: V3.0.9 Added line styles, supports transparent background
+ * 2022-01-10: V3.1.0 Fixed issue where text was not displayed when empty
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2022-11-26: V3.2.9 When horizontal text is not centered, gradient color for lines can be set
+ * 2023-05-12: V3.3.6 Refactored DrawString function
+ * 2023-11-16: V3.5.2 Refactored theme
 ******************************************************************************/
 
 using System;
@@ -54,12 +53,12 @@ namespace Sunny.UI
         public enum LineDirection
         {
             /// <summary>
-            /// 水平的
+            /// Horizontal
             /// </summary>
             Horizontal,
 
             /// <summary>
-            /// 竖直的
+            /// Vertical
             /// </summary>
             Vertical
         }
@@ -67,7 +66,7 @@ namespace Sunny.UI
         private LineDirection direction = LineDirection.Horizontal;
 
         [DefaultValue(LineDirection.Horizontal)]
-        [Description("线条方向"), Category("SunnyUI")]
+        [Description("Line direction"), Category("SunnyUI")]
         public LineDirection Direction
         {
             get => direction;
@@ -80,7 +79,7 @@ namespace Sunny.UI
 
         private int lineSize = 1;
 
-        [Description("线条宽度"), Category("SunnyUI")]
+        [Description("Line width"), Category("SunnyUI")]
         [DefaultValue(1)]
         public int LineSize
         {
@@ -93,9 +92,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -149,7 +148,7 @@ namespace Sunny.UI
         private int textInterval = 10;
 
         [DefaultValue(10)]
-        [Description("文字边距间隔"), Category("SunnyUI")]
+        [Description("Text margin interval"), Category("SunnyUI")]
         public int TextInterval
         {
             get => textInterval;
@@ -161,20 +160,20 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制边框颜色
+        /// Draw border color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Graphics path</param>
         protected override void OnPaintRect(Graphics g, GraphicsPath path)
         {
             //
         }
 
         /// <summary>
-        /// 绘制前景颜色
+        /// Draw foreground color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Graphics path</param>
         protected override void OnPaintFore(Graphics g, GraphicsPath path)
         {
             SizeF sf = new SizeF(0, 0);
@@ -296,7 +295,7 @@ namespace Sunny.UI
         }
 
         UILineDashStyle lineDashStyle = UILineDashStyle.None;
-        [Description("线的样式"), Category("SunnyUI")]
+        [Description("Line style"), Category("SunnyUI")]
         [DefaultValue(UILineDashStyle.None)]
         public UILineDashStyle LineDashStyle
         {
@@ -312,9 +311,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is background color or transparent color or null, it will not be filled
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "Transparent")]
         public Color FillColor
         {
@@ -323,9 +322,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 线颜色
+        /// Line color
         /// </summary>
-        [Description("线颜色"), Category("SunnyUI")]
+        [Description("Line color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color LineColor
         {
@@ -334,9 +333,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 线颜色2
+        /// Line color 2
         /// </summary>
-        [Description("线颜色2"), Category("SunnyUI")]
+        [Description("Line color 2"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "243, 249, 255")]
         public Color LineColor2
         {
@@ -344,7 +343,7 @@ namespace Sunny.UI
             set => SetFillColor2(value);
         }
 
-        [Description("线颜色渐变"), Category("SunnyUI")]
+        [Description("Line color gradient"), Category("SunnyUI")]
         [DefaultValue(false)]
         public bool LineColorGradient
         {

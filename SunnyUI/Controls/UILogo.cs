@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,15 +9,14 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UILogo.cs
- * 文件说明: SunnyUI LOGO
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UILogo.cs
+ * Description: SunnyUI LOGO
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2022-03-19: V3.1.1 重构主题配色
+ * 2020-01-01: V2.2.0 Added file description
+ * 2022-03-19: V3.1.1 Refactored theme colors
 ******************************************************************************/
 
 using System.ComponentModel;
@@ -47,9 +46,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override painting
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Painting parameters</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -119,15 +118,19 @@ namespace Sunny.UI
             DrawVerticalLine(g, FillColor, 288, 22, 6, 37);
         }
 
+        /// <summary>
+        /// Save the logo
+        /// </summary>
+        /// <param name="fileName">File name</param>
         public void SaveLogo(string fileName)
         {
             this.SaveToImage(fileName, ImageFormat.Png);
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -136,7 +139,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 画垂直线
+        /// Draw vertical line
         /// </summary>
         private void DrawVerticalLine(Graphics g, Color color, int left, int top, int width, int height, bool showBottomShadow = false)
         {
@@ -153,7 +156,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 画水平线
+        /// Draw horizontal line
         /// </summary>
         private void DarwHorizontalLine(Graphics g, Color color, int left, int top, int width, int height, int interval = 0, bool showBottomShadow = false)
         {
@@ -164,9 +167,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体颜色
+        /// Font color
         /// </summary>
-        [Description("字体颜色"), Category("SunnyUI")]
+        [Description("Font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "48, 48, 48")]
         public override Color ForeColor
         {
@@ -175,9 +178,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is the background color or transparent color or null, it will not be filled
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color FillColor
         {

@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
- * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
+ * CopyRight (C) 2012-2025 ShenYongHua.
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,26 +9,25 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIDigitalLabel.cs
- * 文件说明: 冷液晶显示LCD标签
- * 当前版本: V3.6.1
- * 创建日期: 2023-12-01
+ * File Name: UIDigitalLabel.cs
+ * File Description: Cold LCD display label
+ * Current Version: V3.6.1
+ * Creation Date: 2023-12-01
  *
- * 2023-12-01: V3.6.1 增加文件说明
- * 2024-01-23: V3.6.3 更新绘制
- * 2024-10-22: V3.7.2 增加DPI支持
-******************************************************************************/
+ * 2023-12-01: V3.6.1 Added file description
+ * 2024-01-23: V3.6.3 Updated drawing
+ * 2024-10-22: V3.7.2 Added DPI support
+ ******************************************************************************/
 
 /******************************************************************************
  * sa-digital-number.ttf
- * Digital Numbers Fonts是一种固定宽度（web）字体，采用冷液晶显示（LCD）样式。
- * 依据SIL Open Font License 1.1授权协议免费公开。
+ * Digital Numbers Fonts is a fixed-width (web) font in a cold LCD display style.
+ * Publicly available for free under the SIL Open Font License 1.1.
  * https://github.com/s-a/digital-numbers-font
  * Copyright (c) 2015, Stephan Ahlf (stephan.ahlf@googlemail.com)
  * This Font Software is licensed under the SIL Open Font License, Version 1.1.
-******************************************************************************/
+ ******************************************************************************/
 
 using System;
 using System.ComponentModel;
@@ -54,7 +53,7 @@ namespace Sunny.UI
 
         private double digitalValue;
 
-        [Description("浮点数"), Category("SunnyUI")]
+        [Description("Floating point number"), Category("SunnyUI")]
         [DefaultValue(typeof(double), "0")]
         public double Value
         {
@@ -71,7 +70,7 @@ namespace Sunny.UI
 
         private int digitalSize = 24;
 
-        [Description("LCD字体大小"), Category("SunnyUI")]
+        [Description("LCD font size"), Category("SunnyUI")]
         [DefaultValue(24)]
         public int DigitalSize
         {
@@ -85,7 +84,7 @@ namespace Sunny.UI
 
         private int decimalPlaces = 2;
 
-        [Description("浮点数，显示文字小数位数"), Category("SunnyUI")]
+        [Description("Floating point number, number of decimal places to display"), Category("SunnyUI")]
         [DefaultValue(2)]
         public int DecimalPlaces
         {
@@ -98,9 +97,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override painting
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Painting parameters</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             using Font font = DigitalFont.Instance.GetFont(UIStyles.DPIScale ? DigitalSize / UIDPIScale.SystemDPIScale : DigitalSize);
@@ -126,9 +125,9 @@ namespace Sunny.UI
         private HorizontalAlignment textAlign = HorizontalAlignment.Right;
 
         /// <summary>
-        /// 文字对齐方向
+        /// Text alignment direction
         /// </summary>
-        [Description("文字对齐方向"), Category("SunnyUI")]
+        [Description("Text alignment direction"), Category("SunnyUI")]
         [DefaultValue(HorizontalAlignment.Right)]
         public new HorizontalAlignment TextAlign
         {
@@ -145,7 +144,7 @@ namespace Sunny.UI
 
         private Point textOffset = new Point(0, 0);
 
-        [Description("文字偏移"), Category("SunnyUI")]
+        [Description("Text offset"), Category("SunnyUI")]
         [DefaultValue(typeof(Point), "0, 0")]
         public Point TextOffset
         {
@@ -158,9 +157,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
 

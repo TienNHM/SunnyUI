@@ -49,7 +49,7 @@ namespace Sunny.UI.Demo
         public static Color GetDarkerColor(Color color)
         {
             const int max = 255;
-            int increase = new Random(Guid.NewGuid().GetHashCode()).Next(30, 220); //还可以根据需要调整此处的值 
+            int increase = new Random(Guid.NewGuid().GetHashCode()).Next(30, 220); //You can also adjust the value here as needed
             int r = Math.Abs(Math.Min(color.R - increase, max));
             int g = Math.Abs(Math.Min(color.G - increase, max));
             int b = Math.Abs(Math.Min(color.B - increase, max));

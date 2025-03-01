@@ -23,8 +23,7 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -40,7 +39,7 @@
             pnlBtm.Controls.Add(btnCancel);
             pnlBtm.Controls.Add(btnOK);
             pnlBtm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            pnlBtm.Font = new System.Drawing.Font("宋体", 12F);
+            pnlBtm.Font = new System.Drawing.Font("Segoe UI", 12F);
             pnlBtm.Location = new System.Drawing.Point(1, 392);
             pnlBtm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             pnlBtm.MinimumSize = new System.Drawing.Size(1, 1);
@@ -56,7 +55,7 @@
             // 
             btnCancel.BackColor = System.Drawing.Color.Transparent;
             btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnCancel.Font = new System.Drawing.Font("宋体", 12F);
+            btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F);
             btnCancel.Location = new System.Drawing.Point(470, 12);
             btnCancel.Margin = new System.Windows.Forms.Padding(0);
             btnCancel.MinimumSize = new System.Drawing.Size(1, 1);
@@ -66,8 +65,8 @@
             btnCancel.Size = new System.Drawing.Size(100, 35);
             btnCancel.Symbol = 361453;
             btnCancel.TabIndex = 1;
-            btnCancel.Text = "取消";
-            btnCancel.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
+            btnCancel.Text = "Cancel";
+            btnCancel.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             btnCancel.TipsText = null;
             btnCancel.Click += btnCancel_Click;
             // 
@@ -75,7 +74,7 @@
             // 
             btnOK.BackColor = System.Drawing.Color.Transparent;
             btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnOK.Font = new System.Drawing.Font("宋体", 12F);
+            btnOK.Font = new System.Drawing.Font("Segoe UI", 12F);
             btnOK.Location = new System.Drawing.Point(355, 12);
             btnOK.Margin = new System.Windows.Forms.Padding(0);
             btnOK.MinimumSize = new System.Drawing.Size(1, 1);
@@ -84,8 +83,8 @@
             btnOK.ShowFocusColor = true;
             btnOK.Size = new System.Drawing.Size(100, 35);
             btnOK.TabIndex = 0;
-            btnOK.Text = "确定";
-            btnOK.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
+            btnOK.Text = "OK";
+            btnOK.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             btnOK.TipsText = null;
             btnOK.Click += btnOK_Click;
             // 

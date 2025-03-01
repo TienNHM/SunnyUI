@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,22 +9,21 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIRichTextBox.cs
- * 文件说明: 富文本输入框
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIRichTextBox.cs
+ * Description: Rich Text Input Box
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2021-05-25: V3.0.4 支持可改背景色
- * 2021-07-29: V3.0.5 修改滚动条没有文字时自动隐藏
- * 2022-02-23: V3.1.1 增加了一些原生的属性和事件
- * 2022-03-14: V3.1.1 增加滚动条的颜色设置
- * 2022-11-03: V3.2.6 增加了可设置垂直滚动条宽度的属性
- * 2023-11-13: V3.5.2 重构主题
- * 2023-12-25: V3.6.2 增加Text的属性编辑器
- * 2024-07-20: V3.6.8 修改滚动条颜色跟随主题
+ * 2020-01-01: V2.2.0 Added file description
+ * 2021-05-25: V3.0.4 Support for changing background color
+ * 2021-07-29: V3.0.5 Modified scrollbar to auto-hide when no text
+ * 2022-02-23: V3.1.1 Added some native properties and events
+ * 2022-03-14: V3.1.1 Added scrollbar color settings
+ * 2022-11-03: V3.2.6 Added property to set vertical scrollbar width
+ * 2023-11-13: V3.5.2 Refactored theme
+ * 2023-12-25: V3.6.2 Added Text property editor
+ * 2024-07-20: V3.6.8 Modified scrollbar color to follow theme
 ******************************************************************************/
 
 using System;
@@ -108,7 +107,7 @@ namespace Sunny.UI
 
         private int scrollBarWidth = 0;
 
-        [DefaultValue(0), Category("SunnyUI"), Description("垂直滚动条宽度，最小为原生滚动条宽度")]
+        [DefaultValue(0), Category("SunnyUI"), Description("Vertical scrollbar width, minimum is the native scrollbar width")]
         public int ScrollBarWidth
         {
             get => scrollBarWidth;
@@ -121,7 +120,7 @@ namespace Sunny.UI
 
         private int scrollBarHandleWidth = 6;
 
-        [DefaultValue(6), Category("SunnyUI"), Description("垂直滚动条滑块宽度，最小为原生滚动条宽度")]
+        [DefaultValue(6), Category("SunnyUI"), Description("Vertical scrollbar handle width, minimum is the native scrollbar width")]
         public int ScrollBarHandleWidth
         {
             get => scrollBarHandleWidth;
@@ -203,9 +202,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 需要额外设置ToolTip的控件
+        /// Control that needs additional ToolTip settings
         /// </summary>
-        /// <returns>控件</returns>
+        /// <returns>Control</returns>
         public Control ExToolTipControl()
         {
             return edit;
@@ -227,9 +226,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载字体变更
+        /// Override font change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnFontChanged(EventArgs e)
         {
             base.OnFontChanged(e);
@@ -239,7 +238,7 @@ namespace Sunny.UI
         private bool showScrollBar = true;
 
         [DefaultValue(false)]
-        [Description("是否只读"), Category("SunnyUI")]
+        [Description("Read-only"), Category("SunnyUI")]
         public bool ReadOnly
         {
             get => edit.ReadOnly;
@@ -304,18 +303,18 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标按下事件
+        /// Override mouse down event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseDown(MouseEventArgs e)
         {
             ActiveControl = edit;
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -336,9 +335,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 滚动条主题样式
+        /// Scrollbar theme style
         /// </summary>
-        [DefaultValue(true), Description("滚动条主题样式"), Category("SunnyUI")]
+        [DefaultValue(true), Description("Scrollbar theme style"), Category("SunnyUI")]
         public bool ScrollBarStyleInherited
         {
             get => bar != null && bar.Style == UIStyle.Inherited;
@@ -357,9 +356,9 @@ namespace Sunny.UI
         private Color scrollBarColor = Color.FromArgb(80, 160, 255);
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Scrollbar fill color
         /// </summary>
-        [Description("滚动条填充颜色"), Category("SunnyUI")]
+        [Description("Scrollbar fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color ScrollBarColor
         {
@@ -376,9 +375,9 @@ namespace Sunny.UI
         private Color scrollBarBackColor = Color.White;
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Scrollbar background color
         /// </summary>
-        [Description("滚动条背景颜色"), Category("SunnyUI")]
+        [Description("Scrollbar background color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "White")]
         public Color ScrollBarBackColor
         {
@@ -420,7 +419,7 @@ namespace Sunny.UI
             KeyUp?.Invoke(this, e);
         }
 
-        [Category("SunnyUI"), Browsable(true), DefaultValue(""), Description("文字")]
+        [Category("SunnyUI"), Browsable(true), DefaultValue(""), Description("Text")]
         [Editor("System.ComponentModel.Design.MultilineStringEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
 
         public override string Text
@@ -526,7 +525,7 @@ namespace Sunny.UI
             // 
             // bar
             // 
-            bar.Font = new Font("宋体", 12F);
+            bar.Font = new Font("Segoe UI", 12F);
             bar.Location = new Point(247, 4);
             bar.MinimumSize = new Size(1, 1);
             bar.Name = "bar";

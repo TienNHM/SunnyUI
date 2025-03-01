@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
- * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
+ * CopyRight (C) 2012-2025 ShenYongHua.
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,18 +9,17 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIRoundProcess.cs
- * 文件说明: 圆形进度条
- * 当前版本: V3.1
- * 创建日期: 2021-04-08
+ * File Name: UIRoundProcess.cs
+ * Description: Circular progress bar
+ * Current Version: V3.1
+ * Creation Date: 2021-04-08
  *
- * 2021-04-08: V3.0.2 增加文件说明
- * 2021-10-18: V3.0.8 增加显示小数位数
- * 2022-03-19: V3.1.1 重构主题配色
- * 2023-07-12: V3.4.0 内圈尺寸小的时候更新配色
- * 2023-07-15: V3.4.0 增加起始角度和扫描角度
+ * 2021-04-08: V3.0.2 Added file description
+ * 2021-10-18: V3.0.8 Added display of decimal places
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2023-07-12: V3.4.0 Updated colors when the inner circle size is small
+ * 2023-07-15: V3.4.0 Added start angle and sweep angle
 ******************************************************************************/
 
 using System;
@@ -32,7 +31,7 @@ using System.Windows.Forms;
 namespace Sunny.UI
 {
     /// <summary>
-    /// 圆形滚动条
+    /// Circular scrollbar
     /// </summary>
     [ToolboxItem(true)]
     [DefaultEvent("ValueChanged")]
@@ -56,7 +55,7 @@ namespace Sunny.UI
 
         private int startAngle = 0;
 
-        [Description("起始角度，正北为0，顺时针0到360°"), Category("SunnyUI")]
+        [Description("Start angle, 0 at due north, clockwise from 0 to 360°"), Category("SunnyUI")]
         [DefaultValue(0)]
         public int StartAngle
         {
@@ -70,7 +69,7 @@ namespace Sunny.UI
 
         private int sweepAngle = 360;
 
-        [Description("扫描角度，范围0到360°"), Category("SunnyUI")]
+        [Description("Sweep angle, range from 0 to 360°"), Category("SunnyUI")]
         [DefaultValue(360)]
         public int SweepAngle
         {
@@ -83,7 +82,7 @@ namespace Sunny.UI
             }
         }
 
-        [Description("显示文字小数位数"), Category("SunnyUI")]
+        [Description("Display decimal places"), Category("SunnyUI")]
         [DefaultValue(1)]
         public int DecimalPlaces
         {
@@ -100,7 +99,7 @@ namespace Sunny.UI
         private int maximum = 100;
 
         [DefaultValue(100)]
-        [Description("最大值"), Category("SunnyUI")]
+        [Description("Maximum value"), Category("SunnyUI")]
         public int Maximum
         {
             get => maximum;
@@ -114,7 +113,7 @@ namespace Sunny.UI
         private int inner = 30;
         private int outer = 50;
 
-        [Description("内径")]
+        [Description("Inner diameter")]
         [Category("SunnyUI")]
         [DefaultValue(30)]
         public int Inner
@@ -127,7 +126,7 @@ namespace Sunny.UI
             }
         }
 
-        [Description("外径")]
+        [Description("Outer diameter")]
         [Category("SunnyUI")]
         [DefaultValue(50)]
         public int Outer
@@ -141,9 +140,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        ///     进度条前景色
+        /// Progress bar foreground color
         /// </summary>
-        [Description("进度条前景色")]
+        [Description("Progress bar foreground color")]
         [Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color ProcessColor
@@ -153,9 +152,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        ///     进度条背景色
+        /// Progress bar background color
         /// </summary>
-        [Description("进度条背景色")]
+        [Description("Progress bar background color")]
         [Category("SunnyUI")]
         [DefaultValue(typeof(Color), "185, 217, 255")]
         public Color ProcessBackColor
@@ -165,9 +164,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        ///     字体颜色
+        /// Font color
         /// </summary>
-        [Description("字体颜色")]
+        [Description("Font color")]
         [Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public override Color ForeColor
@@ -179,7 +178,7 @@ namespace Sunny.UI
         private int posValue;
 
         [DefaultValue(0)]
-        [Description("当前位置"), Category("SunnyUI")]
+        [Description("Current position"), Category("SunnyUI")]
         public int Value
         {
             get => posValue;
@@ -225,10 +224,10 @@ namespace Sunny.UI
         public event OnValueChanged ValueChanged;
 
         /// <summary>
-        /// 绘制填充颜色
+        /// Draw fill color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics surface</param>
+        /// <param name="path">Drawing path</param>
         protected override void OnPaintFill(Graphics g, GraphicsPath path)
         {
             int iin = Math.Min(inner, outer);
@@ -246,9 +245,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);

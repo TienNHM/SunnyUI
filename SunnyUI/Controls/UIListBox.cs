@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,29 +9,28 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIListBox.cs
- * 文件说明: 列表框
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIListBox.cs
+ * Description: ListBox
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-04-25: V2.2.4 更新主题配置类
- * 2020-05-21: V2.2.5 增加鼠标滑过高亮
- *                    开发日志：https://www.cnblogs.com/yhuse/p/12933885.html
- * 2021-06-03: V3.0.4 修改对象绑定的显示问题
- * 2021-07-29: V3.0.5 增加多选行
- * 2021-07-30: V3.0.5 选中项显示方角
- * 2021-08-04: V3.0.5 增加Items变更的事件
- * 2021-12-29: V3.0.9 增加修改文字颜色
- * 2022-02-23: V3.1.1 按键上下移动选择项目时，滚动条跟随
- * 2022-03-08: V3.1.1 修复在选中某一项后，清除选中项需要两次操作
- * 2022-03-19: V3.1.1 重构主题配色
- * 2022-05-15: V3.1.8 增加滚动条颜色设置
- * 2022-09-05: V3.2.3 修复Click，DoubleClick事件
- * 2022-11-03: V3.2.6 增加了可设置垂直滚动条宽度的属性
- * 2023-11-16: V3.5.2 重构主题
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-04-25: V2.2.4 Updated theme configuration class
+ * 2020-05-21: V2.2.5 Added mouse hover highlight
+ *                    Development log: https://www.cnblogs.com/yhuse/p/12933885.html
+ * 2021-06-03: V3.0.4 Fixed display issues with object binding
+ * 2021-07-29: V3.0.5 Added multi-select rows
+ * 2021-07-30: V3.0.5 Selected item shows square corners
+ * 2021-08-04: V3.0.5 Added Items change event
+ * 2021-12-29: V3.0.9 Added text color modification
+ * 2022-02-23: V3.1.1 Scroll bar follows when selecting items with up/down keys
+ * 2022-03-08: V3.1.1 Fixed issue where clearing selected item required two operations after selecting an item
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2022-05-15: V3.1.8 Added scroll bar color setting
+ * 2022-09-05: V3.2.3 Fixed Click, DoubleClick events
+ * 2022-11-03: V3.2.6 Added property to set vertical scroll bar width
+ * 2023-11-16: V3.5.2 Refactored theme
 ******************************************************************************/
 
 using System;
@@ -108,7 +107,7 @@ namespace Sunny.UI
 
         private int scrollBarWidth = 0;
 
-        [DefaultValue(0), Category("SunnyUI"), Description("垂直滚动条宽度，最小为原生滚动条宽度")]
+        [DefaultValue(0), Category("SunnyUI"), Description("Vertical scroll bar width, minimum is the native scroll bar width")]
         public int ScrollBarWidth
         {
             get => scrollBarWidth;
@@ -121,7 +120,7 @@ namespace Sunny.UI
 
         private int scrollBarHandleWidth = 6;
 
-        [DefaultValue(6), Category("SunnyUI"), Description("垂直滚动条滑块宽度，最小为原生滚动条宽度")]
+        [DefaultValue(6), Category("SunnyUI"), Description("Vertical scroll bar handle width, minimum is the native scroll bar width")]
         public int ScrollBarHandleWidth
         {
             get => scrollBarHandleWidth;
@@ -142,9 +141,9 @@ namespace Sunny.UI
         private Color scrollBarColor = Color.FromArgb(80, 160, 255);
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is background color or transparent color or null, it will not be filled
         /// </summary>
-        [Description("滚动条填充颜色"), Category("SunnyUI")]
+        [Description("Scroll bar fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color ScrollBarColor
         {
@@ -161,9 +160,9 @@ namespace Sunny.UI
         private Color scrollBarBackColor = Color.FromArgb(243, 249, 255);
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is background color or transparent color or null, it will not be filled
         /// </summary>
-        [Description("滚动条背景颜色"), Category("SunnyUI")]
+        [Description("Scroll bar background color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "243, 249, 255")]
         public Color ScrollBarBackColor
         {
@@ -178,9 +177,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 滚动条主题样式
+        /// Scroll bar theme style
         /// </summary>
-        [DefaultValue(true), Description("滚动条主题样式"), Category("SunnyUI")]
+        [DefaultValue(true), Description("Scroll bar theme style"), Category("SunnyUI")]
         public bool ScrollBarStyleInherited
         {
             get => bar != null && bar.Style == UIStyle.Inherited;
@@ -245,9 +244,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 需要额外设置ToolTip的控件
+        /// Additional controls that need to set ToolTip
         /// </summary>
-        /// <returns>控件</returns>
+        /// <returns>Control</returns>
         public Control ExToolTipControl()
         {
             return listbox;
@@ -349,7 +348,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(StringAlignment.Near)]
-        [Description("列表项高度"), Category("SunnyUI")]
+        [Description("List item height"), Category("SunnyUI")]
         public new StringAlignment TextAlignment
         {
             get => listbox.TextAlignment;
@@ -357,7 +356,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(SelectionMode.One)]
-        [Description("选择项所用方法"), Category("SunnyUI")]
+        [Description("Selection mode"), Category("SunnyUI")]
         public SelectionMode SelectionMode
         {
             get => listbox.SelectionMode;
@@ -365,7 +364,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(SelectionMode.One)]
-        [Description("选择项所用方法"), Category("SunnyUI")]
+        [Description("Selection mode"), Category("SunnyUI")]
         public SelectedIndexCollection SelectedIndices
         {
             get => listbox.SelectedIndices;
@@ -435,9 +434,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载字体变更
+        /// Override font change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnFontChanged(EventArgs e)
         {
             base.OnFontChanged(e);
@@ -445,9 +444,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载控件尺寸变更
+        /// Override control size change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
@@ -505,7 +504,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(25)]
-        [Description("列表项高度"), Category("SunnyUI")]
+        [Description("List item height"), Category("SunnyUI")]
         public int ItemHeight
         {
             get => listbox.ItemHeight;
@@ -513,9 +512,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// List items
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -587,7 +586,7 @@ namespace Sunny.UI
         [Localizable(true)]
         [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor", typeof(UITypeEditor))]
         [MergableProperty(false)]
-        [Description("列表项"), Category("SunnyUI")]
+        [Description("List items"), Category("SunnyUI")]
         public ObjectCollection Items => listbox.Items;
 
         [Browsable(false)]
@@ -599,7 +598,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "80, 160, 255")]
-        [Description("列表项选中背景颜色"), Category("SunnyUI")]
+        [Description("List item selected background color"), Category("SunnyUI")]
         public Color ItemSelectBackColor
         {
             get => listbox.ItemSelectBackColor;
@@ -607,7 +606,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "243, 249, 255")]
-        [Description("列表项选中字体颜色"), Category("SunnyUI")]
+        [Description("List item selected text color"), Category("SunnyUI")]
         public Color ItemSelectForeColor
         {
             get => listbox.ItemSelectForeColor;
@@ -653,7 +652,7 @@ namespace Sunny.UI
         private Color hoverColor = Color.FromArgb(155, 200, 255);
 
         [DefaultValue(typeof(Color), "220, 236, 255")]
-        [Description("列表项鼠标移上颜色"), Category("SunnyUI")]
+        [Description("List item mouse hover color"), Category("SunnyUI")]
         public Color HoverColor
         {
             get => hoverColor;
@@ -665,7 +664,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue("")]
-        [Description("指示要为此控件中的项显示的属性")]
+        [Description("Indicates the property to display for items in this control")]
         [TypeConverter("System.Windows.Forms.Design.DataMemberFieldConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
         [Editor("System.Windows.Forms.Design.DataMemberFieldEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public string DisplayMember
@@ -675,7 +674,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue("")]
-        [Description("指示用作控件中项的实际值的属性")]
+        [Description("Indicates the property to use as the actual value for the items in the control")]
         [Editor("System.Windows.Forms.Design.DataMemberFieldEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public string ValueMember
         {
@@ -686,7 +685,7 @@ namespace Sunny.UI
         [DefaultValue(null)]
         [RefreshProperties(RefreshProperties.Repaint)]
         [AttributeProvider(typeof(IListSource))]
-        [Description("指示此控件将用来获取其项的列表")]
+        [Description("Indicates the list that this control will use to get its items")]
         public object DataSource
         {
             get => listbox.DataSource;
@@ -715,14 +714,14 @@ namespace Sunny.UI
         public event EventHandler ValueMemberChanged;
 
         [DefaultValue("")]
-        [Description("格式说明符，指示显示值的方式")]
+        [Description("Format string, indicating how to display the value")]
         public string FormatString
         {
             get => listbox.FormatString;
             set => listbox.FormatString = value;
         }
 
-        [Description("获取或设置指示显示值是否可以进行格式化操作。"), Category("SunnyUI")]
+        [Description("Gets or sets a value indicating whether formatting is enabled for the displayed value."), Category("SunnyUI")]
         [DefaultValue(false)]
         public bool FormattingEnabled
         {

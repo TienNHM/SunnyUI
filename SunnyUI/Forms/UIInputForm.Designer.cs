@@ -55,20 +55,20 @@
             // 
             label.AutoSize = true;
             label.BackColor = System.Drawing.Color.Transparent;
-            label.Font = new System.Drawing.Font("宋体", 12F);
+            label.Font = new System.Drawing.Font("Segoe UI", 12F);
             label.ForeColor = System.Drawing.Color.FromArgb(48, 48, 48);
             label.Location = new System.Drawing.Point(28, 57);
             label.Name = "label";
             label.Size = new System.Drawing.Size(215, 16);
             label.Style = UIStyle.Custom;
             label.TabIndex = 1;
-            label.Text = "请在下方编辑框中输入数值：";
+            label.Text = "Please enter a value in the edit box below:";
             label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // edit
             // 
             edit.Cursor = System.Windows.Forms.Cursors.IBeam;
-            edit.Font = new System.Drawing.Font("宋体", 12F);
+            edit.Font = new System.Drawing.Font("Segoe UI", 12F);
             edit.Location = new System.Drawing.Point(29, 92);
             edit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             edit.MinimumSize = new System.Drawing.Size(1, 1);
@@ -91,7 +91,7 @@
             Name = "UIInputForm";
             Padding = new System.Windows.Forms.Padding(0, 35, 0, 0);
             Style = UIStyle.Custom;
-            Text = "输入";
+            Text = "Input";
             ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 473, 182);
             Shown += UIInputForm_Shown;
             Controls.SetChildIndex(pnlBtm, 0);

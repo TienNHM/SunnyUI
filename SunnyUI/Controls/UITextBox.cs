@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI Open Source Control Library, Utility Class Library, Extension Class Library, Multi-page Development Framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,60 +9,59 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UITextBox.cs
- * 文件说明: 输入框
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UITextBox.cs
+ * File Description: Input Box
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-06-03: V2.2.5 增加多行，增加滚动条
- * 2020-09-03: V2.2.7 增加FocusedSelectAll属性，激活时全选
- * 2021-04-15: V3.0.3 修改文字可以居中显示
- * 2021-04-17: V3.0.3 不限制高度为根据字体计算，可进行调整，解决多行输入时不能输入回车的问题
- * 2021-04-18: V3.0.3 增加ShowScrollBar属性，单独控制垂直滚动条
- * 2021-06-01: V3.0.4 增加图标和字体图标的显示
- * 2021-07-18: V3.0.5 修改Focus可用
- * 2021-08-03: V3.0.5 增加GotFocus和LostFocus事件
- * 2021-08-15: V3.0.6 重写了水印文字的画法，并增加水印文字颜色
- * 2021-09-07: V3.0.6 增加按钮
- * 2021-10-14: V3.0.8 调整最小高度限制
- * 2021-10-15: V3.0.8 支持修改背景色
- * 2022-01-07: V3.1.0 按钮支持自定义颜色
- * 2022-02-16: V3.1.1 增加了只读的颜色设置
- * 2022-03-14: V3.1.1 增加滚动条的颜色设置
- * 2022-04-11: V3.1.3 增加对按钮设置ToolTip
- * 2022-06-10: V3.1.9 尺寸改变时重绘
- * 2022-06-23: V3.2.0 重写水印文字，解决不同背景色下泛白的问题
- * 2022-07-17: V3.2.1 增加SelectionChanged事件
- * 2022-07-28: V3.2.2 修复了有水印文字时，不响应Click和DoubleClick事件的问题
- * 2022-09-05: V3.2.3 修复了无水印文字时，光标有时不显示的问题
- * 2022-09-16: V3.2.4 支持自定义右键菜单
- * 2022-09-16: V3.2.4 修改右侧Button可能不显示的问题
- * 2022-11-03: V3.2.6 增加了可设置垂直滚动条宽度的属性
- * 2022-11-12: V3.2.8 修改整数、浮点数大小离开判断为实时输入判断
- * 2022-11-12: V3.2.8 删除MaximumEnabled、MinimumEnabled、HasMaximum、HasMinimum属性
- * 2022-11-26: V3.2.9 增加MouseClick，MouseDoubleClick事件
- * 2023-02-07: V3.3.1 增加Tips小红点
- * 2023-02-10: V3.3.2 有水印时，系统响应触摸屏增加了TouchPressClick属性，默认关闭
- * 2023-06-14: V3.3.9 按钮图标位置修正
- * 2023-07-03: V3.3.9 增加Enabled为false时，可修改文字颜色
- * 2023-07-16: V3.4.0 修复了Enabled为false时，PasswordChar失效的问题
- * 2023-08-17: V3.4.1 修复了Enabled为false时，字体大小调整后，文字显示位置的问题
- * 2023-08-24: V3.4.2 修复了Enabled为false时，自定义颜色，文字不显示的问题
- * 2023-10-25: V3.5.1 修复在高DPI下，文字垂直不居中的问题
- * 2023-10-25: V3.5.1 修复在某些字体不显示下划线的问题
- * 2023-10-26: V3.5.1 字体图标增加旋转角度参数SymbolRotate
- * 2023-11-16: V3.5.2 重构主题
- * 2023-12-18: V3.6.2 修复高度不随字体改变
- * 2023-12-18: V3.6.2 修改显示按钮时Tips小红点的位置
- * 2023-12-25: V3.6.2 增加Text的属性编辑器
- * 2024-01-13: V3.6.3 调整Radius时，自动调整文本框的位置
- * 2024-06-11: V3.6.6 调整为可继承
- * 2024-08-12: V3.6.8 解决原生控件字体在微软雅黑时，显示不完整的问题
- * 2024-08-26: V3.6.9 修复微软雅黑字体显示不完整的问题
- * 2024-08-27: V3.6.9 AutoSize时根据字体自动调整控件高度
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-06-03: V2.2.5 Added multiline, added scrollbar
+ * 2020-09-03: V2.2.7 Added FocusedSelectAll property, select all when activated
+ * 2021-04-15: V3.0.3 Modified text to be centered
+ * 2021-04-17: V3.0.3 Removed height restriction based on font calculation, can be adjusted, solved the issue of not being able to enter a newline in multiline input
+ * 2021-04-18: V3.0.3 Added ShowScrollBar property to control vertical scrollbar separately
+ * 2021-06-01: V3.0.4 Added icon and font icon display
+ * 2021-07-18: V3.0.5 Modified Focus to be usable
+ * 2021-08-03: V3.0.5 Added GotFocus and LostFocus events
+ * 2021-08-15: V3.0.6 Rewrote the watermark text drawing method and added watermark text color
+ * 2021-09-07: V3.0.6 Added button
+ * 2021-10-14: V3.0.8 Adjusted minimum height restriction
+ * 2021-10-15: V3.0.8 Supported background color modification
+ * 2022-01-07: V3.1.0 Button supports custom color
+ * 2022-02-16: V3.1.1 Added read-only color setting
+ * 2022-03-14: V3.1.1 Added scrollbar color setting
+ * 2022-04-11: V3.1.3 Added ToolTip setting for button
+ * 2022-06-10: V3.1.9 Redraw on size change
+ * 2022-06-23: V3.2.0 Rewrote watermark text to solve the issue of whitening under different background colors
+ * 2022-07-17: V3.2.1 Added SelectionChanged event
+ * 2022-07-28: V3.2.2 Fixed the issue of not responding to Click and DoubleClick events when there is watermark text
+ * 2022-09-05: V3.2.3 Fixed the issue of cursor sometimes not showing when there is no watermark text
+ * 2022-09-16: V3.2.4 Supported custom right-click menu
+ * 2022-09-16: V3.2.4 Fixed the issue of the right-side button not showing
+ * 2022-11-03: V3.2.6 Added property to set vertical scrollbar width
+ * 2022-11-12: V3.2.8 Changed integer and floating-point size validation from leaving to real-time input validation
+ * 2022-11-12: V3.2.8 Removed MaximumEnabled, MinimumEnabled, HasMaximum, HasMinimum properties
+ * 2022-11-26: V3.2.9 Added MouseClick, MouseDoubleClick events
+ * 2023-02-07: V3.3.1 Added Tips red dot
+ * 2023-02-10: V3.3.2 Added TouchPressClick property to respond to touch screen events when there is watermark, default is off
+ * 2023-06-14: V3.3.9 Fixed button icon position
+ * 2023-07-03: V3.3.9 Added support for changing text color when Enabled is false
+ * 2023-07-16: V3.4.0 Fixed the issue of PasswordChar not working when Enabled is false
+ * 2023-08-17: V3.4.1 Fixed the issue of text position changing after font size adjustment when Enabled is false
+ * 2023-08-24: V3.4.2 Fixed the issue of text not showing when custom color is set and Enabled is false
+ * 2023-10-25: V3.5.1 Fixed the issue of text not being vertically centered under high DPI
+ * 2023-10-25: V3.5.1 Fixed the issue of underline not showing for some fonts
+ * 2023-10-26: V3.5.1 Added SymbolRotate parameter for font icon rotation
+ * 2023-11-16: V3.5.2 Refactored theme
+ * 2023-12-18: V3.6.2 Fixed height not changing with font
+ * 2023-12-18: V3.6.2 Modified Tips red dot position when button is shown
+ * 2023-12-25: V3.6.2 Added property editor for Text
+ * 2024-01-13: V3.6.3 Adjusted text box position when Radius is changed
+ * 2024-06-11: V3.6.6 Made inheritable
+ * 2024-08-12: V3.6.8 Solved the issue of incomplete display of native control font in Microsoft YaHei
+ * 2024-08-26: V3.6.9 Fixed the issue of incomplete display of Microsoft YaHei font
+ * 2024-08-27: V3.6.9 Auto adjust control height based on font when AutoSize is true
 ******************************************************************************/
 
 using System;
@@ -184,7 +183,7 @@ namespace Sunny.UI
             edit.SetDPIScale();
         }
 
-        [Description("开启后可响应某些触屏的点击事件"), Category("SunnyUI")]
+        [Description("Enable to respond to some touch screen click events"), Category("SunnyUI")]
         [DefaultValue(false)]
         public bool TouchPressClick
         {
@@ -255,7 +254,7 @@ namespace Sunny.UI
 
         private int scrollBarWidth = 0;
 
-        [DefaultValue(0), Category("SunnyUI"), Description("垂直滚动条宽度，最小为原生滚动条宽度")]
+        [DefaultValue(0), Category("SunnyUI"), Description("Vertical scrollbar width, minimum is the native scrollbar width")]
         public int ScrollBarWidth
         {
             get => scrollBarWidth;
@@ -268,7 +267,7 @@ namespace Sunny.UI
 
         private int scrollBarHandleWidth = 6;
 
-        [DefaultValue(6), Category("SunnyUI"), Description("垂直滚动条滑块宽度，最小为原生滚动条宽度")]
+        [DefaultValue(6), Category("SunnyUI"), Description("Vertical scrollbar handle width, minimum is the native scrollbar width")]
         public int ScrollBarHandleWidth
         {
             get => scrollBarHandleWidth;
@@ -298,9 +297,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is the background color or transparent color or null value, it will not be filled
         /// </summary>
-        [Description("填充颜色，当值为背景色或透明色或空值则不填充"), Category("SunnyUI")]
+        [Description("Fill color, if the value is the background color or transparent color or null value, it will not be filled"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "White")]
         public new Color FillColor
         {
@@ -321,7 +320,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体只读颜色
+        /// Font read-only color
         /// </summary>
         [DefaultValue(typeof(Color), "109, 109, 103")]
         public Color ForeReadOnlyColor
@@ -331,7 +330,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 边框只读颜色
+        /// Border read-only color
         /// </summary>
         [DefaultValue(typeof(Color), "173, 178, 181")]
         public Color RectReadOnlyColor
@@ -341,7 +340,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充只读颜色
+        /// Fill read-only color
         /// </summary>
         [DefaultValue(typeof(Color), "244, 244, 244")]
         public Color FillReadOnlyColor
@@ -357,11 +356,11 @@ namespace Sunny.UI
 
         public event EventHandler ButtonClick;
 
-        [DefaultValue(29), Category("SunnyUI"), Description("按钮宽度")]
+        [DefaultValue(29), Category("SunnyUI"), Description("Button width")]
         public int ButtonWidth { get => btn.Width; set { btn.Width = Math.Max(20, value); SizeChange(); } }
 
         private bool showButton = false;
-        [DefaultValue(false), Category("SunnyUI"), Description("显示按钮")]
+        [DefaultValue(false), Category("SunnyUI"), Description("Show button")]
         public bool ShowButton
         {
             get => showButton;
@@ -394,9 +393,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 需要额外设置ToolTip的控件
+        /// Controls that need additional ToolTip settings
         /// </summary>
-        /// <returns>控件</returns>
+        /// <returns>Control</returns>
         public Control ExToolTipControl()
         {
             return edit;
@@ -471,7 +470,7 @@ namespace Sunny.UI
         public override bool Focused => edit.Focused;
 
         [DefaultValue(false)]
-        [Description("激活时选中全部文字"), Category("SunnyUI")]
+        [Description("Select all text when activated"), Category("SunnyUI")]
         public bool FocusedSelectAll
         {
             get => edit.FocusedSelectAll;
@@ -585,7 +584,7 @@ namespace Sunny.UI
         private bool showScrollBar;
 
         [DefaultValue(false)]
-        [Description("显示垂直滚动条"), Category("SunnyUI")]
+        [Description("Show vertical scrollbar"), Category("SunnyUI")]
         public bool ShowScrollBar
         {
             get => showScrollBar;
@@ -647,7 +646,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(null)]
-        [Description("水印文字"), Category("SunnyUI")]
+        [Description("Watermark text"), Category("SunnyUI")]
         public string Watermark
         {
             get => edit.Watermark;
@@ -655,7 +654,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "Gray")]
-        [Description("水印文字颜色"), Category("SunnyUI")]
+        [Description("Watermark text color"), Category("SunnyUI")]
         public Color WatermarkColor
         {
             get => edit.WaterMarkColor;
@@ -663,7 +662,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "Gray")]
-        [Description("水印文字激活颜色"), Category("SunnyUI")]
+        [Description("Watermark text active color"), Category("SunnyUI")]
         public Color WatermarkActiveColor
         {
             get => edit.WaterMarkActiveForeColor;
@@ -689,9 +688,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载字体变更
+        /// Override font change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnFontChanged(EventArgs e)
         {
             base.OnFontChanged(e);
@@ -705,9 +704,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载控件尺寸变更
+        /// Override control size change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
@@ -750,16 +749,16 @@ namespace Sunny.UI
 
             if (!multiline)
             {
-                //单行显示
+                // Single line display
 
-                //AutoSize自动设置高度
+                // AutoSize automatically sets the height
                 if (Dock == DockStyle.None && AutoSize)
                 {
                     if (Height != edit.Height + 5)
                         Height = edit.Height + 5;
                 }
 
-                //根据字体大小编辑框垂直居中
+                // Vertically center the edit box based on font size
                 if (edit.Top != (Height - edit.Height) / 2 + 1)
                 {
                     edit.Top = (Height - edit.Height) / 2 + 1;
@@ -836,7 +835,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue('\0')]
-        [Description("密码掩码"), Category("SunnyUI")]
+        [Description("Password mask"), Category("SunnyUI")]
         public char PasswordChar
         {
             get => edit.PasswordChar;
@@ -844,7 +843,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(false)]
-        [Description("是否只读"), Category("SunnyUI")]
+        [Description("Read-only"), Category("SunnyUI")]
         public bool ReadOnly
         {
             get => isReadOnly;
@@ -857,7 +856,7 @@ namespace Sunny.UI
             }
         }
 
-        [Description("输入类型"), Category("SunnyUI")]
+        [Description("Input type"), Category("SunnyUI")]
         [DefaultValue(UIEditType.String)]
         public UIEditType Type
         {
@@ -866,9 +865,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 当InputType为数字类型时，能输入的最大值
+        /// When InputType is a numeric type, the maximum value that can be entered
         /// </summary>
-        [Description("当InputType为数字类型时，能输入的最大值。"), Category("SunnyUI")]
+        [Description("When InputType is a numeric type, the maximum value that can be entered."), Category("SunnyUI")]
         [DefaultValue(2147483647D)]
         public double Maximum
         {
@@ -877,9 +876,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 当InputType为数字类型时，能输入的最小值
+        /// When InputType is a numeric type, the minimum value that can be entered
         /// </summary>
-        [Description("当InputType为数字类型时，能输入的最小值。"), Category("SunnyUI")]
+        [Description("When InputType is a numeric type, the minimum value that can be entered."), Category("SunnyUI")]
         [DefaultValue(-2147483648D)]
         public double Minimum
         {
@@ -888,7 +887,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(0.00)]
-        [Description("浮点返回值"), Category("SunnyUI")]
+        [Description("Floating-point return value"), Category("SunnyUI")]
         public double DoubleValue
         {
             get => edit.DoubleValue;
@@ -896,14 +895,14 @@ namespace Sunny.UI
         }
 
         [DefaultValue(0)]
-        [Description("整型返回值"), Category("SunnyUI")]
+        [Description("Integer return value"), Category("SunnyUI")]
         public int IntValue
         {
             get => edit.IntValue;
             set => edit.IntValue = value;
         }
 
-        [Description("文本返回值"), Category("SunnyUI")]
+        [Description("Text return value"), Category("SunnyUI")]
         [Browsable(true)]
         [DefaultValue("")]
         [Editor("System.ComponentModel.Design.MultilineStringEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
@@ -913,7 +912,7 @@ namespace Sunny.UI
             set => edit.Text = value;
         }
 
-        [Description("浮点数，显示文字小数位数"), Category("SunnyUI")]
+        [Description("Floating-point, number of decimal places to display"), Category("SunnyUI")]
         [DefaultValue(2)]
         public int DecimalPlaces
         {
@@ -922,7 +921,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(false)]
-        [Description("整型或浮点输入时，是否可空显示"), Category("SunnyUI")]
+        [Description("Whether it can be empty when entering an integer or floating-point number"), Category("SunnyUI")]
         public bool CanEmpty
         {
             get => edit.CanEmpty;
@@ -938,9 +937,9 @@ namespace Sunny.UI
         public bool IsEmpty => edit.Text == "";
 
         /// <summary>
-        /// 重载鼠标按下事件
+        /// Override mouse down event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseDown(MouseEventArgs e)
         {
             ActiveControl = edit;
@@ -954,9 +953,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -994,9 +993,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 滚动条主题样式
+        /// Scrollbar theme style
         /// </summary>
-        [DefaultValue(true), Description("滚动条主题样式"), Category("SunnyUI")]
+        [DefaultValue(true), Description("Scrollbar theme style"), Category("SunnyUI")]
         public bool ScrollBarStyleInherited
         {
             get => bar != null && bar.Style == UIStyle.Inherited;
@@ -1021,9 +1020,9 @@ namespace Sunny.UI
         private Color scrollBarColor = Color.FromArgb(80, 160, 255);
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is the background color or transparent color or null value, it will not be filled
         /// </summary>
-        [Description("滚动条填充颜色"), Category("SunnyUI")]
+        [Description("Scrollbar fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color ScrollBarColor
         {
@@ -1040,9 +1039,9 @@ namespace Sunny.UI
         private Color scrollBarBackColor = Color.White;
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is the background color or transparent color or null value, it will not be filled
         /// </summary>
-        [Description("滚动条背景颜色"), Category("SunnyUI")]
+        [Description("Scrollbar background color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "White")]
         public Color ScrollBarBackColor
         {
@@ -1084,17 +1083,17 @@ namespace Sunny.UI
         public enum UIEditType
         {
             /// <summary>
-            /// 字符串
+            /// String
             /// </summary>
             String,
 
             /// <summary>
-            /// 整数
+            /// Integer
             /// </summary>
             Integer,
 
             /// <summary>
-            /// 浮点数
+            /// Floating-point
             /// </summary>
             Double
         }
@@ -1329,7 +1328,7 @@ namespace Sunny.UI
         }
 
         private Image icon;
-        [Description("图标"), Category("SunnyUI")]
+        [Description("Icon"), Category("SunnyUI")]
         [DefaultValue(null)]
         public Image Icon
         {
@@ -1343,7 +1342,7 @@ namespace Sunny.UI
         }
 
         private int iconSize = 24;
-        [Description("图标大小(方形)"), Category("SunnyUI"), DefaultValue(24)]
+        [Description("Icon size (square)"), Category("SunnyUI"), DefaultValue(24)]
         public int IconSize
         {
             get => iconSize;
@@ -1356,9 +1355,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override drawing
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Drawing parameters</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -1395,10 +1394,10 @@ namespace Sunny.UI
         public Color _symbolColor = UIFontColor.Primary;
 
         /// <summary>
-        /// 字体图标颜色
+        /// Font icon color
         /// </summary>
         [DefaultValue(typeof(Color), "48, 48, 48")]
-        [Description("字体图标颜色"), Category("SunnyUI")]
+        [Description("Font icon color"), Category("SunnyUI")]
         public Color SymbolColor
         {
             get => _symbolColor;
@@ -1412,12 +1411,12 @@ namespace Sunny.UI
         private int _symbol;
 
         /// <summary>
-        /// 字体图标
+        /// Font icon
         /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [Editor("Sunny.UI.UIImagePropertyEditor, " + AssemblyRefEx.SystemDesign, typeof(UITypeEditor))]
         [DefaultValue(0)]
-        [Description("字体图标"), Category("SunnyUI")]
+        [Description("Font icon"), Category("SunnyUI")]
         public int Symbol
         {
             get => _symbol;
@@ -1432,10 +1431,10 @@ namespace Sunny.UI
         private int _symbolSize = 24;
 
         /// <summary>
-        /// 字体图标大小
+        /// Font icon size
         /// </summary>
         [DefaultValue(24)]
-        [Description("字体图标大小"), Category("SunnyUI")]
+        [Description("Font icon size"), Category("SunnyUI")]
         public int SymbolSize
         {
             get => _symbolSize;
@@ -1451,10 +1450,10 @@ namespace Sunny.UI
         private Point symbolOffset = new Point(0, 0);
 
         /// <summary>
-        /// 字体图标的偏移位置
+        /// Offset position of the font icon
         /// </summary>
         [DefaultValue(typeof(Point), "0, 0")]
-        [Description("字体图标的偏移位置"), Category("SunnyUI")]
+        [Description("Offset position of the font icon"), Category("SunnyUI")]
         public Point SymbolOffset
         {
             get => symbolOffset;
@@ -1468,10 +1467,10 @@ namespace Sunny.UI
         private int _symbolRotate = 0;
 
         /// <summary>
-        /// 字体图标旋转角度
+        /// Font icon rotation angle
         /// </summary>
         [DefaultValue(0)]
-        [Description("字体图标旋转角度"), Category("SunnyUI")]
+        [Description("Font icon rotation angle"), Category("SunnyUI")]
         public int SymbolRotate
         {
             get => _symbolRotate;
@@ -1488,7 +1487,7 @@ namespace Sunny.UI
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [Editor("Sunny.UI.UIImagePropertyEditor, " + AssemblyRefEx.SystemDesign, typeof(UITypeEditor))]
         [DefaultValue(361761)]
-        [Description("按钮字体图标"), Category("SunnyUI")]
+        [Description("Button font icon"), Category("SunnyUI")]
         public int ButtonSymbol
         {
             get => btn.Symbol;
@@ -1496,7 +1495,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(24)]
-        [Description("按钮字体图标大小"), Category("SunnyUI")]
+        [Description("Button font icon size"), Category("SunnyUI")]
         public int ButtonSymbolSize
         {
             get => btn.SymbolSize;
@@ -1504,7 +1503,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Point), "-1, 1")]
-        [Description("按钮字体图标的偏移位置"), Category("SunnyUI")]
+        [Description("Offset position of the button font icon"), Category("SunnyUI")]
         public Point ButtonSymbolOffset
         {
             get => btn.SymbolOffset;
@@ -1512,10 +1511,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体图标旋转角度
+        /// Font icon rotation angle
         /// </summary>
         [DefaultValue(0)]
-        [Description("按钮字体图标旋转角度"), Category("SunnyUI")]
+        [Description("Button font icon rotation angle"), Category("SunnyUI")]
         public int ButtonSymbolRotate
         {
             get => btn.SymbolRotate;
@@ -1523,9 +1522,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is the background color or transparent color or null value, it will not be filled
         /// </summary>
-        [Description("按钮填充颜色"), Category("SunnyUI")]
+        [Description("Button fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color ButtonFillColor
         {
@@ -1538,9 +1537,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体颜色
+        /// Font color
         /// </summary>
-        [Description("按钮字体颜色"), Category("SunnyUI")]
+        [Description("Button font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "White")]
         public Color ButtonForeColor
         {
@@ -1553,9 +1552,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("按钮边框颜色"), Category("SunnyUI")]
+        [Description("Button border color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color ButtonRectColor
         {
@@ -1568,7 +1567,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "115, 179, 255"), Category("SunnyUI")]
-        [Description("按钮鼠标移上时填充颜色")]
+        [Description("Button fill color when mouse hovers")]
         public Color ButtonFillHoverColor
         {
             get => btn.FillHoverColor;
@@ -1580,7 +1579,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "White"), Category("SunnyUI")]
-        [Description("按钮鼠标移上时字体颜色")]
+        [Description("Button font color when mouse hovers")]
         public Color ButtonForeHoverColor
         {
             get => btn.ForeHoverColor;
@@ -1592,7 +1591,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "115, 179, 255"), Category("SunnyUI")]
-        [Description("鼠标移上时边框颜色")]
+        [Description("Button border color when mouse hovers")]
         public Color ButtonRectHoverColor
         {
             get => btn.RectHoverColor;
@@ -1604,7 +1603,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "64, 128, 204"), Category("SunnyUI")]
-        [Description("按钮鼠标按下时填充颜色")]
+        [Description("Button fill color when mouse is pressed")]
         public Color ButtonFillPressColor
         {
             get => btn.FillPressColor;
@@ -1616,7 +1615,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "White"), Category("SunnyUI")]
-        [Description("按钮鼠标按下时字体颜色")]
+        [Description("Button font color when mouse is pressed")]
         public Color ButtonForePressColor
         {
             get => btn.ForePressColor;
@@ -1628,7 +1627,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "64, 128, 204"), Category("SunnyUI")]
-        [Description("按钮鼠标按下时边框颜色")]
+        [Description("Button border color when mouse is pressed")]
         public Color ButtonRectPressColor
         {
             get => btn.RectPressColor;
@@ -1640,9 +1639,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 滚动条主题样式
+        /// Scrollbar theme style
         /// </summary>
-        [DefaultValue(true), Description("滚动条主题样式"), Category("SunnyUI")]
+        [DefaultValue(true), Description("Scrollbar theme style"), Category("SunnyUI")]
         public bool ButtonStyleInherited
         {
             get => btn != null && btn.Style == UIStyle.Inherited;

@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,15 +9,14 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIMillisecondTimer.cs
- * 文件说明: 毫秒定时器
- * 当前版本: V3.1
- * 创建日期: 2021-08-15
+ * File Name: UIMillisecondTimer.cs
+ * Description: Millisecond timer
+ * Current Version: V3.1
+ * Creation Date: 2021-08-15
  *
- * 2021-08-15: V3.0.6 增加文件说明
-******************************************************************************/
+ * 2021-08-15: V3.0.6 Added file description
+ ******************************************************************************/
 
 using Sunny.UI.Win32;
 using System;
@@ -32,16 +31,15 @@ namespace Sunny.UI
     {
         public event EventHandler Tick;
 
-        /// <devdoc>
-        /// <para>Initializes a new instance of the UIMillisecondTimer. />
-        /// class.</para>
-        /// </devdoc>
+        /// <summary>
+        /// Initializes a new instance of the UIMillisecondTimer class.
+        /// </summary>
         public UIMillisecondTimer()
         {
             int result = WinMM.timeGetDevCaps(ref TimeCaps, Marshal.SizeOf(TimeCaps));
             if (result != WinMM.TIMERR_NOERROR)
             {
-                throw new Exception("毫秒定时器初始化失败");
+                throw new Exception("Millisecond timer initialization failed");
             }
 
             Version = UIGlobal.Version;
@@ -49,9 +47,9 @@ namespace Sunny.UI
             SetEventCallback = DoSetEventCallback;
         }
 
-        /// <devdoc>
-        /// <para>Initializes a new instance of the UIMillisecondTimer class with the specified container.</para>
-        /// </devdoc>
+        /// <summary>
+        /// Initializes a new instance of the UIMillisecondTimer class with the specified container.
+        /// </summary>
         public UIMillisecondTimer(IContainer container) : this()
         {
             if (container == null)
@@ -92,7 +90,7 @@ namespace Sunny.UI
         public string TagString { get; set; }
 
         /// <summary>
-        /// 版本
+        /// Version
         /// </summary>
         public string Version { get; }
 
@@ -100,9 +98,9 @@ namespace Sunny.UI
 
         private int interval;
 
-        /// <devdoc>
-        ///    <para>Occurs when the specified timer interval has elapsed and the timer is enabled.</para>
-        /// </devdoc>
+        /// <summary>
+        /// Occurs when the specified timer interval has elapsed and the timer is enabled.
+        /// </summary>
         [DefaultValue(50)]
         public int Interval
         {
@@ -123,9 +121,9 @@ namespace Sunny.UI
 
         private bool enabled;
 
-        /// <devdoc>
-        ///    <para> Indicates whether the timer is running.</para>
-        /// </devdoc>
+        /// <summary>
+        /// Indicates whether the timer is running.
+        /// </summary>
         [DefaultValue(false)]
         public bool Enabled
         {
@@ -139,7 +137,7 @@ namespace Sunny.UI
                     int result = WinMM.timeSetEvent(interval, Math.Min(1, TimeCaps.wPeriodMin), SetEventCallback, 0, WinMM.TIME_MS);
                     if (result == 0)
                     {
-                        throw new Exception("毫秒定时器启动失败");
+                        throw new Exception("Millisecond timer startup failed");
                     }
 
                     TimerID = result;
@@ -161,7 +159,7 @@ namespace Sunny.UI
         private int TimerID;
 
         /// <summary>
-        /// 开启定时器
+        /// Starts the timer
         /// </summary>
         public void Start()
         {
@@ -169,7 +167,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重启定时器
+        /// Restarts the timer
         /// </summary>
         public void ReStart()
         {
@@ -178,7 +176,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 停止定时器
+        /// Stops the timer
         /// </summary>
         public void Stop()
         {

@@ -12,9 +12,9 @@ namespace Sunny.UI
         private static readonly string StartUpPath = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
 
         /// <summary>
-        /// 获取当前应用程序的 GUID
+        /// Get the GUID of the current application
         /// </summary>
-        /// <returns>应用程序的 GUID</returns>
+        /// <returns>Application GUID</returns>
         public static Guid AppGuid()
         {
             var asm = Assembly.GetEntryAssembly();
@@ -24,18 +24,18 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 获取指定特殊文件夹的路径，并处理路径格式
+        /// Get the path of the specified special folder and process the path format
         /// </summary>
-        /// <param name="specialFolder">特殊文件夹枚举</param>
-        /// <returns>处理后的文件夹路径</returns>
+        /// <param name="specialFolder">Special folder enumeration</param>
+        /// <returns>Processed folder path</returns>
         public static string Folder(this Environment.SpecialFolder specialFolder) => Environment.GetFolderPath(specialFolder).DealPath();
 
         /// <summary>
-        /// 获取指定特殊文件夹下的应用程序文件夹路径，并在必要时创建该文件夹
+        /// Get the application folder path under the specified special folder and create the folder if necessary
         /// </summary>
-        /// <param name="specialFolder">特殊文件夹枚举</param>
-        /// <param name="createIfNotExists">如果文件夹不存在，是否创建</param>
-        /// <returns>应用程序文件夹路径</returns>
+        /// <param name="specialFolder">Special folder enumeration</param>
+        /// <param name="createIfNotExists">Whether to create the folder if it does not exist</param>
+        /// <returns>Application folder path</returns>
         public static string FolderWithApplication(this Environment.SpecialFolder specialFolder, bool createIfNotExists = true)
         {
             var dir = (specialFolder.Folder() + Application.ProductName).DealPath();
@@ -44,30 +44,30 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 获取当前漫游用户的应用程序特定数据的公共储存库的目录
+        /// Get the directory for the common repository of application-specific data for the current roaming user
         /// C:\Users\{YourUserName}\AppData\Roaming\{Application.ProductName}\
         /// </summary>
-        /// <returns>应用程序数据文件夹路径</returns>
+        /// <returns>Application data folder path</returns>
         public static string ApplicationDataFolder() => Environment.SpecialFolder.ApplicationData.FolderWithApplication();
 
         /// <summary>
-        /// 获取当前非漫游用户使用的应用程序特定数据的公共储存库的目录
+        /// Get the directory for the common repository of application-specific data for the current non-roaming user
         /// C:\Users\{YourUserName}\AppData\Local\{Application.ProductName}\
         /// </summary>
-        /// <returns>本地应用程序数据文件夹路径</returns>
+        /// <returns>Local application data folder path</returns>
         public static string LocalApplicationDataFolder() => Environment.SpecialFolder.LocalApplicationData.FolderWithApplication();
 
         /// <summary>
-        /// 获取所有用户使用的应用程序特定数据的公共储存库的目录
+        /// Get the directory for the common repository of application-specific data for all users
         /// C:\ProgramData \{Application.ProductName}\
         /// </summary>
-        /// <returns>公共应用程序数据文件夹路径</returns>
+        /// <returns>Common application data folder path</returns>
         public static string CommonApplicationDataFolder() => Environment.SpecialFolder.CommonApplicationData.FolderWithApplication();
 
         /// <summary>
-        /// 增加当前程序到开机自动运行
+        /// Add the current program to startup
         /// </summary>
-        /// <param name="arguments">启动参数</param>
+        /// <param name="arguments">Startup arguments</param>
         public static void AddToStartup(string arguments)
         {
             using var key = Registry.CurrentUser.OpenSubKey(StartUpPath, true);
@@ -75,7 +75,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 增加当前程序到开机自动运行
+        /// Add the current program to startup
         /// </summary>
         public static void AddToStartup()
         {
@@ -84,7 +84,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 从开机自动运行移除当前程序
+        /// Remove the current program from startup
         /// </summary>
         public static void RemoveFromStartup()
         {
@@ -93,9 +93,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 判断当前程序是否开机自动运行
+        /// Determine whether the current program is set to run at startup
         /// </summary>
-        /// <returns>是否开机自动运行</returns>
+        /// <returns>Whether the program is set to run at startup</returns>
         public static bool StartupEnabled()
         {
             using var key = Registry.CurrentUser.OpenSubKey(StartUpPath, false);
@@ -103,14 +103,14 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 检查并更新当前程序开机自动运行路径
+        /// Check and update the startup path of the current program
         /// </summary>
         public static void CheckAndUpdateStartupPath()
         {
             if (!StartupEnabled()) return;
 
             string arg = string.Empty;
-            // 从注册表键值中读取启动参数
+            // Read startup arguments from the registry key value
             using var key = Registry.CurrentUser.OpenSubKey(StartUpPath, true);
             if (key == null) return;
             string oldValue = key.GetValue(Application.ProductName)?.ToString();

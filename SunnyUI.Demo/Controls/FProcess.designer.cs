@@ -67,7 +67,7 @@ namespace Sunny.UI.Demo
             // uiLine2
             // 
             this.uiLine2.BackColor = System.Drawing.Color.Transparent;
-            this.uiLine2.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLine2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLine2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLine2.Location = new System.Drawing.Point(29, 287);
             this.uiLine2.MinimumSize = new System.Drawing.Size(16, 16);
@@ -79,7 +79,7 @@ namespace Sunny.UI.Demo
             // 
             // uiBreadcrumb1
             // 
-            this.uiBreadcrumb1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiBreadcrumb1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiBreadcrumb1.ItemIndex = 0;
             this.uiBreadcrumb1.Items.AddRange(new object[] {
             "步骤一",
@@ -100,7 +100,7 @@ namespace Sunny.UI.Demo
             // 
             this.uiRoundProcess2.BackColor = System.Drawing.Color.Transparent;
             this.uiRoundProcess2.DecimalPlaces = 0;
-            this.uiRoundProcess2.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiRoundProcess2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiRoundProcess2.ForeColor2 = System.Drawing.Color.Black;
             this.uiRoundProcess2.Inner = 0;
             this.uiRoundProcess2.Location = new System.Drawing.Point(133, 167);
@@ -114,7 +114,7 @@ namespace Sunny.UI.Demo
             // uiLine9
             // 
             this.uiLine9.BackColor = System.Drawing.Color.Transparent;
-            this.uiLine9.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLine9.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLine9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLine9.Location = new System.Drawing.Point(29, 147);
             this.uiLine9.MinimumSize = new System.Drawing.Size(16, 16);
@@ -127,7 +127,7 @@ namespace Sunny.UI.Demo
             // uiRoundProcess1
             // 
             this.uiRoundProcess1.BackColor = System.Drawing.Color.Transparent;
-            this.uiRoundProcess1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiRoundProcess1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiRoundProcess1.ForeColor2 = System.Drawing.Color.Black;
             this.uiRoundProcess1.Inner = 35;
             this.uiRoundProcess1.Location = new System.Drawing.Point(15, 167);
@@ -141,7 +141,7 @@ namespace Sunny.UI.Demo
             // uiProcessBar2
             // 
             this.uiProcessBar2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.uiProcessBar2.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiProcessBar2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiProcessBar2.Location = new System.Drawing.Point(30, 123);
             this.uiProcessBar2.MinimumSize = new System.Drawing.Size(70, 1);
             this.uiProcessBar2.Name = "uiProcessBar2";
@@ -154,7 +154,7 @@ namespace Sunny.UI.Demo
             // uiLine1
             // 
             this.uiLine1.BackColor = System.Drawing.Color.Transparent;
-            this.uiLine1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLine1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLine1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLine1.Location = new System.Drawing.Point(411, 54);
             this.uiLine1.MinimumSize = new System.Drawing.Size(16, 16);
@@ -167,7 +167,7 @@ namespace Sunny.UI.Demo
             // uiWaitingBar1
             // 
             this.uiWaitingBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
-            this.uiWaitingBar1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiWaitingBar1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiWaitingBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.uiWaitingBar1.Location = new System.Drawing.Point(411, 88);
             this.uiWaitingBar1.MinimumSize = new System.Drawing.Size(70, 23);
@@ -179,7 +179,7 @@ namespace Sunny.UI.Demo
             // uiLine5
             // 
             this.uiLine5.BackColor = System.Drawing.Color.Transparent;
-            this.uiLine5.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLine5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLine5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLine5.Location = new System.Drawing.Point(28, 369);
             this.uiLine5.MinimumSize = new System.Drawing.Size(16, 16);
@@ -192,7 +192,7 @@ namespace Sunny.UI.Demo
             // uiLine4
             // 
             this.uiLine4.BackColor = System.Drawing.Color.Transparent;
-            this.uiLine4.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLine4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLine4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLine4.Location = new System.Drawing.Point(527, 147);
             this.uiLine4.MinimumSize = new System.Drawing.Size(16, 16);
@@ -204,7 +204,7 @@ namespace Sunny.UI.Demo
             // 
             // uiProgressIndicator1
             // 
-            this.uiProgressIndicator1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiProgressIndicator1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiProgressIndicator1.Location = new System.Drawing.Point(527, 173);
             this.uiProgressIndicator1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiProgressIndicator1.Name = "uiProgressIndicator1";
@@ -215,7 +215,7 @@ namespace Sunny.UI.Demo
             // uiLine3
             // 
             this.uiLine3.BackColor = System.Drawing.Color.Transparent;
-            this.uiLine3.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLine3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLine3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLine3.Location = new System.Drawing.Point(30, 54);
             this.uiLine3.MinimumSize = new System.Drawing.Size(16, 16);
@@ -228,7 +228,7 @@ namespace Sunny.UI.Demo
             // uiProcessBar1
             // 
             this.uiProcessBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.uiProcessBar1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiProcessBar1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiProcessBar1.Location = new System.Drawing.Point(30, 88);
             this.uiProcessBar1.MinimumSize = new System.Drawing.Size(70, 1);
             this.uiProcessBar1.Name = "uiProcessBar1";
@@ -244,7 +244,7 @@ namespace Sunny.UI.Demo
             // 
             this.uiProcessBar3.Direction = Sunny.UI.UILine.LineDirection.Vertical;
             this.uiProcessBar3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.uiProcessBar3.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiProcessBar3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiProcessBar3.Location = new System.Drawing.Point(527, 325);
             this.uiProcessBar3.MinimumSize = new System.Drawing.Size(70, 1);
             this.uiProcessBar3.Name = "uiProcessBar3";
@@ -255,7 +255,7 @@ namespace Sunny.UI.Demo
             // uiLine6
             // 
             this.uiLine6.BackColor = System.Drawing.Color.Transparent;
-            this.uiLine6.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLine6.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiLine6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLine6.Location = new System.Drawing.Point(527, 287);
             this.uiLine6.MinimumSize = new System.Drawing.Size(16, 16);
@@ -269,7 +269,7 @@ namespace Sunny.UI.Demo
             // 
             this.uiRoundProcess3.BackColor = System.Drawing.Color.Transparent;
             this.uiRoundProcess3.DecimalPlaces = 0;
-            this.uiRoundProcess3.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiRoundProcess3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiRoundProcess3.ForeColor2 = System.Drawing.Color.Black;
             this.uiRoundProcess3.Inner = 35;
             this.uiRoundProcess3.Location = new System.Drawing.Point(251, 167);
@@ -287,7 +287,7 @@ namespace Sunny.UI.Demo
             // 
             this.uiRoundProcess4.BackColor = System.Drawing.Color.Transparent;
             this.uiRoundProcess4.DecimalPlaces = 0;
-            this.uiRoundProcess4.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiRoundProcess4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiRoundProcess4.ForeColor2 = System.Drawing.Color.Black;
             this.uiRoundProcess4.Inner = 35;
             this.uiRoundProcess4.Location = new System.Drawing.Point(369, 167);
@@ -304,7 +304,7 @@ namespace Sunny.UI.Demo
             // 
             this.uiRuler5.BackColor = System.Drawing.Color.Transparent;
             this.uiRuler5.Direction = Sunny.UI.UITrackBar.BarDirection.VerticalDown;
-            this.uiRuler5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiRuler5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiRuler5.Location = new System.Drawing.Point(439, 387);
             this.uiRuler5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiRuler5.MinorCount = 4;
@@ -320,7 +320,7 @@ namespace Sunny.UI.Demo
             // 
             this.uiRuler6.BackColor = System.Drawing.Color.Transparent;
             this.uiRuler6.Direction = Sunny.UI.UITrackBar.BarDirection.VerticalDown;
-            this.uiRuler6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiRuler6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiRuler6.Location = new System.Drawing.Point(342, 387);
             this.uiRuler6.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiRuler6.MinorCount = 4;
@@ -333,7 +333,7 @@ namespace Sunny.UI.Demo
             // 
             this.uiRuler4.BackColor = System.Drawing.Color.Transparent;
             this.uiRuler4.Direction = Sunny.UI.UITrackBar.BarDirection.Vertical;
-            this.uiRuler4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiRuler4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiRuler4.Location = new System.Drawing.Point(308, 387);
             this.uiRuler4.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiRuler4.MinorCount = 4;
@@ -347,7 +347,7 @@ namespace Sunny.UI.Demo
             // 
             this.uiRuler3.BackColor = System.Drawing.Color.Transparent;
             this.uiRuler3.Direction = Sunny.UI.UITrackBar.BarDirection.Vertical;
-            this.uiRuler3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiRuler3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiRuler3.Location = new System.Drawing.Point(211, 387);
             this.uiRuler3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiRuler3.MinorCount = 4;
@@ -359,7 +359,7 @@ namespace Sunny.UI.Demo
             // uiRuler2
             // 
             this.uiRuler2.BackColor = System.Drawing.Color.Transparent;
-            this.uiRuler2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiRuler2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiRuler2.Location = new System.Drawing.Point(28, 395);
             this.uiRuler2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiRuler2.MinorCount = 4;
@@ -371,7 +371,7 @@ namespace Sunny.UI.Demo
             // uiRuler1
             // 
             this.uiRuler1.BackColor = System.Drawing.Color.Transparent;
-            this.uiRuler1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiRuler1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiRuler1.Location = new System.Drawing.Point(28, 517);
             this.uiRuler1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiRuler1.MinorCount = 4;
@@ -384,7 +384,7 @@ namespace Sunny.UI.Demo
             // uiTrackBar8
             // 
             this.uiTrackBar8.Direction = Sunny.UI.UITrackBar.BarDirection.VerticalDown;
-            this.uiTrackBar8.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiTrackBar8.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiTrackBar8.Location = new System.Drawing.Point(373, 395);
             this.uiTrackBar8.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiTrackBar8.Name = "uiTrackBar8";
@@ -396,7 +396,7 @@ namespace Sunny.UI.Demo
             // uiTrackBar7
             // 
             this.uiTrackBar7.Direction = Sunny.UI.UITrackBar.BarDirection.VerticalDown;
-            this.uiTrackBar7.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiTrackBar7.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiTrackBar7.Location = new System.Drawing.Point(408, 395);
             this.uiTrackBar7.Minimum = -20;
             this.uiTrackBar7.MinimumSize = new System.Drawing.Size(1, 1);
@@ -408,7 +408,7 @@ namespace Sunny.UI.Demo
             // uiTrackBar5
             // 
             this.uiTrackBar5.Direction = Sunny.UI.UITrackBar.BarDirection.Vertical;
-            this.uiTrackBar5.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiTrackBar5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiTrackBar5.Location = new System.Drawing.Point(278, 395);
             this.uiTrackBar5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiTrackBar5.Name = "uiTrackBar5";
@@ -418,7 +418,7 @@ namespace Sunny.UI.Demo
             // 
             // uiTrackBar4
             // 
-            this.uiTrackBar4.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiTrackBar4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiTrackBar4.Location = new System.Drawing.Point(36, 490);
             this.uiTrackBar4.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiTrackBar4.Name = "uiTrackBar4";
@@ -429,7 +429,7 @@ namespace Sunny.UI.Demo
             // 
             // uiTrackBar3
             // 
-            this.uiTrackBar3.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiTrackBar3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiTrackBar3.Location = new System.Drawing.Point(36, 455);
             this.uiTrackBar3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiTrackBar3.Name = "uiTrackBar3";
@@ -441,7 +441,7 @@ namespace Sunny.UI.Demo
             // uiTrackBar2
             // 
             this.uiTrackBar2.Direction = Sunny.UI.UITrackBar.BarDirection.Vertical;
-            this.uiTrackBar2.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiTrackBar2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiTrackBar2.Location = new System.Drawing.Point(243, 395);
             this.uiTrackBar2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiTrackBar2.Name = "uiTrackBar2";
@@ -452,7 +452,7 @@ namespace Sunny.UI.Demo
             // 
             // uiTrackBar1
             // 
-            this.uiTrackBar1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiTrackBar1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiTrackBar1.Location = new System.Drawing.Point(36, 420);
             this.uiTrackBar1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiTrackBar1.Name = "uiTrackBar1";
@@ -464,7 +464,7 @@ namespace Sunny.UI.Demo
             // 
             this.uiProcessBar4.Direction = Sunny.UI.UILine.LineDirection.Vertical;
             this.uiProcessBar4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.uiProcessBar4.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiProcessBar4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.uiProcessBar4.Location = new System.Drawing.Point(706, 325);
             this.uiProcessBar4.MinimumSize = new System.Drawing.Size(3, 1);
             this.uiProcessBar4.Name = "uiProcessBar4";

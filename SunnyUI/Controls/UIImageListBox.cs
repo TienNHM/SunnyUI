@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,22 +9,21 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIImageListBox.cs
- * 文件说明: 图片列表框
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIImageListBox.cs
+ * File Description: Image list box
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-04-25: V2.2.4 更新主题配置类
- * 2020-05-21: V2.2.5 增加鼠标滑过高亮
- * 2021-08-07: V3.0.5 从文件载入图片，并且解除占用
- * 2022-03-19: V3.1.1 重构主题配色
- * 2022-08-30: V3.2.3 增加了一些事件
- * 2022-09-05: V3.2.3 修复Click，DoubleClick事件
- * 2022-11-03: V3.2.6 增加了可设置垂直滚动条宽度的属性
- * 2023-05-13: V3.3.6 重构DrawString函数
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-04-25: V2.2.4 Updated theme configuration class
+ * 2020-05-21: V2.2.5 Added mouse hover highlight
+ * 2021-08-07: V3.0.5 Load images from file and release occupation
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2022-08-30: V3.2.3 Added some events
+ * 2022-09-05: V3.2.3 Fixed Click and DoubleClick events
+ * 2022-11-03: V3.2.6 Added property to set vertical scrollbar width
+ * 2023-05-13: V3.3.6 Refactored DrawString function
 ******************************************************************************/
 
 using System;
@@ -103,9 +102,9 @@ namespace Sunny.UI
         private Color scrollBarColor = Color.FromArgb(80, 160, 255);
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, no fill if the value is background color, transparent color, or null
         /// </summary>
-        [Description("滚动条填充颜色"), Category("SunnyUI")]
+        [Description("Scrollbar fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color ScrollBarColor
         {
@@ -122,9 +121,9 @@ namespace Sunny.UI
         private Color scrollBarBackColor = Color.FromArgb(243, 249, 255);
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Scrollbar background color
         /// </summary>
-        [Description("滚动条背景颜色"), Category("SunnyUI")]
+        [Description("Scrollbar background color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "243, 249, 255")]
         public Color ScrollBarBackColor
         {
@@ -139,9 +138,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 滚动条主题样式
+        /// Scrollbar theme style
         /// </summary>
-        [DefaultValue(true), Description("滚动条主题样式"), Category("SunnyUI")]
+        [DefaultValue(true), Description("Scrollbar theme style"), Category("SunnyUI")]
         public bool ScrollBarStyleInherited
         {
             get => bar != null && bar.Style == UIStyle.Inherited;
@@ -159,7 +158,10 @@ namespace Sunny.UI
 
         private int scrollBarWidth = 0;
 
-        [DefaultValue(0), Category("SunnyUI"), Description("垂直滚动条宽度，最小为原生滚动条宽度")]
+        /// <summary>
+        /// Vertical scrollbar width, minimum is the native scrollbar width
+        /// </summary>
+        [DefaultValue(0), Category("SunnyUI"), Description("Vertical scrollbar width, minimum is the native scrollbar width")]
         public int ScrollBarWidth
         {
             get => scrollBarWidth;
@@ -172,7 +174,10 @@ namespace Sunny.UI
 
         private int scrollBarHandleWidth = 6;
 
-        [DefaultValue(6), Category("SunnyUI"), Description("垂直滚动条滑块宽度，最小为原生滚动条宽度")]
+        /// <summary>
+        /// Vertical scrollbar handle width, minimum is the native scrollbar width
+        /// </summary>
+        [DefaultValue(6), Category("SunnyUI"), Description("Vertical scrollbar handle width, minimum is the native scrollbar width")]
         public int ScrollBarHandleWidth
         {
             get => scrollBarHandleWidth;
@@ -240,9 +245,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 需要额外设置ToolTip的控件
+        /// Control that needs additional ToolTip
         /// </summary>
-        /// <returns>控件</returns>
+        /// <returns>Control</returns>
         public Control ExToolTipControl()
         {
             return listbox;
@@ -287,9 +292,9 @@ namespace Sunny.UI
         public new event MouseEventHandler MouseMove;
 
         /// <summary>
-        /// 重载字体变更
+        /// Override font change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnFontChanged(EventArgs e)
         {
             base.OnFontChanged(e);
@@ -297,9 +302,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载控件尺寸变更
+        /// Override control size change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
@@ -360,7 +365,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(100)]
-        [Description("列表项高度"), Category("SunnyUI")]
+        [Description("Item height"), Category("SunnyUI")]
         public int ItemHeight
         {
             get => listbox.ItemHeight;
@@ -368,7 +373,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(4)]
-        [Description("图片文字间间隔"), Category("SunnyUI")]
+        [Description("Image text interval"), Category("SunnyUI")]
         public int ImageInterval
         {
             get => listbox.ImageInterval;
@@ -376,7 +381,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(true)]
-        [Description("显示说明文字"), Category("SunnyUI")]
+        [Description("Show description text"), Category("SunnyUI")]
         public bool ShowDescription
         {
             get => listbox.ShowDescription;
@@ -384,9 +389,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -440,33 +445,33 @@ namespace Sunny.UI
         [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         [MergableProperty(false)]
         [Browsable(false)]
-        [Description("列表项"), Category("SunnyUI")]
+        [Description("List items"), Category("SunnyUI")]
         public ListBox.ObjectCollection Items => listbox.Items;
 
         /// <summary>
-        /// 增加图片
+        /// Add image
         /// </summary>
-        /// <param name="record">图片对象</param>
+        /// <param name="record">Image object</param>
         public void AddImage(ImageListItem record)
         {
             Items.Add(record);
         }
 
         /// <summary>
-        /// 增加图片
+        /// Add image
         /// </summary>
-        /// <param name="imagePath">图片路径</param>
-        /// <param name="description">图片描述</param>
+        /// <param name="imagePath">Image path</param>
+        /// <param name="description">Image description</param>
         public void AddImage(string imagePath, string description = "")
         {
             AddImage(new ImageListItem(imagePath, description));
         }
 
         /// <summary>
-        /// 增加图片
+        /// Add image
         /// </summary>
-        /// <param name="image">图片</param>
-        /// <param name="description">图片描述</param>
+        /// <param name="image">Image</param>
+        /// <param name="description">Image description</param>
         public void AddImage(Bitmap image, string description = "")
         {
             AddImage(new ImageListItem(image, description));
@@ -478,7 +483,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "80, 160, 255")]
-        [Description("选中项背景颜色"), Category("SunnyUI")]
+        [Description("Selected item background color"), Category("SunnyUI")]
         public Color ItemSelectBackColor
         {
             get => listbox.ItemSelectBackColor;
@@ -486,7 +491,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "243, 249, 255")]
-        [Description("选中项字体颜色"), Category("SunnyUI")]
+        [Description("Selected item font color"), Category("SunnyUI")]
         public Color ItemSelectForeColor
         {
             get => listbox.ItemSelectForeColor;
@@ -520,7 +525,7 @@ namespace Sunny.UI
         private Color hoverColor = Color.FromArgb(155, 200, 255);
 
         [DefaultValue(typeof(Color), "220, 236, 255")]
-        [Description("鼠标移上颜色"), Category("SunnyUI")]
+        [Description("Mouse hover color"), Category("SunnyUI")]
         public Color HoverColor
         {
             get => hoverColor;
@@ -537,10 +542,10 @@ namespace Sunny.UI
             private UIScrollBar bar;
 
             /// <summary>
-            /// Tag字符串
+            /// Tag string
             /// </summary>
             [DefaultValue(null)]
-            [Description("获取或设置包含有关控件的数据的对象字符串"), Category("SunnyUI")]
+            [Description("Gets or sets the object string containing data about the control"), Category("SunnyUI")]
             public string TagString { get; set; }
 
             public UIScrollBar Bar
@@ -593,9 +598,9 @@ namespace Sunny.UI
             }
 
             /// <summary>
-            /// 重载控件尺寸变更
+            /// Override control size change
             /// </summary>
-            /// <param name="e">参数</param>
+            /// <param name="e">Parameters</param>
             protected override void OnSizeChanged(EventArgs e)
             {
                 if (Bar != null && Bar.Visible)
@@ -634,10 +639,10 @@ namespace Sunny.UI
             }
 
             /// <summary>
-            /// 自定义主题风格
+            /// Custom theme style
             /// </summary>
             [DefaultValue(false), Browsable(false)]
-            [Description("获取或设置可以自定义主题风格"), Category("SunnyUI")]
+            [Description("Gets or sets the ability to customize the theme style"), Category("SunnyUI")]
             public bool StyleCustomMode { get; set; }
 
             public string Version { get; }
@@ -711,9 +716,9 @@ namespace Sunny.UI
             }
 
             /// <summary>
-            /// 主题样式
+            /// Theme style
             /// </summary>
-            [DefaultValue(UIStyle.Inherited), Description("主题样式"), Category("SunnyUI")]
+            [DefaultValue(UIStyle.Inherited), Description("Theme style"), Category("SunnyUI")]
             public UIStyle Style
             {
                 get => _style;
@@ -721,9 +726,9 @@ namespace Sunny.UI
             }
 
             /// <summary>
-            /// 设置主题样式
+            /// Set theme style
             /// </summary>
-            /// <param name="style">主题样式</param>
+            /// <param name="style">Theme style</param>
             private void SetStyle(UIStyle style)
             {
                 if (!style.IsCustom())
@@ -776,19 +781,19 @@ namespace Sunny.UI
             }
 
             /// <summary>
-            /// 增加图片
+            /// Add image
             /// </summary>
-            /// <param name="record">图片对象</param>
+            /// <param name="record">Image object</param>
             public void AddImage(ImageListItem record)
             {
                 Items.Add(record);
             }
 
             /// <summary>
-            /// 增加图片
+            /// Add image
             /// </summary>
-            /// <param name="imagePath">图片路径</param>
-            /// <param name="description">图片描述</param>
+            /// <param name="imagePath">Image path</param>
+            /// <param name="description">Image description</param>
             public void AddImage(string imagePath, string description = "")
             {
                 AddImage(new ImageListItem(imagePath, description));
@@ -920,9 +925,9 @@ namespace Sunny.UI
             }
 
             /// <summary>
-            /// 重载鼠标移动事件
+            /// Override mouse move event
             /// </summary>
-            /// <param name="e">鼠标参数</param>
+            /// <param name="e">Mouse parameters</param>
             protected override void OnMouseMove(MouseEventArgs e)
             {
                 base.OnMouseMove(e);
@@ -930,9 +935,9 @@ namespace Sunny.UI
             }
 
             /// <summary>
-            /// 重载鼠标离开事件
+            /// Override mouse leave event
             /// </summary>
-            /// <param name="e">鼠标参数</param>
+            /// <param name="e">Mouse parameters</param>
             protected override void OnMouseLeave(EventArgs e)
             {
                 base.OnMouseLeave(e);
@@ -972,7 +977,7 @@ namespace Sunny.UI
             }
 
             /// <summary>
-            /// 析构函数
+            /// Destructor
             /// </summary>
             public void Dispose()
             {

@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility library, extension library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,17 +9,17 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
+ * If you use this code, please retain this note.
  ******************************************************************************
- * 文件名称: UIImageButton.cs
- * 文件说明: 图像按钮
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIImageButton.cs
+ * Description: Image Button
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2022-03-19: V3.1.1 重构主题配色
- * 2023-05-04: V3.3.6 增加调用点击事件PerformClick
- * 2023-05-13: V3.3.6 重构DrawString函数
+ * 2020-01-01: V2.2.0 Added file description
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2023-05-04: V3.3.6 Added PerformClick method to trigger click event
+ * 2023-05-13: V3.3.6 Refactored DrawString function
 ******************************************************************************/
 
 using System;
@@ -30,7 +30,7 @@ using System.Windows.Forms;
 namespace Sunny.UI
 {
     /// <summary>
-    /// 图像按钮
+    /// Image Button
     /// </summary>
     public sealed class UIImageButton : PictureBox, IStyleInterface, IZoomScale, IFormTranslator
     {
@@ -49,16 +49,16 @@ namespace Sunny.UI
         private bool isClick;
 
         [Browsable(false)]
-        [Description("控件在界面显示时需要多语翻译的属性名称数组"), Category("SunnyUI")]
+        [Description("Array of property names that need multi-language translation when the control is displayed"), Category("SunnyUI")]
         public string[] FormTranslatorProperties => ["Text"];
 
         [DefaultValue(true)]
-        [Description("控件在界面显示时需要多语翻译"), Category("SunnyUI")]
+        [Description("Whether the control needs multi-language translation when displayed"), Category("SunnyUI")]
         public bool MultiLanguageSupport { get; set; } = true;
 
 
         /// <summary>
-        /// 调用点击事件
+        /// Trigger click event
         /// </summary>
         public void PerformClick()
         {
@@ -72,30 +72,30 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 禁止控件跟随窗体缩放
+        /// Disable control scaling with the form
         /// </summary>
-        [DefaultValue(false), Category("SunnyUI"), Description("禁止控件跟随窗体缩放")]
+        [DefaultValue(false), Category("SunnyUI"), Description("Disable control scaling with the form")]
         public bool ZoomScaleDisabled { get; set; }
 
         /// <summary>
-        /// 控件缩放前在其容器里的位置
+        /// Control's position in its container before scaling
         /// </summary>
         [Browsable(false), DefaultValue(typeof(Rectangle), "0, 0, 0, 0")]
         public Rectangle ZoomScaleRect { get; set; }
 
         /// <summary>
-        /// 设置控件缩放比例
+        /// Set control scaling ratio
         /// </summary>
-        /// <param name="scale">缩放比例</param>
+        /// <param name="scale">Scaling ratio</param>
         public void SetZoomScale(float scale)
         {
 
         }
 
         /// <summary>
-        /// 主题样式
+        /// Theme style
         /// </summary>
-        [DefaultValue(UIStyle.Inherited), Description("主题样式"), Category("SunnyUI")]
+        [DefaultValue(UIStyle.Inherited), Description("Theme style"), Category("SunnyUI")]
         public UIStyle Style
         {
             get => _style;
@@ -103,10 +103,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// Tag字符串
+        /// Tag string
         /// </summary>
         [DefaultValue(null)]
-        [Description("获取或设置包含有关控件的数据的对象字符串"), Category("SunnyUI")]
+        [Description("Get or set the object string containing data about the control"), Category("SunnyUI")]
         public string TagString { get; set; }
 
         public void SetStyleColor(UIBaseStyle uiColor)
@@ -115,9 +115,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="style">主题样式</param>
+        /// <param name="style">Theme style</param>
         private void SetStyle(UIStyle style)
         {
             if (!style.IsCustom())
@@ -146,7 +146,7 @@ namespace Sunny.UI
         }
 
         [Category("SunnyUI")]
-        [Description("按钮文字")]
+        [Description("Button text")]
         [Browsable(true)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public override string Text
@@ -162,7 +162,7 @@ namespace Sunny.UI
             }
         }
 
-        [Description("文字对齐方式"), Category("SunnyUI")]
+        [Description("Text alignment"), Category("SunnyUI")]
         [DefaultValue(ContentAlignment.MiddleCenter)]
         public ContentAlignment TextAlign
         {
@@ -175,7 +175,7 @@ namespace Sunny.UI
         }
 
         [Category("SunnyUI")]
-        [Description("文字字体")]
+        [Description("Text font")]
         [Browsable(true)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public override Font Font
@@ -189,7 +189,7 @@ namespace Sunny.UI
         }
 
         [Category("SunnyUI")]
-        [Description("文字颜色")]
+        [Description("Text color")]
         [Browsable(true)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [DefaultValue(typeof(Color), "48, 48, 48")]
@@ -205,16 +205,16 @@ namespace Sunny.UI
 
         [Browsable(false)]
         [DefaultValue(typeof(Image), "null")]
-        [Description("初始化图片"), Category("SunnyUI")]
+        [Description("Initial image"), Category("SunnyUI")]
         public new Image InitialImage { get; set; }
 
         [Browsable(false)]
         [DefaultValue(typeof(Image), "null")]
-        [Description("出错图片"), Category("SunnyUI")]
+        [Description("Error image"), Category("SunnyUI")]
         public new Image ErrorImage { get; set; }
 
         /// <summary>
-        /// 构造函数
+        /// Constructor
         /// </summary>
         public UIImageButton()
         {
@@ -230,19 +230,19 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 自定义主题风格
+        /// Custom theme style
         /// </summary>
         [DefaultValue(false), Browsable(false)]
-        [Description("获取或设置可以自定义主题风格"), Category("SunnyUI")]
+        [Description("Get or set the ability to customize the theme style"), Category("SunnyUI")]
         public bool StyleCustomMode { get; set; }
 
         public string Version { get; }
 
         /// <summary>
-        /// 鼠标移上图片
+        /// Mouse hover image
         /// </summary>
         [DefaultValue(typeof(Image), "null")]
-        [Description("鼠标移上图片"), Category("SunnyUI")]
+        [Description("Mouse hover image"), Category("SunnyUI")]
         public Image ImageHover
         {
             get => imageHover;
@@ -255,10 +255,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 鼠标按下图片
+        /// Mouse press image
         /// </summary>
         [DefaultValue(typeof(Image), "null")]
-        [Description("鼠标按下图片"), Category("SunnyUI")]
+        [Description("Mouse press image"), Category("SunnyUI")]
         public Image ImagePress
         {
             get => imagePress;
@@ -271,10 +271,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 不可用时图片
+        /// Disabled image
         /// </summary>
         [DefaultValue(typeof(Image), "null")]
-        [Description("不可用时图片"), Category("SunnyUI")]
+        [Description("Disabled image"), Category("SunnyUI")]
         public Image ImageDisabled
         {
             get => imageDisabled;
@@ -286,10 +286,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 选中时图片
+        /// Selected image
         /// </summary>
         [DefaultValue(typeof(Image), "null")]
-        [Description("选中时图片"), Category("SunnyUI")]
+        [Description("Selected image"), Category("SunnyUI")]
         public Image ImageSelected
         {
             get => imageSelected;
@@ -301,10 +301,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 是否选中
+        /// Whether selected
         /// </summary>
         [DefaultValue(typeof(bool), "false")]
-        [Description("是否选中"), Category("SunnyUI")]
+        [Description("Whether selected"), Category("SunnyUI")]
         public bool Selected
         {
             get => selected;
@@ -329,9 +329,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标按下事件
+        /// Override mouse down event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse event args</param>
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
@@ -340,9 +340,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标抬起事件
+        /// Override mouse up event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse event args</param>
         protected override void OnMouseUp(MouseEventArgs e)
         {
             base.OnMouseUp(e);
@@ -351,9 +351,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标进入事件
+        /// Override mouse enter event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse event args</param>
         protected override void OnMouseEnter(EventArgs e)
         {
             base.OnMouseEnter(e);
@@ -368,9 +368,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标离开事件
+        /// Override mouse leave event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse event args</param>
         protected override void OnMouseLeave(EventArgs e)
         {
             base.OnMouseLeave(e);
@@ -382,7 +382,7 @@ namespace Sunny.UI
         private Point imageOffset;
 
         [DefaultValue(typeof(Point), "0, 0")]
-        [Description("图片偏移位置"), Category("SunnyUI")]
+        [Description("Image offset position"), Category("SunnyUI")]
         public Point ImageOffset
         {
             get => imageOffset;
@@ -394,9 +394,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制按钮
+        /// Draw button
         /// </summary>
-        /// <param name="pe">pe</param>
+        /// <param name="pe">Paint event args</param>
         protected override void OnPaint(PaintEventArgs pe)
         {
             Image img = Image;

@@ -25,14 +25,14 @@ namespace Sunny.UI.Demo
             int pageIndex = 1000;
 
             //uiNavBar1设置节点，也可以在Nodes属性里配置
-            uiNavBar1.Nodes.Add("控件");
-            uiNavBar1.Nodes.Add("窗体");
-            uiNavBar1.Nodes.Add("图表");
-            uiNavBar1.Nodes.Add("工控");
-            uiNavBar1.Nodes.Add("主题");
+            uiNavBar1.Nodes.Add("Controls");
+            uiNavBar1.Nodes.Add("Forms");
+            uiNavBar1.Nodes.Add("Charts");
+            uiNavBar1.Nodes.Add("Industrial controls");
+            uiNavBar1.Nodes.Add("Themes");
             uiNavBar1.SetNodePageIndex(uiNavBar1.Nodes[0], pageIndex);
             uiNavBar1.SetNodeSymbol(uiNavBar1.Nodes[0], 61451);
-            TreeNode parent = uiNavMenu1.CreateNode("控件", 61451, 24, pageIndex);
+            TreeNode parent = uiNavMenu1.CreateNode("Controls", 61451, 24, pageIndex);
 
             //通过设置PageIndex关联，节点文字、图标由相应的Page的Text、Symbol提供
             uiNavMenu1.CreateChildNode(parent, AddPage(new FAvatar(), ++pageIndex));
@@ -65,7 +65,7 @@ namespace Sunny.UI.Demo
             pageIndex = 2000;
             uiNavBar1.SetNodePageIndex(uiNavBar1.Nodes[1], pageIndex);
             uiNavBar1.SetNodeSymbol(uiNavBar1.Nodes[1], 61818);
-            parent = uiNavMenu1.CreateNode("窗体", 61818, 24, pageIndex);
+            parent = uiNavMenu1.CreateNode("Forms", 61818, 24, pageIndex);
             //通过设置GUID关联，节点字体图标和大小由UIPage设置
             uiNavMenu1.CreateChildNode(parent, AddPage(new FDialogs(), Guid.NewGuid()));
             uiNavMenu1.CreateChildNode(parent, AddPage(new FEditor(), Guid.NewGuid()));
@@ -74,7 +74,7 @@ namespace Sunny.UI.Demo
             pageIndex = 3000;
             uiNavBar1.SetNodePageIndex(uiNavBar1.Nodes[2], pageIndex);
             uiNavBar1.SetNodeSymbol(uiNavBar1.Nodes[2], 61950);
-            parent = uiNavMenu1.CreateNode("图表", 61950, 24, pageIndex);
+            parent = uiNavMenu1.CreateNode("Charts", 61950, 24, pageIndex);
             //直接关联（默认自动生成GUID）
             uiNavMenu1.CreateChildNode(parent, AddPage(new FBarChart()));
             uiNavMenu1.CreateChildNode(parent, AddPage(new FDoughnutChart()));
@@ -84,7 +84,7 @@ namespace Sunny.UI.Demo
             pageIndex = 4000;
             uiNavBar1.SetNodePageIndex(uiNavBar1.Nodes[3], pageIndex);
             uiNavBar1.SetNodeSymbol(uiNavBar1.Nodes[3], 362614);
-            parent = uiNavMenu1.CreateNode("工控", 362614, 24, pageIndex);
+            parent = uiNavMenu1.CreateNode("Industrial controls", 362614, 24, pageIndex);
             //直接关联（默认自动生成GUID）
 
             uiNavMenu1.CreateChildNode(parent, AddPage(CreateInstance<UIPage>("Sunny.UI.Demo.FPipe")));
@@ -100,9 +100,9 @@ namespace Sunny.UI.Demo
                 uiNavBar1.CreateChildNode(uiNavBar1.Nodes[4], style.DisplayText(), style.Value());
             }
 
-            var node = uiNavBar1.CreateChildNode(uiNavBar1.Nodes[4], "字体图标", 99999);
+            var node = uiNavBar1.CreateChildNode(uiNavBar1.Nodes[4], "Font icon", 99999);
             uiNavBar1.SetNodeSymbol(node, 558426);
-            node = uiNavBar1.CreateChildNode(uiNavBar1.Nodes[4], "多彩主题", UIStyle.Colorful.Value());
+            node = uiNavBar1.CreateChildNode(uiNavBar1.Nodes[4], "Colorful theme", UIStyle.Colorful.Value());
             uiNavBar1.SetNodeSymbol(node, 558295);
             //左侧导航主节点关联页面
             uiNavMenu1.CreateNode(AddPage(new FSymbols(), 99999));
@@ -168,7 +168,7 @@ namespace Sunny.UI.Demo
 
         private void 关于ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            UIMessageBox.Show(Version, "关于", Style, UIMessageBoxButtons.OK, false);
+            UIMessageBox.Show(Version, "About", Style, UIMessageBoxButtons.OK, false);
         }
 
         private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -180,14 +180,14 @@ namespace Sunny.UI.Demo
         {
             if (e.hotKey.ModifierKey == UI.ModifierKeys.Shift && e.hotKey.Key == Keys.F8)
             {
-                this.ShowInfoTip("您按下了全局系统热键 Shift+F8");
+                this.ShowInfoTip("You pressed the global system hotkey Shift+F8");
             }
         }
 
         private void Form1_ReceiveParams(object sender, UIPageParamsArgs e)
         {
             Text = e.Value.ToString();
-            SendParamToPage(1001, "传值给页面");
+            SendParamToPage(1001, "Pass value to page");
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -236,14 +236,19 @@ namespace Sunny.UI.Demo
 
         private class CodeTranslator : IniCodeTranslator<CodeTranslator>
         {
-            public string CloseAskString { get; set; } = "您确认要退出程序吗？";
-            public string Controls { get; set; } = "控件";
-            public string Forms { get; set; } = "窗体";
-            public string Charts { get; set; } = "图表";
-            public string Industrial { get; set; } = "工控";
-            public string Theme { get; set; } = "主题";
-            public string Symbols { get; set; } = "字体图标";
-            public string Colorful { get; set; } = "多彩主题";
+            public string CloseAskString { get; set; } = "Do you want to exit the program?";
+            public string Controls { get; set; } = "Controls";
+            public string Forms { get; set; } = "Forms";
+            public string Charts { get; set; } = "Charts";
+            public string Industrial { get; set; } = "Industrial control";
+            public string Theme { get; set; } = "Theme";
+            public string Symbols { get; set; } = "Symbols";
+            public string Colorful { get; set; } = "Colorful theme";
+        }
+
+        private void FMain_Load(object sender, EventArgs e)
+        {
+            NEnUS_Click(null, null);
         }
     }
 }

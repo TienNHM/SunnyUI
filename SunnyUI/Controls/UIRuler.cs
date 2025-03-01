@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,14 +9,13 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIRuler.cs
- * 文件说明: 刻度尺
- * 当前版本: V3.6.1
- * 创建日期: 2023-11-29
+ * File Name: UIRuler.cs
+ * Description: Ruler
+ * Current Version: V3.6.1
+ * Creation Date: 2023-11-29
  *
- * 2023-11-29: V3.6.1 增加文件说明
+ * 2023-11-29: V3.6.1 Added file description
 ******************************************************************************/
 
 using System;
@@ -32,7 +31,7 @@ namespace Sunny.UI
         private UITrackBar.BarDirection direction = UITrackBar.BarDirection.Horizontal;
 
         [DefaultValue(UITrackBar.BarDirection.Horizontal)]
-        [Description("线条方向"), Category("SunnyUI")]
+        [Description("Line direction"), Category("SunnyUI")]
         public UITrackBar.BarDirection Direction
         {
             get => direction;
@@ -59,7 +58,7 @@ namespace Sunny.UI
         private int interval = 15;
 
         [DefaultValue(15)]
-        [Description("两边间隔"), Category("SunnyUI")]
+        [Description("Interval on both sides"), Category("SunnyUI")]
         public int Interval
         {
             get => interval;
@@ -79,7 +78,7 @@ namespace Sunny.UI
         UITextPos textDirection = UITextPos.Front;
 
         [DefaultValue(UITextPos.Front)]
-        [Description("文字位置"), Category("SunnyUI")]
+        [Description("Text position"), Category("SunnyUI")]
         public UITextPos TextDirection
         {
             get => textDirection;
@@ -249,9 +248,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -263,9 +262,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 线颜色
+        /// Line color
         /// </summary>
-        [Description("线颜色"), Category("SunnyUI")]
+        [Description("Line color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color LineColor
         {
@@ -275,7 +274,7 @@ namespace Sunny.UI
 
         private double startValue = 0;
 
-        [Description("起始值"), Category("SunnyUI")]
+        [Description("Starting value"), Category("SunnyUI")]
         [DefaultValue(typeof(double), "0")]
         public double StartValue
         {
@@ -289,7 +288,7 @@ namespace Sunny.UI
 
         private double stepValue = 20;
 
-        [Description("递增值"), Category("SunnyUI")]
+        [Description("Increment value"), Category("SunnyUI")]
         [DefaultValue(typeof(double), "20")]
         public double StepValue
         {
@@ -303,7 +302,7 @@ namespace Sunny.UI
 
         private int stepCount = 5;
 
-        [Description("递增次数"), Category("SunnyUI")]
+        [Description("Number of increments"), Category("SunnyUI")]
         [DefaultValue(5)]
         public int StepCount
         {
@@ -317,7 +316,7 @@ namespace Sunny.UI
 
         private int majorSize = 6;
 
-        [Description("主刻度长度"), Category("SunnyUI")]
+        [Description("Major tick length"), Category("SunnyUI")]
         [DefaultValue(6)]
         public int MajorSize
         {
@@ -331,7 +330,7 @@ namespace Sunny.UI
 
         private int minorSize = 3;
 
-        [Description("小刻度长度"), Category("SunnyUI")]
+        [Description("Minor tick length"), Category("SunnyUI")]
         [DefaultValue(3)]
         public int MinorSize
         {
@@ -345,7 +344,7 @@ namespace Sunny.UI
 
         private int minorCount = 1;
 
-        [Description("小刻度个数"), Category("SunnyUI")]
+        [Description("Number of minor ticks"), Category("SunnyUI")]
         [DefaultValue(1)]
         public int MinorCount
         {
@@ -358,7 +357,7 @@ namespace Sunny.UI
         }
 
         private int decimalPlaces = 0;
-        [Description("浮点数，显示文字小数位数"), Category("SunnyUI")]
+        [Description("Decimal places for displayed text"), Category("SunnyUI")]
         [DefaultValue(0)]
         public int DecimalPlaces
         {

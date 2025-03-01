@@ -5,14 +5,14 @@ namespace Sunny.UI
     partial class UITransfer
     {
         /// <summary> 
-        /// 必需的设计器变量。
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary> 
-        /// 清理所有正在使用的资源。
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,11 +22,11 @@ namespace Sunny.UI
             base.Dispose(disposing);
         }
 
-        #region 组件设计器生成的代码
+        #region Component Designer generated code
 
         /// <summary> 
-        /// 设计器支持所需的方法 - 不要修改
-        /// 使用代码编辑器修改此方法的内容。
+        /// Required method for Designer support - do not modify 
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -42,7 +42,7 @@ namespace Sunny.UI
             // 
             b1.BackColor = System.Drawing.Color.Transparent;
             b1.Cursor = Cursors.Hand;
-            b1.Font = new System.Drawing.Font("宋体", 12F);
+            b1.Font = new System.Drawing.Font("Segoe UI", 12F);
             b1.Location = new System.Drawing.Point(228, 85);
             b1.Margin = new Padding(0);
             b1.MinimumSize = new System.Drawing.Size(1, 1);
@@ -51,7 +51,7 @@ namespace Sunny.UI
             b1.Size = new System.Drawing.Size(44, 32);
             b1.Symbol = 61697;
             b1.TabIndex = 3;
-            b1.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
+            b1.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             b1.TipsText = null;
             b1.Click += b1_Click;
             // 
@@ -59,7 +59,7 @@ namespace Sunny.UI
             // 
             b2.BackColor = System.Drawing.Color.Transparent;
             b2.Cursor = Cursors.Hand;
-            b2.Font = new System.Drawing.Font("宋体", 12F);
+            b2.Font = new System.Drawing.Font("Segoe UI", 12F);
             b2.Location = new System.Drawing.Point(228, 135);
             b2.Margin = new Padding(0);
             b2.MinimumSize = new System.Drawing.Size(1, 1);
@@ -68,7 +68,7 @@ namespace Sunny.UI
             b2.Size = new System.Drawing.Size(44, 32);
             b2.Symbol = 61701;
             b2.TabIndex = 4;
-            b2.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
+            b2.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             b2.TipsText = null;
             b2.Click += b2_Click;
             // 
@@ -76,7 +76,7 @@ namespace Sunny.UI
             // 
             b3.BackColor = System.Drawing.Color.Transparent;
             b3.Cursor = Cursors.Hand;
-            b3.Font = new System.Drawing.Font("宋体", 12F);
+            b3.Font = new System.Drawing.Font("Segoe UI", 12F);
             b3.Location = new System.Drawing.Point(228, 183);
             b3.Margin = new Padding(0);
             b3.MinimumSize = new System.Drawing.Size(1, 1);
@@ -85,7 +85,7 @@ namespace Sunny.UI
             b3.Size = new System.Drawing.Size(44, 32);
             b3.Symbol = 61700;
             b3.TabIndex = 5;
-            b3.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
+            b3.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             b3.TipsText = null;
             b3.Click += b3_Click;
             // 
@@ -93,7 +93,7 @@ namespace Sunny.UI
             // 
             b4.BackColor = System.Drawing.Color.Transparent;
             b4.Cursor = Cursors.Hand;
-            b4.Font = new System.Drawing.Font("宋体", 12F);
+            b4.Font = new System.Drawing.Font("Segoe UI", 12F);
             b4.Location = new System.Drawing.Point(228, 233);
             b4.Margin = new Padding(0);
             b4.MinimumSize = new System.Drawing.Size(1, 1);
@@ -102,7 +102,7 @@ namespace Sunny.UI
             b4.Size = new System.Drawing.Size(44, 32);
             b4.Symbol = 61696;
             b4.TabIndex = 6;
-            b4.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
+            b4.TipsFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
             b4.TipsText = null;
             b4.Click += b4_Click;
             // 
@@ -111,7 +111,7 @@ namespace Sunny.UI
             l1.BackColor = System.Drawing.Color.Transparent;
             l1.Dock = DockStyle.Left;
             l1.FillColor = System.Drawing.Color.White;
-            l1.Font = new System.Drawing.Font("宋体", 12F);
+            l1.Font = new System.Drawing.Font("Segoe UI", 12F);
             l1.HoverColor = System.Drawing.Color.FromArgb(155, 200, 255);
             l1.ItemSelectForeColor = System.Drawing.Color.White;
             l1.Location = new System.Drawing.Point(1, 1);
@@ -132,7 +132,7 @@ namespace Sunny.UI
             l2.BackColor = System.Drawing.Color.Transparent;
             l2.Dock = DockStyle.Right;
             l2.FillColor = System.Drawing.Color.White;
-            l2.Font = new System.Drawing.Font("宋体", 12F);
+            l2.Font = new System.Drawing.Font("Segoe UI", 12F);
             l2.HoverColor = System.Drawing.Color.FromArgb(155, 200, 255);
             l2.ItemSelectForeColor = System.Drawing.Color.White;
             l2.Location = new System.Drawing.Point(289, 1);

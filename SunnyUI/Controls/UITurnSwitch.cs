@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
- * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * SunnyUI Open Source Control Library, Utility Class Library, Extension Class Library, Multi-page Development Framework.
+ * CopyRight (C) 2012-2025 ShenYongHua(Shen Yonghua).
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,16 +9,15 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UITurnSwitch.cs
- * 文件说明: 旋转开关
- * 当前版本: V3.3
- * 创建日期: 2023-07-05
+ * File Name: UITurnSwitch.cs
+ * File Description: Rotary Switch
+ * Current Version: V3.3
+ * Creation Date: 2023-07-05
  *
- * 2023-07-05: V3.3.9 增加文件说明
- * 2023-07-06: V3.3.9 调整配色，增加自定义角度
-******************************************************************************/
+ * 2023-07-05: V3.3.9 Added file description
+ * 2023-07-06: V3.3.9 Adjusted color scheme, added custom angle
+ ******************************************************************************/
 
 using System;
 using System.ComponentModel;
@@ -36,8 +35,8 @@ namespace Sunny.UI
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="sender">对象</param>
-        /// <param name="value">开关值</param>
+        /// <param name="sender">Object</param>
+        /// <param name="value">Switch value</param>
         public delegate void OnValueChanged(object sender, bool value);
 
         public UITurnSwitch()
@@ -53,7 +52,7 @@ namespace Sunny.UI
         public override string[] FormTranslatorProperties => ["ActiveText", "InActiveText"];
 
         [DefaultValue(false)]
-        [Description("是否只读"), Category("SunnyUI")]
+        [Description("Read-only"), Category("SunnyUI")]
         public bool ReadOnly { get; set; }
 
         public event OnValueChanged ValueChanged;
@@ -61,9 +60,9 @@ namespace Sunny.UI
         public event EventHandler ActiveChanged;
 
         /// <summary>
-        /// 字体颜色
+        /// Font color
         /// </summary>
-        [Description("字体颜色"), Category("SunnyUI")]
+        [Description("Font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "White")]
         public override Color ForeColor
         {
@@ -74,7 +73,7 @@ namespace Sunny.UI
         private bool activeValue;
 
         [DefaultValue(false)]
-        [Description("是否打开"), Category("SunnyUI")]
+        [Description("Is active"), Category("SunnyUI")]
         public bool Active
         {
             get => activeValue;
@@ -90,10 +89,10 @@ namespace Sunny.UI
             }
         }
 
-        private string activeText = "开";
+        private string activeText = "On";
 
-        [DefaultValue("开")]
-        [Description("打开文字"), Category("SunnyUI")]
+        [DefaultValue("On")]
+        [Description("Active text"), Category("SunnyUI")]
         public string ActiveText
         {
             get => activeText;
@@ -104,10 +103,10 @@ namespace Sunny.UI
             }
         }
 
-        private string inActiveText = "关";
+        private string inActiveText = "Off";
 
-        [DefaultValue("关")]
-        [Description("关闭文字"), Category("SunnyUI")]
+        [DefaultValue("Off")]
+        [Description("Inactive text"), Category("SunnyUI")]
         public string InActiveText
         {
             get => inActiveText;
@@ -121,7 +120,7 @@ namespace Sunny.UI
         private Color inActiveColor = Color.Red;
 
         [DefaultValue(typeof(Color), "Red")]
-        [Description("关闭颜色"), Category("SunnyUI")]
+        [Description("Inactive color"), Category("SunnyUI")]
         public Color InActiveColor
         {
             get => inActiveColor;
@@ -134,9 +133,9 @@ namespace Sunny.UI
 
         private Color activeColor = Color.Lime;
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("打开颜色"), Category("SunnyUI")]
+        [Description("Active color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "Lime")]
         public Color ActiveColor
         {
@@ -151,7 +150,7 @@ namespace Sunny.UI
         private int inActiveAngle = 315;
 
         [DefaultValue(315)]
-        [Description("开关关闭角度"), Category("SunnyUI")]
+        [Description("Inactive angle"), Category("SunnyUI")]
         public int InActiveAngle
         {
             get => inActiveAngle;
@@ -164,9 +163,9 @@ namespace Sunny.UI
 
         private int activeAngle = 45;
         /// <summary>
-        /// 边框颜色
+        /// Border color
         /// </summary>
-        [Description("开关打开角度"), Category("SunnyUI")]
+        [Description("Active angle"), Category("SunnyUI")]
         [DefaultValue(45)]
         public int ActiveAngle
         {
@@ -181,9 +180,9 @@ namespace Sunny.UI
         private Color backColor = Color.Silver;
 
         /// <summary>
-        /// 填充颜色
+        /// Fill color
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "Silver")]
         public Color FillColor
         {
@@ -198,9 +197,9 @@ namespace Sunny.UI
         private Color handleColor = Color.DarkGray;
 
         /// <summary>
-        /// 按钮把手颜色
+        /// Handle color
         /// </summary>
-        [Description("按钮把手颜色"), Category("SunnyUI")]
+        [Description("Handle color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "DarkGray")]
         public Color HandleColor
         {
@@ -213,9 +212,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 点击事件
+        /// Click event
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Event args</param>
         protected override void OnClick(EventArgs e)
         {
             ActiveChange();
@@ -253,7 +252,7 @@ namespace Sunny.UI
 
         private int backSize = 100;
 
-        [Description("开关尺寸"), Category("SunnyUI")]
+        [Description("Switch size"), Category("SunnyUI")]
         [DefaultValue(100)]
         public int BackSize
         {
@@ -267,7 +266,7 @@ namespace Sunny.UI
 
         private int backInnerSize = 80;
 
-        [Description("开关内圈尺寸"), Category("SunnyUI")]
+        [Description("Inner switch size"), Category("SunnyUI")]
         [DefaultValue(80)]
         public int BackInnerSize
         {
@@ -280,10 +279,10 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 绘制填充颜色
+        /// Draw fill color
         /// </summary>
-        /// <param name="g">绘图图面</param>
-        /// <param name="path">绘图路径</param>
+        /// <param name="g">Graphics</param>
+        /// <param name="path">Graphics path</param>
         protected override void OnPaintFill(Graphics g, GraphicsPath path)
         {
             Color color = Active ? ActiveColor : InActiveColor;

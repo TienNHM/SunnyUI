@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,15 +9,14 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIEditFormHelper.cs
- * 文件说明: 编辑窗体帮助类
- * 当前版本: V3.1
- * 创建日期: 2020-12-28
+ * File Name: UIEditFormHelper.cs
+ * File Description: Edit form helper class
+ * Current Version: V3.1
+ * Creation Date: 2020-12-28
  *
- * 2020-12-28: V2.2.10 增加文件说明
-******************************************************************************/
+ * 2020-12-28: V2.2.10 Added file description
+ ******************************************************************************/
 
 using System;
 using System.Collections;
@@ -93,7 +92,7 @@ namespace Sunny.UI
 
         public readonly ConcurrentDictionary<string, EditInfo> Dictionary = new ConcurrentDictionary<string, EditInfo>();
 
-        public string Text { get; set; } = "编辑";
+        public string Text { get; set; } = "Edit";
 
         public bool AutoLabelWidth { get; set; }
 
@@ -109,7 +108,7 @@ namespace Sunny.UI
         public void AddText(string dataPropertyName, string text, string value, bool checkEmpty, bool enabled = true)
         {
             if (Dictionary.ContainsKey(dataPropertyName))
-                throw new DuplicateNameException(dataPropertyName + ": 已经存在");
+                throw new DuplicateNameException(dataPropertyName + ": already exists");
 
             EditInfo info = new EditInfo()
             {
@@ -128,7 +127,7 @@ namespace Sunny.UI
         public void AddFileSelect(string dataPropertyName, string text, string filename, bool checkEmpty, string filter = "", string defaultExt = "", bool enabled = true)
         {
             if (Dictionary.ContainsKey(dataPropertyName))
-                throw new DuplicateNameException(dataPropertyName + ": 已经存在");
+                throw new DuplicateNameException(dataPropertyName + ": already exists");
 
             EditInfo info = new EditInfo()
             {
@@ -146,10 +145,10 @@ namespace Sunny.UI
             Dictionary.TryAdd(info.DataPropertyName, info);
         }
 
-        public void AddDirSelect(string dataPropertyName, string text, string dirname, bool checkEmpty, string desc = "请选择文件夹", bool enabled = true)
+        public void AddDirSelect(string dataPropertyName, string text, string dirname, bool checkEmpty, string desc = "Please select a folder", bool enabled = true)
         {
             if (Dictionary.ContainsKey(dataPropertyName))
-                throw new DuplicateNameException(dataPropertyName + ": 已经存在");
+                throw new DuplicateNameException(dataPropertyName + ": already exists");
 
             EditInfo info = new EditInfo()
             {
@@ -169,7 +168,7 @@ namespace Sunny.UI
         public void AddPassword(string dataPropertyName, string text, string value, bool checkEmpty, bool enabled = true)
         {
             if (Dictionary.ContainsKey(dataPropertyName))
-                throw new DuplicateNameException(dataPropertyName + ": 已经存在");
+                throw new DuplicateNameException(dataPropertyName + ": already exists");
 
             EditInfo info = new EditInfo()
             {
@@ -188,7 +187,7 @@ namespace Sunny.UI
         public void AddDouble(string dataPropertyName, string text, double value, bool enabled = true, bool halfWidth = true)
         {
             if (Dictionary.ContainsKey(dataPropertyName))
-                throw new DuplicateNameException(dataPropertyName + ": 已经存在");
+                throw new DuplicateNameException(dataPropertyName + ": already exists");
 
             EditInfo info = new EditInfo()
             {
@@ -207,7 +206,7 @@ namespace Sunny.UI
         public void AddDouble(string dataPropertyName, string text, double value, int decimalPlaces, bool enabled = true, bool halfWidth = true)
         {
             if (Dictionary.ContainsKey(dataPropertyName))
-                throw new DuplicateNameException(dataPropertyName + ": 已经存在");
+                throw new DuplicateNameException(dataPropertyName + ": already exists");
 
             EditInfo info = new EditInfo()
             {
@@ -227,7 +226,7 @@ namespace Sunny.UI
         public void AddInteger(string dataPropertyName, string text, int value, bool enabled = true, bool halfWidth = true)
         {
             if (Dictionary.ContainsKey(dataPropertyName))
-                throw new DuplicateNameException(dataPropertyName + ": 已经存在");
+                throw new DuplicateNameException(dataPropertyName + ": already exists");
 
             EditInfo info = new EditInfo()
             {
@@ -246,7 +245,7 @@ namespace Sunny.UI
         public void AddDate(string dataPropertyName, string text, DateTime value, bool enabled = true, bool halfWidth = true)
         {
             if (Dictionary.ContainsKey(dataPropertyName))
-                throw new DuplicateNameException(dataPropertyName + ": 已经存在");
+                throw new DuplicateNameException(dataPropertyName + ": already exists");
 
             EditInfo info = new EditInfo()
             {
@@ -265,7 +264,7 @@ namespace Sunny.UI
         public void AddDateTime(string dataPropertyName, string text, DateTime value, bool enabled = true, bool halfWidth = false)
         {
             if (Dictionary.ContainsKey(dataPropertyName))
-                throw new DuplicateNameException(dataPropertyName + ": 已经存在");
+                throw new DuplicateNameException(dataPropertyName + ": already exists");
 
             EditInfo info = new EditInfo()
             {
@@ -284,7 +283,7 @@ namespace Sunny.UI
         public void AddSwitch(string dataPropertyName, string text, bool value, bool enabled = true)
         {
             if (Dictionary.ContainsKey(dataPropertyName))
-                throw new DuplicateNameException(dataPropertyName + ": 已经存在");
+                throw new DuplicateNameException(dataPropertyName + ": already exists");
 
             EditInfo info = new EditInfo()
             {
@@ -303,7 +302,7 @@ namespace Sunny.UI
         public void AddSwitch(string dataPropertyName, string text, bool value, string activeText, string inActiveText, bool enabled = true)
         {
             if (Dictionary.ContainsKey(dataPropertyName))
-                throw new DuplicateNameException(dataPropertyName + ": 已经存在");
+                throw new DuplicateNameException(dataPropertyName + ": already exists");
 
             EditInfo info = new EditInfo()
             {
@@ -324,7 +323,7 @@ namespace Sunny.UI
             string valueMember, object value, bool enabled = true, bool halfWidth = false)
         {
             if (Dictionary.ContainsKey(dataPropertyName))
-                throw new DuplicateNameException(dataPropertyName + ": 已经存在");
+                throw new DuplicateNameException(dataPropertyName + ": already exists");
 
             EditInfo info = new EditInfo()
             {
@@ -346,7 +345,7 @@ namespace Sunny.UI
         public void AddCombobox(string dataPropertyName, string text, string[] items, int selectedIndex = -1, bool enabled = true, bool halfWidth = false)
         {
             if (Dictionary.ContainsKey(dataPropertyName))
-                throw new DuplicateNameException(dataPropertyName + ": 已经存在");
+                throw new DuplicateNameException(dataPropertyName + ": already exists");
 
             EditInfo info = new EditInfo()
             {
@@ -366,7 +365,7 @@ namespace Sunny.UI
         public void AddComboTreeView(string dataPropertyName, string text, TreeNode[] nodes, TreeNode value, bool enabled = true, bool halfWidth = false)
         {
             if (Dictionary.ContainsKey(dataPropertyName))
-                throw new DuplicateNameException(dataPropertyName + ": 已经存在");
+                throw new DuplicateNameException(dataPropertyName + ": already exists");
 
             EditInfo info = new EditInfo()
             {
@@ -386,7 +385,7 @@ namespace Sunny.UI
         public void AddComboCheckedListBox(string dataPropertyName, string text, ComboCheckedListBoxItem[] nodes, string value, bool enabled = true, bool halfWidth = false)
         {
             if (Dictionary.ContainsKey(dataPropertyName))
-                throw new DuplicateNameException(dataPropertyName + ": 已经存在");
+                throw new DuplicateNameException(dataPropertyName + ": already exists");
 
             EditInfo info = new EditInfo()
             {
@@ -407,7 +406,7 @@ namespace Sunny.UI
             string valueMember, int selectedIndex = -1, bool enabled = true, bool halfWidth = false)
         {
             if (Dictionary.ContainsKey(dataPropertyName))
-                throw new DuplicateNameException(dataPropertyName + ": 已经存在");
+                throw new DuplicateNameException(dataPropertyName + ": already exists");
 
             EditInfo info = new EditInfo()
             {

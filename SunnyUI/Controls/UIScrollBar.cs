@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,18 +9,17 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIScrollBar.cs
- * 文件说明: 滚动条
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIScrollBar.cs
+ * File Description: Scroll bar
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-04-25: V2.2.4 更新主题配置类
- * 2022-03-19: V3.1.1 重构主题配色
- * 2022-11-03: V3.2.6 增加了可设置垂直滚动条宽度的属性
- * 2024-11-04: V3.7.2 修复了一些重载事件
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-04-25: V2.2.4 Updated theme configuration class
+ * 2022-03-19: V3.1.1 Refactored theme colors
+ * 2022-11-03: V3.2.6 Added property to set vertical scrollbar width
+ * 2024-11-04: V3.7.2 Fixed some overloaded events
 ******************************************************************************/
 
 using System;
@@ -90,7 +89,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(0)]
-        [Description("当前值"), Category("SunnyUI")]
+        [Description("Current value"), Category("SunnyUI")]
         public int Value
         {
             get => scrollValue;
@@ -103,7 +102,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(100)]
-        [Description("最大值"), Category("SunnyUI")]
+        [Description("Maximum value"), Category("SunnyUI")]
         public int Maximum
         {
             get => maximum;
@@ -121,9 +120,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载控件尺寸变更
+        /// Override control size change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
@@ -188,9 +187,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override drawing
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Drawing parameters</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             e.Graphics.Clear(fillColor);
@@ -323,9 +322,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标按下事件
+        /// Override mouse down event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
@@ -394,9 +393,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标抬起事件
+        /// Override mouse up event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseUp(MouseEventArgs e)
         {
             IsPress = false;
@@ -409,9 +408,9 @@ namespace Sunny.UI
         private int MousePos;
 
         /// <summary>
-        /// 重载鼠标移动事件
+        /// Override mouse move event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseMove(MouseEventArgs e)
         {
             MousePos = e.Y;
@@ -448,9 +447,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标离开事件
+        /// Override mouse leave event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseLeave(EventArgs e)
         {
             base.OnMouseLeave(e);
@@ -489,9 +488,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -503,9 +502,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体颜色
+        /// Font color
         /// </summary>
-        [Description("字体颜色"), Category("SunnyUI")]
+        [Description("Font color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public override Color ForeColor
         {
@@ -514,9 +513,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 字体颜色
+        /// Rectangle color
         /// </summary>
-        [Description("字体颜色"), Category("SunnyUI")]
+        [Description("Rectangle color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "80, 160, 255")]
         public Color RectColor
         {
@@ -525,9 +524,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, if the value is background color or transparent color or empty value, it will not be filled
         /// </summary>
-        [Description("填充颜色"), Category("SunnyUI")]
+        [Description("Fill color"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "243, 249, 255")]
         public Color FillColor
         {
@@ -536,7 +535,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "115, 179, 255")]
-        [Description("鼠标移上颜色"), Category("SunnyUI")]
+        [Description("Mouse hover color"), Category("SunnyUI")]
         public Color HoverColor
         {
             get => fillHoverColor;
@@ -544,7 +543,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(typeof(Color), "64, 128, 204")]
-        [Description("鼠标按下颜色"), Category("SunnyUI")]
+        [Description("Mouse press color"), Category("SunnyUI")]
         public Color PressColor
         {
             get => fillPressColor;

@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,15 +9,14 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIGlobal.cs
- * 文件说明: 全局参数类
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIGlobal.cs
+ * Description: Global parameter class
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
-******************************************************************************/
+ * 2020-01-01: V2.2.0 Added file description
+ ******************************************************************************/
 
 using System;
 using System.ComponentModel;
@@ -26,14 +25,14 @@ using System.Reflection;
 namespace Sunny.UI
 {
     /// <summary>
-    /// 全局参数类
+    /// Global parameter class
     /// </summary>
     public static class UIGlobal
     {
         //public const string Version = "SunnyUI.Net V3.2.6";
 
         /// <summary>
-        /// 版本
+        /// Version
         /// </summary>
         public static string Version = Assembly.GetExecutingAssembly().GetName().Name + " V" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
 

@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,19 +9,18 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIToolTip.cs
- * 文件说明: 提示
- * 当前版本: V3.1
- * 创建日期: 2020-07-21
+ * File Name: UIToolTip.cs
+ * File Description: Tooltip
+ * Current Version: V3.1
+ * Creation Date: 2020-07-21
  *
- * 2020-07-21: V2.2.6 增加控件
- * 2020-07-25: V2.2.6 更新绘制
- * 2021-08-16: V3.0.6 增加ToolTip接口，解决类似UITextBox这类的组合控件无法显示ToolTip的问题
- * 2021-12-09: V3.0.9 修复默认显示
- * 2023-05-14: V3.3.6 重构DrawString函数
- * 2023-10-26: V3.5.1 字体图标增加旋转角度参数SymbolRotate
+ * 2020-07-21: V2.2.6 Added control
+ * 2020-07-25: V2.2.6 Updated drawing
+ * 2021-08-16: V3.0.6 Added ToolTip interface, solved the issue where composite controls like UITextBox could not display ToolTip
+ * 2021-12-09: V3.0.9 Fixed default display
+ * 2023-05-14: V3.3.6 Refactored DrawString function
+ * 2023-10-26: V3.5.1 Added rotation angle parameter SymbolRotate for font icons
 ******************************************************************************/
 
 using System;
@@ -50,19 +49,19 @@ namespace Sunny.UI
             InitOwnerDraw();
         }
 
-        [DefaultValue(typeof(Font), "宋体, 9pt"), Description("字体"), Category("SunnyUI")]
-        public Font Font { get; set; } = new Font("宋体", 9);
+        [DefaultValue(typeof(Font), "Segoe UI, 9pt"), Description("Font"), Category("SunnyUI")]
+        public Font Font { get; set; } = new Font("Segoe UI", 9);
 
-        [DefaultValue(typeof(Font), "宋体, 12pt"), Description("标题字体"), Category("SunnyUI")]
-        public Font TitleFont { get; set; } = new Font("宋体", 12);
+        [DefaultValue(typeof(Font), "Segoe UI, 12pt"), Description("Title font"), Category("SunnyUI")]
+        public Font TitleFont { get; set; } = new Font("Segoe UI", 12);
 
-        [DefaultValue(typeof(Color), "239, 239, 239"), Description("边框颜色"), Category("SunnyUI")]
+        [DefaultValue(typeof(Color), "239, 239, 239"), Description("Border color"), Category("SunnyUI")]
         public Color RectColor { get; set; } = UIChartStyles.Dark.ForeColor;
 
-        [DefaultValue(true), Description("自动大小"), Category("SunnyUI")]
+        [DefaultValue(true), Description("Auto size"), Category("SunnyUI")]
         public bool AutoSize { get; set; } = true;
 
-        [DefaultValue(typeof(Size), "100, 70"), Description("不自动缩放时大小"), Category("SunnyUI")]
+        [DefaultValue(typeof(Size), "100, 70"), Description("Size when not auto-scaling"), Category("SunnyUI")]
         public Size Size { get; set; } = new Size(100, 70);
 
         public new void SetToolTip(Control control, string caption)
@@ -253,27 +252,27 @@ namespace Sunny.UI
             public string ToolTipText { get; set; }
 
             /// <summary>
-            /// 字体图标
+            /// Font icon
             /// </summary>
             public int Symbol { get; set; }
 
             /// <summary>
-            /// 字体图标大小
+            /// Font icon size
             /// </summary>
             public int SymbolSize { get; set; } = 32;
 
             /// <summary>
-            /// 字体图标的偏移位置
+            /// Font icon offset position
             /// </summary>
             public Point SymbolOffset { get; set; } = new Point(0, 0);
 
             /// <summary>
-            /// 字体图标旋转角度
+            /// Font icon rotation angle
             /// </summary>
             public int SymbolRotate { get; set; } = 0;
 
             /// <summary>
-            /// 字体图标颜色
+            /// Font icon color
             /// </summary>
             public Color SymbolColor { get; set; } = UIChartStyles.Dark.ForeColor;
         }

@@ -114,7 +114,7 @@ namespace Sunny.UI
             TopPanel.Controls.Add(b1);
             TopPanel.Dock = DockStyle.Top;
             TopPanel.FillColor = Color.White;
-            TopPanel.Font = new Font("宋体", 12F);
+            TopPanel.Font = new Font("Segoe UI", 12F);
             TopPanel.Location = new Point(0, 0);
             TopPanel.Margin = new Padding(4, 5, 4, 5);
             TopPanel.MinimumSize = new Size(1, 1);
@@ -136,7 +136,7 @@ namespace Sunny.UI
             b4.Cursor = Cursors.Hand;
             b4.FillColor = Color.White;
             b4.FillHoverColor = Color.FromArgb(80, 160, 255);
-            b4.Font = new Font("宋体", 12F);
+            b4.Font = new Font("Segoe UI", 12F);
             b4.ForeColor = Color.FromArgb(80, 160, 255);
             b4.Location = new Point(250, 4);
             b4.MinimumSize = new Size(1, 1);
@@ -150,7 +150,7 @@ namespace Sunny.UI
             b4.StyleCustomMode = true;
             b4.Symbol = 61697;
             b4.TabIndex = 3;
-            b4.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b4.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             b4.Click += b4_Click;
             // 
             // b3
@@ -160,7 +160,7 @@ namespace Sunny.UI
             b3.Cursor = Cursors.Hand;
             b3.FillColor = Color.White;
             b3.FillHoverColor = Color.FromArgb(80, 160, 255);
-            b3.Font = new Font("宋体", 12F);
+            b3.Font = new Font("Segoe UI", 12F);
             b3.ForeColor = Color.FromArgb(80, 160, 255);
             b3.Location = new Point(214, 4);
             b3.MinimumSize = new Size(1, 1);
@@ -174,7 +174,7 @@ namespace Sunny.UI
             b3.StyleCustomMode = true;
             b3.Symbol = 61701;
             b3.TabIndex = 2;
-            b3.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b3.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             b3.Click += b3_Click;
             // 
             // b2
@@ -183,7 +183,7 @@ namespace Sunny.UI
             b2.Cursor = Cursors.Hand;
             b2.FillColor = Color.White;
             b2.FillHoverColor = Color.FromArgb(80, 160, 255);
-            b2.Font = new Font("宋体", 12F);
+            b2.Font = new Font("Segoe UI", 12F);
             b2.ForeColor = Color.FromArgb(80, 160, 255);
             b2.Location = new Point(40, 4);
             b2.MinimumSize = new Size(1, 1);
@@ -197,7 +197,7 @@ namespace Sunny.UI
             b2.StyleCustomMode = true;
             b2.Symbol = 61700;
             b2.TabIndex = 1;
-            b2.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b2.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             b2.Click += b2_Click;
             // 
             // b1
@@ -206,7 +206,7 @@ namespace Sunny.UI
             b1.Cursor = Cursors.Hand;
             b1.FillColor = Color.White;
             b1.FillHoverColor = Color.FromArgb(80, 160, 255);
-            b1.Font = new Font("宋体", 12F);
+            b1.Font = new Font("Segoe UI", 12F);
             b1.ForeColor = Color.FromArgb(80, 160, 255);
             b1.Location = new Point(4, 4);
             b1.MinimumSize = new Size(1, 1);
@@ -220,7 +220,7 @@ namespace Sunny.UI
             b1.StyleCustomMode = true;
             b1.Symbol = 61696;
             b1.TabIndex = 0;
-            b1.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            b1.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             b1.Click += b1_Click;
             // 
             // TabControl
@@ -230,7 +230,7 @@ namespace Sunny.UI
             TabControl.Controls.Add(tabPage3);
             TabControl.Dock = DockStyle.Fill;
             TabControl.DrawMode = TabDrawMode.OwnerDrawFixed;
-            TabControl.Font = new Font("宋体", 12F);
+            TabControl.Font = new Font("Segoe UI", 12F);
             TabControl.ItemSize = new Size(150, 40);
             TabControl.Location = new Point(0, 31);
             TabControl.MainPage = "";
@@ -242,7 +242,7 @@ namespace Sunny.UI
             TabControl.Style = UIStyle.Custom;
             TabControl.TabIndex = 1;
             TabControl.TabUnSelectedForeColor = Color.FromArgb(240, 240, 240);
-            TabControl.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            TabControl.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             TabControl.SelectedIndexChanged += TabControl_SelectedIndexChanged;
             // 
             // tabPage1
@@ -259,7 +259,7 @@ namespace Sunny.UI
             // 
             p1.Dock = DockStyle.Fill;
             p1.FillColor = Color.White;
-            p1.Font = new Font("宋体", 12F);
+            p1.Font = new Font("Segoe UI", 12F);
             p1.Location = new Point(0, 0);
             p1.Margin = new Padding(4, 5, 4, 5);
             p1.MinimumSize = new Size(1, 1);
@@ -289,7 +289,7 @@ namespace Sunny.UI
             // 
             p2.Dock = DockStyle.Fill;
             p2.FillColor = Color.White;
-            p2.Font = new Font("宋体", 12F);
+            p2.Font = new Font("Segoe UI", 12F);
             p2.Location = new Point(0, 0);
             p2.Margin = new Padding(4, 5, 4, 5);
             p2.MinimumSize = new Size(1, 1);
@@ -319,7 +319,7 @@ namespace Sunny.UI
             // 
             p3.Dock = DockStyle.Fill;
             p3.FillColor = Color.White;
-            p3.Font = new Font("宋体", 12F);
+            p3.Font = new Font("Segoe UI", 12F);
             p3.Location = new Point(0, 0);
             p3.Margin = new Padding(4, 5, 4, 5);
             p3.MinimumSize = new Size(1, 1);
@@ -339,7 +339,7 @@ namespace Sunny.UI
             // sb
             // 
             sb.BackColor = Color.Transparent;
-            sb.Font = new Font("宋体", 12F);
+            sb.Font = new Font("Segoe UI", 12F);
             sb.ForeColor = Color.DarkGray;
             sb.Location = new Point(398, 103);
             sb.Name = "sb";
@@ -352,7 +352,7 @@ namespace Sunny.UI
             // mb
             // 
             mb.BackColor = Color.Transparent;
-            mb.Font = new Font("宋体", 12F);
+            mb.Font = new Font("Segoe UI", 12F);
             mb.ForeColor = Color.DarkGray;
             mb.Location = new Point(345, 103);
             mb.Name = "mb";
@@ -365,7 +365,7 @@ namespace Sunny.UI
             // hb
             // 
             hb.BackColor = Color.Transparent;
-            hb.Font = new Font("宋体", 12F);
+            hb.Font = new Font("Segoe UI", 12F);
             hb.ForeColor = Color.DarkGray;
             hb.Location = new Point(292, 103);
             hb.Name = "hb";
@@ -378,7 +378,7 @@ namespace Sunny.UI
             // st
             // 
             st.BackColor = Color.Transparent;
-            st.Font = new Font("宋体", 12F);
+            st.Font = new Font("Segoe UI", 12F);
             st.ForeColor = Color.DarkGray;
             st.Location = new Point(398, 31);
             st.Name = "st";
@@ -391,7 +391,7 @@ namespace Sunny.UI
             // mt
             // 
             mt.BackColor = Color.Transparent;
-            mt.Font = new Font("宋体", 12F);
+            mt.Font = new Font("Segoe UI", 12F);
             mt.ForeColor = Color.DarkGray;
             mt.Location = new Point(345, 31);
             mt.Name = "mt";
@@ -404,7 +404,7 @@ namespace Sunny.UI
             // ht
             // 
             ht.BackColor = Color.Transparent;
-            ht.Font = new Font("宋体", 12F);
+            ht.Font = new Font("Segoe UI", 12F);
             ht.ForeColor = Color.DarkGray;
             ht.Location = new Point(292, 31);
             ht.Name = "ht";
@@ -417,7 +417,7 @@ namespace Sunny.UI
             // sc
             // 
             sc.BackColor = Color.Transparent;
-            sc.Font = new Font("宋体", 12F);
+            sc.Font = new Font("Segoe UI", 12F);
             sc.ForeColor = Color.FromArgb(48, 48, 48);
             sc.Location = new Point(398, 65);
             sc.Name = "sc";
@@ -431,7 +431,7 @@ namespace Sunny.UI
             // mc
             // 
             mc.BackColor = Color.Transparent;
-            mc.Font = new Font("宋体", 12F);
+            mc.Font = new Font("Segoe UI", 12F);
             mc.ForeColor = Color.FromArgb(48, 48, 48);
             mc.Location = new Point(345, 65);
             mc.Name = "mc";
@@ -445,7 +445,7 @@ namespace Sunny.UI
             // hc
             // 
             hc.BackColor = Color.Transparent;
-            hc.Font = new Font("宋体", 12F);
+            hc.Font = new Font("Segoe UI", 12F);
             hc.ForeColor = Color.FromArgb(48, 48, 48);
             hc.Location = new Point(292, 65);
             hc.Name = "hc";
@@ -459,7 +459,7 @@ namespace Sunny.UI
             // btnCancel
             // 
             btnCancel.Cursor = Cursors.Hand;
-            btnCancel.Font = new Font("宋体", 12F);
+            btnCancel.Font = new Font("Segoe UI", 12F);
             btnCancel.Location = new Point(370, 162);
             btnCancel.MinimumSize = new Size(1, 1);
             btnCancel.Name = "btnCancel";
@@ -469,13 +469,13 @@ namespace Sunny.UI
             btnCancel.Symbol = 0;
             btnCancel.TabIndex = 30;
             btnCancel.Text = "取消";
-            btnCancel.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            btnCancel.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             btnCancel.Click += btnCancel_Click;
             // 
             // btnOK
             // 
             btnOK.Cursor = Cursors.Hand;
-            btnOK.Font = new Font("宋体", 12F);
+            btnOK.Font = new Font("Segoe UI", 12F);
             btnOK.Location = new Point(291, 162);
             btnOK.MinimumSize = new Size(1, 1);
             btnOK.Name = "btnOK";
@@ -485,7 +485,7 @@ namespace Sunny.UI
             btnOK.Symbol = 0;
             btnOK.TabIndex = 29;
             btnOK.Text = "确定";
-            btnOK.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            btnOK.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             btnOK.Click += btnOK_Click;
             // 
             // s2
@@ -494,7 +494,7 @@ namespace Sunny.UI
             s2.Cursor = Cursors.Hand;
             s2.FillColor = Color.White;
             s2.FillHoverColor = Color.FromArgb(80, 160, 255);
-            s2.Font = new Font("宋体", 12F);
+            s2.Font = new Font("Segoe UI", 12F);
             s2.ForeColor = Color.FromArgb(80, 160, 255);
             s2.Location = new Point(405, 129);
             s2.MinimumSize = new Size(1, 1);
@@ -509,7 +509,7 @@ namespace Sunny.UI
             s2.Symbol = 61703;
             s2.TabIndex = 28;
             s2.Tag = "6";
-            s2.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            s2.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             s2.Click += s2_Click;
             // 
             // mm2
@@ -518,7 +518,7 @@ namespace Sunny.UI
             mm2.Cursor = Cursors.Hand;
             mm2.FillColor = Color.White;
             mm2.FillHoverColor = Color.FromArgb(80, 160, 255);
-            mm2.Font = new Font("宋体", 12F);
+            mm2.Font = new Font("Segoe UI", 12F);
             mm2.ForeColor = Color.FromArgb(80, 160, 255);
             mm2.Location = new Point(352, 129);
             mm2.MinimumSize = new Size(1, 1);
@@ -533,7 +533,7 @@ namespace Sunny.UI
             mm2.Symbol = 61703;
             mm2.TabIndex = 27;
             mm2.Tag = "5";
-            mm2.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            mm2.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             mm2.Click += mm2_Click;
             // 
             // h2
@@ -542,7 +542,7 @@ namespace Sunny.UI
             h2.Cursor = Cursors.Hand;
             h2.FillColor = Color.White;
             h2.FillHoverColor = Color.FromArgb(80, 160, 255);
-            h2.Font = new Font("宋体", 12F);
+            h2.Font = new Font("Segoe UI", 12F);
             h2.ForeColor = Color.FromArgb(80, 160, 255);
             h2.Location = new Point(299, 128);
             h2.MinimumSize = new Size(1, 1);
@@ -557,7 +557,7 @@ namespace Sunny.UI
             h2.Symbol = 61703;
             h2.TabIndex = 26;
             h2.Tag = "4";
-            h2.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            h2.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             h2.Click += h2_Click;
             // 
             // s1
@@ -566,7 +566,7 @@ namespace Sunny.UI
             s1.Cursor = Cursors.Hand;
             s1.FillColor = Color.White;
             s1.FillHoverColor = Color.FromArgb(80, 160, 255);
-            s1.Font = new Font("宋体", 12F);
+            s1.Font = new Font("Segoe UI", 12F);
             s1.ForeColor = Color.FromArgb(80, 160, 255);
             s1.Location = new Point(405, 4);
             s1.MinimumSize = new Size(1, 1);
@@ -581,7 +581,7 @@ namespace Sunny.UI
             s1.Symbol = 61702;
             s1.TabIndex = 25;
             s1.Tag = "3";
-            s1.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            s1.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             s1.Click += s1_Click;
             // 
             // mm1
@@ -590,7 +590,7 @@ namespace Sunny.UI
             mm1.Cursor = Cursors.Hand;
             mm1.FillColor = Color.White;
             mm1.FillHoverColor = Color.FromArgb(80, 160, 255);
-            mm1.Font = new Font("宋体", 12F);
+            mm1.Font = new Font("Segoe UI", 12F);
             mm1.ForeColor = Color.FromArgb(80, 160, 255);
             mm1.Location = new Point(352, 4);
             mm1.MinimumSize = new Size(1, 1);
@@ -605,7 +605,7 @@ namespace Sunny.UI
             mm1.Symbol = 61702;
             mm1.TabIndex = 24;
             mm1.Tag = "2";
-            mm1.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            mm1.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             mm1.Click += mm1_Click;
             // 
             // h1
@@ -614,7 +614,7 @@ namespace Sunny.UI
             h1.Cursor = Cursors.Hand;
             h1.FillColor = Color.White;
             h1.FillHoverColor = Color.FromArgb(80, 160, 255);
-            h1.Font = new Font("宋体", 12F);
+            h1.Font = new Font("Segoe UI", 12F);
             h1.ForeColor = Color.FromArgb(80, 160, 255);
             h1.Location = new Point(299, 4);
             h1.MinimumSize = new Size(1, 1);
@@ -629,7 +629,7 @@ namespace Sunny.UI
             h1.Symbol = 61702;
             h1.TabIndex = 23;
             h1.Tag = "1";
-            h1.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            h1.TipsFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             h1.Click += h1_Click;
             // 
             // uiPanel1
@@ -639,7 +639,7 @@ namespace Sunny.UI
             uiPanel1.Controls.Add(TopPanel);
             uiPanel1.Dock = DockStyle.Left;
             uiPanel1.FillColor = Color.White;
-            uiPanel1.Font = new Font("宋体", 12F);
+            uiPanel1.Font = new Font("Segoe UI", 12F);
             uiPanel1.Location = new Point(0, 0);
             uiPanel1.Margin = new Padding(4, 5, 4, 5);
             uiPanel1.MinimumSize = new Size(1, 1);

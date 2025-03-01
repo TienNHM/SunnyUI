@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI Open Source Control Library, Utility Library, Extension Library, Multi-page Development Framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,19 +9,18 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIIPTextBox.cs
- * 文件说明: IP地址输入框
- * 当前版本: V3.1
- * 创建日期: 2022-01-29
+ * File Name: UIIPTextBox.cs
+ * Description: IP Address Input Box
+ * Current Version: V3.1
+ * Creation Date: 2022-01-29
  *
- * 2022-01-29: V3.1.0 增加文件说明
- * 2022-11-02: V3.2.6 增加TextChanged事件
- * 2022-12-02: V3.3.0 删除TextChanged事件，增加ValueChanged事件
- * 2023-05-10: V3.3.6 修复Enabled切换时背景色不一致的问题
- * 2023-05-13: V3.3.6 重构DrawString函数
- * 2023-11-13: V3.5.2 重构主题
+ * 2022-01-29: V3.1.0 Added file description
+ * 2022-11-02: V3.2.6 Added TextChanged event
+ * 2022-12-02: V3.3.0 Removed TextChanged event, added ValueChanged event
+ * 2023-05-10: V3.3.6 Fixed background color inconsistency when switching Enabled
+ * 2023-05-13: V3.3.6 Refactored DrawString function
+ * 2023-11-13: V3.5.2 Refactored theme
 ******************************************************************************/
 
 using System;
@@ -153,9 +152,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 填充颜色，当值为背景色或透明色或空值则不填充
+        /// Fill color, no fill if the value is background color, transparent color, or null
         /// </summary>
-        [Description("填充颜色，当值为背景色或透明色或空值则不填充"), Category("SunnyUI")]
+        [Description("Fill color, no fill if the value is background color, transparent color, or null"), Category("SunnyUI")]
         [DefaultValue(typeof(Color), "White")]
         public new Color FillColor
         {
@@ -230,7 +229,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 获取输入的IP地址
+        /// Get the entered IP address
         /// </summary>
         [DefaultValue(null)]
         public IPAddress Value
@@ -251,9 +250,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -285,9 +284,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载绘图
+        /// Override drawing
         /// </summary>
-        /// <param name="e">绘图参数</param>
+        /// <param name="e">Drawing parameters</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -317,7 +316,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(false)]
-        [Description("是否只读"), Category("SunnyUI")]
+        [Description("Read-only"), Category("SunnyUI")]
         public bool ReadOnly
         {
             get => txt1.ReadOnly;
@@ -341,9 +340,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载鼠标按下事件
+        /// Override mouse down event
         /// </summary>
-        /// <param name="e">鼠标参数</param>
+        /// <param name="e">Mouse parameters</param>
         protected override void OnMouseDown(MouseEventArgs e)
         {
             ActiveControl = txt1;
@@ -454,9 +453,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 重载字体变更
+        /// Override font change
         /// </summary>
-        /// <param name="e">参数</param>
+        /// <param name="e">Parameters</param>
         protected override void OnFontChanged(EventArgs e)
         {
             base.OnFontChanged(e);

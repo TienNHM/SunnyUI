@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * SunnyUI 开源控件库、工具类库、扩展类库、多页面开发框架。
+ * SunnyUI open source control library, utility class library, extension class library, multi-page development framework.
  * CopyRight (C) 2012-2025 ShenYongHua(沈永华).
- * QQ群：56829229 QQ：17612584 EMail：SunnyUI@QQ.Com
+ * QQ Group: 56829229 QQ: 17612584 EMail: SunnyUI@QQ.Com
  *
  * Blog:   https://www.cnblogs.com/yhuse
  * Gitee:  https://gitee.com/yhuse/SunnyUI
@@ -9,40 +9,39 @@
  *
  * SunnyUI.dll can be used for free under the GPL-3.0 license.
  * If you use this code, please keep this note.
- * 如果您使用此代码，请保留此说明。
  ******************************************************************************
- * 文件名称: UIComboBox.cs
- * 文件说明: 组合框
- * 当前版本: V3.1
- * 创建日期: 2020-01-01
+ * File Name: UIComboBox.cs
+ * File Description: ComboBox
+ * Current Version: V3.1
+ * Creation Date: 2020-01-01
  *
- * 2020-01-01: V2.2.0 增加文件说明
- * 2020-06-11: V2.2.5 增加DataSource，支持数据绑定
- * 2021-05-06: V3.0.3 解决鼠标下拉选择，触发SelectedIndexChanged两次的问题
- * 2021-06-03: V3.0.4 更新了数据绑定相关代码
- * 2021-08-03: V3.0.5 Items.Clear后清除显示
- * 2021-08-15: V3.0.6 重写了水印文字的画法，并增加水印文字颜色
- * 2022-01-16: V3.1.0 增加了下拉框颜色设置
- * 2022-04-13: V3.1.3 根据Text自动选中SelectIndex
- * 2022-04-15: V3.1.3 增加过滤
- * 2022-04-16: V3.1.3 过滤下拉控跟随主题配色
- * 2022-04-20: V3.1.5 过滤文字为空时，下拉框显示所有数据列表
- * 2022-05-04: V3.1.8 过滤时修复ValueMember绑定值的显示
- * 2022-05-24: V3.1.9 Selceted=-1，清除文本
- * 2022-08-25: V3.2.3 下拉框边框可设置颜色
- * 2022-11-03: V3.2.6 过滤时删除字符串前面、后面的空格
- * 2022-11-13: V3.2.8 增加不显示过滤可以自动调整下拉框宽度
- * 2022-11-30: V3.3.0 增加Clear方法
- * 2023-02-04: V3.3.1 增加清除按钮
- * 2023-03-15: V3.3.3 修改失去焦点自动关闭过滤下拉框
- * 2023-06-28: V3.3.9 增加过滤时忽略大小写
- * 2023-07-03: V3.3.9 修改了几个对象的释放
- * 2023-08-11: V3.4.1 Items.Clear后，DropDownStyle为DropDown时，不清空Text
- * 2023-12-26: V3.6.2 增加下拉界面的滚动条设置
- * 2024-01-27: V3.6.3 修复在窗体构造函数设置SelectedIndex报错
- * 2024-10-28: V3.7.2 增加了SelectionChangeCommitted事件，下拉框显示鼠标点击条目时响应
- * 2024-11-10: V3.7.2 增加StyleDropDown属性，手动修改Style时设置此属性以修改下拉框主题
- * 2024-11-10: V3.7.2 删除ScrollBarColor、ScrollBarBackColor、ScrollBarStyleInherited属性
+ * 2020-01-01: V2.2.0 Added file description
+ * 2020-06-11: V2.2.5 Added DataSource, supports data binding
+ * 2021-05-06: V3.0.3 Fixed issue where mouse dropdown selection triggers SelectedIndexChanged twice
+ * 2021-06-03: V3.0.4 Updated data binding related code
+ * 2021-08-03: V3.0.5 Clear display after Items.Clear
+ * 2021-08-15: V3.0.6 Rewrote watermark text drawing method and added watermark text color
+ * 2022-01-16: V3.1.0 Added dropdown color settings
+ * 2022-04-13: V3.1.3 Automatically select SelectIndex based on Text
+ * 2022-04-15: V3.1.3 Added filtering
+ * 2022-04-16: V3.1.3 Filtering dropdown follows theme colors
+ * 2022-04-20: V3.1.5 Show all data list when filter text is empty
+ * 2022-05-04: V3.1.8 Fixed display of ValueMember bound value during filtering
+ * 2022-05-24: V3.1.9 Clear text when Selceted=-1
+ * 2022-08-25: V3.2.3 Dropdown border color can be set
+ * 2022-11-03: V3.2.6 Remove leading and trailing spaces when filtering
+ * 2022-11-13: V3.2.8 Added auto-adjust dropdown width when filtering is not displayed
+ * 2022-11-30: V3.3.0 Added Clear method
+ * 2023-02-04: V3.3.1 Added clear button
+ * 2023-03-15: V3.3.3 Automatically close filter dropdown when losing focus
+ * 2023-06-28: V3.3.9 Ignore case when filtering
+ * 2023-07-03: V3.3.9 Modified the release of several objects
+ * 2023-08-11: V3.4.1 Do not clear Text when DropDownStyle is DropDown after Items.Clear
+ * 2023-12-26: V3.6.2 Added scrollbar settings for dropdown interface
+ * 2024-01-27: V3.6.3 Fixed error when setting SelectedIndex in form constructor
+ * 2024-10-28: V3.7.2 Added SelectionChangeCommitted event, responds when dropdown shows mouse click item
+ * 2024-11-10: V3.7.2 Added StyleDropDown property, set this property to change dropdown theme when manually modifying Style
+ * 2024-11-10: V3.7.2 Removed ScrollBarColor, ScrollBarBackColor, ScrollBarStyleInherited properties
 ******************************************************************************/
 
 using System;
@@ -55,7 +54,7 @@ using System.Windows.Forms;
 namespace Sunny.UI
 {
     /// <summary>
-    /// 组合框
+    /// ComboBox
     /// </summary>
     [DefaultProperty("Items")]
     [DefaultEvent("SelectedIndexChanged")]
@@ -64,7 +63,7 @@ namespace Sunny.UI
     public sealed partial class UIComboBox : UIDropControl, IToolTip, IHideDropDown
     {
         /// <summary>
-        /// 构造函数
+        /// Constructor
         /// </summary>
         public UIComboBox()
         {
@@ -102,14 +101,14 @@ namespace Sunny.UI
         [Browsable(false)]
         public override string[] FormTranslatorProperties => null;
 
-        [DefaultValue(0), Category("SunnyUI"), Description("垂直滚动条宽度，最小为原生滚动条宽度")]
+        [DefaultValue(0), Category("SunnyUI"), Description("Vertical scrollbar width, minimum is the native scrollbar width")]
         public int ScrollBarWidth
         {
             get => ListBox.ScrollBarWidth;
             set => ListBox.ScrollBarWidth = value;
         }
 
-        [DefaultValue(6), Category("SunnyUI"), Description("垂直滚动条滑块宽度，最小为原生滚动条宽度")]
+        [DefaultValue(6), Category("SunnyUI"), Description("Vertical scrollbar handle width, minimum is the native scrollbar width")]
         public int ScrollBarHandleWidth
         {
             get => ListBox.ScrollBarHandleWidth;
@@ -117,7 +116,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(false)]
-        [Description("显示清除按钮"), Category("SunnyUI")]
+        [Description("Show clear button"), Category("SunnyUI")]
         public bool ShowClearButton
         {
             get => showClearButton;
@@ -245,10 +244,10 @@ namespace Sunny.UI
         private bool showFilter;
 
         /// <summary>
-        /// 显示过滤
+        /// Show filter
         /// </summary>
         [DefaultValue(false)]
-        [Description("显示过滤"), Category("SunnyUI")]
+        [Description("Show filter"), Category("SunnyUI")]
         public bool ShowFilter
         {
             get => showFilter;
@@ -263,14 +262,14 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 过滤显示最大条目数
+        /// Maximum number of items to display in the filter
         /// </summary>
         [DefaultValue(100)]
-        [Description("过滤显示最大条目数"), Category("SunnyUI")]
+        [Description("Maximum number of items to display in the filter"), Category("SunnyUI")]
         public int FilterMaxCount { get; set; } = 100;
 
         /// <summary>
-        /// 下拉状态改变事件
+        /// Dropdown state change event
         /// </summary>
         protected override void DropDownStyleChanged()
         {
@@ -310,9 +309,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 需要额外设置ToolTip的控件
+        /// Controls that need additional ToolTip settings
         /// </summary>
-        /// <returns>控件</returns>
+        /// <returns>Control</returns>
         public Control ExToolTipControl()
         {
             return edit;
@@ -465,11 +464,11 @@ namespace Sunny.UI
         }
 
         [DefaultValue(false)]
-        [Description("过滤时删除字符串前面、后面的空格"), Category("SunnyUI")]
+        [Description("Remove leading and trailing spaces when filtering"), Category("SunnyUI")]
         public bool TrimFilter { get; set; }
 
         [DefaultValue(false)]
-        [Description("过滤时忽略大小写"), Category("SunnyUI")]
+        [Description("Ignore case when filtering"), Category("SunnyUI")]
         public bool FilterIgnoreCase { get; set; }
 
         private void FillFilterTextEmpty()
@@ -556,10 +555,10 @@ namespace Sunny.UI
         public event EventHandler SelectedValueChanged;
 
         /// <summary>
-        /// 值改变事件
+        /// Value change event
         /// </summary>
-        /// <param name="sender">控件</param>
-        /// <param name="value">值</param>
+        /// <param name="sender">Control</param>
+        /// <param name="value">Value</param>
         protected override void ItemForm_ValueChanged(object sender, object value)
         {
             Invalidate();
@@ -600,7 +599,7 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 创建对象
+        /// Create instance
         /// </summary>
         protected override void CreateInstance()
         {
@@ -624,7 +623,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(25)]
-        [Description("列表项高度"), Category("SunnyUI")]
+        [Description("Item height"), Category("SunnyUI")]
         public int ItemHeight
         {
             get => ListBox.ItemHeight;
@@ -632,7 +631,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(8)]
-        [Description("列表下拉最大个数"), Category("SunnyUI")]
+        [Description("Maximum number of items in the dropdown list"), Category("SunnyUI")]
         public int MaxDropDownItems { get; set; } = 8;
 
         private void UIComboBox_FontChanged(object sender, EventArgs e)
@@ -674,7 +673,7 @@ namespace Sunny.UI
         }
 
         [DefaultValue(false)]
-        [Description("不显示过滤可以自动调整下拉框宽度"), Category("SunnyUI")]
+        [Description("Auto-adjust dropdown width when filtering is not displayed"), Category("SunnyUI")]
         public bool DropDownAutoWidth { get; set; }
 
         private void UIComboBox_ButtonClick(object sender, EventArgs e)
@@ -747,9 +746,9 @@ namespace Sunny.UI
         }
 
         /// <summary>
-        /// 设置主题样式
+        /// Set theme style
         /// </summary>
-        /// <param name="uiColor">主题样式</param>
+        /// <param name="uiColor">Theme style</param>
         public override void SetStyleColor(UIBaseStyle uiColor)
         {
             base.SetStyleColor(uiColor);
@@ -768,18 +767,18 @@ namespace Sunny.UI
         }
 
         [DefaultValue(150)]
-        [Description("下拉框宽度"), Category("SunnyUI")]
+        [Description("Dropdown width"), Category("SunnyUI")]
         public int DropDownWidth { get; set; }
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         [Localizable(true)]
         [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         [MergableProperty(false)]
-        [Description("列表项"), Category("SunnyUI")]
+        [Description("Items"), Category("SunnyUI")]
         public ListBox.ObjectCollection Items => ListBox.Items;
 
         [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        [Description("选中索引"), Category("SunnyUI")]
+        [Description("Selected index"), Category("SunnyUI")]
         public int SelectedIndex
         {
             get => ShowFilter ? -1 : ListBox.SelectedIndex;
@@ -802,7 +801,7 @@ namespace Sunny.UI
         private bool Wana_1;
 
         [Browsable(false), Bindable(true), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        [Description("选中项"), Category("SunnyUI")]
+        [Description("Selected item"), Category("SunnyUI")]
         public object SelectedItem
         {
             get => ShowFilter ? filterSelectedItem : ListBox.SelectedItem;
@@ -816,7 +815,7 @@ namespace Sunny.UI
         }
 
         [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        [Description("选中文字"), Category("SunnyUI")]
+        [Description("Selected text"), Category("SunnyUI")]
         public string SelectedText
         {
             get
@@ -837,7 +836,7 @@ namespace Sunny.UI
             Clear();
         }
 
-        [Description("获取或设置要为此列表框显示的属性。"), Category("SunnyUI")]
+        [Description("Gets or sets the property to display for this list box."), Category("SunnyUI")]
         [DefaultValue("")]
         [Editor("System.Windows.Forms.Design.DataMemberFieldEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         [TypeConverter("System.Windows.Forms.Design.DataMemberFieldConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
@@ -851,7 +850,7 @@ namespace Sunny.UI
             }
         }
 
-        [Description("获取或设置指示显示值的方式的格式说明符字符。"), Category("SunnyUI")]
+        [Description("Gets or sets the format-specifier characters that indicate how a value is to be displayed."), Category("SunnyUI")]
         [DefaultValue("")]
         [MergableProperty(false)]
         public string FormatString
@@ -860,7 +859,7 @@ namespace Sunny.UI
             set => FilterListBox.FormatString = ListBox.FormatString = value;
         }
 
-        [Description("获取或设置指示显示值是否可以进行格式化操作。"), Category("SunnyUI")]
+        [Description("Gets or sets a value indicating whether formatting is applied to the display value."), Category("SunnyUI")]
         [DefaultValue(false)]
         public bool FormattingEnabled
         {
@@ -868,7 +867,7 @@ namespace Sunny.UI
             set => FilterListBox.FormattingEnabled = ListBox.FormattingEnabled = value;
         }
 
-        [Description("获取或设置要为此列表框实际值的属性。"), Category("SunnyUI")]
+        [Description("Gets or sets the property to use as the actual value for the items in the list."), Category("SunnyUI")]
         [DefaultValue("")]
         [Editor("System.Windows.Forms.Design.DataMemberFieldEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public string ValueMember
